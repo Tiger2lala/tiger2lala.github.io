@@ -546,6 +546,8 @@ Need change in di...
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 3
@@ -672,20 +674,25 @@ jsonContent:
     <!-- async load share.js -->
      
     <script type="text/x-mathjax-config">
+   
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
             processEscapes: true
+        },
+        TeX: {
+            extensions: ["https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2/mhchem.js"]
         }
     });
+
     MathJax.Hub.Queue(function() {
         var all = MathJax.Hub.getAllJax();
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 </body>
 </html>
 
