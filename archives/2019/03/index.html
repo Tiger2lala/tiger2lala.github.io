@@ -638,15 +638,16 @@ jsonContent:
     <!-- async load share.js -->
      
     <script type="text/x-mathjax-config">
-   
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
     MathJax.Hub.Config({
+
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
             processEscapes: true
         },
         TeX: {
-            extensions: ["https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2/mhchem.js"]
+            extensions: ["[mhchem]/mhchem.js"]
         }
     });
 
