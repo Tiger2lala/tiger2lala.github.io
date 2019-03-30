@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="2LalA猪">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="2LalA猪">
+    
+    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Matrix_Tensor · 黄油上瘾 ButterAddict</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/baicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Matrix_Tensor</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">黄油上瘾</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Matrix_Tensor
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h1><h2 id="Vector-space"><a href="#Vector-space" class="headerlink" title="Vector space"></a>Vector space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><ul>
+<li>A set of elements on which <strong>vector addition</strong> and <strong>scalar multiplication</strong> are defined</li>
+<li>Closed under these operations</li>
+<li>Includes identity <script type="math/tex">\mathbf{0}​</script> for vector addition</li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>2D spaces <script type="math/tex">\mathbb{R}^2 \neq \mathbb{C}</script>, since <script type="math/tex">\mathbb{C}</script> has a single point of <script type="math/tex">\infty</script>.</li>
+</ul>
+<h3 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h3><p>The set of all vectors that are linear combinations of any vectors of a set <script type="math/tex">\mathbb{S}​</script>.</p>
+<h3 id="Linearly-independent"><a href="#Linearly-independent" class="headerlink" title="Linearly independent"></a>Linearly independent</h3><p>None of the vectors is a linear combination of others, or</p>
+<script type="math/tex; mode=display">
+x_1\mathbf{e}_1+x_2\mathbf{e}_2+x_3\mathbf{e}_3+...=0 \iff x_1=x_2=x_3=...=0</script><h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><p>A set that spans <script type="math/tex">\mathbb{V}​</script> and are linearly independent.</p>
+<ul>
+<li>The number of elements is the dimension of <script type="math/tex">\mathbb{V}</script>.</li>
+<li>Any vector can be expressed as a linear combination of the basis set in a unique way.</li>
+<li>Can have infinite dimensions - e.g. Fourier series</li>
+</ul>
+<h3 id="Change-of-bases"><a href="#Change-of-bases" class="headerlink" title="Change of bases"></a>Change of bases</h3><blockquote>
+<p>Primed / unprimed opposite to lecture notes convention.</p>
+</blockquote>
+<ul>
+<li>Idea: the same vector has different components in different bases.</li>
+</ul>
+<script type="math/tex; mode=display">
+\mathbf{e}_j'=\mathbf{e}_i\mathbf{R}_{ij}</script><p>where <script type="math/tex">\mathbf{R}_{ij}</script> is the <script type="math/tex">i</script>th component of <script type="math/tex">\mathbf{e}_j'</script> in the unprimed basis, i.e.</p>
+<script type="math/tex; mode=display">
+\mathbf{R}_{ij}=
+\begin{pmatrix}
+\uparrow & \uparrow & \uparrow\\
+\mathbf{e_1'} & \mathbf{e_2'} &\mathbf{e_3'}\\
+\downarrow &\downarrow &\downarrow
+\end{pmatrix}</script><p>Check by reversing the argument</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+\uparrow & \uparrow & \uparrow\\
+\mathbf{e_1'} & \mathbf{e_2'} &\mathbf{e_3'}\\
+\downarrow &\downarrow &\downarrow
+\end{pmatrix}
+\begin{pmatrix}
+\uparrow \\
+\mathbf{e'}\\
+\downarrow 
+\end{pmatrix}
+=\begin{pmatrix}
+\uparrow \\
+\mathbf{e'}\,\mathrm{in}\,\mathbf{e}\\
+\downarrow 
+\end{pmatrix}</script><p>Now, </p>
+<script type="math/tex; mode=display">
+\mathbf{x}=x_i\mathbf{e}_i=x_j'\mathbf{e}_j'=x_j'\mathbf{e}_i\mathbf{R}_{ij}\\
+\implies x_i=\mathbf{R}_{ij}x_j'</script><h4 id="Inverse"><a href="#Inverse" class="headerlink" title="Inverse"></a>Inverse</h4><p>Define the transformations</p>
+<script type="math/tex; mode=display">
+\mathbf{e}_j'=\mathbf{e}_i\mathbf{R}_{ij} \\
+\mathbf{e}_j=\mathbf{e}_i'\mathbf{S}_{ij}</script><p>Sub in,</p>
+<script type="math/tex; mode=display">
+\mathbf{e}_j=\mathbf{e}_k\mathbf{R}_{ki}\mathbf{S}_{ij}</script><p>True iff <script type="math/tex">\mathbf{R}_{ki}\mathbf{S}_{ij}=\delta_{kj}</script>, similarly, <script type="math/tex">\mathbf{S}_{ki}\mathbf{R}_{ij}=\delta_{kj}</script>. Hence, inverse transform is represented by inverse matrix.</p>
+<h4 id="Transforming-matrices"><a href="#Transforming-matrices" class="headerlink" title="Transforming matrices"></a>Transforming matrices</h4><script type="math/tex; mode=display">
+\begin{align}
+\mathbf{A}\mathbf{x}=\mathbf{e}_i\mathbf{A}_{ij}x_j&=\mathbf{e}_i'\mathbf{A'}_{ij}x_j'\\
+\mathbf{e}_i\mathbf{A}_{ij}x_j&=\mathbf{e}_k\mathbf{R}_{ki}\mathbf{A'}_{ij}x_j'\\
+\mathbf{A}\mathbf{x}&=\mathbf{R}\mathbf{A'}\mathbf{R}^{-1}\mathbf{x'}\\
+\mathbf{A}&=(\mathbf{R}\mathbf{A'})\mathbf{R}^{-1}\\
+\end{align}</script><h2 id="Linear-Operation"><a href="#Linear-Operation" class="headerlink" title="Linear Operation"></a>Linear Operation</h2><script type="math/tex; mode=display">
+\mathbf{A}(\alpha\mathbf{x}+\mathbf{y})=\alpha\mathbf{A}\mathbf{x}+\mathbf{A}\mathbf{y}</script><p>Without reference to any bases.</p>
+<h2 id="Inner-Product"><a href="#Inner-Product" class="headerlink" title="Inner Product"></a>Inner Product</h2><script type="math/tex; mode=display">
+<\!\!x|y\!\!>=x_i^*y_i</script><ul>
+<li>Linear in 2nd argument</li>
+<li>Anti-linear in 1st argument</li>
+<li>Hermitian: <script type="math/tex"><\!\!x|y\!\!>^*=<y|x>​</script></li>
+<li>Positive-definite: <script type="math/tex"><\!\!x|x\!\!>\geq0</script></li>
+</ul>
+<h3 id="Inner-Product-and-bases"><a href="#Inner-Product-and-bases" class="headerlink" title="Inner Product and bases"></a>Inner Product and bases</h3><script type="math/tex; mode=display">
+<\!\!x|y\!\!>=<\!\!x_i\mathbf{e}_i|y_j\mathbf{e}_j\!\!>=x_i^*y_j<\!\!\mathbf{e}_i|\mathbf{e}_j\!\!>=x_i^*y_j\mathbf{G}_{ij}</script><ul>
+<li>Metric coefficient: <script type="math/tex">\mathbf{G}_{ij}</script>, hermitian</li>
+</ul>
+<h3 id="Cauchy-Schwartz"><a href="#Cauchy-Schwartz" class="headerlink" title="Cauchy-Schwartz"></a>Cauchy-Schwartz</h3><script type="math/tex; mode=display">
+|<\!\!\mathbf{x}|\mathbf{y}\!\!>|\leq||\mathbf{x}||\,||\mathbf{y}||</script><blockquote>
+<p>Proof by considering <script type="math/tex"><\!\!\mathbf{x}-\alpha\mathbf{y}|\mathbf{x}-\alpha\mathbf{y}\!\!></script>, then choose appropriate phase of <script type="math/tex">\alpha</script>, so that <script type="math/tex">\alpha<\!\!\mathbf{x}|\mathbf{y}\!\!></script> is real and positive; appropriate length of <script type="math/tex">\alpha=\frac{|\mathbf{x}|}{|\mathbf{y}|}</script>.</p>
+</blockquote>
+<h2 id="Hermitian-Conjugate"><a href="#Hermitian-Conjugate" class="headerlink" title="Hermitian Conjugate"></a>Hermitian Conjugate</h2><script type="math/tex; mode=display">
+\mathbf{A}^\dagger=(\mathbf{A}^T)^*\\
+\mathbf{AB}^\dagger=\mathbf{B}^\dagger\mathbf{A}^\dagger</script><p>An operator is adjoint if <script type="math/tex"><\!\!\mathbf{A}^\dagger \mathbf{x}|\mathbf{y}\!\!>=<\!\!\mathbf{x}|\mathbf{A} \mathbf{y}\!\!></script>.</p>
+<h3 id="Special-square-matrices"><a href="#Special-square-matrices" class="headerlink" title="Special square matrices"></a>Special square matrices</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real Symmetric</td>
+<td><script type="math/tex">A_{ij}=A_{ji}</script></td>
+</tr>
+<tr>
+<td>Real Antisymmetric</td>
+<td><script type="math/tex">A_{ij}=-A_{ji}</script></td>
+</tr>
+<tr>
+<td>Orthogonal</td>
+<td><script type="math/tex">\mathbf{A}^\mathrm{T}=\mathbf{A}^{-1}</script></td>
+</tr>
+<tr>
+<td>Hermitian</td>
+<td><script type="math/tex">\mathbf{A}^\dagger=\mathbf{A}</script></td>
+</tr>
+<tr>
+<td>Anti-hermitian</td>
+<td><script type="math/tex">\mathbf{A}^\dagger=-\mathbf{A}</script></td>
+</tr>
+<tr>
+<td>Unitary</td>
+<td><script type="math/tex">\mathbf{A}^\dagger=\mathbf{A}^{-1}</script></td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><script type="math/tex">\mathbf{A}^\dagger\mathbf{A}=\mathbf{A}\mathbf{A}^\dagger</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Special-results"><a href="#Special-results" class="headerlink" title="Special results"></a>Special results</h3><ol>
+<li>If A is Hermitian then iA is anti-Hermitian</li>
+<li>if A is Hermitian then exp(iA) is unitary</li>
+</ol>
+<blockquote>
+<p>c.f. real number</p>
+</blockquote>
+<h2 id="Eigenvectors"><a href="#Eigenvectors" class="headerlink" title="Eigenvectors"></a>Eigenvectors</h2><p>Two things to remember:</p>
+<script type="math/tex; mode=display">
+\mathbf{Ax}=\lambda\mathbf{x}\\
+\mathbf{AS}=\mathbf{S\Lambda}</script><ol>
+<li>Always find Eigenvalues first, by solving characteristic equation <script type="math/tex">\det{(\mathbf{A}-\lambda\mathbf{I})}=0</script>.</li>
+<li>Roots<ol>
+<li>n distinct roots - n linearly independent vectors</li>
+<li>m repeated roots - may be 1 to m vectors corresponding to it, and any linear combinations of those  are Eigenvectors.</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>Derivation of Eigenvalue, Eigenvector properties of special matrices.</p>
+</blockquote>
+<h3 id="Diagonalisation"><a href="#Diagonalisation" class="headerlink" title="Diagonalisation"></a>Diagonalisation</h3><p>Diagonalisation is also a similarity transformation, into the Eigenvector basis.</p>
+<ul>
+<li>Only diagonalisable if the matrix has n independent eigenvectors.</li>
+</ul>
+<p>Normal matrices can be diagonalised by unitary transformation. - Transformation between orthonormal bases is described by a unitary vector.</p>
+<ul>
+<li>Tr and Det are most easily studied in the diagonal form, invariant under similarity transformations.</li>
+</ul>
+<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><h3 id="Quadratic-form"><a href="#Quadratic-form" class="headerlink" title="Quadratic form"></a>Quadratic form</h3><p>Any homogeneous quadratic funtion is a quadratic form of a symmetric matrix.</p>
+<script type="math/tex; mode=display">
+Q(\mathbf{x})=\mathbf{x}^T\mathbf{A}\mathbf{x}=A_{ij}x_i x_j</script><p>By diagonalisation, we can get a <script type="math/tex">Q(\mathbf{x}')</script> with no cross-terms.</p>
+<ul>
+<li>The eigenvectors of A defines the <strong>principal axes</strong> of the quadratic form.</li>
+<li><em>Positive (semi-)definite</em> means all eigenvalues are larger than (or equal to) 0.</li>
+</ul>
+<h4 id="Quadratic-surface"><a href="#Quadratic-surface" class="headerlink" title="Quadratic surface"></a>Quadratic surface</h4><script type="math/tex; mode=display">
+Q(\mathbf{x})=k</script><ul>
+<li>Ellipsoids - <script type="math/tex">\lambda​</script> same sign</li>
+<li><p>Hyperboloids - <script type="math/tex">\lambda</script> different signs</p>
+</li>
+<li><p><script type="math/tex">\lambda_1=\lambda_2=\lambda_3</script> - sphere</p>
+</li>
+<li><script type="math/tex">\lambda_1=\lambda_2</script> - revolution about z’ (axis of symmetry)</li>
+<li><script type="math/tex">\lambda_3=0</script> - conic section translated along z’</li>
+</ul>
+<h3 id="Hermitian-Form"><a href="#Hermitian-Form" class="headerlink" title="Hermitian Form"></a>Hermitian Form</h3><p>Similar idea for complex vector space.</p>
+<script type="math/tex; mode=display">
+H(\mathbf{x})=\mathbf{x}^\dagger\mathbf{H}\mathbf{x}=\sum\lambda_i|x_i'|^2</script><h2 id="Stationary-property"><a href="#Stationary-property" class="headerlink" title="Stationary property"></a>Stationary property</h2><p>Define Rayleigh quotient</p>
+<script type="math/tex; mode=display">
+\lambda(\mathbf{x})=\frac{\mathbf{x}^\dagger\mathbf{A}\mathbf{x}}{\mathbf{x}^\dagger\mathbf{x}}</script><ul>
+<li><script type="math/tex">\lambda</script> is a scalar</li>
+<li><script type="math/tex; mode=display">\lambda(\alpha\mathbf{x})=\lambda(\mathbf{x})</script></li>
+<li>When <script type="math/tex">\mathbf{x}</script> is eigenvector, <script type="math/tex">\lambda</script> is eigenvalue.</li>
+</ul>
+<h3 id="Rayleigh-Ritz"><a href="#Rayleigh-Ritz" class="headerlink" title="Rayleigh-Ritz"></a>Rayleigh-Ritz</h3><p>Eigenvalues of a matrix is the stationery values of the Rayleigh quotient.</p>
+<blockquote>
+<p>Proof by considering <script type="math/tex">\lambda(\mathbf{x}+\delta \mathbf{x})-\lambda(\mathbf{x})</script>.</p>
+</blockquote>
+<h1 id="Cartesian-Tensor"><a href="#Cartesian-Tensor" class="headerlink" title="Cartesian Tensor"></a>Cartesian Tensor</h1><p>Use the transformation matrix <script type="math/tex">L</script>:</p>
+<script type="math/tex; mode=display">
+L_{ij}=\mathbf{e}_i'\cdot\mathbf{e}_j\\
+\mathbf{L}=
+\begin{pmatrix}
+\leftarrow & \mathbf{e_1'} & \rightarrow\\
+\leftarrow & \mathbf{e_2'} &\rightarrow\\
+\leftarrow &\mathbf{e_3'} &\rightarrow
+\end{pmatrix}
+=\begin{pmatrix}
+\uparrow & \uparrow & \uparrow\\
+... & \mathbf{e_i}\,\mathrm{in}\,\mathbf{e_i}' &...\\
+\downarrow &\downarrow &\downarrow
+\end{pmatrix}
+\\</script><p>So the transformation law for a vector is (only this form makes sense for me…)</p>
+<script type="math/tex; mode=display">
+v_i'=L_{ij}v_j=
+\begin{pmatrix}
+\uparrow & \uparrow & \uparrow\\
+... & \mathbf{e_i}\,\mathrm{in}\,\mathbf{e_i}' &...\\
+\downarrow &\downarrow &\downarrow
+\end{pmatrix}
+\begin{pmatrix}
+\uparrow\\ \mathbf{v}\\\downarrow
+\end{pmatrix}</script><h2 id="Definition-in-terms-of-transformation-laws"><a href="#Definition-in-terms-of-transformation-laws" class="headerlink" title="Definition in terms of transformation laws"></a>Definition in terms of transformation laws</h2><p><strong>Vector</strong>: a set of coefficents <script type="math/tex">v_i​</script>, defined wrt orthonormal basis <script type="math/tex">\mathbf{e}_i​</script>, such that <script type="math/tex">v_i'​</script> wrt another basis <script type="math/tex">\mathbf{e}_i'​</script> are given by <script type="math/tex">v_i'=L_{ij}v_j​</script>.</p>
+<p><strong>Axial vectors</strong>: <script type="math/tex">v_i'=\det(\mathbf{L})L_{ij}v_j</script></p>
+<p><strong>Tensors</strong>: <script type="math/tex">T_{ijk...}'=L_{ia}L_{jb}L_{kc}...T_{abc...}​</script></p>
+<p><strong>Pseudo-tensor</strong>: <script type="math/tex">T_{ijk...}'=\det(\mathbf{L})L_{ia}L_{jb}L_{kc}...T_{abc...}​</script></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Everything is checked by the transformation law above.</p>
+<ul>
+<li>Delta is a 2nd order tensor</li>
+<li>Epsilon is a 3rd order pseudo tensor</li>
+<li>Inertia tensor: <script type="math/tex">I_{ij}=\int_V\rho(\mathbf{x})(x_kx_k\delta_{ij}-x_ix_i)\,dV</script></li>
+</ul>
+<blockquote>
+<p>Derive from the angular momentum definition.</p>
+</blockquote>
+<h2 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h2><ol>
+<li>Addition</li>
+<li>Outer product</li>
+<li>Inner product (contraction)</li>
+</ol>
+<p>Note: Cross-product is defined using the epsilon symbol, so any cross product is a pseudo-tensor.</p>
+<ol>
+<li>Symmetric and antisymmetric properties are invariant.<ul>
+<li>Contraction of symmetric &amp; antisymmetric indices <script type="math/tex">S_{ijk...}A_{ijr...} = 0</script>.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Proof by using symmetry properties once and relabel once.</p>
+</blockquote>
+<h2 id="Second-order-tensors"><a href="#Second-order-tensors" class="headerlink" title="Second-order tensors"></a>Second-order tensors</h2><p>Two new things</p>
+<h3 id="Antisymmetric-3D"><a href="#Antisymmetric-3D" class="headerlink" title="Antisymmetric (3D)"></a>Antisymmetric (3D)</h3><p>Only three degrees of freedom, hence can be represented by a vector.</p>
+<script type="math/tex; mode=display">
+A_{ij}=\epsilon_{ijk}\omega_k</script><p>The vector <script type="math/tex">\omega</script> is a <strong>dual vector</strong>, defined by</p>
+<script type="math/tex; mode=display">
+\omega_k=\frac{1}{2}\epsilon_{klm}A_{lm}</script><h3 id="Symmetric-3D"><a href="#Symmetric-3D" class="headerlink" title="Symmetric (3D)"></a>Symmetric (3D)</h3><p>Can be further decomposed, uniquely, into a traceless symmetric matrix and identity.</p>
+<script type="math/tex; mode=display">
+S=\tilde{S}+\frac{\mathrm{Tr}(S)}{3}I</script><h2 id="Isotropic-tensors"><a href="#Isotropic-tensors" class="headerlink" title="Isotropic tensors"></a>Isotropic tensors</h2><p>Tensors or pseudo-tensors with the same components in all frames.</p>
+<ul>
+<li>Scalars are isotropic</li>
+<li>No non-zero rank 1 isotropic tensor</li>
+<li>Rank 2 isotropic tensors are <script type="math/tex">\lambda\delta_{ij}</script></li>
+</ul>
+<blockquote>
+<p>Proof by (wlog) considering a rotation <script type="math/tex">\pi/2</script> by z-axis and by y-axis.</p>
+</blockquote>
+<ul>
+<li>Rank 3 isotropic tensors are <script type="math/tex">\lambda\epsilon_{ijk}</script></li>
+<li>Rank 4 isotropic tensors are <script type="math/tex">\lambda\delta_{ij}\delta_{kl}+\mu\delta_{ik}\delta_{jl}+\nu\delta_{il}\delta_{jk}</script></li>
+</ul>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><ol>
+<li>Since invariant, we can pick the most convenient frame (e.g eigenvector frame).</li>
+<li>Integrals</li>
+</ol>
+<h4 id="Integral-1"><a href="#Integral-1" class="headerlink" title="Integral 1"></a>Integral 1</h4><script type="math/tex; mode=display">
+X_i=\int_{r\leq a}x_i\rho(r)\,dV</script><p>Transform <script type="math/tex">x_i'=R_{ij}x_j</script> we find <script type="math/tex">X_i=X_i'</script>. But only isotropic rank 1 tensor is <script type="math/tex">\mathbf{0}</script>.</p>
+<h4 id="Integral-2"><a href="#Integral-2" class="headerlink" title="Integral 2"></a>Integral 2</h4><script type="math/tex; mode=display">
+K_{ij}=\int_{r\leq a}x_ix_j\rho(r)\,dV</script><p>This is also isotropic, so <script type="math/tex">K_{ij}=\lambda\delta_{ij}</script>.</p>
+<script type="math/tex; mode=display">
+K_{ij}=\frac{1}{3}(\int_{r\leq a}r^2\rho(r)\,dV)\delta_{ij}</script><p>Only need to do 1 integral.</p>
+<h2 id="Tensor-fields"><a href="#Tensor-fields" class="headerlink" title="Tensor fields"></a>Tensor fields</h2><ul>
+<li><script type="math/tex">\nabla</script>, with components <script type="math/tex">\partial_i</script>, is a vector in Cartesian <strong>only</strong>.</li>
+</ul>
+<p>One idea (maybe) new</p>
+<ul>
+<li>The derivative of a second-order tensor <script type="math/tex">\sigma_{ij}</script> is a rank 3 tensor field <script type="math/tex">\partial_i\sigma_{jk}</script>.</li>
+</ul>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">https://www.butteraddict.fun/2019/03/Matrix-Tensor/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">March 30th 2019, 4:19:51 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">March 30th 2019, 4:22:21 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/03/Contour-Integration/" title="Contour Integration">
+                    <div class="prevTitle">Contour Integration</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+    
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/wechatpay.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matrices"><span class="toc-number">1.</span> <span class="toc-text">Matrices</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vector-space"><span class="toc-number">1.1.</span> <span class="toc-text">Vector space</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition"><span class="toc-number">1.1.1.</span> <span class="toc-text">Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Span"><span class="toc-number">1.1.2.</span> <span class="toc-text">Span</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linearly-independent"><span class="toc-number">1.1.3.</span> <span class="toc-text">Linearly independent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basis"><span class="toc-number">1.2.</span> <span class="toc-text">Basis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-of-bases"><span class="toc-number">1.2.1.</span> <span class="toc-text">Change of bases</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Inverse"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Inverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transforming-matrices"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Transforming matrices</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Operation"><span class="toc-number">1.3.</span> <span class="toc-text">Linear Operation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inner-Product"><span class="toc-number">1.4.</span> <span class="toc-text">Inner Product</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inner-Product-and-bases"><span class="toc-number">1.4.1.</span> <span class="toc-text">Inner Product and bases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cauchy-Schwartz"><span class="toc-number">1.4.2.</span> <span class="toc-text">Cauchy-Schwartz</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hermitian-Conjugate"><span class="toc-number">1.5.</span> <span class="toc-text">Hermitian Conjugate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-square-matrices"><span class="toc-number">1.5.1.</span> <span class="toc-text">Special square matrices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-results"><span class="toc-number">1.5.2.</span> <span class="toc-text">Special results</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eigenvectors"><span class="toc-number">1.6.</span> <span class="toc-text">Eigenvectors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Diagonalisation"><span class="toc-number">1.6.1.</span> <span class="toc-text">Diagonalisation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forms"><span class="toc-number">1.7.</span> <span class="toc-text">Forms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quadratic-form"><span class="toc-number">1.7.1.</span> <span class="toc-text">Quadratic form</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Quadratic-surface"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">Quadratic surface</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hermitian-Form"><span class="toc-number">1.7.2.</span> <span class="toc-text">Hermitian Form</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stationary-property"><span class="toc-number">1.8.</span> <span class="toc-text">Stationary property</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rayleigh-Ritz"><span class="toc-number">1.8.1.</span> <span class="toc-text">Rayleigh-Ritz</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cartesian-Tensor"><span class="toc-number">2.</span> <span class="toc-text">Cartesian Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definition-in-terms-of-transformation-laws"><span class="toc-number">2.1.</span> <span class="toc-text">Definition in terms of transformation laws</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-number">2.2.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Operations"><span class="toc-number">2.3.</span> <span class="toc-text">Operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Second-order-tensors"><span class="toc-number">2.4.</span> <span class="toc-text">Second-order tensors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Antisymmetric-3D"><span class="toc-number">2.4.1.</span> <span class="toc-text">Antisymmetric (3D)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-3D"><span class="toc-number">2.4.2.</span> <span class="toc-text">Symmetric (3D)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Isotropic-tensors"><span class="toc-number">2.5.</span> <span class="toc-text">Isotropic tensors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications"><span class="toc-number">2.5.1.</span> <span class="toc-text">Applications</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Integral-1"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">Integral 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integral-2"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">Integral 2</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensor-fields"><span class="toc-number">2.6.</span> <span class="toc-text">Tensor fields</span></a></li></ol></li></ol>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 5
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix_Tensor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/2019/03/Contour-Integration/">Contour Integration</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href="/2019/03/IB-Spectroscopy/">IB Spectroscopy Techniques</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "2LalA猪"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+    MathJax.Hub.Config({
+
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+            extensions: ["[mhchem]/mhchem.js"]
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
+
+
