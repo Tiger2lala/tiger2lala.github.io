@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>IB Spectroscopy Techniques · 黄油上瘾 ButterAddict</title>
+    <title>Differential Equations · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">黄油上瘾</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">IB Spectroscopy Techniques</a>
+                <a href="#" class="post-name">Differential Equations</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            IB Spectroscopy Techniques
+            Differential Equations
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,22 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">153</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">839</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/03/15</span>
+                    <span class="post-intro-time">2019/04/04</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,105 +403,165 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Overall-picture"><a href="#Overall-picture" class="headerlink" title="Overall picture"></a>Overall picture</h1><h2 id="Scale"><a href="#Scale" class="headerlink" title="Scale"></a>Scale</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Energy scale / <script type="math/tex">\pu{cm-1}</script></th>
-<th>EM wave</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Electronic</td>
-<td>10000</td>
-<td>UV/VIS,  X-ray</td>
-</tr>
-<tr>
-<td>Vibration</td>
-<td>1000</td>
-<td>IR</td>
-</tr>
-<tr>
-<td>Rotation</td>
-<td>1</td>
-<td>Microwave</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
-<li><p>Rotation (Microwave) Spectra</p>
-<ul>
-<li>Need permanent dipole </li>
-<li>x, y or z transforms as totally symmetric representation</li>
+        <h1 id="Key-concepts"><a href="#Key-concepts" class="headerlink" title="Key concepts"></a>Key concepts</h1><ol>
+<li>Linear operator</li>
+<li>Homogeneous: <ul>
+<li>equation: no forcing, <em>or</em>, a multiple of a solution <script type="math/tex">y</script>, <script type="math/tex">\alpha y</script> is also a solution.</li>
+<li>problem: <em>in addition</em>, <script type="math/tex">\alpha y</script> also satisfies B.C.</li>
 </ul>
 </li>
-<li><p>Infrared</p>
-<ul>
-<li>Need change in dipole upon vibration</li>
-<li>Corresponding normal modes transform like x, y or z</li>
-</ul>
-</li>
-<li><p>Raman</p>
-<ul>
-<li>Need change in polarisability</li>
-<li>Complementary to IR<ol>
-<li>Rotation: detectable except spherical caps (eg <script type="math/tex">\ce{CH4}</script>, <script type="math/tex">\ce{SF6}</script>)</li>
-<li>Vibration: corresponding normal modes transform like any coordinate squared term</li>
-</ol>
-</li>
+<li>Boundary conditions<ul>
+<li>Dirichlet: the function value on the boundary is defined</li>
+<li>Neumann: the normal derivative value on the boundary is defined</li>
 </ul>
 </li>
 </ol>
-<h1 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h1><p>Derived from the Schro ̈dinger equation for rigid rotors.</p>
-<h2 id="Key-quantities"><a href="#Key-quantities" class="headerlink" title="Key quantities"></a>Key quantities</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Quantity</th>
-<th>Formula</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Energy</td>
-<td><script type="math/tex">E=hBJ(J+1)</script></td>
-<td></td>
-</tr>
-<tr>
-<td>Rotational constant</td>
-<td><script type="math/tex">B=\frac{\hbar^2}{2I}</script></td>
-<td>in J</td>
-</tr>
-<tr>
-<td></td>
-<td><script type="math/tex">\tilde{B}=\frac{h}{8\pi^2\tilde{c}I}</script></td>
-<td>in <script type="math/tex">\pu{cm-1}</script></td>
-</tr>
-<tr>
-<td>Degeneracy</td>
-<td><script type="math/tex">2J+1</script></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li><script type="math/tex">J</script> gives the amount of angular momentum</li>
-<li><script type="math/tex">M_J</script> specifies the direction of anuglar momentum</li>
-</ul>
-<h2 id="Form-of-spectrum"><a href="#Form-of-spectrum" class="headerlink" title="Form of spectrum"></a>Form of spectrum</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#123;% asset_img example.jpg This is an example image %&#125;`</span><br></pre></td></tr></table></figure>
+<h1 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h1><h2 id="General-Inhomogeneous-Problems"><a href="#General-Inhomogeneous-Problems" class="headerlink" title="General Inhomogeneous Problems"></a>General Inhomogeneous Problems</h2><h3 id="By-Green’s-Functions"><a href="#By-Green’s-Functions" class="headerlink" title="By Green’s Functions"></a>By Green’s Functions</h3><p>Idea: (denote the linear PDE by <script type="math/tex">\mathcal{L}u(\mathbf{r})=f(\mathbf{r})</script>,) We can break up the forcing <script type="math/tex">f</script> into infinite point source forcing <script type="math/tex">\delta(\mathbf{r}-\mathbf{r_0})</script>. If we can find the Green’s function that satisfies </p>
+<script type="math/tex; mode=display">
+\mathcal{L}G(\mathbf{r},\mathbf{r_0} )=\delta(\mathbf{r}-\mathbf{r_0}),</script><p>which corresponds to the response of the system due to each of the point source, then we can integrate the effects of these point sources, </p>
+<script type="math/tex; mode=display">
+u(\mathbf{r})=\int G(\mathbf{r},\mathbf{r_0} )f(\mathbf{r_0})d^V(\mathbf{r_0})</script><p>to obtain the solution.</p>
+<p>The methods depends highly on the boundary conditions given.</p>
+<h2 id="Laplace-and-Poisson’s-equations"><a href="#Laplace-and-Poisson’s-equations" class="headerlink" title="Laplace and Poisson’s equations"></a>Laplace and Poisson’s equations</h2><h3 id="Physical-origins"><a href="#Physical-origins" class="headerlink" title="Physical origins"></a>Physical origins</h3><p>Poisson’s equation is</p>
+<script type="math/tex; mode=display">
+\nabla^2 \Psi = \rho(\mathbf{x})</script><p>Examples</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&\mathrm{Diffusion \,equation}  &\kappa \nabla^2 u&=\frac{\partial u}{\partial t}\\
+&\mathrm{Diffusion \,equation \,with \,source}  &\kappa \nabla^2 u&=\frac{\partial u}{\partial t}-S(\mathbf{x})\\
+&\mathrm{Electrostatics}  &\nabla^2 \Phi&=-\rho(\mathbf{x})/\epsilon_0\\
+&\mathrm{Gravitation}  &\nabla^2 \Phi&=4\pi G\rho(\mathbf{x})\\
+&\mathrm{Schrodinger}  &-\frac{\hbar^2}{2m}\nabla^2 \Psi + V(\mathbf{x})\Psi&=E\Psi\\
+&\mathrm{Ideal \,fluid \, flow}  &\nabla^2 \Phi&=0\\
+\end{align}</script><blockquote>
+<p>Keyword in questions is ‘steady state’.</p>
+</blockquote>
+<h3 id="Separation-of-variables"><a href="#Separation-of-variables" class="headerlink" title="Separation of variables"></a>Separation of variables</h3><p>Laplace equation is linear in <script type="math/tex">\Psi</script>, so the superposition of any solutions is another solution. Separation of variables in <em>orthogonal</em> coordinates is a method to find basis solutions.</p>
+<h3 id="Laplace-in-Plane-polar"><a href="#Laplace-in-Plane-polar" class="headerlink" title="Laplace in Plane polar"></a>Laplace in Plane polar</h3><p>The equation becomes</p>
+<script type="math/tex; mode=display">
+\nabla^2 \Psi = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial \Psi}{\partial r}) + \frac{1}{r^2}\frac{\partial^2 \Psi}{\partial \phi^2}=0</script><p>Still consider separable solutions <script type="math/tex">\Psi=R(r)\Phi(\phi)</script>, giving</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&\frac{\Phi}{r}\frac{d}{dr}(rR')+\frac{R}{r^2}\Phi''=0\\
+\implies & \frac{r}{R}\frac{d}{dr}(r R')=-\frac{\Phi''}{\Phi}=\lambda\\
+\end{align}</script><p>Solve the two independent ODEs, with the B.C. that <script type="math/tex">\Phi(\phi)=\Phi(\phi + 2 \pi)</script>,</p>
+<script type="math/tex; mode=display">
+\Phi=
+    \begin{cases}
+    A+B\phi & n=0 \\
+    A\cos(n\phi)+B\sin(n\phi) & n \neq 0
+    \end{cases}\\
 
+R=
+    \begin{cases}
+    C+D \ln r& n=0 \\
+    Cr^n + Dr^{-n} & n \neq 0
+    \end{cases}\\</script><blockquote>
+<p>The equation for <script type="math/tex">R</script> can be solved by <script type="math/tex">u=\ln r</script>.</p>
+</blockquote>
+<p>Therefore, the general solution is:</p>
+<script type="math/tex; mode=display">
+\Psi = A_0 + B_0 \phi + C_o \ln r + \sum_{n=1}^\infty (A_n r^n+ C_n r^{-n})\cos n\phi + \sum_{n=1}^\infty (B_n r^n+ D_n r^{-n})\sin n\phi \tag{*}</script><blockquote>
+<ol>
+<li>Eliminate some constants by requiring finite values at <script type="math/tex">r=0</script> or <script type="math/tex">r=\infty</script>.</li>
+<li>If there is a barrier, there is no radial component of the flow (1st derivative).</li>
+</ol>
+</blockquote>
+<h3 id="Laplace-in-spherical-polar-axisymmetric"><a href="#Laplace-in-spherical-polar-axisymmetric" class="headerlink" title="Laplace in spherical polar (axisymmetric)"></a>Laplace in spherical polar (axisymmetric)</h3><p><em>Axisymmetric</em> means no <script type="math/tex">\phi</script> dependence.</p>
+<p>The Laplace equation is</p>
+<script type="math/tex; mode=display">
+\nabla^2 \Psi = \frac{1}{r^2}\frac{\partial}{\partial r} (r^2 \frac{\partial \Psi}{\partial r}) + \frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}(\sin \theta \frac{\partial \Psi}{\partial \theta})=0</script><p>Again, try separable solutions <script type="math/tex">\Psi=R(r)T(\theta)</script>, then</p>
+<script type="math/tex; mode=display">
+\frac{1}{R}(r^2R')'=-\frac{1}{T \sin\theta}(T'\sin\theta)'=\lambda</script><p>Rearranging <script type="math/tex">T</script>, with subsitution of <script type="math/tex">u=\cos \theta</script>,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{d}{du}((1-u^2)\frac{d T}{du})+\lambda T =0 && \mathrm{Legendre \, equation}
+\end{align}</script><p>Therefore, <script type="math/tex">\lambda=l(l+1)</script>, and <script type="math/tex">T=P_l(u)</script>.</p>
+<p>Then the equation for <script type="math/tex">R</script> is </p>
+<script type="math/tex; mode=display">
+(r^2 R')'=l(l+1)R\\
+\implies r^2 R''+2rR'-l(l+1)R=0\\
+\implies R=Ar^l+Br^{-l-1}</script><blockquote>
+<p>Solve by <script type="math/tex">v=\ln r</script>.</p>
+</blockquote>
+<p>Therefore, the general solution is:</p>
+<script type="math/tex; mode=display">
+\Psi = \sum_{l=0}^{\infty}(A_l r^l+ B_l r^{-l-1})P_l(\cos \theta) \tag{*}</script><blockquote>
+<p>Remember when <script type="math/tex">P_l</script> is normalised as <script type="math/tex">P_l(1)=1</script>, the orthogonal relation is <script type="math/tex">\int_{-1}^{1} P_m(u)P_n(u)\, du=2/(2m+1)\delta_{mn}</script>.</p>
+</blockquote>
+<h3 id="Uniqueness-of-solutions-to-Poisson’s-equation"><a href="#Uniqueness-of-solutions-to-Poisson’s-equation" class="headerlink" title="Uniqueness of solutions to Poisson’s equation"></a>Uniqueness of solutions to Poisson’s equation</h3><p>The key identity to use is the Divergence theorem and </p>
+<script type="math/tex; mode=display">
+\nabla \cdot (\Psi\nabla\Psi)=|\nabla\Psi|^2+\Psi\nabla^2\Psi</script><h3 id="Green’s-function-for-Poisson’s-equation"><a href="#Green’s-function-for-Poisson’s-equation" class="headerlink" title="Green’s function for Poisson’s equation"></a>Green’s function for Poisson’s equation</h3><p>It is <em>defined</em> that the Green’s function satisfies:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\nabla_\mathbf{r}^2G(\mathbf{r},\mathbf{r}')&=\delta^3(\mathbf{r}-\mathbf{r}') && \mathbf{r}\, \mathrm{in \, V, }\\
+G&=0 && \mathbf{r} \,\mathrm{on \, S \, for \, Dirichlet, \, or}\\
+\frac{\partial G}{\partial n}&=\frac{1}{A}&& \mathrm{for \, Neumann}
+\end{align}</script><h4 id="Fundamental-solution-in-3D-for-Dirichlet"><a href="#Fundamental-solution-in-3D-for-Dirichlet" class="headerlink" title="Fundamental solution in 3D for Dirichlet"></a>Fundamental solution in 3D for Dirichlet</h4><blockquote>
+<p>Proof required</p>
+</blockquote>
+<p>The <strong>fundamental solution</strong> is when <script type="math/tex">V</script> is all space. Wlog consider <script type="math/tex">\mathbf{r}'=\mathbf{0}</script>. We know <script type="math/tex">G</script> is a function of <script type="math/tex">\mathbf{r}</script> only.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& & (r^2G')'&=0\\
+&\implies & r^2G'&=C\\
+&\implies & G&=\frac{C}{r}+A\\
+\end{align}</script><p>We know <script type="math/tex">A=0</script> from the B.C at infinity; to determine C,</p>
+<script type="math/tex; mode=display">
+\int_{r<\epsilon}\nabla^2G\, dV = \oint_{r=\epsilon} \nabla G\cdot\hat{\mathbf{n}}\, dS = \oint_{r=\epsilon} \frac{\partial G}{\partial r} \, dS=\oint_{r=\epsilon} \frac{-c}{r^2}\, dS=-4\pi C</script><p>Because we can take <script type="math/tex">\epsilon</script> as small as we like, </p>
+<script type="math/tex; mode=display">
+\nabla^2G=-\pi C \delta^3(\mathbf{r})\\
+\implies C=-\frac{1}{4\pi}</script><p>Hence, the fundamental solution is </p>
+<script type="math/tex; mode=display">
+G(\mathbf{r},\mathbf{r}')=-\frac{1}{4\pi|\mathbf{r}-\mathbf{r}'|}</script><h4 id="Fundamental-solution-in-2D"><a href="#Fundamental-solution-in-2D" class="headerlink" title="Fundamental solution in 2D"></a>Fundamental solution in 2D</h4><p>Similar to above, we get</p>
+<script type="math/tex; mode=display">
+G(\mathbf{r},\mathbf{r}')=\frac{1}{2\pi}\ln|\mathbf{r}-\mathbf{r}'|+ \mathrm{const.}</script><blockquote>
+<p>Note: divergence theorem in 2D is used. </p>
+</blockquote>
+<h4 id="Method-of-images"><a href="#Method-of-images" class="headerlink" title="Method of images"></a>Method of images</h4><p>Construct solutions for different geometries from fundamental solutions.</p>
+<h5 id="Planes"><a href="#Planes" class="headerlink" title="Planes"></a>Planes</h5><p>Remove the plane and replace with a source at the image point</p>
+<ul>
+<li>With the opposite sign for Dirichlet (0 potential at the boundary)</li>
+<li>With the same sign for Neumann (0 normal derivative at the boundary; insulator)</li>
+</ul>
+<h5 id="Sphere-radius-a-Dirichlet"><a href="#Sphere-radius-a-Dirichlet" class="headerlink" title="Sphere (radius a) (Dirichlet)"></a>Sphere (radius a) (Dirichlet)</h5><p>Strength = <script type="math/tex">-a/r'</script></p>
+<p>Position <script type="math/tex">\mathbf{r}''=\frac{a^2}{r'^2}\mathbf{r}'​</script></p>
+<h5 id="Circle-radius-a-Dirichlet"><a href="#Circle-radius-a-Dirichlet" class="headerlink" title="Circle (radius a) (Dirichlet)"></a>Circle (radius a) (Dirichlet)</h5><p>Strength = -1</p>
+<p>Position <script type="math/tex">\mathbf{r}''=\frac{a^2}{r'^2}\mathbf{r}'</script></p>
+<blockquote>
+<p>Remember <script type="math/tex">r'r''=a^2</script>.</p>
+</blockquote>
+<h3 id="Integral-solution-of-Poisson’s-equation"><a href="#Integral-solution-of-Poisson’s-equation" class="headerlink" title="Integral solution of Poisson’s equation"></a>Integral solution of Poisson’s equation</h3><p>Consider this. Using <script type="math/tex">\mathbf{F}=\Phi\mathbf{\nabla}\Psi-\Psi\mathbf{\nabla}\Phi</script> (divergence theorem) and <script type="math/tex">\mathbf{\nabla}\cdot(\Phi \mathbf{\nabla}\Psi)=\mathbf{\nabla}\Phi\cdot\mathbf{\nabla}\Psi + \Phi\nabla^2\Psi</script>, we can obtain <strong>Green’s identity</strong></p>
+<script type="math/tex; mode=display">
+\int_V (\Phi\nabla^2\Psi -\Psi\nabla^2\Phi)\, dV = \oint_S (\Phi\mathbf{\nabla}\Psi-\Psi\mathbf{\nabla}\Phi) \cdot \mathbf{n}\, dS= \oint_S(\Phi\frac{\partial \Psi}{\partial n}-\Psi\frac{\partial \Phi}{\partial n})\, dS</script><p>Then, put in <script type="math/tex">\Psi=G</script> (with Dirichlet B.C.),</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\int_V (\Phi\nabla^2G -G\nabla^2\Phi)\, dV &= \oint_S(\Phi\frac{\partial G}{\partial n}-G\frac{\partial \Phi}{\partial n})\, dS && \mathrm{copy \ from \ above}\\
+\int_V (\Phi\,\delta(\mathbf{r}-\mathbf{r}') -G\,\rho(\mathbf{r}))\, dV &= \oint_S(f(\mathbf{r})\frac{\partial G}{\partial n}-0\cdot\frac{\partial \Phi}{\partial n})\, dS && \mathrm{put \ in \ knowns}\\
+\int_V \Phi\,\delta(\mathbf{r}-\mathbf{r}') &=\int_VG\,\rho(\mathbf{r})\, dV +\oint_Sf(\mathbf{r})\frac{\partial G}{\partial n}\, dS && \mathrm{move \ a \ term}\\
+\Phi(\mathbf{r}') &=\int_VG(\mathbf{r}-\mathbf{r}')\,\rho(\mathbf{r})\, dV +\oint_Sf(\mathbf{r})\frac{\partial G}{\partial n}\, dS && \mathrm{integrate \ the \ \delta}
+\end{align}</script><p>Notes:</p>
+<ul>
+<li>Can use this to solve Laplace - set <script type="math/tex">\rho</script> to 0</li>
+<li>If <script type="math/tex">V​</script> is all space, then need to make sure the surface integral does go to 0</li>
+</ul>
+<p>For Neumann B.C.,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\int_V \Phi\nabla^2G\, dV &= \int_V G\nabla^2\Phi\, dV+\oint_S(\Phi\frac{\partial G}{\partial n}-G\frac{\partial \Phi}{\partial n})\, dS && \mathrm{copy \ from \ above}\\
+\int_V \Phi\delta(\mathbf{r}-\mathbf{r}')\, dV &= \int_V G\rho(\mathbf{r})\, dV+\oint_S(\frac{1}{A}\Phi-Gf(\mathbf{r}))\, dS && \mathrm{sub \ in \ knowns}\\
+\Phi(\mathbf{r}') &= \int_V G\rho(\mathbf{r})\, dV+\oint_S(\frac{1}{A}\Phi-Gf(\mathbf{r}))\, dS && \mathrm{integrate \ the \ \delta}\\
+\end{align}</script><p>Still seems undoable. But if <script type="math/tex">V</script> is all space, and the surface integral of <script type="math/tex">\Phi</script> is finite, then</p>
+<script type="math/tex; mode=display">
+\Phi(\mathbf{r}') = \int_V G(\mathbf{r}-\mathbf{r}')\rho(\mathbf{r})\, dV-\oint_SG(\mathbf{r}-\mathbf{r}')f(\mathbf{r})\, dS</script>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
-            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">https://www.butteraddict.fun/2019/03/IB-Spectroscopy/</a>
-            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">March 15th 2019, 2:30:09 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">March 15th 2019, 10:30:09 am</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">https://www.butteraddict.fun/2019/04/Differential-Equations/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 4th 2019, 5:33:12 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 4th 2019, 5:41:14 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -501,17 +569,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/Contour-Integration/" title="Contour Integration">
-                    <div class="nextTitle">Contour Integration</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/01/Addict-2019/" title="2019, what can I addict to?">
-                    <div class="prevTitle">2019, what can I addict to?</div>
+                <a href="/2019/03/Matrix-Tensor/" title="Matrix_Tensor">
+                    <div class="prevTitle">Matrix_Tensor</div>
                 </a>
             
         </li>
@@ -634,7 +697,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overall-picture"><span class="toc-number">1.</span> <span class="toc-text">Overall picture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scale"><span class="toc-number">1.1.</span> <span class="toc-text">Scale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-number">1.2.</span> <span class="toc-text">Requirements</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotation"><span class="toc-number">2.</span> <span class="toc-text">Rotation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-quantities"><span class="toc-number">2.1.</span> <span class="toc-text">Key quantities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Form-of-spectrum"><span class="toc-number">2.2.</span> <span class="toc-text">Form of spectrum</span></a></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDE"><span class="toc-number">2.</span> <span class="toc-text">PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#General-Inhomogeneous-Problems"><span class="toc-number">2.1.</span> <span class="toc-text">General Inhomogeneous Problems</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#By-Green’s-Functions"><span class="toc-number">2.1.1.</span> <span class="toc-text">By Green’s Functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Laplace-and-Poisson’s-equations"><span class="toc-number">2.2.</span> <span class="toc-text">Laplace and Poisson’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Physical-origins"><span class="toc-number">2.2.1.</span> <span class="toc-text">Physical origins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Separation-of-variables"><span class="toc-number">2.2.2.</span> <span class="toc-text">Separation of variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-Plane-polar"><span class="toc-number">2.2.3.</span> <span class="toc-text">Laplace in Plane polar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-spherical-polar-axisymmetric"><span class="toc-number">2.2.4.</span> <span class="toc-text">Laplace in spherical polar (axisymmetric)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniqueness-of-solutions-to-Poisson’s-equation"><span class="toc-number">2.2.5.</span> <span class="toc-text">Uniqueness of solutions to Poisson’s equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-function-for-Poisson’s-equation"><span class="toc-number">2.2.6.</span> <span class="toc-text">Green’s function for Poisson’s equation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-3D-for-Dirichlet"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">Fundamental solution in 3D for Dirichlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-2D"><span class="toc-number">2.2.6.2.</span> <span class="toc-text">Fundamental solution in 2D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-of-images"><span class="toc-number">2.2.6.3.</span> <span class="toc-text">Method of images</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Planes"><span class="toc-number">2.2.6.3.1.</span> <span class="toc-text">Planes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sphere-radius-a-Dirichlet"><span class="toc-number">2.2.6.3.2.</span> <span class="toc-text">Sphere (radius a) (Dirichlet)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Circle-radius-a-Dirichlet"><span class="toc-number">2.2.6.3.3.</span> <span class="toc-text">Circle (radius a) (Dirichlet)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integral-solution-of-Poisson’s-equation"><span class="toc-number">2.2.7.</span> <span class="toc-text">Integral solution of Poisson’s equation</span></a></li></ol></li></ol></li></ol>
         
     </div>
     
