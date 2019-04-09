@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">153</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">642</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -447,6 +447,9 @@ height:50vh;
 </ul>
 </li>
 </ol>
+<h2 id="Unit-conversion"><a href="#Unit-conversion" class="headerlink" title="Unit conversion"></a>Unit conversion</h2><p>Just remember: wavenumber = <script type="math/tex">1/\lambda</script>, everything follows</p>
+<p>Energy <script type="math/tex">E=h\nu=hc/\lambda=h\tilde{c}\tilde{\nu}</script> in Joule</p>
+<p>But quantity in Joule is not equal to quantity in <script type="math/tex">\pu{cm-1}</script>.</p>
 <h1 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h1><p>Derived from the Schro ̈dinger equation for rigid rotors.</p>
 <h2 id="Key-quantities"><a href="#Key-quantities" class="headerlink" title="Key quantities"></a>Key quantities</h2><div class="table-container">
 <table>
@@ -484,7 +487,219 @@ height:50vh;
 <li><script type="math/tex">J</script> gives the amount of angular momentum</li>
 <li><script type="math/tex">M_J</script> specifies the direction of anuglar momentum</li>
 </ul>
-<h2 id="Form-of-spectrum"><a href="#Form-of-spectrum" class="headerlink" title="Form of spectrum"></a>Form of spectrum</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#123;% asset_img example.jpg This is an example image %&#125;`</span><br></pre></td></tr></table></figure>
+<h2 id="Form-of-spectrum"><a href="#Form-of-spectrum" class="headerlink" title="Form of spectrum"></a>Form of spectrum</h2><img src="/2019/03/IB-Spectroscopy/Rotational_spectrum_example.png" title="Example pure rotation spectrum.">
+<h2 id="Intensity"><a href="#Intensity" class="headerlink" title="Intensity"></a>Intensity</h2><h3 id="Population-of-levels"><a href="#Population-of-levels" class="headerlink" title="Population of levels"></a>Population of levels</h3><p>Generally, population obeys Boltzmann distribution:</p>
+<script type="math/tex; mode=display">
+N_J=N_0\exp(-\frac{h\tilde{c}\tilde{B}J(J+1)}{kT})</script><p>This combined with degeneracy,</p>
+<script type="math/tex; mode=display">
+\mathrm{population}\propto(2J+1)\exp(-\frac{E_J}{kT})</script><h3 id="Factors-affecting-intensity"><a href="#Factors-affecting-intensity" class="headerlink" title="Factors affecting intensity"></a>Factors affecting intensity</h3><ol>
+<li>As stimulated emission can happen at the same time as absorption, the intensity depends on <strong>population differences</strong> (instead of population of the lower state).</li>
+<li><strong>Transition dipole moment</strong> <script type="math/tex"><\!\!\psi_1|\mu|\psi_2\!\!></script>.</li>
+</ol>
+<h3 id="Max-populated-level"><a href="#Max-populated-level" class="headerlink" title="Max populated level"></a>Max populated level</h3><p>Obtained by differentiation of the population expression. Result is <script type="math/tex">J_{max}\approx\sqrt{\frac{kT}{2h\tilde{c}{\tilde{B}}}}-\frac{1}{2}</script>.</p>
+<h2 id="Transition-requirements"><a href="#Transition-requirements" class="headerlink" title="Transition requirements"></a>Transition requirements</h2><ol>
+<li>Must have permanent dipole</li>
+<li>During transition <script type="math/tex">J</script> must change by <script type="math/tex">\pm1</script>. This is due to the photon having 1 unit of angular momentum.</li>
+</ol>
+<h2 id="Polyatomic-linear"><a href="#Polyatomic-linear" class="headerlink" title="Polyatomic linear"></a>Polyatomic linear</h2><p>Same form, just more complicated in calculating <script type="math/tex">I</script>.</p>
+<h3 id="Isotopic-substitution"><a href="#Isotopic-substitution" class="headerlink" title="Isotopic substitution"></a>Isotopic substitution</h3><p>Substituting an isotope changes - obviously- the mass, but does not change bond length significantly. This is because:</p>
+<ul>
+<li>The potential energy curve does not change</li>
+<li>Only the ZPE changes (slightly), hence gives a very slightly different <script type="math/tex"><r></script>, or <script type="math/tex"><1/r^2></script> if calculating <script type="math/tex">I</script>.</li>
+</ul>
+<p>Hence, the bond lengths can be calculated by solving simultaneous equations.</p>
+<h1 id="Rotation-Raman"><a href="#Rotation-Raman" class="headerlink" title="Rotation Raman"></a>Rotation Raman</h1><h2 id="Raman"><a href="#Raman" class="headerlink" title="Raman"></a>Raman</h2><ul>
+<li>The electric field of the photon induces a dipole in the molecule</li>
+<li>The molecule promoted to a <strong>virtual state</strong></li>
+<li>The molecule re-emits a photon</li>
+</ul>
+<p>If:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+h\nu'=hv && E'=E && \mathrm{Rayleigh \ scattering}
+\end{align}\\
+\begin{cases}
+h\nu'<h\nu & E'>E&& \mathrm{Stoke \ scattering}\\
+h\nu'>h\nu & E'<E && \mathrm{anti-Stoke \ scattering}
+\end{cases}</script><p>For Rayleigh, since photons are indistinguishable, we don’t know whether a photon is absorbed and re-emitted or straight through.</p>
+<h3 id="Selection-Rule"><a href="#Selection-Rule" class="headerlink" title="Selection Rule"></a>Selection Rule</h3><script type="math/tex; mode=display">
+\Delta J=0, \pm2</script><h2 id="Example-spectrum"><a href="#Example-spectrum" class="headerlink" title="Example spectrum"></a>Example spectrum</h2><img src="/2019/03/IB-Spectroscopy/Rot_raman.gif" title="Example rotational Raman spectrum.">
+<h1 id="Vibration-spectrum"><a href="#Vibration-spectrum" class="headerlink" title="Vibration spectrum"></a>Vibration spectrum</h1><h2 id="Harmonic-oscillator"><a href="#Harmonic-oscillator" class="headerlink" title="Harmonic oscillator"></a>Harmonic oscillator</h2><h3 id="Key-quantities-1"><a href="#Key-quantities-1" class="headerlink" title="Key quantities"></a>Key quantities</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Formula</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">\mu</script></td>
+<td><script type="math/tex">\frac{m_1m_2}{m_1+m_2}</script></td>
+<td></td>
+</tr>
+<tr>
+<td><script type="math/tex">\nu</script></td>
+<td><script type="math/tex">\frac{1}{2\pi}\sqrt{\frac{k}{\mu}}</script></td>
+<td>in Hz</td>
+</tr>
+<tr>
+<td><script type="math/tex">\epsilon</script></td>
+<td><script type="math/tex">(v+\frac{1}{2})\tilde{\omega}</script></td>
+<td>in <script type="math/tex">\pu{cm-1}</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Selection-rule"><a href="#Selection-rule" class="headerlink" title="Selection rule"></a>Selection rule</h3><script type="math/tex; mode=display">
+\Delta \nu=\pm1</script><h2 id="Anharmonic-Oscillator"><a href="#Anharmonic-Oscillator" class="headerlink" title="Anharmonic Oscillator"></a>Anharmonic Oscillator</h2><p>The <strong>Morse potential</strong> takes the form:</p>
+<script type="math/tex; mode=display">
+V_M(x)=D_e[1-\exp(-\beta x)]^2</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Formula</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">k_M</script> - spring constant</td>
+<td><script type="math/tex">2D_e\beta^2</script></td>
+<td>obtained by Taylor expansion</td>
+</tr>
+<tr>
+<td><script type="math/tex">E_v</script></td>
+<td><script type="math/tex">(v+\frac{1}{2})\hbar\omega-(v+\frac{1}{2})^2\hbar\omega x_e</script></td>
+<td>in Joules - this is exact</td>
+</tr>
+<tr>
+<td><script type="math/tex">\epsilon_v</script></td>
+<td><script type="math/tex">(v+\frac{1}{2})\tilde{\omega}-(v+\frac{1}{2})^2\tilde{\omega} x_e</script></td>
+<td>in <script type="math/tex">\pu{cm-1}</script></td>
+</tr>
+<tr>
+<td><script type="math/tex">x_e</script></td>
+<td><script type="math/tex">\frac{\hbar\beta^2}{2\mu\omega}</script></td>
+<td></td>
+</tr>
+<tr>
+<td><script type="math/tex">D_e</script></td>
+<td></td>
+<td>Depth of well</td>
+</tr>
+<tr>
+<td><script type="math/tex">D_0</script></td>
+<td><script type="math/tex">D_e-E_0</script></td>
+<td>Dissociation energy</td>
+</tr>
+<tr>
+<td><script type="math/tex">\beta</script></td>
+<td></td>
+<td>Steepness of well</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <script type="math/tex">E-v</script> curve is parabolic - the points beyond the energy start to decrease in energy, which are non-physical. <script type="math/tex">v_{max}</script> can be obtained by differentiating energy w.r.t <script type="math/tex">v</script>.</p>
+<script type="math/tex; mode=display">
+v_{max}=\frac{1}{2x_e}-\frac{1}{2}\\
+\tilde{D}_e=\frac{\tilde{\omega}}{4x_e} \\</script><h3 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h3><ol>
+<li>Must have change in dipole during vibration</li>
+<li>Selection rule is less strict, <script type="math/tex">\Delta v=\pm1,\pm2, \pm3...</script>. The curve is no longer symmetric, so integrals no longer vanishing.</li>
+</ol>
+<h3 id="Important-transitions"><a href="#Important-transitions" class="headerlink" title="Important transitions"></a>Important transitions</h3><ul>
+<li>Fundamental - <script type="math/tex">0\to1</script> - strong</li>
+<li>1st overtone - <script type="math/tex">0\to2</script> - weak</li>
+<li>Hot band - <script type="math/tex">1\to 2</script> - weak, temperature dependent</li>
+</ul>
+<h1 id="Vibrating-rotor"><a href="#Vibrating-rotor" class="headerlink" title="Vibrating rotor"></a>Vibrating rotor</h1><p>For a simultaneous change of both vibrational energy and rotational energy in a diatomic molecule:</p>
+<script type="math/tex; mode=display">
+\Delta v=\pm1,\pm2,\pm3 ...\\
+\Delta J=\pm1</script><h2 id="Notations"><a href="#Notations" class="headerlink" title="Notations"></a>Notations</h2><p>Rot state for lower vib state <script type="math/tex">J''​</script></p>
+<p>Rot state for upper vib state <script type="math/tex">J'​</script></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Lines for <script type="math/tex">\Delta J</script></th>
+<th>-2</th>
+<th>-1</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Combination-difference"><a href="#Combination-difference" class="headerlink" title="Combination difference"></a>Combination difference</h2><p>As <script type="math/tex">v</script> changes, <script type="math/tex"><r></script> (also <script type="math/tex"><1/r^2></script>) changes, <script type="math/tex">I</script> changes, hence <script type="math/tex">B</script> is different for upper and lower vibration states.</p>
+<p>Nevertheless they can be solved by <strong>combination difference</strong> method - using transitions of the same upper state or same lower state.</p>
+<img src="/2019/03/IB-Spectroscopy/rotvib.png" title="Energy levels of rotation vibration spectrum.">
+<ul>
+<li>The larger <script type="math/tex">v</script>, the more molecule vibrates, the smaller <script type="math/tex"><1/r^2></script>, the smaller <script type="math/tex">B</script>.</li>
+</ul>
+<script type="math/tex; mode=display">
+\tilde{B}_v=\tilde{B}_e-\tilde{\alpha}(v+\frac{1}{2})</script><p>where <script type="math/tex">\tilde{B}_e</script> is the hypothetical rotation constant with the <strong>equilibrium bond length</strong> at the bottom of well.</p>
+<h3 id="Graphical-method"><a href="#Graphical-method" class="headerlink" title="Graphical method"></a>Graphical method</h3><p>e.g.</p>
+<script type="math/tex; mode=display">
+\tilde{R}_J-\tilde{P}_J=2\tilde{B}_1(2J+1)</script><h1 id="Polyatomic"><a href="#Polyatomic" class="headerlink" title="Polyatomic"></a>Polyatomic</h1><h2 id="Perpendicular-and-parallel-vibrations"><a href="#Perpendicular-and-parallel-vibrations" class="headerlink" title="Perpendicular and parallel vibrations"></a>Perpendicular and parallel vibrations</h2><ul>
+<li><em>Stretching</em> changes the dipole moment <em>parallel</em> to the principal axis</li>
+<li><em>Bending</em> changes the dipole moment <em>perpendicular</em> to the principal axis</li>
+</ul>
+<p>For perpendicular vibrations, the <script type="math/tex">\Delta J=\pm1</script> need not hold! This is due to <strong>vibrational angular momentum</strong> - when the two degenerate perpendicular modes combine in phase, a circular motion along the principal axis results.</p>
+<p>Hence in <em>linear</em>, <em>bending</em> modes, Q branch is seen. Also, <script type="math/tex">B_1>B_0</script> in bending modes.</p>
+<blockquote>
+<p>Lack of Q branch in any one mode indicates the molecule is linear.</p>
+</blockquote>
+<h1 id="Electronic-spectroscopy"><a href="#Electronic-spectroscopy" class="headerlink" title="Electronic spectroscopy"></a>Electronic spectroscopy</h1><p>Different electronic states give different PE curves.</p>
+
+<h2 id="Selection-rules"><a href="#Selection-rules" class="headerlink" title="Selection rules"></a>Selection rules</h2><p>The total transition dipole moment can be separated into electronic and vibrational parts.</p>
+<p>Using the independence of the two parts, and the orthogonality of electronic wavefunctions, the expression reduces to</p>
+<script type="math/tex; mode=display">
+|<\!\!\psi_E''|\mu_E|\psi_E'\!\!><\!\!\psi_V''|\psi_V'\!\!>|^2</script><p>the second term is called the <strong>Franck Condon factor</strong>, which measures the overlap between the two vib states.</p>
+<ul>
+<li><p>If the bond length changes, the FC factor is the greatest for <script type="math/tex">v'>>0</script>; if the bond length is roughly the same, 0-0 transition is the most intense.</p>
+</li>
+<li><p>The bond length change is predicted by the bond-order of the electronic states.</p>
+</li>
+</ul>
+<h1 id="Photoelectron-spectroscopy"><a href="#Photoelectron-spectroscopy" class="headerlink" title="Photoelectron spectroscopy"></a>Photoelectron spectroscopy</h1><h2 id="Conservation-of-energy"><a href="#Conservation-of-energy" class="headerlink" title="Conservation of energy"></a>Conservation of energy</h2><p>For atoms,</p>
+<script type="math/tex; mode=display">
+KE=h\nu-I_i</script><p>For molecules,</p>
+<script type="math/tex; mode=display">
+KE=h\nu-I-\Delta E_{vib}-\Delta E_{rot}</script><p>But note that removing an electron changes the energy of <em>all</em> the remaining electrons, hence not exactly the <em>orbital energy</em>.</p>
+<h2 id="Form-of-atomic-spectrum"><a href="#Form-of-atomic-spectrum" class="headerlink" title="Form of atomic spectrum"></a>Form of atomic spectrum</h2><img src="/2019/03/IB-Spectroscopy/PES_Kr.png" title="Example PES of Krypton. _Slattery et al.(2000)_">
+<ul>
+<li>Peaks are labeled with the <em>term symbols</em> of the resulting ions.</li>
+<li>Within a term, the relative energies of levels are according to <em>Hund’s 3rd rule</em>.</li>
+<li>The degeneracies <script type="math/tex">2J+1</script> is a main contributor of relative intensities of peaks.</li>
+</ul>
+<h3 id="Spin-Orbit-coupling"><a href="#Spin-Orbit-coupling" class="headerlink" title="Spin-Orbit coupling"></a>Spin-Orbit coupling</h3><p>The size of <strong>spin-orbit coupling</strong> is seen on the PES spectrum. Two main factors</p>
+<ol>
+<li>The greater the nuclear charge <script type="math/tex">Z</script>, the larger size;</li>
+<li>The closer the electron to the nucleus, the larger the interaction.</li>
+</ol>
+<h2 id="Molecular-spectrum"><a href="#Molecular-spectrum" class="headerlink" title="Molecular spectrum"></a>Molecular spectrum</h2><ul>
+<li>A progression is seen for each peak, representing the different <em>vibration states</em> in the <em>resulting electronic state</em>.</li>
+<li>Within each progression, <script type="math/tex">\tilde{\omega}</script> and <script type="math/tex">\tilde{\omega}x_e</script> can be determined, for that electronic state.</li>
+</ul>
+<h3 id="Bond-order"><a href="#Bond-order" class="headerlink" title="Bond order"></a>Bond order</h3><p>We can deduce the change in bond order - or how bonding/antibonding is the orbital that the electron is removed from, through two features.</p>
+<ol>
+<li>Number of intense peaks. According to F-C factor, as in electronic spectra.</li>
+<li>The <script type="math/tex">\omega</script> value of the resulting bond vibration. The stronger the resulting bond, the larger the gap between peaks in the progression.</li>
+</ol>
 
     </article>
     <!-- license  -->
@@ -493,7 +708,7 @@ height:50vh;
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">https://www.butteraddict.fun/2019/03/IB-Spectroscopy/</a>
             </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">March 15th 2019, 2:30:09 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">March 15th 2019, 10:30:09 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/IB-Spectroscopy/">April 8th 2019, 4:46:21 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -634,7 +849,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overall-picture"><span class="toc-number">1.</span> <span class="toc-text">Overall picture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scale"><span class="toc-number">1.1.</span> <span class="toc-text">Scale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-number">1.2.</span> <span class="toc-text">Requirements</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotation"><span class="toc-number">2.</span> <span class="toc-text">Rotation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-quantities"><span class="toc-number">2.1.</span> <span class="toc-text">Key quantities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Form-of-spectrum"><span class="toc-number">2.2.</span> <span class="toc-text">Form of spectrum</span></a></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overall-picture"><span class="toc-number">1.</span> <span class="toc-text">Overall picture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scale"><span class="toc-number">1.1.</span> <span class="toc-text">Scale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-number">1.2.</span> <span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit-conversion"><span class="toc-number">1.3.</span> <span class="toc-text">Unit conversion</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotation"><span class="toc-number">2.</span> <span class="toc-text">Rotation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-quantities"><span class="toc-number">2.1.</span> <span class="toc-text">Key quantities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Form-of-spectrum"><span class="toc-number">2.2.</span> <span class="toc-text">Form of spectrum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Intensity"><span class="toc-number">2.3.</span> <span class="toc-text">Intensity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Population-of-levels"><span class="toc-number">2.3.1.</span> <span class="toc-text">Population of levels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Factors-affecting-intensity"><span class="toc-number">2.3.2.</span> <span class="toc-text">Factors affecting intensity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Max-populated-level"><span class="toc-number">2.3.3.</span> <span class="toc-text">Max populated level</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transition-requirements"><span class="toc-number">2.4.</span> <span class="toc-text">Transition requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Polyatomic-linear"><span class="toc-number">2.5.</span> <span class="toc-text">Polyatomic linear</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Isotopic-substitution"><span class="toc-number">2.5.1.</span> <span class="toc-text">Isotopic substitution</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotation-Raman"><span class="toc-number">3.</span> <span class="toc-text">Rotation Raman</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Raman"><span class="toc-number">3.1.</span> <span class="toc-text">Raman</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Selection-Rule"><span class="toc-number">3.1.1.</span> <span class="toc-text">Selection Rule</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-spectrum"><span class="toc-number">3.2.</span> <span class="toc-text">Example spectrum</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vibration-spectrum"><span class="toc-number">4.</span> <span class="toc-text">Vibration spectrum</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Harmonic-oscillator"><span class="toc-number">4.1.</span> <span class="toc-text">Harmonic oscillator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Key-quantities-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">Key quantities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Selection-rule"><span class="toc-number">4.1.2.</span> <span class="toc-text">Selection rule</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anharmonic-Oscillator"><span class="toc-number">4.2.</span> <span class="toc-text">Anharmonic Oscillator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Transitions"><span class="toc-number">4.2.1.</span> <span class="toc-text">Transitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Important-transitions"><span class="toc-number">4.2.2.</span> <span class="toc-text">Important transitions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vibrating-rotor"><span class="toc-number">5.</span> <span class="toc-text">Vibrating rotor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Notations"><span class="toc-number">5.1.</span> <span class="toc-text">Notations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Combination-difference"><span class="toc-number">5.2.</span> <span class="toc-text">Combination difference</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Graphical-method"><span class="toc-number">5.2.1.</span> <span class="toc-text">Graphical method</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Polyatomic"><span class="toc-number">6.</span> <span class="toc-text">Polyatomic</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Perpendicular-and-parallel-vibrations"><span class="toc-number">6.1.</span> <span class="toc-text">Perpendicular and parallel vibrations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Electronic-spectroscopy"><span class="toc-number">7.</span> <span class="toc-text">Electronic spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection-rules"><span class="toc-number">7.1.</span> <span class="toc-text">Selection rules</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Photoelectron-spectroscopy"><span class="toc-number">8.</span> <span class="toc-text">Photoelectron spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conservation-of-energy"><span class="toc-number">8.1.</span> <span class="toc-text">Conservation of energy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Form-of-atomic-spectrum"><span class="toc-number">8.2.</span> <span class="toc-text">Form of atomic spectrum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spin-Orbit-coupling"><span class="toc-number">8.2.1.</span> <span class="toc-text">Spin-Orbit coupling</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Molecular-spectrum"><span class="toc-number">8.3.</span> <span class="toc-text">Molecular spectrum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bond-order"><span class="toc-number">8.3.1.</span> <span class="toc-text">Bond order</span></a></li></ol></li></ol></li></ol>
         
     </div>
     
@@ -766,13 +981,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
-    
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -809,9 +1024,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
     
@@ -852,28 +1067,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 

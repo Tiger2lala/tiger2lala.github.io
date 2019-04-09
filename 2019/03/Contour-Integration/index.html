@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">657</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">711</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -465,6 +465,15 @@ f(z_0)=\frac{1}{2\pi i} \oint_C \frac{f(z)}{z-z_0}\, dz</script><p>for analytic 
 <p>To make a function continuous and single valued, a <strong>branch cut</strong> is introduced to prevent any curve from encircling that point.</p>
 <p>The cut can be any curve from the branch point to infinity.</p>
 <p>In some cases, a finite branch cut may be used to connect two branch points. Check by encircling both points.</p>
+<blockquote>
+<p>Branch cuts do not actually matter for integrals not encircling the branch point for <script type="math/tex">2\pi</script>.</p>
+</blockquote>
+<h2 id="Choices-of-contours"><a href="#Choices-of-contours" class="headerlink" title="Choices of contours"></a>Choices of contours</h2><p>Several standard choices are listed below.</p>
+
+<ul>
+<li>When evaluating <strong>straight lines</strong> <em>not</em> on <strong>real axis</strong>, carefully parameterise <script type="math/tex">z</script>.</li>
+<li>For keyholes, make sure the <script type="math/tex">\epsilon</script> and <script type="math/tex">R</script> bits both vanishes (or at least converges). - check their big O</li>
+</ul>
 <h1 id="Transformation-Methods"><a href="#Transformation-Methods" class="headerlink" title="Transformation Methods"></a>Transformation Methods</h1><h2 id="Jordan’s-lemma"><a href="#Jordan’s-lemma" class="headerlink" title="Jordan’s lemma"></a>Jordan’s lemma</h2><p>If <script type="math/tex">g(z) \to 0</script> uniformly (order does not depend on angle) on <script type="math/tex">C_R</script> as <script type="math/tex">R \to \infty</script>, then</p>
 <script type="math/tex; mode=display">
 \lim_{R \to \infty} \int_{C_R} g(z)e^{i\lambda z} \, dz =0</script><h2 id="Fourier-transform-methods"><a href="#Fourier-transform-methods" class="headerlink" title="Fourier transform methods"></a>Fourier transform methods</h2><ol>
@@ -484,7 +493,7 @@ f(z_0)=\frac{1}{2\pi i} \oint_C \frac{f(z)}{z-z_0}\, dz</script><p>for analytic 
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/03/Contour-Integration/">https://www.butteraddict.fun/2019/03/Contour-Integration/</a>
             </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/03/Contour-Integration/">March 29th 2019, 5:20:31 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/Contour-Integration/">March 29th 2019, 1:38:13 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/Contour-Integration/">April 9th 2019, 2:47:34 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -625,7 +634,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Contour-Integration"><span class="toc-number">1.</span> <span class="toc-text">Contour Integration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Analytic-functions"><span class="toc-number">1.1.</span> <span class="toc-text">Analytic functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complex-Integrals"><span class="toc-number">1.2.</span> <span class="toc-text">Complex Integrals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Properties"><span class="toc-number">1.2.1.</span> <span class="toc-text">Properties</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cauchy’s-theorem"><span class="toc-number">1.3.</span> <span class="toc-text">Cauchy’s theorem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Consequence"><span class="toc-number">1.3.1.</span> <span class="toc-text">Consequence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Residues"><span class="toc-number">1.4.</span> <span class="toc-text">Residues</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ways-to-calculate-residues"><span class="toc-number">1.4.1.</span> <span class="toc-text">Ways to calculate residues*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calculus-of-residues"><span class="toc-number">1.5.</span> <span class="toc-text">Calculus of residues</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cauchy’s-formula"><span class="toc-number">1.6.</span> <span class="toc-text">Cauchy’s formula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-point-at-infinity"><span class="toc-number">1.7.</span> <span class="toc-text">The point at infinity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivalued-functions-and-branch-cuts"><span class="toc-number">1.8.</span> <span class="toc-text">Multivalued functions and branch cuts</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformation-Methods"><span class="toc-number">2.</span> <span class="toc-text">Transformation Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jordan’s-lemma"><span class="toc-number">2.1.</span> <span class="toc-text">Jordan’s lemma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fourier-transform-methods"><span class="toc-number">2.2.</span> <span class="toc-text">Fourier transform methods</span></a></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Contour-Integration"><span class="toc-number">1.</span> <span class="toc-text">Contour Integration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Analytic-functions"><span class="toc-number">1.1.</span> <span class="toc-text">Analytic functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complex-Integrals"><span class="toc-number">1.2.</span> <span class="toc-text">Complex Integrals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Properties"><span class="toc-number">1.2.1.</span> <span class="toc-text">Properties</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cauchy’s-theorem"><span class="toc-number">1.3.</span> <span class="toc-text">Cauchy’s theorem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Consequence"><span class="toc-number">1.3.1.</span> <span class="toc-text">Consequence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Residues"><span class="toc-number">1.4.</span> <span class="toc-text">Residues</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ways-to-calculate-residues"><span class="toc-number">1.4.1.</span> <span class="toc-text">Ways to calculate residues*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calculus-of-residues"><span class="toc-number">1.5.</span> <span class="toc-text">Calculus of residues</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cauchy’s-formula"><span class="toc-number">1.6.</span> <span class="toc-text">Cauchy’s formula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-point-at-infinity"><span class="toc-number">1.7.</span> <span class="toc-text">The point at infinity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivalued-functions-and-branch-cuts"><span class="toc-number">1.8.</span> <span class="toc-text">Multivalued functions and branch cuts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Choices-of-contours"><span class="toc-number">1.9.</span> <span class="toc-text">Choices of contours</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformation-Methods"><span class="toc-number">2.</span> <span class="toc-text">Transformation Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jordan’s-lemma"><span class="toc-number">2.1.</span> <span class="toc-text">Jordan’s lemma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fourier-transform-methods"><span class="toc-number">2.2.</span> <span class="toc-text">Fourier transform methods</span></a></li></ol></li></ol>
         
     </div>
     
@@ -757,13 +766,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
-    
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -800,9 +809,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
     
@@ -843,28 +852,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 
