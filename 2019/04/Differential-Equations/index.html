@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">839</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">560</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,13 +416,128 @@ height:50vh;
 </ul>
 </li>
 </ol>
-<h1 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h1><h2 id="General-Inhomogeneous-Problems"><a href="#General-Inhomogeneous-Problems" class="headerlink" title="General Inhomogeneous Problems"></a>General Inhomogeneous Problems</h2><h3 id="By-Green’s-Functions"><a href="#By-Green’s-Functions" class="headerlink" title="By Green’s Functions"></a>By Green’s Functions</h3><p>Idea: (denote the linear PDE by <script type="math/tex">\mathcal{L}u(\mathbf{r})=f(\mathbf{r})</script>,) We can break up the forcing <script type="math/tex">f</script> into infinite point source forcing <script type="math/tex">\delta(\mathbf{r}-\mathbf{r_0})</script>. If we can find the Green’s function that satisfies </p>
+<h1 id="ODE"><a href="#ODE" class="headerlink" title="ODE"></a>ODE</h1><h2 id="Homogeneous-2nd-order-equations"><a href="#Homogeneous-2nd-order-equations" class="headerlink" title="Homogeneous 2nd order equations"></a>Homogeneous 2nd order equations</h2><script type="math/tex; mode=display">
+y''+py'+qy=0</script><h3 id="Independent-solutions"><a href="#Independent-solutions" class="headerlink" title="Independent solutions"></a>Independent solutions</h3><p>Two solutions <script type="math/tex">y_1</script> and <script type="math/tex">y_2</script> are independent iff <script type="math/tex">Ay_1+By_2=0 \iff A=B=0</script>. </p>
+<p>Then the general solutions is <script type="math/tex">Ay_1+By_2</script>.</p>
+<h3 id="Wroskian"><a href="#Wroskian" class="headerlink" title="Wroskian"></a>Wroskian</h3><ul>
+<li>If two solutions are independent, then the Wroskian <script type="math/tex">W\neq 0</script>.</li>
+<li>It is <em>intrinsic</em> to an ODE - depends only on <script type="math/tex">p</script>. <script type="math/tex">W=\exp(-\int p\,dx)</script></li>
+</ul>
+<blockquote>
+<p>Proof by considering <script type="math/tex">W'</script>.</p>
+</blockquote>
+<p>The Wroskian can be used to find a second solution when we know one already.</p>
+<script type="math/tex; mode=display">
+\frac{W}{y_1^2}=\frac{y_2'}{y_1}-\frac{y_2 y_1'}{y_1^2}=\frac{d}{dx}\frac{y_2}{y_1}\\
+\implies y_2=y_1\int\frac{W}{y_1^2}\,dx</script><h3 id="Series-solutions"><a href="#Series-solutions" class="headerlink" title="Series solutions"></a>Series solutions</h3><h4 id="The-point-about-which-to-expand"><a href="#The-point-about-which-to-expand" class="headerlink" title="The point about which to expand"></a>The point about which to expand</h4><ul>
+<li><strong>Ordinary point</strong> if both <script type="math/tex">p(x)</script> and <script type="math/tex">q(x)</script> are analytical; <strong>singular point</strong> otherwise.</li>
+<li>If <script type="math/tex">(x-x_0)p(x)</script> and <script type="math/tex">(x-x_0)^2q(x)</script> are analytical, then <strong>regular singular point</strong>.</li>
+</ul>
+<h4 id="About-an-ordinary-point"><a href="#About-an-ordinary-point" class="headerlink" title="About an ordinary point"></a>About an ordinary point</h4><p>Use a Taylor series</p>
+<script type="math/tex; mode=display">
+y=\sum_{n=0}^\infty a_n(x-x_0)^n\\
+p(x)=\sum_{n=0}^\infty p_n(x-x_0)^n\\
+q(x)=\sum_{n=0}^\infty q_n(x-x_0)^n</script><p>and then compare coefficients - we get</p>
+<script type="math/tex; mode=display">
+(n+2)(n+1)a_{n+2}+\sum_{r=0}^n p_{n-r}(r+1)a_{r+1}+\sum_{r=0}^n q_{n-r}a_{r}=0</script><h4 id="About-a-regular-singular-point"><a href="#About-a-regular-singular-point" class="headerlink" title="About a regular singular point"></a>About a regular singular point</h4><p>Fuchs’s theorem: at least one solution of the form</p>
+<script type="math/tex; mode=display">
+\begin{align}
+y=\sum_{n=0}^\infty a_n(x-x_0)^{n+\sigma}&&a_0 \neq 0
+\end{align}</script><p>Match coefficients with this trail solution, when <script type="math/tex">n=0</script>, we have:</p>
+<p><strong>Indicial equation</strong>: <script type="math/tex">\sigma(\sigma-1)+P_0\sigma+Q_0=0</script>, where <script type="math/tex">P=(x-x_0)p;\, Q=(x-x_0)^2q</script>.</p>
+<ul>
+<li>All is good when <script type="math/tex">\sigma_1-\sigma_2\notin \mathbb{Z}​</script>, we have two independent solutions</li>
+<li>If <script type="math/tex">\sigma_1-\sigma_2\in \mathbb{Z}</script>, and <script type="math/tex">\Re(\sigma_1)\geq \Re(\sigma_2)</script>, then the solution with <script type="math/tex">\sigma_2</script> will fail (e.g. infinite coefficient).</li>
+<li>The second solution may be found by <script type="math/tex">y_2=y=\sum_{n=0}^\infty b_n(x-x_0)^{n+\sigma_2}+ky_1\ln(x)</script>.</li>
+</ul>
+<h2 id="Inhomogeneous-Problems-Green’s-function"><a href="#Inhomogeneous-Problems-Green’s-function" class="headerlink" title="Inhomogeneous Problems: Green’s function"></a>Inhomogeneous Problems: Green’s function</h2><h3 id="Green’s-Functions-idea"><a href="#Green’s-Functions-idea" class="headerlink" title="Green’s Functions: idea"></a>Green’s Functions: idea</h3><p>Idea: (denote the linear PDE by <script type="math/tex">\mathcal{L}u(\mathbf{r})=f(\mathbf{r})</script>,) We can break up the forcing <script type="math/tex">f</script> into infinite point source forcing <script type="math/tex">\delta(\mathbf{r}-\mathbf{r_0})</script>. If we can find the Green’s function that satisfies </p>
 <script type="math/tex; mode=display">
 \mathcal{L}G(\mathbf{r},\mathbf{r_0} )=\delta(\mathbf{r}-\mathbf{r_0}),</script><p>which corresponds to the response of the system due to each of the point source, then we can integrate the effects of these point sources, </p>
 <script type="math/tex; mode=display">
 u(\mathbf{r})=\int G(\mathbf{r},\mathbf{r_0} )f(\mathbf{r_0})d^V(\mathbf{r_0})</script><p>to obtain the solution.</p>
+<blockquote>
+<p>We can also understand it as the inverse operator of <script type="math/tex">\mathcal{L}</script>.</p>
+</blockquote>
 <p>The methods depends highly on the boundary conditions given.</p>
-<h2 id="Laplace-and-Poisson’s-equations"><a href="#Laplace-and-Poisson’s-equations" class="headerlink" title="Laplace and Poisson’s equations"></a>Laplace and Poisson’s equations</h2><h3 id="Physical-origins"><a href="#Physical-origins" class="headerlink" title="Physical origins"></a>Physical origins</h3><p>Poisson’s equation is</p>
+<h3 id="Aside-General-functions"><a href="#Aside-General-functions" class="headerlink" title="Aside: General functions"></a>Aside: General functions</h3><p>Functions that has an effect on other functions. Their own specific definition (eg values at discontinuities) is not important.</p>
+<ul>
+<li>It is meaningless to multiply together two general functions with the same variable.</li>
+</ul>
+<h4 id="Heaviside-step-function"><a href="#Heaviside-step-function" class="headerlink" title="Heaviside step function"></a>Heaviside step function</h4><script type="math/tex; mode=display">
+H(x)=
+\begin{cases}
+0 &&x<0\\
+1 &&x>0
+\end{cases}</script><h4 id="Top-hat-function"><a href="#Top-hat-function" class="headerlink" title="Top hat function"></a>Top hat function</h4><script type="math/tex; mode=display">
+\delta_\epsilon (x)=
+\begin{cases}
+\frac{1}{\epsilon} && 0<x<\epsilon\\
+0 && \mathrm{otherwise}
+\end{cases}</script><p>Connection: <script type="math/tex">\lim_{\epsilon \to 0}\delta_\epsilon(x)=H'(x)</script></p>
+<h4 id="Dirac-Delta-function"><a href="#Dirac-Delta-function" class="headerlink" title="Dirac-Delta function"></a>Dirac-Delta function</h4><p>Has a <em>sampling effect</em> - when integrated, extract the value of a function at a certain point.</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^\infty f(x)\delta(x-\xi)\,dx=f(\xi)</script><p>Note: the delta function itself could be defined smoothly, e.g. a Gaussian</p>
+<script type="math/tex; mode=display">
+\delta(x)=\lim_{\epsilon\to 0}\frac{1}{\sqrt{2\pi\epsilon^2}}\exp(-\frac{x^2}{2\epsilon^2})</script><h4 id="D-E-s-containing-delta-function-matching-conditions"><a href="#D-E-s-containing-delta-function-matching-conditions" class="headerlink" title="D.E.s containing \delta function - matching conditions"></a>D.E.s containing <script type="math/tex">\delta</script> function - matching conditions</h4><blockquote>
+<p>Example: <script type="math/tex">y''+y=\delta(x)</script></p>
+</blockquote>
+<p>For <script type="math/tex">x<0</script> and <script type="math/tex">x>0</script>, the equation is homogeneous, hence we have the usual solution:</p>
+<script type="math/tex; mode=display">
+y=\begin{cases}
+A\sin(x)+B\cos(x)&& x<0\\
+C\sin(x)+D\cos(x)&& x>0
+\end{cases}</script><p>But as a 2nd order DE, we can only have 2 arbitrary constants. Integrate the orginal equation about the origin:</p>
+<script type="math/tex; mode=display">
+\int_{-\epsilon}^\epsilon y''\,dx+\int_{-\epsilon}^\epsilon y\,dx=\int_{-\epsilon}^\epsilon \delta(x)\,dx\\
+\implies y'(\epsilon)-y'(-\epsilon)+0=1</script><p>where we assumed <script type="math/tex">y</script> is bounded. Hence the relations between <script type="math/tex">A,B</script> and <script type="math/tex">C,D</script> can be found.</p>
+<h3 id="Procedure-of-solving-inhomogeneous-PDE-with-Green’s-Functions"><a href="#Procedure-of-solving-inhomogeneous-PDE-with-Green’s-Functions" class="headerlink" title="Procedure of solving inhomogeneous PDE with Green’s Functions"></a>Procedure of solving inhomogeneous PDE with Green’s Functions</h3><ol>
+<li>Find 2 independent homogeneous solutions, <script type="math/tex">y_1</script> and <script type="math/tex">y_2</script>.</li>
+<li>Work out the Wroskian</li>
+</ol>
+<script type="math/tex; mode=display">
+W=
+\begin{vmatrix}
+y_1&y_2\\y_1'&y_2'
+\end{vmatrix}.</script><ol>
+<li>Solve for <script type="math/tex">G</script> by applying B.C. (same as for <script type="math/tex">y</script>) and jump condition.</li>
+<li>Integrate to find <script type="math/tex">y</script>.</li>
+</ol>
+<h3 id="B-C-of-initial-value-problems"><a href="#B-C-of-initial-value-problems" class="headerlink" title="B.C. of initial value problems"></a>B.C. of initial value problems</h3><p>The boundary conditions is of the form <script type="math/tex">y(0)=m; \ y'(0)=n</script>.</p>
+<blockquote>
+<p>Suppose the problem is <script type="math/tex">y''(x)+py'(x)+qy(x)=f(x)</script>, subject to <script type="math/tex">y(0)=y'(0)=0</script>.</p>
+</blockquote>
+<p>Then Greens function solves: </p>
+<script type="math/tex; mode=display">
+G_{xx}+pG_x+qG=\delta(x-\xi), \tag{*}</script><p>subject to <script type="math/tex">G(0,\xi)=\partial_xG(0,\xi)=0</script>.</p>
+<p>Again, by integrating, <script type="math/tex">G</script> must be continuous and the first derivative has a jump. At <script type="math/tex">x=\xi</script>, </p>
+<script type="math/tex; mode=display">
+\begin{align}
+[G]=0 && [\partial_x G]=1
+\end{align}</script><p>Again, the equation is homogeneous when <script type="math/tex">x\neq\xi</script>, so</p>
+<script type="math/tex; mode=display">
+G=\begin{cases}
+A(\xi)y_1(x)+B(\xi)y_2(x)&& 0<x<\xi\\
+C(\xi)y_1(x)+D(\xi)y_2(x)&& x>\xi
+\end{cases}</script><p>Apply B.C.s:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+x=0 && \begin{bmatrix}y_1(0)&y_2(0)\\y_1'(0)&y_2'(0)\end{bmatrix}\begin{bmatrix}A(\xi)\\B(\xi)\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}\implies A=B=0\\
+x=\xi && 
+\begin{bmatrix}y_1(\xi)&y_2(\xi)\\y_1'(\xi)&y_2'(\xi)\end{bmatrix}\begin{bmatrix}C(\xi)\\D(\xi)\end{bmatrix}=\begin{bmatrix}0\\1\end{bmatrix}\implies  \begin{bmatrix}C(\xi)\\D(\xi)\end{bmatrix}=\begin{bmatrix}-y_2(\xi)/W(\xi)\\y_1(\xi)/W(\xi)\end{bmatrix}
+\end{align}</script><p>Therefore,</p>
+<script type="math/tex; mode=display">
+G(x,\xi)=\begin{cases}0 && 0\leq x<\xi \\ \frac{y_1(\xi)y_2(x)-y_1(x)y_2(\xi)}{W(\xi)}&&x\geq \xi\end{cases}</script><h3 id="Boundary-value-problem"><a href="#Boundary-value-problem" class="headerlink" title="Boundary value problem"></a>Boundary value problem</h3><p>Find complementary functions <script type="math/tex">y_a(x)</script> and <script type="math/tex">y_b(x)</script> satisfying the boundary conditions at <script type="math/tex">a</script> and <script type="math/tex">b</script> respectively. The Green’s function must be </p>
+<script type="math/tex; mode=display">
+G=\begin{cases}
+A(\xi)y_a(x)&& a\leq x\leq\xi\\
+B(\xi)y_b(x)&& \xi<x\leq b
+\end{cases}</script><p>with jump conditions <script type="math/tex">[G]=0</script> and <script type="math/tex">[\partial_x G]=1</script> at <script type="math/tex">x=\xi</script>.</p>
+<p>By solving these, the Green’s function is </p>
+<script type="math/tex; mode=display">
+G=\frac{1}{W(\xi)}\begin{cases}
+y_b(\xi)y_a(x)&& a\leq x\leq\xi\\
+y_a(\xi)y_b(x)&& \xi<x\leq b
+\end{cases}</script><h1 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h1><h2 id="Laplace-and-Poisson’s-equations"><a href="#Laplace-and-Poisson’s-equations" class="headerlink" title="Laplace and Poisson’s equations"></a>Laplace and Poisson’s equations</h2><h3 id="Physical-origins"><a href="#Physical-origins" class="headerlink" title="Physical origins"></a>Physical origins</h3><p>Poisson’s equation is</p>
 <script type="math/tex; mode=display">
 \nabla^2 \Psi = \rho(\mathbf{x})</script><p>Examples</p>
 <script type="math/tex; mode=display">
@@ -542,7 +657,7 @@ G(\mathbf{r},\mathbf{r}')=\frac{1}{2\pi}\ln|\mathbf{r}-\mathbf{r}'|+ \mathrm{con
 \Phi(\mathbf{r}') &=\int_VG(\mathbf{r} ; \mathbf{r}')\,\rho(\mathbf{r})\, dV +\oint_Sf(\mathbf{r})\frac{\partial G}{\partial n}\, dS && \mathrm{integrate \ the \ \delta}
 \end{align}</script><p>Notes:</p>
 <ul>
-<li>Can use this to solve Laplace - set <script type="math/tex">\rho</script> to 0</li>
+<li>Can use this to solve Laplace - set <script type="math/tex">\rho​</script> to 0</li>
 <li>If <script type="math/tex">V​</script> is all space, then need to make sure the surface integral does go to 0</li>
 </ul>
 <p>For Neumann B.C.,</p>
@@ -561,7 +676,7 @@ G(\mathbf{r},\mathbf{r}')=\frac{1}{2\pi}\ln|\mathbf{r}-\mathbf{r}'|+ \mathrm{con
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">https://www.butteraddict.fun/2019/04/Differential-Equations/</a>
             </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 4th 2019, 10:33:12 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 9th 2019, 2:52:26 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 12th 2019, 4:19:47 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -697,7 +812,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDE"><span class="toc-number">2.</span> <span class="toc-text">PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#General-Inhomogeneous-Problems"><span class="toc-number">2.1.</span> <span class="toc-text">General Inhomogeneous Problems</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#By-Green’s-Functions"><span class="toc-number">2.1.1.</span> <span class="toc-text">By Green’s Functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Laplace-and-Poisson’s-equations"><span class="toc-number">2.2.</span> <span class="toc-text">Laplace and Poisson’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Physical-origins"><span class="toc-number">2.2.1.</span> <span class="toc-text">Physical origins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Separation-of-variables"><span class="toc-number">2.2.2.</span> <span class="toc-text">Separation of variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-Plane-polar"><span class="toc-number">2.2.3.</span> <span class="toc-text">Laplace in Plane polar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-spherical-polar-axisymmetric"><span class="toc-number">2.2.4.</span> <span class="toc-text">Laplace in spherical polar (axisymmetric)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniqueness-of-solutions-to-Poisson’s-equation"><span class="toc-number">2.2.5.</span> <span class="toc-text">Uniqueness of solutions to Poisson’s equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-function-for-Poisson’s-equation"><span class="toc-number">2.2.6.</span> <span class="toc-text">Green’s function for Poisson’s equation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-3D-for-Dirichlet"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">Fundamental solution in 3D for Dirichlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-2D"><span class="toc-number">2.2.6.2.</span> <span class="toc-text">Fundamental solution in 2D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-of-images"><span class="toc-number">2.2.6.3.</span> <span class="toc-text">Method of images</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Planes"><span class="toc-number">2.2.6.3.1.</span> <span class="toc-text">Planes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sphere-radius-a-Dirichlet"><span class="toc-number">2.2.6.3.2.</span> <span class="toc-text">Sphere (radius a) (Dirichlet)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Circle-radius-a-Dirichlet"><span class="toc-number">2.2.6.3.3.</span> <span class="toc-text">Circle (radius a) (Dirichlet)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integral-solution-of-Poisson’s-equation"><span class="toc-number">2.2.7.</span> <span class="toc-text">Integral solution of Poisson’s equation</span></a></li></ol></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ODE"><span class="toc-number">2.</span> <span class="toc-text">ODE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homogeneous-2nd-order-equations"><span class="toc-number">2.1.</span> <span class="toc-text">Homogeneous 2nd order equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Independent-solutions"><span class="toc-number">2.1.1.</span> <span class="toc-text">Independent solutions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wroskian"><span class="toc-number">2.1.2.</span> <span class="toc-text">Wroskian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series-solutions"><span class="toc-number">2.1.3.</span> <span class="toc-text">Series solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#The-point-about-which-to-expand"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">The point about which to expand</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-an-ordinary-point"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">About an ordinary point</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-a-regular-singular-point"><span class="toc-number">2.1.3.3.</span> <span class="toc-text">About a regular singular point</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inhomogeneous-Problems-Green’s-function"><span class="toc-number">2.2.</span> <span class="toc-text">Inhomogeneous Problems: Green’s function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-Functions-idea"><span class="toc-number">2.2.1.</span> <span class="toc-text">Green’s Functions: idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aside-General-functions"><span class="toc-number">2.2.2.</span> <span class="toc-text">Aside: General functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heaviside-step-function"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">Heaviside step function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Top-hat-function"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Top hat function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dirac-Delta-function"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">Dirac-Delta function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D-E-s-containing-delta-function-matching-conditions"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">D.E.s containing \delta function - matching conditions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Procedure-of-solving-inhomogeneous-PDE-with-Green’s-Functions"><span class="toc-number">2.2.3.</span> <span class="toc-text">Procedure of solving inhomogeneous PDE with Green’s Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-C-of-initial-value-problems"><span class="toc-number">2.2.4.</span> <span class="toc-text">B.C. of initial value problems</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boundary-value-problem"><span class="toc-number">2.2.5.</span> <span class="toc-text">Boundary value problem</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDE"><span class="toc-number">3.</span> <span class="toc-text">PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Laplace-and-Poisson’s-equations"><span class="toc-number">3.1.</span> <span class="toc-text">Laplace and Poisson’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Physical-origins"><span class="toc-number">3.1.1.</span> <span class="toc-text">Physical origins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Separation-of-variables"><span class="toc-number">3.1.2.</span> <span class="toc-text">Separation of variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-Plane-polar"><span class="toc-number">3.1.3.</span> <span class="toc-text">Laplace in Plane polar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-spherical-polar-axisymmetric"><span class="toc-number">3.1.4.</span> <span class="toc-text">Laplace in spherical polar (axisymmetric)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniqueness-of-solutions-to-Poisson’s-equation"><span class="toc-number">3.1.5.</span> <span class="toc-text">Uniqueness of solutions to Poisson’s equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-function-for-Poisson’s-equation"><span class="toc-number">3.1.6.</span> <span class="toc-text">Green’s function for Poisson’s equation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-3D-for-Dirichlet"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">Fundamental solution in 3D for Dirichlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-2D"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">Fundamental solution in 2D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-of-images"><span class="toc-number">3.1.6.3.</span> <span class="toc-text">Method of images</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Planes"><span class="toc-number">3.1.6.3.1.</span> <span class="toc-text">Planes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sphere-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.2.</span> <span class="toc-text">Sphere (radius a) (Dirichlet)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Circle-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.3.</span> <span class="toc-text">Circle (radius a) (Dirichlet)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integral-solution-of-Poisson’s-equation"><span class="toc-number">3.1.7.</span> <span class="toc-text">Integral solution of Poisson’s equation</span></a></li></ol></li></ol></li></ol>
         
     </div>
     
@@ -827,13 +942,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
-    
         <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -870,9 +985,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
     
