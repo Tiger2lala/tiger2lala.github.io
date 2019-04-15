@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>黄油上瘾 ButterAddict</title>
+    <title>Functionals · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Functionals</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">黄油上瘾</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Functionals
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">946</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/15</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,197 +401,155 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/Functionals/">
-            
-                <span>Functionals</span>
-        </a>
-        <div class="abstract-content">
-            FunctionalsJust like functions take variables as arguments, functionals take functions as arguments.
-In the following sections, the functional of the form
-
-G[y]=\int_\alpha^\beta f(y,y' ; x) \, dxis considered.
-Functional derivativesDefinition:
-
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Functionals"><a href="#Functionals" class="headerlink" title="Functionals"></a>Functionals</h1><p>Just like functions take variables as arguments, <strong>functionals</strong> take <em>functions</em> as arguments.</p>
+<p>In the following sections, the functional of the form</p>
+<script type="math/tex; mode=display">
+G[y]=\int_\alpha^\beta f(y,y' ; x) \, dx</script><p>is considered.</p>
+<h1 id="Functional-derivatives"><a href="#Functional-derivatives" class="headerlink" title="Functional derivatives"></a>Functional derivatives</h1><p>Definition:</p>
+<script type="math/tex; mode=display">
 \begin{align}
 
 \delta G &= G[y+\delta y]-G[y]\\
-&=\...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
+&=\int_\alpha^\beta f(y+\delta y,y'+\delta y'; x)- f(y,y' ; x) \, dx\\
+&=\int_\alpha^\beta [f(y,y' ; x)+\frac{\partial f}{\partial y}(\delta y)+\frac{\partial f}{\partial y'}(\delta y)']- f(y,y' ; x) \, dx && \mathrm{Taylor \ expansion}\\
+
+&=\int_\alpha^\beta \frac{\partial f}{\partial y}(\delta y) -\frac{d}{dx}(\frac{\partial f}{\partial y'})(\delta y)\, dx +[\delta y \frac{\partial f}{\partial y'}]_\alpha^\beta
+
+\end{align}</script><p>If y is fixed on the boundary, the B.T is 0, then</p>
+<script type="math/tex; mode=display">
+\delta G=\int_\alpha^\beta [\frac{\partial f}{\partial y} -\frac{d}{dx}(\frac{\partial f}{\partial y'})](\delta y)\, dx \tag{1}\label{fcndif}</script><p>and <em>define</em> the <strong>functional derivative</strong> to be</p>
+<script type="math/tex; mode=display">
+\frac{\delta G}{\delta y(x)}=\frac{\partial f}{\partial y} -\frac{d}{dx}(\frac{\partial f}{\partial y'}) \tag{2}\label{fcnd}</script><p>Stationary when <script type="math/tex">\frac{\delta G}{\delta y(x)}=0​</script>, i.e.</p>
+<script type="math/tex; mode=display">
+\frac{\partial f}{\partial y} =\frac{d}{dx}(\frac{\partial f}{\partial y'})</script><p>This is the <strong>Euler Lagrange</strong> equation.</p>
+<h2 id="Special-cases"><a href="#Special-cases" class="headerlink" title="Special cases"></a>Special cases</h2><h3 id="No-dependence-on-y"><a href="#No-dependence-on-y" class="headerlink" title="No dependence on $y$"></a>No dependence on $y$</h3><p>If <script type="math/tex">\frac{\partial f}{\partial y}=0</script>, then <script type="math/tex">\frac{\partial f}{\partial y'}</script> is const.</p>
+<h3 id="No-dependence-on-x-First-integral"><a href="#No-dependence-on-x-First-integral" class="headerlink" title="No dependence on $x$ - First integral"></a>No dependence on $x$ - First integral</h3><p>If <script type="math/tex">\frac{\partial f}{\partial x}=0</script>, use chain rule,</p>
+<script type="math/tex; mode=display">
+\frac{df}{dx}=\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}\frac{dy}{dx}+\frac{\partial f}{\partial y'}\frac{d^2y}{dx^2}</script><p>Use the EL equation</p>
+<script type="math/tex; mode=display">
+\frac{df}{dx}=\frac{\partial f}{\partial x}+y'\frac{d}{dx}(\frac{\partial f}{\partial y'})+y''\frac{\partial f}{\partial y'}=\frac{d}{dx}(y'\frac{\partial f}{\partial y'})\\
+\implies \frac{df}{dx}(y'\frac{\partial f}{\partial y'}-f)=0\\
+\implies y'\frac{\partial f}{\partial y'}-f=\mathrm{const.}</script><h2 id="Relate-to-SL"><a href="#Relate-to-SL" class="headerlink" title="Relate to SL"></a>Relate to SL</h2><p>Consider these two functionals</p>
+<script type="math/tex; mode=display">
+\begin{align}
+F[y]&=\int_\alpha^\beta y\mathcal{L}y\, dx\\
+&=\int_\alpha^\beta -y\frac{d}{dx}[\rho(x)y']+\sigma(x)y^2\, dx\\
+&=\int_\alpha^\beta \rho(x)(y')^2+\sigma(x)y^2\, dx
+\end{align}</script><p>where the last line used integration by parts, and the boundary term is 0; and</p>
+<script type="math/tex; mode=display">
+G[y]=\int_\alpha^\beta w(x)y^2\, dx</script><p>Then, use the expression <script type="math/tex">\ref{fcndif}</script>, and we get</p>
+<script type="math/tex; mode=display">
+\delta F=2\int_\alpha^\beta (\delta y)\mathcal{L}y\, dx\\
+\delta G=2\int_\alpha^\beta (\delta y)w(x)y\, dx</script><p>so</p>
+<script type="math/tex; mode=display">
+\frac{\delta F}{\delta y(x)}=2\mathcal{L}y\\
+\frac{\delta G}{\delta y(x)}=2wy</script><p>Then consider</p>
+<script type="math/tex; mode=display">
+\Lambda[y]=\frac{F[y]}{G[y]}\\
+\implies \delta \Lambda=\frac{F[y]+\delta F[y]}{G[y]+\delta G[y]}=\frac{1}{G}(\delta F -\frac{F}{G}\delta G)\\
+\implies \frac{\delta \Lambda}{\delta y(x)}=\frac{2}{G}(\mathcal{L}y-\Lambda wy)</script><p>We have it. Extremizing <script type="math/tex">\Lambda</script> is equivalent to <script type="math/tex">y</script> being an <strong>eigenfunction</strong>, and the extremal values are <strong>eigenvalues</strong>.</p>
+<blockquote>
+<p>Alternatively derived from Lagrange multipliers.</p>
+</blockquote>
+<h1 id="Variation-principles"><a href="#Variation-principles" class="headerlink" title="Variation principles"></a>Variation principles</h1><h2 id="Fermat’s-principle"><a href="#Fermat’s-principle" class="headerlink" title="Fermat’s principle"></a>Fermat’s principle</h2><p>Minimizes <strong>optical path length</strong>. (Or not so strictly minimizes the time taken.)</p>
+<p>The OPD is defined with the <strong>refractive index</strong> <script type="math/tex">\mu(x)</script>, through</p>
+<script type="math/tex; mode=display">
+P=\int_A^B \mu(\mathbf{r})\,dl</script><ul>
+<li>If no question involves a path that does not double back, use one of the coordinates to <em>parametrize</em>.</li>
+<li>Requires the functional derivative w.r.t. the other coordinates to be 0.</li>
+</ul>
+<h2 id="Hamilton’s-principle"><a href="#Hamilton’s-principle" class="headerlink" title="Hamilton’s principle"></a>Hamilton’s principle</h2><p>The <strong>Lagrangian</strong> of a system is <script type="math/tex">L=T-V</script>.</p>
+<p>The <strong>action functional</strong> is</p>
+<script type="math/tex; mode=display">
+S=\int_{t_i}^{t_f} L(\{q_i\},\{\dot{q_i}\}\dots,t)\,dt</script><p>where <script type="math/tex">q</script>s are general coordinates.</p>
+<p><strong>Hamilton’s principle</strong> is that the motion in configuration space extremizes the action functional <script type="math/tex">S</script>.</p>
+<p>The E-L equation becomes the <strong>Lagrange equation</strong>,</p>
+<script type="math/tex; mode=display">
+\frac{d}{dt}(\frac{\partial L}{\partial \dot{q_i}})-\frac{\partial L}{\partial q_i}=0</script><p>for all <script type="math/tex">i</script>.</p>
+<h3 id="First-integral"><a href="#First-integral" class="headerlink" title="First integral"></a>First integral</h3><p>If <script type="math/tex">\frac{\partial L}{\partial t}=0</script>, then</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^N \dot{q}_i \frac{\partial L}{\partial \dot{q_i}}-L=\mathrm{const.}</script><blockquote>
+<p>By considering <script type="math/tex">\frac{d L}{dt}</script>.</p>
+</blockquote>
+<p>Generally in this case, <script type="math/tex">T</script> is a homogeneous <em>quadratic</em> in velocities, and <script type="math/tex">V</script> does not depend on velocities, then,</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^N \dot{q}_i \frac{\partial L}{\partial \dot{q_i}}-L=T+V=\mathrm{const.}</script><p>i.e. Energy is conserved.</p>
+<h1 id="Constrained-variation-and-Lagrange-multipliers"><a href="#Constrained-variation-and-Lagrange-multipliers" class="headerlink" title="Constrained variation and Lagrange multipliers"></a>Constrained variation and Lagrange multipliers</h1><p>Recall: <script type="math/tex">df=\nabla f\cdot d \mathbf{x}</script>, stationary points at <script type="math/tex">\nabla f=0</script>.</p>
+<p>Now the path is not free, but on a given <script type="math/tex">d\mathbf{l}</script>, such that <script type="math/tex">dp=d\mathbf{l}\cdot\nabla p=0</script> (line of const. <script type="math/tex">p</script>). Therefore it has to be that <script type="math/tex">\nabla f=\lambda \nabla p​</script>.</p>
+<p>The question becomes to extremize <em>without constraint</em> a function</p>
+<script type="math/tex; mode=display">
+\phi(x,y,\lambda)=f(x,y)-\lambda p(x,y)</script><p>where the <script type="math/tex">\lambda</script> is a <strong>Lagrange multiplier</strong>. More generally, for functions,</p>
+<script type="math/tex; mode=display">
+\phi(x,y,\dots,\lambda_1,\lambda_2,\dots)=f(x,y,\dots)-\sum_{i=1}^k\lambda_i p_i(x,y)</script><p>And for functionals,</p>
+<script type="math/tex; mode=display">
+\Phi_\lambda [y]=G[y]-\lambda P[y]</script><h1 id="Rayleigh-Ritz"><a href="#Rayleigh-Ritz" class="headerlink" title="Rayleigh-Ritz"></a>Rayleigh-Ritz</h1><p>For an SL problem, suppose everything (<script type="math/tex">\rho,\ \sigma,\ w</script>) is positive, then <script type="math/tex">\Lambda \geq 0</script>. There exists an <strong>absolute minimum</strong> in the extremal values <script type="math/tex">\lambda_0 \geq 0</script>.</p>
+<p>Therefore, we have</p>
+<script type="math/tex; mode=display">
+\Lambda[y]\geq \lambda_0</script><p>for all <script type="math/tex">y</script> satisfying B.C.s, and only equal if <script type="math/tex">y=y_0</script>.</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
+<li>Put into SL form</li>
+<li>Come up with a trial function, with parameters</li>
+<li>Compute <script type="math/tex">F</script> and <script type="math/tex">G</script> for the trail function</li>
+<li>Minimize <script type="math/tex">\Lambda</script> w.r.t parameters</li>
+</ol>
+<p>Then we have the best estimate of the eigenvalue and corresponding values of parameters with <em>this</em> trail function.</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/Differential-Equations/">
-            
-                <span>Differential Equations</span>
-        </a>
-        <div class="abstract-content">
-            Key concepts
-Linear operator
-Homogeneous: 
-equation: no forcing, or, a multiple of a solution y, \alpha y is also a solution.
-problem: in addition, \alpha y also satisfies B.C.
-
-
-Boundary conditions
-Dirichlet: the function value on the boundary is defined
-Neumann: the normal derivative value on t...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/04/Functionals/">https://www.butteraddict.fun/2019/04/Functionals/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/04/Functionals/">April 15th 2019, 2:12:10 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Functionals/">April 15th 2019, 2:13:38 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/Matrix-Tensor/">
-            
-                <span>Matrix_Tensor</span>
-        </a>
-        <div class="abstract-content">
-            MatricesVector spaceDefinition
-A set of elements on which vector addition and scalar multiplication are defined
-Closed under these operations
-Includes identity \mathbf{0}​ for vector addition
-
-Note:
-
-2D spaces \mathbb{R}^2 \neq \mathbb{C}, since \mathbb{C} has a single point of \infty.
-
-SpanThe s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/Contour-Integration/">
-            
-                <span>Contour Integration</span>
-        </a>
-        <div class="abstract-content">
-            Contour IntegrationIdea: A powerful method of doing integrals by using the properties of complex functions.
-Analytic functions
-To be differentiable at a point, a function must satisfy Cauchy-Riemann.
-
-
-\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \,\frac{\partial v}{\partial x} ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/Intro-to-QM/">
-            
-                <span>Introduction to Quantum Mechanics</span>
-        </a>
-        <div class="abstract-content">
-            Notes for Cambridge IB Introduction to QM course. Password access required.
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/Differential-Equations/" title="Differential Equations">
+                    <div class="prevTitle">Differential Equations</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -601,6 +622,26 @@ To be differentiable at a point, a function must satisfy Cauchy-Riemann.
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Functionals"><span class="toc-number">1.</span> <span class="toc-text">Functionals</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Functional-derivatives"><span class="toc-number">2.</span> <span class="toc-text">Functional derivatives</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-cases"><span class="toc-number">2.1.</span> <span class="toc-text">Special cases</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#No-dependence-on-y"><span class="toc-number">2.1.1.</span> <span class="toc-text">No dependence on $y$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#No-dependence-on-x-First-integral"><span class="toc-number">2.1.2.</span> <span class="toc-text">No dependence on $x$ - First integral</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relate-to-SL"><span class="toc-number">2.2.</span> <span class="toc-text">Relate to SL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Variation-principles"><span class="toc-number">3.</span> <span class="toc-text">Variation principles</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fermat’s-principle"><span class="toc-number">3.1.</span> <span class="toc-text">Fermat’s principle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hamilton’s-principle"><span class="toc-number">3.2.</span> <span class="toc-text">Hamilton’s principle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-integral"><span class="toc-number">3.2.1.</span> <span class="toc-text">First integral</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Constrained-variation-and-Lagrange-multipliers"><span class="toc-number">4.</span> <span class="toc-text">Constrained variation and Lagrange multipliers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rayleigh-Ritz"><span class="toc-number">5.</span> <span class="toc-text">Rayleigh-Ritz</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Steps"><span class="toc-number">5.1.</span> <span class="toc-text">Steps</span></a></li></ol></li></ol>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -827,6 +868,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";

@@ -537,7 +537,131 @@ B(\xi)y_b(x)&& \xi<x\leq b
 G=\frac{1}{W(\xi)}\begin{cases}
 y_b(\xi)y_a(x)&& a\leq x\leq\xi\\
 y_a(\xi)y_b(x)&& \xi<x\leq b
-\end{cases}</script><h1 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h1><h2 id="Laplace-and-Poisson’s-equations"><a href="#Laplace-and-Poisson’s-equations" class="headerlink" title="Laplace and Poisson’s equations"></a>Laplace and Poisson’s equations</h2><h3 id="Physical-origins"><a href="#Physical-origins" class="headerlink" title="Physical origins"></a>Physical origins</h3><p>Poisson’s equation is</p>
+\end{cases}</script><h2 id="Sturm-Liouville-theory"><a href="#Sturm-Liouville-theory" class="headerlink" title="Sturm-Liouville theory"></a>Sturm-Liouville theory</h2><h3 id="Inner-product-of-functions"><a href="#Inner-product-of-functions" class="headerlink" title="Inner product of functions"></a>Inner product of functions</h3><p>The <strong>inner product</strong> of two continuous functions <script type="math/tex">u</script> and <script type="math/tex">v</script>, on a range <script type="math/tex">x \in (a, b)</script> is </p>
+<script type="math/tex; mode=display">
+<\!\!u|v\!\!>=\int_a^b u^*(x)v(x)\, dx</script><p>Generalise a little by introducing a weight function <script type="math/tex">w(x)>0</script> on <script type="math/tex">(a,b)</script>.</p>
+<script type="math/tex; mode=display">
+<\!\!u|v\!\!>_w=\int_a^b u^*(x)v(x)w(x)\, dx</script><p>The subscript <script type="math/tex">w</script> can be omitted.</p>
+<h3 id="Self-adjoint-and-SL-operator"><a href="#Self-adjoint-and-SL-operator" class="headerlink" title="Self-adjoint and SL operator"></a>Self-adjoint and SL operator</h3><p>The adjoint of a differential operator <script type="math/tex">\mathcal{L}​</script> such that (after integration by parts,)</p>
+<script type="math/tex; mode=display">
+<\!\!u|\mathcal{L}v\!\!>=<\!\!\mathcal{L}^\dagger u|v\!\!>+ \mathrm{b.t.s}</script><ul>
+<li>An operator is <strong>self-adjoint</strong> if <script type="math/tex">\mathcal{L}=\mathcal{L}^\dagger</script>, and the boudary terms are 0.</li>
+</ul>
+<p>A <strong>Sturm-Liouville operator</strong>, defined on a range $$\alpha \leq x \leq \beta$ is of the form:</p>
+<script type="math/tex; mode=display">
+\mathcal{L}=-\frac{d}{dx}(\rho(x)\frac{d}{dx})+\sigma(x)</script><p>where <script type="math/tex">\sigma</script> and <script type="math/tex">\rho</script> are real functions, and <script type="math/tex">\rho(x)>0</script> for <script type="math/tex">x \in (\alpha, \beta)</script>.</p>
+<blockquote>
+<p>Prove an SL operator is self-adjoint by integrating by part twice.</p>
+</blockquote>
+<p>SL operators resembles <em>Hermitian matrices</em>, and they are useful because they have <em>orthogonal eigenfunctions</em>.</p>
+<h4 id="Into-SL-form"><a href="#Into-SL-form" class="headerlink" title="Into SL form"></a>Into SL form</h4><p>Any 2nd order ordinary differential operator can be put into a SL form.</p>
+<p>Consider a general 2nd order operator</p>
+<script type="math/tex; mode=display">
+\begin{align}
+
+\tilde{\mathcal{L}}y(x)=\lambda y(x)&=a(x)\frac{d^2}{dx^2}+b(x)\frac{d}{dx}+c(x)\\
+
+\mathcal{L}=w(x)\tilde{\mathcal{L}}&=w(x)a(x)\frac{d^2}{dx^2}+w(x)b(x)\frac{d}{dx}+w(x)c(x)\\
+
+\end{align}</script><p>If this is a SL form, then</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mathcal{L}&=-\frac{d}{dx}(\rho(x)\frac{d}{dx})+\sigma(x)\\
+&=-\rho(x)\frac{d^2}{dx^2}-\frac{d\rho}{dx}\frac{d}{dx}+\sigma(x)
+
+\end{align}</script><p>Compare and we have</p>
+<script type="math/tex; mode=display">
+\begin{align}
+a(x)w(x)&=-\rho(x)\\
+b(x)w(x)&=-\frac{d\rho}{dx}\\
+w(x)c(x)&=\sigma(x)
+
+\end{align}</script><p>Hence we can solve</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\rho(x)&=-\exp(\int \frac{b}{a})\\
+w(x)&=\frac{-\rho(x)}{a(x)}\\
+c(x)&=\frac{\sigma(x)}{w(x)}
+
+\end{align}</script><h3 id="Eigenvalues-and-eigenfunctions"><a href="#Eigenvalues-and-eigenfunctions" class="headerlink" title="Eigenvalues and eigenfunctions"></a>Eigenvalues and eigenfunctions</h3><p>Now if a solution <script type="math/tex">y(x)</script> satisfies the eigenvalue equation</p>
+<script type="math/tex; mode=display">
+\tilde{\mathcal{L}}y(x)=\lambda y(x)</script><p>then </p>
+<script type="math/tex; mode=display">
+\mathcal{L}y(x)=\lambda w(x)y(x)</script><p>We can prove the <em>reality</em> of eigenvalues and <em>orthogonality</em> of eigenfunctions by the same method as in matrices.</p>
+<h4 id="Eigenfunction-expansion"><a href="#Eigenfunction-expansion" class="headerlink" title="Eigenfunction expansion"></a>Eigenfunction expansion</h4><p>Let <script type="math/tex">{y_n}</script> be a set of orthonormal eigenfunctions, satisfying the b.c.s, of a self-adjoint operator, w.r.t. a weight function <script type="math/tex">w</script>.</p>
+<script type="math/tex; mode=display">
+<\!\!y_n | y_m\!\!>_w = \delta_{nm}</script><p>Any function <script type="math/tex">f</script> satisfying b.c.s may be expressed as</p>
+<script type="math/tex; mode=display">
+f(x) = \sum_{n=1}^{\infty}a_n y_n(x) \tag{*}</script><p>and</p>
+<script type="math/tex; mode=display">
+a_n=<\!\!y_n | f\!\!>_w</script><h4 id="Completeness-relation"><a href="#Completeness-relation" class="headerlink" title="Completeness relation"></a>Completeness relation</h4><p>Using the above two statements</p>
+<script type="math/tex; mode=display">
+\begin{align}
+
+f(x) &= \sum_{n=1}^{\infty}a_n y_n(x)\\
+
+&=\sum_{n=1}^{\infty}<\!\!y_n | f\!\!>_w y_n(x)\\
+
+&=\sum_{n=1}^{\infty} y_n(x) \int_\alpha^\beta y_n^*(\xi) f(\xi) w(\xi) \, d\xi\\
+
+&=\int_\alpha^\beta f(\xi) [w(\xi)\sum_{n=1}^{\infty}y_n(x)y_n^*(\xi)] \, d\xi \\
+
+&=\int_\alpha^\beta f(\xi) \delta (x-\xi) \, d\xi
+
+\end{align}</script><p>Hence we have the <strong>completeness relation</strong>, which defines the meaning of “having a complete set of funtions”.</p>
+<script type="math/tex; mode=display">
+\sum_{n=1}^{\infty}y_n(x)y_n^*(\xi)=\frac{1}{w(\xi)}\delta (x-\xi)</script><h3 id="Solutions-of-DEs"><a href="#Solutions-of-DEs" class="headerlink" title="Solutions of DEs"></a>Solutions of DEs</h3><p>How can eigenfunction expansion be used to solve differential equations?</p>
+<p>We have the problem</p>
+<script type="math/tex; mode=display">
+\mathcal{L}y(x)=f(x)+ \mathrm{b.c.s}</script><p>and we have the eigenfunctions</p>
+<script type="math/tex; mode=display">
+\mathcal{L}y(x)=\lambda w(x)y(x)\\
+
+<\!\!y_n | y_m\!\!>_w = \delta_{nm}</script><p>The Green’s function solutions is </p>
+<script type="math/tex; mode=display">
+y(x)=\int_\alpha^\beta G(x ; x') f(x') \, dx'</script><p>If we make</p>
+<script type="math/tex; mode=display">
+G(x ; x')=\sum_{n=1}^{\infty} \frac{1}{\lambda_n}y_n(x)y_n^*(x') \tag{**}</script><p>then</p>
+<ol>
+<li>B.C.s are satisfied</li>
+<li>The point-source response if recoverd.</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{align}
+
+\mathcal{L}_x G(x ; x')&=w(x) \sum_{n=1}^{\infty} \lambda_n \frac{1}{\lambda_n}y_n(x)y_n^*(x')\\
+
+&=\frac{w(x)}{w(x')}\delta (x-x')\\
+
+&=\delta (x-x')
+
+\end{align}</script><p>Note that this will fail if any of the eigenvalues is zero. But if <script type="math/tex">\lambda_1</script> is very small compared to others,</p>
+<script type="math/tex; mode=display">
+y(x)=\int_\alpha^\beta \sum_{n=1}^{\infty} \frac{1}{\lambda_n}y_n(x)y_n^*(x') f(x') \, dx' \approx \frac{y_1(x)}{\lambda_1} <\!\!y_1 | f\!\!></script><p>as long as <script type="math/tex"><\!\!y_1 | f\!\!></script> is not too small.</p>
+<p>Any forcing with non-zero <script type="math/tex">y_1</script> component will cause a large “resonant” response.</p>
+<h3 id="Error-and-Paresval"><a href="#Error-and-Paresval" class="headerlink" title="Error and Paresval"></a>Error and Paresval</h3><p>If the expansion is truncated,</p>
+<script type="math/tex; mode=display">
+f(x) \approx \sum_{n=1}^N a_n y_n(x)</script><p>and define the error as </p>
+<script type="math/tex; mode=display">
+\begin{align}
+
+E_N&=||f(x)-\sum_{n=1}^N a_n y_n(x)||_w^2\\
+
+&=||f||_w^2-\sum_{n=1}^N[<\!\!f |y_n\!\!>_w a_n- a_n^*<\!\!y_n | f\!\!>_w]+\sum_{n=1}^N\sum_{n=1}^N a_n^* a_m <\!\!y_n | y_m!\!\!>_w\\
+
+&=||f||_w^2-\sum_{n=1}^N[<\!\!f |y_n\!\!>_w a_n- a_n^*<\!\!y_n | f\!\!>_w]+\sum_{n=1}^N a_n^* a_n 
+
+\end{align}</script><p>The partial derivatives</p>
+<script type="math/tex; mode=display">
+\frac{\partial E_N}{\partial a_n^*}=a_n-<\!\!y_n | f\!\!>_w\\
+
+\frac{\partial E_N}{\partial a_n}=a_n^*-<\!\!f | y_n\!\!>_w\\</script><p>Of course the error is minimised when <script type="math/tex">a_n=<\!\!y_n | f\!\!>_w</script>, i.e. untracated,</p>
+<script type="math/tex; mode=display">
+E_N=||f||_w^2-\sum_{n=1}^N |a_n|^2 \geq 0\\
+
+\implies ||f||_w^2 \geq \sum_{n=1}^N |a_n|^2 \tag{Bessel's inequality}</script><p>with the equality taking at the limit of <script type="math/tex">N \to \infty</script>,</p>
+<script type="math/tex; mode=display">
+||f||_w^2 = \sum_{n=1}^N |a_n|^2 \tag{Parseval's theorem}</script><h1 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h1><h2 id="Laplace-and-Poisson’s-equations"><a href="#Laplace-and-Poisson’s-equations" class="headerlink" title="Laplace and Poisson’s equations"></a>Laplace and Poisson’s equations</h2><h3 id="Physical-origins"><a href="#Physical-origins" class="headerlink" title="Physical origins"></a>Physical origins</h3><p>Poisson’s equation is</p>
 <script type="math/tex; mode=display">
 \nabla^2 \Psi = \rho(\mathbf{x})</script><p>Examples</p>
 <script type="math/tex; mode=display">
@@ -676,13 +800,18 @@ G(\mathbf{r},\mathbf{r}')=\frac{1}{2\pi}\ln|\mathbf{r}-\mathbf{r}'|+ \mathrm{con
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">https://www.butteraddict.fun/2019/04/Differential-Equations/</a>
             </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 4th 2019, 10:33:12 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 12th 2019, 4:19:47 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Differential-Equations/">April 15th 2019, 2:20:52 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/04/Functionals/" title="Functionals">
+                    <div class="nextTitle">Functionals</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -812,7 +941,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ODE"><span class="toc-number">2.</span> <span class="toc-text">ODE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homogeneous-2nd-order-equations"><span class="toc-number">2.1.</span> <span class="toc-text">Homogeneous 2nd order equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Independent-solutions"><span class="toc-number">2.1.1.</span> <span class="toc-text">Independent solutions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wroskian"><span class="toc-number">2.1.2.</span> <span class="toc-text">Wroskian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series-solutions"><span class="toc-number">2.1.3.</span> <span class="toc-text">Series solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#The-point-about-which-to-expand"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">The point about which to expand</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-an-ordinary-point"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">About an ordinary point</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-a-regular-singular-point"><span class="toc-number">2.1.3.3.</span> <span class="toc-text">About a regular singular point</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inhomogeneous-Problems-Green’s-function"><span class="toc-number">2.2.</span> <span class="toc-text">Inhomogeneous Problems: Green’s function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-Functions-idea"><span class="toc-number">2.2.1.</span> <span class="toc-text">Green’s Functions: idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aside-General-functions"><span class="toc-number">2.2.2.</span> <span class="toc-text">Aside: General functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heaviside-step-function"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">Heaviside step function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Top-hat-function"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Top hat function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dirac-Delta-function"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">Dirac-Delta function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D-E-s-containing-delta-function-matching-conditions"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">D.E.s containing \delta function - matching conditions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Procedure-of-solving-inhomogeneous-PDE-with-Green’s-Functions"><span class="toc-number">2.2.3.</span> <span class="toc-text">Procedure of solving inhomogeneous PDE with Green’s Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-C-of-initial-value-problems"><span class="toc-number">2.2.4.</span> <span class="toc-text">B.C. of initial value problems</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boundary-value-problem"><span class="toc-number">2.2.5.</span> <span class="toc-text">Boundary value problem</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDE"><span class="toc-number">3.</span> <span class="toc-text">PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Laplace-and-Poisson’s-equations"><span class="toc-number">3.1.</span> <span class="toc-text">Laplace and Poisson’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Physical-origins"><span class="toc-number">3.1.1.</span> <span class="toc-text">Physical origins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Separation-of-variables"><span class="toc-number">3.1.2.</span> <span class="toc-text">Separation of variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-Plane-polar"><span class="toc-number">3.1.3.</span> <span class="toc-text">Laplace in Plane polar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-spherical-polar-axisymmetric"><span class="toc-number">3.1.4.</span> <span class="toc-text">Laplace in spherical polar (axisymmetric)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniqueness-of-solutions-to-Poisson’s-equation"><span class="toc-number">3.1.5.</span> <span class="toc-text">Uniqueness of solutions to Poisson’s equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-function-for-Poisson’s-equation"><span class="toc-number">3.1.6.</span> <span class="toc-text">Green’s function for Poisson’s equation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-3D-for-Dirichlet"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">Fundamental solution in 3D for Dirichlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-2D"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">Fundamental solution in 2D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-of-images"><span class="toc-number">3.1.6.3.</span> <span class="toc-text">Method of images</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Planes"><span class="toc-number">3.1.6.3.1.</span> <span class="toc-text">Planes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sphere-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.2.</span> <span class="toc-text">Sphere (radius a) (Dirichlet)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Circle-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.3.</span> <span class="toc-text">Circle (radius a) (Dirichlet)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integral-solution-of-Poisson’s-equation"><span class="toc-number">3.1.7.</span> <span class="toc-text">Integral solution of Poisson’s equation</span></a></li></ol></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ODE"><span class="toc-number">2.</span> <span class="toc-text">ODE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homogeneous-2nd-order-equations"><span class="toc-number">2.1.</span> <span class="toc-text">Homogeneous 2nd order equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Independent-solutions"><span class="toc-number">2.1.1.</span> <span class="toc-text">Independent solutions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wroskian"><span class="toc-number">2.1.2.</span> <span class="toc-text">Wroskian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series-solutions"><span class="toc-number">2.1.3.</span> <span class="toc-text">Series solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#The-point-about-which-to-expand"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">The point about which to expand</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-an-ordinary-point"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">About an ordinary point</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#About-a-regular-singular-point"><span class="toc-number">2.1.3.3.</span> <span class="toc-text">About a regular singular point</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inhomogeneous-Problems-Green’s-function"><span class="toc-number">2.2.</span> <span class="toc-text">Inhomogeneous Problems: Green’s function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-Functions-idea"><span class="toc-number">2.2.1.</span> <span class="toc-text">Green’s Functions: idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aside-General-functions"><span class="toc-number">2.2.2.</span> <span class="toc-text">Aside: General functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heaviside-step-function"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">Heaviside step function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Top-hat-function"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Top hat function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dirac-Delta-function"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">Dirac-Delta function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D-E-s-containing-delta-function-matching-conditions"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">D.E.s containing \delta function - matching conditions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Procedure-of-solving-inhomogeneous-PDE-with-Green’s-Functions"><span class="toc-number">2.2.3.</span> <span class="toc-text">Procedure of solving inhomogeneous PDE with Green’s Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-C-of-initial-value-problems"><span class="toc-number">2.2.4.</span> <span class="toc-text">B.C. of initial value problems</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boundary-value-problem"><span class="toc-number">2.2.5.</span> <span class="toc-text">Boundary value problem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sturm-Liouville-theory"><span class="toc-number">2.3.</span> <span class="toc-text">Sturm-Liouville theory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inner-product-of-functions"><span class="toc-number">2.3.1.</span> <span class="toc-text">Inner product of functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-adjoint-and-SL-operator"><span class="toc-number">2.3.2.</span> <span class="toc-text">Self-adjoint and SL operator</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Into-SL-form"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">Into SL form</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eigenvalues-and-eigenfunctions"><span class="toc-number">2.3.3.</span> <span class="toc-text">Eigenvalues and eigenfunctions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Eigenfunction-expansion"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">Eigenfunction expansion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Completeness-relation"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">Completeness relation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solutions-of-DEs"><span class="toc-number">2.3.4.</span> <span class="toc-text">Solutions of DEs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Error-and-Paresval"><span class="toc-number">2.3.5.</span> <span class="toc-text">Error and Paresval</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDE"><span class="toc-number">3.</span> <span class="toc-text">PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Laplace-and-Poisson’s-equations"><span class="toc-number">3.1.</span> <span class="toc-text">Laplace and Poisson’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Physical-origins"><span class="toc-number">3.1.1.</span> <span class="toc-text">Physical origins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Separation-of-variables"><span class="toc-number">3.1.2.</span> <span class="toc-text">Separation of variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-Plane-polar"><span class="toc-number">3.1.3.</span> <span class="toc-text">Laplace in Plane polar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-in-spherical-polar-axisymmetric"><span class="toc-number">3.1.4.</span> <span class="toc-text">Laplace in spherical polar (axisymmetric)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniqueness-of-solutions-to-Poisson’s-equation"><span class="toc-number">3.1.5.</span> <span class="toc-text">Uniqueness of solutions to Poisson’s equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Green’s-function-for-Poisson’s-equation"><span class="toc-number">3.1.6.</span> <span class="toc-text">Green’s function for Poisson’s equation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-3D-for-Dirichlet"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">Fundamental solution in 3D for Dirichlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fundamental-solution-in-2D"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">Fundamental solution in 2D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-of-images"><span class="toc-number">3.1.6.3.</span> <span class="toc-text">Method of images</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Planes"><span class="toc-number">3.1.6.3.1.</span> <span class="toc-text">Planes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sphere-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.2.</span> <span class="toc-text">Sphere (radius a) (Dirichlet)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Circle-radius-a-Dirichlet"><span class="toc-number">3.1.6.3.3.</span> <span class="toc-text">Circle (radius a) (Dirichlet)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integral-solution-of-Poisson’s-equation"><span class="toc-number">3.1.7.</span> <span class="toc-text">Integral solution of Poisson’s equation</span></a></li></ol></li></ol></li></ol>
         
     </div>
     
@@ -882,9 +1011,20 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -897,6 +1037,11 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href="/2019/04/Functionals/">Functionals</a>
+        </li>
     
     
         <li class="archive-post-item">
