@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>黄油上瘾 ButterAddict</title>
+    <title>Fourier Transform · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Fourier Transform</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">黄油上瘾</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Fourier Transform
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">624</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,209 +401,148 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/Fourier-Transform/">
-            
-                <span>Fourier Transform</span>
-        </a>
-        <div class="abstract-content">
-            
-This is a only a summary of knowledge. 
-
-Fourier transformThere are many conventions as in where to put the normalisation 2\pi factor.
-
-Forward Fourier transform (Fourier analysis)
-
-
-\tilde{f}(k)=\int_{-\infty}^\infty f(x)e^{-ikx}\,dx
-Inverse Fourier transform (Fourier synthesis)
-
-
-f(x)=\frac{1}...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/Functionals/">
-            
-                <span>Functionals</span>
-        </a>
-        <div class="abstract-content">
-            FunctionalsJust like functions take variables as arguments, functionals take functions as arguments.
-In the following sections, the functional of the form
-
-G[y]=\int_\alpha^\beta f(y,y' ; x) \, dxis considered.
-Functional derivativesDefinition:
-
+            <main class="main post-page">
+    <article class="article-entry">
+        <blockquote>
+<p>This is a only a summary of knowledge. </p>
+</blockquote>
+<h1 id="Fourier-transform"><a href="#Fourier-transform" class="headerlink" title="Fourier transform"></a>Fourier transform</h1><p>There are many conventions as in where to put the normalisation <script type="math/tex">2\pi</script> factor.</p>
+<ul>
+<li>Forward Fourier transform (Fourier <strong>analysis</strong>)</li>
+</ul>
+<script type="math/tex; mode=display">
+\tilde{f}(k)=\int_{-\infty}^\infty f(x)e^{-ikx}\,dx</script><ul>
+<li>Inverse Fourier transform (Fourier <strong>synthesis</strong>)</li>
+</ul>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty \tilde{f}(k) e^{ikx}\,dx</script><p>Another common convention is to put <script type="math/tex">\frac{1}{\sqrt{2\pi}}</script> before both integrals (balanced convention).</p>
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h3><script type="math/tex; mode=display">
 \begin{align}
+h(x)=\alpha f(x)+\beta g(x) && \iff && \tilde{h}(k)=\alpha \tilde{f}(k)+\beta \tilde{g}(k)
 
-\delta G &= G[y+\delta y]-G[y]\\
-&=\...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
+\end{align}</script><h3 id="Rescaling-real-alpha"><a href="#Rescaling-real-alpha" class="headerlink" title="Rescaling (real $\alpha$)"></a>Rescaling (real $\alpha$)</h3><script type="math/tex; mode=display">
+\begin{align}
+g(x)=f(\alpha x) && \iff && \tilde{g}(k)=\frac{1}{|\alpha|} \tilde{f}(\frac{k}{\alpha})
+
+\end{align}</script><h3 id="Shift-exponential-real-alpha"><a href="#Shift-exponential-real-alpha" class="headerlink" title="Shift / exponential (real $\alpha$)"></a>Shift / exponential (real $\alpha$)</h3><script type="math/tex; mode=display">
+\begin{align}
+g(x)= f(x-\alpha) && \iff && \tilde{g}(k)=e^{-ik\alpha} \tilde{f}(k)\\
+
+g(x)= e^{ik\alpha}f(x) && \iff && \tilde{g}(k)= \tilde{f}(k-\alpha)
+\end{align}</script><h3 id="Differentiation-multiplication"><a href="#Differentiation-multiplication" class="headerlink" title="Differentiation / multiplication"></a>Differentiation / multiplication</h3><script type="math/tex; mode=display">
+\begin{align}
+g(x)= f'(x) && \iff && \tilde{g}(k)=ik \tilde{f}(k)\\
+
+g(x)= xf(x) && \iff && \tilde{g}(k)= i\tilde{f}'(k)
+\end{align}</script><h3 id="Duality"><a href="#Duality" class="headerlink" title="Duality"></a>Duality</h3><script type="math/tex; mode=display">
+\begin{align}
+g(x)= \tilde{f}(x) && \iff && \tilde{g}(k)=2\pi  f(-k)\\
+
+\end{align}</script><h3 id="Complex-conjugation-and-parity-inversion"><a href="#Complex-conjugation-and-parity-inversion" class="headerlink" title="Complex conjugation and parity inversion"></a>Complex conjugation and parity inversion</h3><script type="math/tex; mode=display">
+\begin{align}
+g(x)= [f(x)]^* && \iff && \tilde{g}(k)= [\tilde{f}(-k)]^*\\
+
+\end{align}</script><h3 id="Symmetry-even-amp-odd"><a href="#Symmetry-even-amp-odd" class="headerlink" title="Symmetry - even &amp; odd"></a>Symmetry - even &amp; odd</h3><script type="math/tex; mode=display">
+\begin{align}
+f(-x)= \pm f(x) && \iff && \tilde{f}(-k)=\pm \tilde{f}(k)\\
+
+\end{align}</script><h2 id="FT-of-special-functions"><a href="#FT-of-special-functions" class="headerlink" title="FT of special functions"></a>FT of special functions</h2><h3 id="Top-hat-function"><a href="#Top-hat-function" class="headerlink" title="Top-hat function"></a>Top-hat function</h3><p>FT is <script type="math/tex">\mathrm{sinc}</script>.</p>
+<p>e.g. <script type="math/tex">f(x)</script> is a top hat of strength 1, <script type="math/tex">(-1,1)</script>, then <script type="math/tex">\tilde{f}(k)=\frac{2\sin k}{k}</script>.</p>
+<h3 id="Gaussian"><a href="#Gaussian" class="headerlink" title="Gaussian"></a>Gaussian</h3><p>FT is another Gaussian, with inversely proportional width, <script type="math/tex">\sigma_x \sigma_k=1</script>.</p>
+<blockquote>
+<p>Done by completing the square of the exponent. Also need Jordan’s lemma.</p>
+</blockquote>
+<h3 id="Delta-function"><a href="#Delta-function" class="headerlink" title="Delta function"></a>Delta function</h3><p>Gives a definite position, hence should give no information about the momentum - a constant. Then we have the identity</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^\infty e^{\pm ikx} \, dx = 2\pi \delta(k)</script><h1 id="Convolution-theorem-amp-such"><a href="#Convolution-theorem-amp-such" class="headerlink" title="Convolution theorem &amp; such"></a>Convolution theorem &amp; such</h1><h2 id="What-is-convolution"><a href="#What-is-convolution" class="headerlink" title="What is convolution"></a>What is convolution</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>The convolution <script type="math/tex">h</script> of two function <script type="math/tex">f</script> and <script type="math/tex">g</script></p>
+<script type="math/tex; mode=display">
+\begin{align}
+h=f*g && \iff && h(x)=\int_{-\infty}^\infty f(y)g(x-y) \, dx
+
+\end{align}</script><p>This is a <em>symmetric</em> operation, i.e. <script type="math/tex">f*g=g*f​</script>.</p>
+<h3 id="Function-plot-intuition"><a href="#Function-plot-intuition" class="headerlink" title="Function / plot intuition"></a>Function / plot intuition</h3><p>Copy and (continuously) pasting <script type="math/tex">f</script> at <script type="math/tex">x</script> with the weight <script type="math/tex">g(x)</script>. </p>
+<p>The simplist illustration of this idea is if <script type="math/tex">g​</script> is a delta function, or a sum of several delta functions. This is the same as “lattice &amp; motif” idea.</p>
+<h3 id="Probability"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</h3><p>If <script type="math/tex">f(x)</script> and <script type="math/tex">g(y)</script> are two (independent) probability distribution functions, then <script type="math/tex">h(z)</script> is the PDF of <script type="math/tex">z=x+y</script>.</p>
+<h2 id="Convolution-theorem"><a href="#Convolution-theorem" class="headerlink" title="Convolution theorem"></a>Convolution theorem</h2><script type="math/tex; mode=display">
+\begin{align}
+h=f*g && \iff && \tilde{h}(k)=\tilde{g}(k)\tilde{f}(k)
+
+\end{align}</script><p>So, it is easiest to manipulate a convolution in the frequency space, as a product.</p>
+<ul>
+<li>Deconvolution is possible as a division in the frequency space.</li>
+</ul>
+<h2 id="Correlation"><a href="#Correlation" class="headerlink" title="Correlation"></a>Correlation</h2><p>The correlation of two functions is</p>
+<script type="math/tex; mode=display">
+\begin{align}
+h=f\otimes g && \iff && h(x)=\int_{-\infty}^\infty [f(y)]^*g(x+y) \, dx
+
+\end{align}</script><ul>
+<li>If two signals are in phase, the correlation is positive;</li>
+<li>Vice versa</li>
+<li>If two signals are completely unrelated (e.g. noises), then correlation is 0.</li>
+</ul>
+<h2 id="Parseval’s-theorem"><a href="#Parseval’s-theorem" class="headerlink" title="Parseval’s theorem"></a>Parseval’s theorem</h2><script type="math/tex; mode=display">
+\int_{-\infty}^\infty [f(x)]^*g(x) \, dx=\frac{1}{2\pi}\int_{-\infty}^\infty [\tilde{f}(k)]^*\tilde{g}(k) \, dk</script><p>or more commonly, when <script type="math/tex">f=g</script>,</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^\infty |f(x)|^2 \, dx=\frac{1}{2\pi}\int_{-\infty}^\infty |\tilde{f}(k)|^2 \, dk</script><blockquote>
+<p>Derive from: <em>either</em> the Fourier transform of a correlation; <em>or</em> change the order of integration and use the delta function identity.</p>
+</blockquote>
+<p>Fourier transform preserves the <strong>inner product</strong> of functions, hence it is a <strong>unitary transformation</strong>.</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/Differential-Equations/">
-            
-                <span>Differential Equations</span>
-        </a>
-        <div class="abstract-content">
-            Key concepts
-Linear operator
-Homogeneous: 
-equation: no forcing, or, a multiple of a solution y, \alpha y is also a solution.
-problem: in addition, \alpha y also satisfies B.C.
-
-
-Boundary conditions
-Dirichlet: the function value on the boundary is defined
-Neumann: the normal derivative value on t...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/04/Fourier-Transform/">https://www.butteraddict.fun/2019/04/Fourier-Transform/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/04/Fourier-Transform/">April 25th 2019, 9:00:34 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/04/Fourier-Transform/">April 25th 2019, 4:04:06 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/Matrix-Tensor/">
-            
-                <span>Matrix &amp; Tensor</span>
-        </a>
-        <div class="abstract-content">
-            MatricesVector spaceDefinition
-A set of elements on which vector addition and scalar multiplication are defined
-Closed under these operations
-Includes identity \mathbf{0}​ for vector addition
-
-Note:
-
-2D spaces \mathbb{R}^2 \neq \mathbb{C}, since \mathbb{C} has a single point of \infty.
-
-SpanThe s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/Contour-Integration/">
-            
-                <span>Contour Integration</span>
-        </a>
-        <div class="abstract-content">
-            Contour IntegrationIdea: A powerful method of doing integrals by using the properties of complex functions.
-Analytic functions
-To be differentiable at a point, a function must satisfy Cauchy-Riemann.
-
-
-\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \,\frac{\partial v}{\partial x} ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/Functionals/" title="Functionals">
+                    <div class="prevTitle">Functionals</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -613,6 +615,26 @@ To be differentiable at a point, a function must satisfy Cauchy-Riemann.
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Fourier-transform"><span class="toc-number">1.</span> <span class="toc-text">Fourier transform</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Properties"><span class="toc-number">1.1.</span> <span class="toc-text">Properties</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linearity"><span class="toc-number">1.1.1.</span> <span class="toc-text">Linearity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rescaling-real-alpha"><span class="toc-number">1.1.2.</span> <span class="toc-text">Rescaling (real $\alpha$)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift-exponential-real-alpha"><span class="toc-number">1.1.3.</span> <span class="toc-text">Shift / exponential (real $\alpha$)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Differentiation-multiplication"><span class="toc-number">1.1.4.</span> <span class="toc-text">Differentiation / multiplication</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Duality"><span class="toc-number">1.1.5.</span> <span class="toc-text">Duality</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complex-conjugation-and-parity-inversion"><span class="toc-number">1.1.6.</span> <span class="toc-text">Complex conjugation and parity inversion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetry-even-amp-odd"><span class="toc-number">1.1.7.</span> <span class="toc-text">Symmetry - even &amp; odd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FT-of-special-functions"><span class="toc-number">1.2.</span> <span class="toc-text">FT of special functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Top-hat-function"><span class="toc-number">1.2.1.</span> <span class="toc-text">Top-hat function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gaussian"><span class="toc-number">1.2.2.</span> <span class="toc-text">Gaussian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-function"><span class="toc-number">1.2.3.</span> <span class="toc-text">Delta function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Convolution-theorem-amp-such"><span class="toc-number">2.</span> <span class="toc-text">Convolution theorem &amp; such</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-convolution"><span class="toc-number">2.1.</span> <span class="toc-text">What is convolution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition"><span class="toc-number">2.1.1.</span> <span class="toc-text">Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-plot-intuition"><span class="toc-number">2.1.2.</span> <span class="toc-text">Function / plot intuition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probability"><span class="toc-number">2.1.3.</span> <span class="toc-text">Probability</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convolution-theorem"><span class="toc-number">2.2.</span> <span class="toc-text">Convolution theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Correlation"><span class="toc-number">2.3.</span> <span class="toc-text">Correlation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parseval’s-theorem"><span class="toc-number">2.4.</span> <span class="toc-text">Parseval’s theorem</span></a></li></ol></li></ol>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -857,6 +879,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
