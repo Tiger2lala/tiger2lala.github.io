@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Solids · 黄油上瘾 ButterAddict</title>
+    <title>Electrons and Solids · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">黄油上瘾</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Solids</a>
+                <a href="#" class="post-name">Electrons and Solids</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Solids
+            Electrons and Solids
             <!-- 404 -->
             
         </h1>
@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -413,7 +413,29 @@ E=-\frac{N_A \mathcal{A}z_{+}z_{\_}e^2}{4\pi\epsilon_0 a}+\frac{B}{a^n}.</script
 <p>Extremising this expression gives </p>
 <script type="math/tex; mode=display">
 U_0=-\frac{N_A \mathcal{A}z_{+}z_{\_}e^2}{4\pi\epsilon_0 a_0}(1-\frac{1}{n})</script><p>and generally approximates that <script type="math/tex">\Delta H_{latt}\approx-U_0</script>.</p>
-<h1 id="Free-electron-gas"><a href="#Free-electron-gas" class="headerlink" title="Free electron gas"></a>Free electron gas</h1><h2 id="Hamiltonian-and-B-C"><a href="#Hamiltonian-and-B-C" class="headerlink" title="Hamiltonian and B.C."></a>Hamiltonian and B.C.</h2><p>Free particle, so </p>
+<h1 id="Reciprocal-lattice"><a href="#Reciprocal-lattice" class="headerlink" title="Reciprocal lattice"></a>Reciprocal lattice</h1><p>It is the Fourier transform of the real lattice - a lattice in <script type="math/tex">k</script> space.</p>
+<h2 id="Construction"><a href="#Construction" class="headerlink" title="Construction"></a>Construction</h2><p>No need to do FT. For real lattice vectors <script type="math/tex">\mathbf{a}_i</script> and reciprocal lattice vectors <script type="math/tex">\mathbf{b}_i</script>, </p>
+<script type="math/tex; mode=display">
+\mathbf{a}_i\cdot\mathbf{b}_i=2\pi\delta_{ij}.\\</script><p>In 3D (usually in…),</p>
+<script type="math/tex; mode=display">
+\mathbf{b}_3=\frac{2\pi(\mathbf{a}_1\times\mathbf{a}_2)}{[\mathbf{a}_1,\mathbf{a}_2,\mathbf{a}_3]}</script><p>Maybe useful: volume of reciprocal unit cell <script type="math/tex">\Omega=(2\pi)^3/V_c</script>.</p>
+<h2 id="Brillouin-zones"><a href="#Brillouin-zones" class="headerlink" title="Brillouin zones"></a>Brillouin zones</h2><h3 id="Construction-1"><a href="#Construction-1" class="headerlink" title="Construction"></a>Construction</h3><ol>
+<li>Arbitrarily choose an origin in the reciprocal space</li>
+<li>Connect this point to all other lattice points with line segments</li>
+<li>Draw out the perpendicular bisectors of every line segment</li>
+<li>Walk from the origin, in straight lines, and every time you cross a besector line, the zone number +1.</li>
+</ol>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li>Each BZ has the same area / volume = <script type="math/tex">\Omega</script>.</li>
+<li>Since the origin is arbitrarily chosen, and the lattice has translation symmetry, any zone can be mapped onto the 1st zone. (<strong>folding</strong>)</li>
+</ol>
+<h1 id="Free-electron-gas"><a href="#Free-electron-gas" class="headerlink" title="Free electron gas"></a>Free electron gas</h1><h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><ol>
+<li>Consider only valence electrons</li>
+<li>Electrons are <em>free</em> to move within the lattice</li>
+<li>There is no potential due to nuclei, or electron-electron interactions</li>
+<li>Pauli principal applies</li>
+</ol>
+<h2 id="Hamiltonian-and-B-C"><a href="#Hamiltonian-and-B-C" class="headerlink" title="Hamiltonian and B.C."></a>Hamiltonian and B.C.</h2><p>Free particle, so </p>
 <script type="math/tex; mode=display">
 \hat{H}=-\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}.</script><p>The eigenfuntion and eigenvalue are</p>
 <script type="math/tex; mode=display">
@@ -440,7 +462,8 @@ D_{3D}=\frac{N_x N_y N_z V_\mathrm{cell}}{(2\pi)^3}=\frac{\mathcal{V}}{(2\pi)^3}
 <h3 id="Fermi-Dirac"><a href="#Fermi-Dirac" class="headerlink" title="Fermi-Dirac"></a>Fermi-Dirac</h3><p>Due to a restriction on ‘box size’ (i.e. Pauli in the case of electrons), each state is filled with max 2 electrons, and they are filled up to a level way way way higher than <script type="math/tex">kT</script> (at ambient temperatures).</p>
 <p>The distribution has the form</p>
 <script type="math/tex; mode=display">
-F(E)=\frac{1}{\exp((E-\mu)/kT)+1}</script><p>where <script type="math/tex">\mu</script> is the <em>chemical potential</em>, or <strong>Fermi level</strong>. To a good approximation, <script type="math/tex">\mu</script> can be replaced with <script type="math/tex">E_F</script>, the <strong>Fermi energy</strong>.</p>
+F(E)=\frac{1}{\exp((E-\mu)/kT)+1}</script><p>where <script type="math/tex">\mu</script> is the <em>chemical potential</em>, or <strong>Fermi level</strong>. To a good approximation, <script type="math/tex">\mu</script> can be replaced with <script type="math/tex">E_F​</script>, the <strong>Fermi energy</strong>.</p>
+<img src="/2019/05/Solids/Fermi_dirac_distr.svg" title="Fermi-Dirac distribution">
 <h3 id="Fermi-level-and-energy"><a href="#Fermi-level-and-energy" class="headerlink" title="Fermi level and energy"></a>Fermi level and energy</h3><p><strong>Fermi energy</strong> is straightforward - the highest level filled at absolute zero. No excess energy for any excitation, so the cut off is sharp and well-defined.</p>
 <p>At non-zero temperature, the cutoff is no longer sharp, and <strong>Fermi level</strong> is the level with exactly 50% probability of being filled. It is therefore temperature dependent.</p>
 <p>They are often used interchangeably.</p>
@@ -528,21 +551,44 @@ j&=\frac{\mathrm{charge}}{\mathrm{time}\times\mathrm{area}}\\
 \end{align}</script><p>We get <script type="math/tex">j=\sigma E\propto E</script>, so Ohm’s law is obeyed.</p>
 <p><strong>Conductivity</strong> can be read off as</p>
 <script type="math/tex; mode=display">
-\sigma=\frac{j}{E}=n_e e \mu.</script>
+\sigma=\frac{j}{E}=n_e e \mu.</script><h4 id="Interpretation"><a href="#Interpretation" class="headerlink" title="Interpretation"></a>Interpretation</h4><ul>
+<li>External field shifts the <strong>Fermi sphere</strong> opposite to its direction.</li>
+<li>Constant field gives a constant shift velocity.</li>
+<li>But collisions prevents it from shifting indefinitely.</li>
+<li>In reality, the shift turns out to be tiny compared to the size of Fermi sphere.</li>
+</ul>
+<p>Therefore, the resulting average of the electron momentum is no longer 0, but opposite to the field direction.</p>
+<p><u>Note</u>: Since the density of states is high, there are always free states available right next to the occupied states - hence the conduction in metal is <em>not an activated process</em>.</p>
+<h4 id="Scattering"><a href="#Scattering" class="headerlink" title="Scattering"></a>Scattering</h4><p>Scattered electrons need to go into a new <em>available</em> state. Both phonon and defect scattering can only produce a large change in <em>momentum</em> but <em>not energy</em>, which means changes direction, but not radius. Hence only possible to occur near Fermi sphere (otherwise there are no free states with similar radii).</p>
+<p>The states in the <em>front</em> is scattered more strongly (due to higher energy), hence on average, scattering tries to push the Fermi sphere back to the origin.</p>
+<h1 id="Nearly-free-electron-gas"><a href="#Nearly-free-electron-gas" class="headerlink" title="Nearly-free electron gas"></a>Nearly-free electron gas</h1><p>Now we take into account some <em>weak</em> interactions with the lattice - so only need to make some slight adjustments to the FEG model.</p>
+<img src="/2019/05/Solids/reduced%20zone.png" title="Reduced zone">
+
     </article>
+    
     <!-- license  -->
     
         <div class="license-wrapper">
+            <center>
+                <p>Like this? Please support me!</p>
+                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+                <p>or via <a href="/about/index.html">other methods.</a></p>
+            </center>
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/05/Solids/">https://www.butteraddict.fun/2019/05/Solids/</a>
-            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/05/Solids/">May 10th 2019, 3:53:00 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/05/Solids/">May 10th 2019, 10:55:07 am</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/05/Solids/">May 10th 2019, 10:53:00 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/05/Solids/">May 10th 2019, 10:50:56 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/07/La-Pause-de-Pierrette/" title="【学年最佳餐厅】La Pause de Pierrette">
+                    <div class="nextTitle">【学年最佳餐厅】La Pause de Pierrette</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -672,7 +718,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ionic-Model"><span class="toc-number">1.</span> <span class="toc-text">Ionic Model</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Free-electron-gas"><span class="toc-number">2.</span> <span class="toc-text">Free electron gas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hamiltonian-and-B-C"><span class="toc-number">2.1.</span> <span class="toc-text">Hamiltonian and B.C.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Density-of-states"><span class="toc-number">2.2.</span> <span class="toc-text">Density of states</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fermi-Dirac-distribution"><span class="toc-number">2.3.</span> <span class="toc-text">Fermi-Dirac distribution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-not-Boltzmann"><span class="toc-number">2.3.1.</span> <span class="toc-text">Why not Boltzmann</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-Dirac"><span class="toc-number">2.3.2.</span> <span class="toc-text">Fermi-Dirac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-level-and-energy"><span class="toc-number">2.3.3.</span> <span class="toc-text">Fermi level and energy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Limits"><span class="toc-number">2.3.4.</span> <span class="toc-text">Limits</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Density-of-states-in-terms-of-energy"><span class="toc-number">2.4.</span> <span class="toc-text">Density of states in terms of energy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-lot-of-other-quantities"><span class="toc-number">2.5.</span> <span class="toc-text">A lot of other quantities</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Heat-Capacity"><span class="toc-number">2.5.1.</span> <span class="toc-text">Heat Capacity</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-very-approximate-way"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">A very approximate way</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Physics-Way"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">Physics Way</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Formal-way"><span class="toc-number">2.5.1.3.</span> <span class="toc-text">Formal way</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bulk-Modulus"><span class="toc-number">2.5.2.</span> <span class="toc-text">Bulk Modulus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Electrical-conductivity"><span class="toc-number">2.5.3.</span> <span class="toc-text">Electrical conductivity</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Electron-motion"><span class="toc-number">2.5.3.1.</span> <span class="toc-text">Electron motion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Equation-of-motion"><span class="toc-number">2.5.3.2.</span> <span class="toc-text">Equation of motion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Current-density"><span class="toc-number">2.5.3.3.</span> <span class="toc-text">Current density</span></a></li></ol></li></ol></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ionic-Model"><span class="toc-number">1.</span> <span class="toc-text">Ionic Model</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reciprocal-lattice"><span class="toc-number">2.</span> <span class="toc-text">Reciprocal lattice</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Construction"><span class="toc-number">2.1.</span> <span class="toc-text">Construction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Brillouin-zones"><span class="toc-number">2.2.</span> <span class="toc-text">Brillouin zones</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Construction-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">Construction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Properties"><span class="toc-number">2.2.2.</span> <span class="toc-text">Properties</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Free-electron-gas"><span class="toc-number">3.</span> <span class="toc-text">Free electron gas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">3.1.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hamiltonian-and-B-C"><span class="toc-number">3.2.</span> <span class="toc-text">Hamiltonian and B.C.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Density-of-states"><span class="toc-number">3.3.</span> <span class="toc-text">Density of states</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fermi-Dirac-distribution"><span class="toc-number">3.4.</span> <span class="toc-text">Fermi-Dirac distribution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-not-Boltzmann"><span class="toc-number">3.4.1.</span> <span class="toc-text">Why not Boltzmann</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-Dirac"><span class="toc-number">3.4.2.</span> <span class="toc-text">Fermi-Dirac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-level-and-energy"><span class="toc-number">3.4.3.</span> <span class="toc-text">Fermi level and energy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Limits"><span class="toc-number">3.4.4.</span> <span class="toc-text">Limits</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Density-of-states-in-terms-of-energy"><span class="toc-number">3.5.</span> <span class="toc-text">Density of states in terms of energy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-lot-of-other-quantities"><span class="toc-number">3.6.</span> <span class="toc-text">A lot of other quantities</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Heat-Capacity"><span class="toc-number">3.6.1.</span> <span class="toc-text">Heat Capacity</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-very-approximate-way"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">A very approximate way</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Physics-Way"><span class="toc-number">3.6.1.2.</span> <span class="toc-text">Physics Way</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Formal-way"><span class="toc-number">3.6.1.3.</span> <span class="toc-text">Formal way</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bulk-Modulus"><span class="toc-number">3.6.2.</span> <span class="toc-text">Bulk Modulus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Electrical-conductivity"><span class="toc-number">3.6.3.</span> <span class="toc-text">Electrical conductivity</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Electron-motion"><span class="toc-number">3.6.3.1.</span> <span class="toc-text">Electron motion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Equation-of-motion"><span class="toc-number">3.6.3.2.</span> <span class="toc-text">Equation of motion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Current-density"><span class="toc-number">3.6.3.3.</span> <span class="toc-text">Current density</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Interpretation"><span class="toc-number">3.6.3.4.</span> <span class="toc-text">Interpretation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scattering"><span class="toc-number">3.6.3.5.</span> <span class="toc-text">Scattering</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nearly-free-electron-gas"><span class="toc-number">4.</span> <span class="toc-text">Nearly-free electron gas</span></a></li></ol>
         
     </div>
     
@@ -771,9 +817,28 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -789,7 +854,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Solids</a>
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/La-Pause-de-Pierrette/">【学年最佳餐厅】La Pause de Pierrette</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Electrons and Solids</a>
         </li>
     
     
@@ -804,12 +874,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/05</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
         </li>
     
     
@@ -824,7 +894,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
         </li>
     
     
@@ -838,7 +908,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
         </li>
     
     </ul></div>
@@ -846,13 +916,19 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+    
+        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -889,11 +965,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
     
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
     
