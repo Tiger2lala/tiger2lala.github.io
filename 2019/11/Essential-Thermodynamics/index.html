@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Matrix &amp; Tensor · 黄油上瘾 ButterAddict</title>
+    <title>Essential Thermodynamics · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">黄油上瘾</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Matrix & Tensor</a>
+                <a href="#" class="post-name">Essential Thermodynamics</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Matrix & Tensor
+            Essential Thermodynamics
             <!-- 404 -->
             
         </h1>
@@ -268,18 +268,18 @@ height:50vh;
     
         <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="数学">数学</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">695</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/03/30</span>
+                    <span class="post-intro-time">2019/11/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,277 +403,103 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h1><h2 id="Vector-space"><a href="#Vector-space" class="headerlink" title="Vector space"></a>Vector space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><ul>
-<li>A set of elements on which <strong>vector addition</strong> and <strong>scalar multiplication</strong> are defined</li>
-<li>Closed under these operations</li>
-<li>Includes identity <script type="math/tex">\mathbf{0}​</script> for vector addition</li>
-</ul>
-<p>Note:</p>
-<ul>
-<li>2D spaces <script type="math/tex">\mathbb{R}^2 \neq \mathbb{C}</script>, since <script type="math/tex">\mathbb{C}</script> has a single point of <script type="math/tex">\infty</script>.</li>
-</ul>
-<h3 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h3><p>The set of all vectors that are linear combinations of any vectors of a set <script type="math/tex">\mathbb{S}​</script>.</p>
-<h3 id="Linearly-independent"><a href="#Linearly-independent" class="headerlink" title="Linearly independent"></a>Linearly independent</h3><p>None of the vectors is a linear combination of others, or</p>
+        <p> Essential Thermodynamics - summary of Cambridge IA chemistry TD course.</p>
+<h1 id="Laws"><a href="#Laws" class="headerlink" title="Laws"></a>Laws</h1><ol>
+<li>First Law:</li>
+</ol>
 <script type="math/tex; mode=display">
-x_1\mathbf{e}_1+x_2\mathbf{e}_2+x_3\mathbf{e}_3+...=0 \iff x_1=x_2=x_3=...=0</script><h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><p>A set that spans <script type="math/tex">\mathbb{V}​</script> and are linearly independent.</p>
-<ul>
-<li>The number of elements is the dimension of <script type="math/tex">\mathbb{V}</script>.</li>
-<li>Any vector can be expressed as a linear combination of the basis set in a unique way.</li>
-<li>Can have infinite dimensions - e.g. Fourier series</li>
-</ul>
-<h3 id="Change-of-bases"><a href="#Change-of-bases" class="headerlink" title="Change of bases"></a>Change of bases</h3><blockquote>
-<p>Primed / unprimed opposite to lecture notes convention.</p>
-</blockquote>
-<ul>
-<li>Idea: the same vector has different components in different bases.</li>
-</ul>
+dU =\delta q+ \delta w \label{td1}\tag{1}</script><ol>
+<li><p>Second Law: <strong>entropy of the Universe increases in a spontaneous process.</strong></p>
+<p>Entropy is classically defined as </p>
+</li>
+</ol>
 <script type="math/tex; mode=display">
-\mathbf{e}_j'=\mathbf{e}_i\mathbf{R}_{ij}</script><p>where <script type="math/tex">\mathbf{R}_{ij}</script> is the <script type="math/tex">i</script>th component of <script type="math/tex">\mathbf{e}_j'</script> in the unprimed basis, i.e.</p>
+dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}</script><p>​        Boltzmann’s entropy relates to the number of microsystems:</p>
 <script type="math/tex; mode=display">
-\mathbf{R}_{ij}=
-\begin{pmatrix}
-\uparrow & \uparrow & \uparrow\\
-\mathbf{e_1'} & \mathbf{e_2'} &\mathbf{e_3'}\\
-\downarrow &\downarrow &\downarrow
-\end{pmatrix}</script><p>Check by reversing the argument</p>
+S=k_B \ln \Omega.</script><h1 id="Master-equations"><a href="#Master-equations" class="headerlink" title="Master equations"></a>Master equations</h1><h2 id="1-U-Internal-energy"><a href="#1-U-Internal-energy" class="headerlink" title="1. U: Internal energy"></a>1. U: Internal energy</h2><p>Consider reversible gas expansion, then <script type="math/tex">(\ref{td1})</script> becomes</p>
 <script type="math/tex; mode=display">
-\begin{pmatrix}
-\uparrow & \uparrow & \uparrow\\
-\mathbf{e_1'} & \mathbf{e_2'} &\mathbf{e_3'}\\
-\downarrow &\downarrow &\downarrow
-\end{pmatrix}
-\begin{pmatrix}
-\uparrow \\
-\mathbf{e'}\\
-\downarrow 
-\end{pmatrix}
-=\begin{pmatrix}
-\uparrow \\
-\mathbf{e'}\,\mathrm{in}\,\mathbf{e}\\
-\downarrow 
-\end{pmatrix}</script><p>Now, </p>
+dU=\delta q-p\,dV</script><p>If the heat is reversible,</p>
 <script type="math/tex; mode=display">
-\mathbf{x}=x_i\mathbf{e}_i=x_j'\mathbf{e}_j'=x_j'\mathbf{e}_i\mathbf{R}_{ij}\\
-\implies x_i=\mathbf{R}_{ij}x_j'</script><h4 id="Inverse"><a href="#Inverse" class="headerlink" title="Inverse"></a>Inverse</h4><p>Define the transformations</p>
-<script type="math/tex; mode=display">
-\mathbf{e}_j'=\mathbf{e}_i\mathbf{R}_{ij} \\
-\mathbf{e}_j=\mathbf{e}_i'\mathbf{S}_{ij}</script><p>Sub in,</p>
-<script type="math/tex; mode=display">
-\mathbf{e}_j=\mathbf{e}_k\mathbf{R}_{ki}\mathbf{S}_{ij}</script><p>True iff <script type="math/tex">\mathbf{R}_{ki}\mathbf{S}_{ij}=\delta_{kj}</script>, similarly, <script type="math/tex">\mathbf{S}_{ki}\mathbf{R}_{ij}=\delta_{kj}</script>. Hence, inverse transform is represented by inverse matrix.</p>
-<h4 id="Transforming-matrices"><a href="#Transforming-matrices" class="headerlink" title="Transforming matrices"></a>Transforming matrices</h4><script type="math/tex; mode=display">
+dU=T\,dS-p\,dV \label{ms1}</script><h2 id="2-H-Enthalpy"><a href="#2-H-Enthalpy" class="headerlink" title="2. H: Enthalpy"></a>2. H: Enthalpy</h2><script type="math/tex; mode=display">
 \begin{align}
-\mathbf{A}\mathbf{x}=\mathbf{e}_i\mathbf{A}_{ij}x_j&=\mathbf{e}_i'\mathbf{A'}_{ij}x_j'\\
-\mathbf{e}_i\mathbf{A}_{ij}x_j&=\mathbf{e}_k\mathbf{R}_{ki}\mathbf{A'}_{ij}x_j'\\
-\mathbf{A}\mathbf{x}&=\mathbf{R}\mathbf{A'}\mathbf{R}^{-1}\mathbf{x'}\\
-\mathbf{A}&=(\mathbf{R}\mathbf{A'})\mathbf{R}^{-1}\\
-\end{align}</script><h2 id="Linear-Operation"><a href="#Linear-Operation" class="headerlink" title="Linear Operation"></a>Linear Operation</h2><script type="math/tex; mode=display">
-\mathbf{A}(\alpha\mathbf{x}+\mathbf{y})=\alpha\mathbf{A}\mathbf{x}+\mathbf{A}\mathbf{y}</script><p>Without reference to any bases.</p>
-<h2 id="Inner-Product"><a href="#Inner-Product" class="headerlink" title="Inner Product"></a>Inner Product</h2><script type="math/tex; mode=display">
-<\!\!x|y\!\!>=x_i^*y_i</script><ul>
-<li>Linear in 2nd argument</li>
-<li>Anti-linear in 1st argument</li>
-<li>Hermitian: <script type="math/tex"><\!\!x|y\!\!>^*=<y|x>​</script></li>
-<li>Positive-definite: <script type="math/tex"><\!\!x|x\!\!>\geq0</script></li>
-</ul>
-<h3 id="Inner-Product-and-bases"><a href="#Inner-Product-and-bases" class="headerlink" title="Inner Product and bases"></a>Inner Product and bases</h3><script type="math/tex; mode=display">
-<\!\!x|y\!\!>=<\!\!x_i\mathbf{e}_i|y_j\mathbf{e}_j\!\!>=x_i^*y_j<\!\!\mathbf{e}_i|\mathbf{e}_j\!\!>=x_i^*y_j\mathbf{G}_{ij}</script><ul>
-<li>Metric coefficient: <script type="math/tex">\mathbf{G}_{ij}</script>, hermitian</li>
-</ul>
-<h3 id="Cauchy-Schwartz"><a href="#Cauchy-Schwartz" class="headerlink" title="Cauchy-Schwartz"></a>Cauchy-Schwartz</h3><script type="math/tex; mode=display">
-|<\!\!\mathbf{x}|\mathbf{y}\!\!>|\leq||\mathbf{x}||\,||\mathbf{y}||</script><blockquote>
-<p>Proof by considering <script type="math/tex"><\!\!\mathbf{x}-\alpha\mathbf{y}|\mathbf{x}-\alpha\mathbf{y}\!\!></script>, then choose appropriate phase of <script type="math/tex">\alpha</script>, so that <script type="math/tex">\alpha<\!\!\mathbf{x}|\mathbf{y}\!\!></script> is real and positive; appropriate length of <script type="math/tex">\alpha=\frac{|\mathbf{x}|}{|\mathbf{y}|}</script>.</p>
-</blockquote>
-<h2 id="Hermitian-Conjugate"><a href="#Hermitian-Conjugate" class="headerlink" title="Hermitian Conjugate"></a>Hermitian Conjugate</h2><script type="math/tex; mode=display">
-\mathbf{A}^\dagger=(\mathbf{A}^T)^*\\
-\mathbf{AB}^\dagger=\mathbf{B}^\dagger\mathbf{A}^\dagger</script><p>An operator is adjoint if <script type="math/tex"><\!\!\mathbf{A}^\dagger \mathbf{x}|\mathbf{y}\!\!>=<\!\!\mathbf{x}|\mathbf{A} \mathbf{y}\!\!></script>.</p>
-<h3 id="Special-square-matrices"><a href="#Special-square-matrices" class="headerlink" title="Special square matrices"></a>Special square matrices</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Relation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Real Symmetric</td>
-<td><script type="math/tex">A_{ij}=A_{ji}</script></td>
-</tr>
-<tr>
-<td>Real Antisymmetric</td>
-<td><script type="math/tex">A_{ij}=-A_{ji}</script></td>
-</tr>
-<tr>
-<td>Orthogonal</td>
-<td><script type="math/tex">\mathbf{A}^\mathrm{T}=\mathbf{A}^{-1}</script></td>
-</tr>
-<tr>
-<td>Hermitian</td>
-<td><script type="math/tex">\mathbf{A}^\dagger=\mathbf{A}</script></td>
-</tr>
-<tr>
-<td>Anti-hermitian</td>
-<td><script type="math/tex">\mathbf{A}^\dagger=-\mathbf{A}</script></td>
-</tr>
-<tr>
-<td>Unitary</td>
-<td><script type="math/tex">\mathbf{A}^\dagger=\mathbf{A}^{-1}</script></td>
-</tr>
-<tr>
-<td>Normal</td>
-<td><script type="math/tex">\mathbf{A}^\dagger\mathbf{A}=\mathbf{A}\mathbf{A}^\dagger</script></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="Special-results"><a href="#Special-results" class="headerlink" title="Special results"></a>Special results</h3><ol>
-<li>If A is Hermitian then iA is anti-Hermitian</li>
-<li>if A is Hermitian then exp(iA) is unitary</li>
-</ol>
-<blockquote>
-<p>c.f. real number</p>
-</blockquote>
-<h2 id="Eigenvectors"><a href="#Eigenvectors" class="headerlink" title="Eigenvectors"></a>Eigenvectors</h2><p>Two things to remember:</p>
+H&=U+pV \nonumber\\
+dH&=dU+p\,dV+V\,dp \nonumber\\
+&=T\,dS-p\,dV+p\,dV+V\,dp\nonumber\\
+&=T\,dS+V\,dp
+\end{align}</script><h2 id="3-G-Gibbs-energy"><a href="#3-G-Gibbs-energy" class="headerlink" title="3. G: Gibbs energy"></a>3. G: Gibbs energy</h2><script type="math/tex; mode=display">
+\begin{align}
+G&=H-TS \nonumber\\
+dG&=dH-T\,dS-S\,dT \nonumber \\
+&=T\,dS+V\,dp-T\,dS-S\,dT\nonumber\\
+&=V\,dp-S\,dT
+\end{align}</script><h2 id="A-Hemholtz-energy"><a href="#A-Hemholtz-energy" class="headerlink" title="A: Hemholtz energy"></a>A: Hemholtz energy</h2><script type="math/tex; mode=display">
+\begin{align}
+A&=U-TS \nonumber\\
+dA&=dU-T\,dS-S\,dT \nonumber\\
+&=-p\,dV-S\,dT
+\end{align}</script><h1 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h1><h2 id="Gas-expansion"><a href="#Gas-expansion" class="headerlink" title="Gas expansion"></a>Gas expansion</h2><p>Ideal gas law: <script type="math/tex">pV=nRT</script>.</p>
+<p>The work done is against the external pressure,</p>
 <script type="math/tex; mode=display">
-\mathbf{Ax}=\lambda\mathbf{x}\\
-\mathbf{AS}=\mathbf{S\Lambda}</script><ol>
-<li>Always find Eigenvalues first, by solving characteristic equation <script type="math/tex">\det{(\mathbf{A}-\lambda\mathbf{I})}=0</script>.</li>
-<li>Roots<ol>
-<li>n distinct roots - n linearly independent vectors</li>
-<li>m repeated roots - may be 1 to m vectors corresponding to it, and any linear combinations of those  are Eigenvectors.</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>Derivation of Eigenvalue, Eigenvector properties of special matrices.</p>
-</blockquote>
-<h3 id="Diagonalisation"><a href="#Diagonalisation" class="headerlink" title="Diagonalisation"></a>Diagonalisation</h3><p>Diagonalisation is also a similarity transformation, into the Eigenvector basis.</p>
+\delta w=-p_\mathrm{ext}\,dV.</script><p>Hence by integration, </p>
+<script type="math/tex; mode=display">
+\begin{align}
+w&=-p_\mathrm{ext}(V_f-V_i)&&\mathrm{constant\ external\ pressure}\\
+w&=-nRT\ln\frac{V_f}{V_i}&&\mathrm{isothermal,\ reversible}.
+\end{align}</script><ul>
+<li>The work done in a reversible process is maximum.</li>
+</ul>
+<p>If the process is reversible, than <script type="math/tex">q_\mathrm{rev}=-w</script>, so the entropy is </p>
+<script type="math/tex; mode=display">
+\Delta S=nR\ln\frac{V_f}{V_i}.</script><h2 id="Constant-Volume-process"><a href="#Constant-Volume-process" class="headerlink" title="Constant Volume process"></a>Constant Volume process</h2><p>Since <script type="math/tex">dV=0</script>, </p>
+<script type="math/tex; mode=display">
+dU = \delta q_\rm{const.\ V}.</script><p>Define constant volume heat capacity</p>
+<script type="math/tex; mode=display">
+C_V=\left ( \frac{\partial U}{\partial T}\right )_V.</script><h2 id="Constant-Pressure-process"><a href="#Constant-Pressure-process" class="headerlink" title="Constant Pressure process"></a>Constant Pressure process</h2><p>Substitute <script type="math/tex">dU</script> into <script type="math/tex">dH</script>,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+dH&=\delta q+Vdp\\
+dH&=\delta q_\rm{const\ p}
+\end{align}</script><p>Define the constant pressure heat capacity</p>
+<script type="math/tex; mode=display">
+C_p=\left ( \frac{\partial H}{\partial T}\right )_V. \label{H-cp} \tag{3}</script><p>Also at constant pressure, substitute into <script type="math/tex">(\ref{entropy})</script>,</p>
+<script type="math/tex; mode=display">
+\frac{dS}{dT}=\frac{C_p}{T}. \label{S-cp} \tag{4}</script><h3 id="Gibbs-energy"><a href="#Gibbs-energy" class="headerlink" title="Gibbs energy"></a>Gibbs energy</h3><p>At constant pressure, maximizing the entropy of the universe is equivalent to minimizing the Gibbs energy. At equilibrium, <script type="math/tex">dG=0</script>.</p>
+<h3 id="Gibbs-Helmholtz-equation"><a href="#Gibbs-Helmholtz-equation" class="headerlink" title="Gibbs-Helmholtz equation"></a>Gibbs-Helmholtz equation</h3><p>Consider the derivative</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{d}{dT}\left(\frac{G}{T}\right)&=\frac{1}{T}\frac{dG}{dT}-\frac{1}{T^2}G\\
+&=-\frac{1}{T}S-\frac{1}{T^2}(H-TS)\\
+&=-\frac{H}{T^2}.
+\end{align}</script><p>This is the Gibbs-Helmholtz equation.</p>
 <ul>
-<li>Only diagonalisable if the matrix has n independent eigenvectors.</li>
+<li>The analogue for the Helmholtz free energy is <script type="math/tex">\left(\frac{\partial (A/T)}{\partial T}\right)_V=-\frac{E}{T^2}</script>.</li>
 </ul>
-<p>Normal matrices can be diagonalised by unitary transformation. - Transformation between orthonormal bases is described by a unitary vector.</p>
-<ul>
-<li>Tr and Det are most easily studied in the diagonal form, invariant under similarity transformations.</li>
-</ul>
-<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><h3 id="Quadratic-form"><a href="#Quadratic-form" class="headerlink" title="Quadratic form"></a>Quadratic form</h3><p>Any homogeneous quadratic funtion is a quadratic form of a symmetric matrix.</p>
+<h1 id="Mixtures"><a href="#Mixtures" class="headerlink" title="Mixtures"></a>Mixtures</h1><h2 id="Ideal-Gas"><a href="#Ideal-Gas" class="headerlink" title="Ideal Gas"></a>Ideal Gas</h2><p>The Gibbs free energy of a component of ideal gas is</p>
 <script type="math/tex; mode=display">
-Q(\mathbf{x})=\mathbf{x}^T\mathbf{A}\mathbf{x}=A_{ij}x_i x_j</script><p>By diagonalisation, we can get a <script type="math/tex">Q(\mathbf{x}')</script> with no cross-terms.</p>
-<ul>
-<li>The eigenvectors of A defines the <strong>principal axes</strong> of the quadratic form.</li>
-<li><em>Positive (semi-)definite</em> means all eigenvalues are larger than (or equal to) 0.</li>
-</ul>
-<h4 id="Quadratic-surface"><a href="#Quadratic-surface" class="headerlink" title="Quadratic surface"></a>Quadratic surface</h4><script type="math/tex; mode=display">
-Q(\mathbf{x})=k</script><ul>
-<li>Ellipsoids - <script type="math/tex">\lambda​</script> same sign</li>
-<li><p>Hyperboloids - <script type="math/tex">\lambda</script> different signs</p>
-</li>
-<li><p><script type="math/tex">\lambda_1=\lambda_2=\lambda_3</script> - sphere</p>
-</li>
-<li><script type="math/tex">\lambda_1=\lambda_2</script> - revolution about z’ (axis of symmetry)</li>
-<li><script type="math/tex">\lambda_3=0</script> - conic section translated along z’</li>
-</ul>
-<h3 id="Hermitian-Form"><a href="#Hermitian-Form" class="headerlink" title="Hermitian Form"></a>Hermitian Form</h3><p>Similar idea for complex vector space.</p>
+G_{m,i}=G_{m,i}^\circ + RT\ln\frac{p_i}{p^\circ}.</script><h2 id="Chemical-potential"><a href="#Chemical-potential" class="headerlink" title="Chemical potential"></a>Chemical potential</h2><p>The Gibbs energy of a system can be written in terms of chemical potentials of components by</p>
 <script type="math/tex; mode=display">
-H(\mathbf{x})=\mathbf{x}^\dagger\mathbf{H}\mathbf{x}=\sum\lambda_i|x_i'|^2</script><h2 id="Stationary-property"><a href="#Stationary-property" class="headerlink" title="Stationary property"></a>Stationary property</h2><p>Define Rayleigh quotient</p>
+G=n_A\mu_A+n_B\mu_B+n_C\mu_C+...</script><p>Then, </p>
 <script type="math/tex; mode=display">
-\lambda(\mathbf{x})=\frac{\mathbf{x}^\dagger\mathbf{A}\mathbf{x}}{\mathbf{x}^\dagger\mathbf{x}}</script><ul>
-<li><script type="math/tex">\lambda</script> is a scalar</li>
-<li><script type="math/tex; mode=display">\lambda(\alpha\mathbf{x})=\lambda(\mathbf{x})</script></li>
-<li>When <script type="math/tex">\mathbf{x}</script> is eigenvector, <script type="math/tex">\lambda</script> is eigenvalue.</li>
-</ul>
-<h3 id="Rayleigh-Ritz"><a href="#Rayleigh-Ritz" class="headerlink" title="Rayleigh-Ritz"></a>Rayleigh-Ritz</h3><p>Eigenvalues of a matrix is the stationery values of the Rayleigh quotient.</p>
-<blockquote>
-<p>Proof by considering <script type="math/tex">\lambda(\mathbf{x}+\delta \mathbf{x})-\lambda(\mathbf{x})</script>.</p>
-</blockquote>
-<h1 id="Cartesian-Tensor"><a href="#Cartesian-Tensor" class="headerlink" title="Cartesian Tensor"></a>Cartesian Tensor</h1><p>Use the transformation matrix <script type="math/tex">L</script>:</p>
+\mu_i(c_i)=\mu_i^\circ+RT\ln\frac{c_i}{c^\circ}</script><p>in an ideal solution.</p>
+<p>The <strong>standard</strong> concentration is <script type="math/tex">\pu{1 mol dm-3}</script>, and the <strong>standard pressure</strong> is <script type="math/tex">\pu{1 bar}</script>.</p>
+<h1 id="Chemical-changes"><a href="#Chemical-changes" class="headerlink" title="Chemical changes"></a>Chemical changes</h1><p>During an reaction,</p>
 <script type="math/tex; mode=display">
-L_{ij}=\mathbf{e}_i'\cdot\mathbf{e}_j\\
-\mathbf{L}=
-\begin{pmatrix}
-\leftarrow & \mathbf{e_1'} & \rightarrow\\
-\leftarrow & \mathbf{e_2'} &\rightarrow\\
-\leftarrow &\mathbf{e_3'} &\rightarrow
-\end{pmatrix}
-=\begin{pmatrix}
-\uparrow & \uparrow & \uparrow\\
-... & \mathbf{e_i}\,\mathrm{in}\,\mathbf{e_i}' &...\\
-\downarrow &\downarrow &\downarrow
-\end{pmatrix}
-\\</script><p>So the transformation law for a vector is (only this form makes sense for me…)</p>
+\Delta_r G=-\nu_A\mu_A-\nu_B\mu_B+\nu_C\mu_C+\nu_D\mu_D</script><p>At equilibrium,</p>
 <script type="math/tex; mode=display">
-v_i'=L_{ij}v_j=
-\begin{pmatrix}
-\uparrow & \uparrow & \uparrow\\
-... & \mathbf{e_i}\,\mathrm{in}\,\mathbf{e_i}' &...\\
-\downarrow &\downarrow &\downarrow
-\end{pmatrix}
-\begin{pmatrix}
-\uparrow\\ \mathbf{v}\\\downarrow
-\end{pmatrix}</script><h2 id="Definition-in-terms-of-transformation-laws"><a href="#Definition-in-terms-of-transformation-laws" class="headerlink" title="Definition in terms of transformation laws"></a>Definition in terms of transformation laws</h2><p><strong>Vector</strong>: a set of coefficents <script type="math/tex">v_i​</script>, defined wrt orthonormal basis <script type="math/tex">\mathbf{e}_i​</script>, such that <script type="math/tex">v_i'​</script> wrt another basis <script type="math/tex">\mathbf{e}_i'​</script> are given by <script type="math/tex">v_i'=L_{ij}v_j​</script>.</p>
-<p><strong>Axial vectors</strong>: <script type="math/tex">v_i'=\det(\mathbf{L})L_{ij}v_j</script></p>
-<p><strong>Tensors</strong>: <script type="math/tex">T_{ijk...}'=L_{ia}L_{jb}L_{kc}...T_{abc...}​</script></p>
-<p><strong>Pseudo-tensor</strong>: <script type="math/tex">T_{ijk...}'=\det(\mathbf{L})L_{ia}L_{jb}L_{kc}...T_{abc...}​</script></p>
-<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Everything is checked by the transformation law above.</p>
-<ul>
-<li>Delta is a 2nd order tensor</li>
-<li>Epsilon is a 3rd order pseudo tensor</li>
-<li>Inertia tensor: <script type="math/tex">I_{ij}=\int_V\rho(\mathbf{x})(x_kx_k\delta_{ij}-x_ix_i)\,dV</script></li>
-</ul>
-<blockquote>
-<p>Derive from the angular momentum definition.</p>
-</blockquote>
-<h2 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h2><ol>
-<li>Addition</li>
-<li>Outer product</li>
-<li>Inner product (contraction)</li>
-</ol>
-<p>Note: Cross-product is defined using the epsilon symbol, so any cross product is a pseudo-tensor.</p>
-<ol>
-<li>Symmetric and antisymmetric properties are invariant.<ul>
-<li>Contraction of symmetric &amp; antisymmetric indices <script type="math/tex">S_{ijk...}A_{ijr...} = 0</script>.</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>Proof by using symmetry properties once and relabel once.</p>
-</blockquote>
-<h2 id="Second-order-tensors"><a href="#Second-order-tensors" class="headerlink" title="Second-order tensors"></a>Second-order tensors</h2><p>Two new things</p>
-<h3 id="Antisymmetric-3D"><a href="#Antisymmetric-3D" class="headerlink" title="Antisymmetric (3D)"></a>Antisymmetric (3D)</h3><p>Only three degrees of freedom, hence can be represented by a vector.</p>
+\Delta_rG=0\\
+\implies -\nu_A\mu_A-\nu_B\mu_B+\nu_C\mu_C+\nu_D\mu_D=0.</script><h2 id="Equilibrium-constant"><a href="#Equilibrium-constant" class="headerlink" title="Equilibrium constant"></a>Equilibrium constant</h2><script type="math/tex; mode=display">
+\Delta_r G^\circ=-RT\ln K</script><p>Put into G-H equation to get <em>van’t Hoff isochore</em></p>
 <script type="math/tex; mode=display">
-A_{ij}=\epsilon_{ijk}\omega_k</script><p>The vector <script type="math/tex">\omega</script> is a <strong>dual vector</strong>, defined by</p>
+\frac{d \ln K}{d T}=\frac{\Delta_r H^\circ}{RT^2}</script><h2 id="Temperature-dependence"><a href="#Temperature-dependence" class="headerlink" title="Temperature dependence"></a>Temperature dependence</h2><p>Define the <em>reaction heat capacity change</em> to be</p>
 <script type="math/tex; mode=display">
-\omega_k=\frac{1}{2}\epsilon_{klm}A_{lm}</script><h3 id="Symmetric-3D"><a href="#Symmetric-3D" class="headerlink" title="Symmetric (3D)"></a>Symmetric (3D)</h3><p>Can be further decomposed, uniquely, into a traceless symmetric matrix and identity.</p>
+\Delta_r C_p^\circ=-\nu_AC_{p,A}^\circ-\nu_BC_{p,B}^\circ+\nu_CC_{p,C}^\circ+\nu_DC_{p,D}^\circ,</script><p>then the variation of enthalpy and entropy of reaction with temperature can be worked out (from <script type="math/tex">(\ref{H-cp}</script>) and <script type="math/tex">(\ref{S-cp})</script>).</p>
 <script type="math/tex; mode=display">
-S=\tilde{S}+\frac{\mathrm{Tr}(S)}{3}I</script><h2 id="Isotropic-tensors"><a href="#Isotropic-tensors" class="headerlink" title="Isotropic tensors"></a>Isotropic tensors</h2><p>Tensors or pseudo-tensors with the same components in all frames.</p>
-<ul>
-<li>Scalars are isotropic</li>
-<li>No non-zero rank 1 isotropic tensor</li>
-<li>Rank 2 isotropic tensors are <script type="math/tex">\lambda\delta_{ij}</script></li>
-</ul>
-<blockquote>
-<p>Proof by (wlog) considering a rotation <script type="math/tex">\pi/2</script> by z-axis and by y-axis.</p>
-</blockquote>
-<ul>
-<li>Rank 3 isotropic tensors are <script type="math/tex">\lambda\epsilon_{ijk}</script></li>
-<li>Rank 4 isotropic tensors are <script type="math/tex">\lambda\delta_{ij}\delta_{kl}+\mu\delta_{ik}\delta_{jl}+\nu\delta_{il}\delta_{jk}</script></li>
-</ul>
-<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><ol>
-<li>Since invariant, we can pick the most convenient frame (e.g eigenvector frame).</li>
-<li>Integrals</li>
-</ol>
-<h4 id="Integral-1"><a href="#Integral-1" class="headerlink" title="Integral 1"></a>Integral 1</h4><script type="math/tex; mode=display">
-X_i=\int_{r\leq a}x_i\rho(r)\,dV</script><p>Relabel the integration variables as primed. Transform <script type="math/tex">x_i'=R_{ij}x_j</script> we find <script type="math/tex">X_i=X_i'</script>. But only isotropic rank 1 tensor is <script type="math/tex">\mathbf{0}</script>.</p>
-<h4 id="Integral-2"><a href="#Integral-2" class="headerlink" title="Integral 2"></a>Integral 2</h4><script type="math/tex; mode=display">
-K_{ij}=\int_{r\leq a}x_ix_j\rho(r)\,dV</script><p>This is also isotropic, so <script type="math/tex">K_{ij}=\lambda\delta_{ij}</script>.</p>
+\Delta_rH^\circ(T_2)=\Delta_rH^\circ(T_1)+(T_2-T_1)\Delta_r C_p^\circ\\
+\Delta_rS^\circ(T_2)=\Delta_rS^\circ(T_1)+\ln\frac{T_2}{T_1}\Delta_r C_p^\circ.</script><h2 id="Electrochemistry"><a href="#Electrochemistry" class="headerlink" title="Electrochemistry"></a>Electrochemistry</h2><p>From <script type="math/tex">\Delta G = nFE</script>, </p>
 <script type="math/tex; mode=display">
-K_{ij}=\frac{1}{3}(\int_{r\leq a}r^2\rho(r)\,dV)\delta_{ij}</script><p>Only need to do 1 integral.</p>
-<h2 id="Tensor-fields"><a href="#Tensor-fields" class="headerlink" title="Tensor fields"></a>Tensor fields</h2><ul>
-<li><script type="math/tex">\nabla</script>, with components <script type="math/tex">\partial_i</script>, is a vector in Cartesian <strong>only</strong>.</li>
-</ul>
-<p>One idea (maybe) new</p>
-<ul>
-<li>The derivative of a second-order tensor <script type="math/tex">\sigma_{ij}</script> is a rank 3 tensor field <script type="math/tex">\partial_i\sigma_{jk}</script>.</li>
-</ul>
+\Delta S = nF\left(\frac{\partial E}{\partial T}\right)_P.</script><p>And then, everything can be dealt with throught <em>Nernst equation</em>.</p>
+<script type="math/tex; mode=display">
+E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}</script><p>where the <script type="math/tex">a_i</script> represents the activities. In ideal solutions, these terms are represented by the concentrations <script type="math/tex">c_i</script>.</p>
 
     </article>
     
@@ -686,9 +512,9 @@ K_{ij}=\frac{1}{3}(\int_{r\leq a}r^2\rho(r)\,dV)\delta_{ij}</script><p>Only need
                 <p>or via <a href="/about/index.html">other methods.</a></p>
             </center>
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
-            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">https://www.butteraddict.fun/2019/03/Matrix-Tensor/</a>
-            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">March 30th 2019, 8:19:51 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/03/Matrix-Tensor/">April 25th 2019, 4:02:19 pm</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">November 30th 2019, 9:32:11 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">November 30th 2019, 5:35:28 pm</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -696,17 +522,12 @@ K_{ij}=\frac{1}{3}(\int_{r\leq a}r^2\rho(r)\,dV)\delta_{ij}</script><p>Only need
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/Differential-Equations/" title="Differential Equations">
-                    <div class="nextTitle">Differential Equations</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/03/Contour-Integration/" title="Contour Integration">
-                    <div class="prevTitle">Contour Integration</div>
+                <a href="/2019/07/La-Pause-de-Pierrette/" title="【学年最佳餐厅】La Pause de Pierrette">
+                    <div class="prevTitle">【学年最佳餐厅】La Pause de Pierrette</div>
                 </a>
             
         </li>
@@ -829,7 +650,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matrices"><span class="toc-number">1.</span> <span class="toc-text">Matrices</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vector-space"><span class="toc-number">1.1.</span> <span class="toc-text">Vector space</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition"><span class="toc-number">1.1.1.</span> <span class="toc-text">Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Span"><span class="toc-number">1.1.2.</span> <span class="toc-text">Span</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linearly-independent"><span class="toc-number">1.1.3.</span> <span class="toc-text">Linearly independent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basis"><span class="toc-number">1.2.</span> <span class="toc-text">Basis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-of-bases"><span class="toc-number">1.2.1.</span> <span class="toc-text">Change of bases</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Inverse"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Inverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transforming-matrices"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Transforming matrices</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Operation"><span class="toc-number">1.3.</span> <span class="toc-text">Linear Operation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inner-Product"><span class="toc-number">1.4.</span> <span class="toc-text">Inner Product</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inner-Product-and-bases"><span class="toc-number">1.4.1.</span> <span class="toc-text">Inner Product and bases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cauchy-Schwartz"><span class="toc-number">1.4.2.</span> <span class="toc-text">Cauchy-Schwartz</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hermitian-Conjugate"><span class="toc-number">1.5.</span> <span class="toc-text">Hermitian Conjugate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-square-matrices"><span class="toc-number">1.5.1.</span> <span class="toc-text">Special square matrices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-results"><span class="toc-number">1.5.2.</span> <span class="toc-text">Special results</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eigenvectors"><span class="toc-number">1.6.</span> <span class="toc-text">Eigenvectors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Diagonalisation"><span class="toc-number">1.6.1.</span> <span class="toc-text">Diagonalisation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forms"><span class="toc-number">1.7.</span> <span class="toc-text">Forms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quadratic-form"><span class="toc-number">1.7.1.</span> <span class="toc-text">Quadratic form</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Quadratic-surface"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">Quadratic surface</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hermitian-Form"><span class="toc-number">1.7.2.</span> <span class="toc-text">Hermitian Form</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stationary-property"><span class="toc-number">1.8.</span> <span class="toc-text">Stationary property</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rayleigh-Ritz"><span class="toc-number">1.8.1.</span> <span class="toc-text">Rayleigh-Ritz</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cartesian-Tensor"><span class="toc-number">2.</span> <span class="toc-text">Cartesian Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definition-in-terms-of-transformation-laws"><span class="toc-number">2.1.</span> <span class="toc-text">Definition in terms of transformation laws</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-number">2.2.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Operations"><span class="toc-number">2.3.</span> <span class="toc-text">Operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Second-order-tensors"><span class="toc-number">2.4.</span> <span class="toc-text">Second-order tensors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Antisymmetric-3D"><span class="toc-number">2.4.1.</span> <span class="toc-text">Antisymmetric (3D)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-3D"><span class="toc-number">2.4.2.</span> <span class="toc-text">Symmetric (3D)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Isotropic-tensors"><span class="toc-number">2.5.</span> <span class="toc-text">Isotropic tensors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications"><span class="toc-number">2.5.1.</span> <span class="toc-text">Applications</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Integral-1"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">Integral 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integral-2"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">Integral 2</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensor-fields"><span class="toc-number">2.6.</span> <span class="toc-text">Tensor fields</span></a></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Laws"><span class="toc-number">1.</span> <span class="toc-text">Laws</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Master-equations"><span class="toc-number">2.</span> <span class="toc-text">Master equations</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-U-Internal-energy"><span class="toc-number">2.1.</span> <span class="toc-text">1. U: Internal energy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-H-Enthalpy"><span class="toc-number">2.2.</span> <span class="toc-text">2. H: Enthalpy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-G-Gibbs-energy"><span class="toc-number">2.3.</span> <span class="toc-text">3. G: Gibbs energy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Hemholtz-energy"><span class="toc-number">2.4.</span> <span class="toc-text">A: Hemholtz energy</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Processes"><span class="toc-number">3.</span> <span class="toc-text">Processes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-expansion"><span class="toc-number">3.1.</span> <span class="toc-text">Gas expansion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Constant-Volume-process"><span class="toc-number">3.2.</span> <span class="toc-text">Constant Volume process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Constant-Pressure-process"><span class="toc-number">3.3.</span> <span class="toc-text">Constant Pressure process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gibbs-energy"><span class="toc-number">3.3.1.</span> <span class="toc-text">Gibbs energy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gibbs-Helmholtz-equation"><span class="toc-number">3.3.2.</span> <span class="toc-text">Gibbs-Helmholtz equation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mixtures"><span class="toc-number">4.</span> <span class="toc-text">Mixtures</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ideal-Gas"><span class="toc-number">4.1.</span> <span class="toc-text">Ideal Gas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chemical-potential"><span class="toc-number">4.2.</span> <span class="toc-text">Chemical potential</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chemical-changes"><span class="toc-number">5.</span> <span class="toc-text">Chemical changes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Equilibrium-constant"><span class="toc-number">5.1.</span> <span class="toc-text">Equilibrium constant</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Temperature-dependence"><span class="toc-number">5.2.</span> <span class="toc-text">Temperature dependence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Electrochemistry"><span class="toc-number">5.3.</span> <span class="toc-text">Electrochemistry</span></a></li></ol></li></ol>
         
     </div>
     
