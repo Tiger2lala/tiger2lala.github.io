@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="2LalA猪">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="2LalA猪">
+    
+    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>High Resolution Spectroscopy · 黄油上瘾 ButterAddict</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/baicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">High Resolution Spectroscopy</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">黄油上瘾</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            High Resolution Spectroscopy
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.9k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/01/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Updated to vibrational spectroscopies.</p>
+<h1 id="Interaction-of-molecules-with-radiation"><a href="#Interaction-of-molecules-with-radiation" class="headerlink" title="Interaction of molecules with radiation"></a>Interaction of molecules with radiation</h1><center>
+<svg width="200" height="70">
+   <defs>
+      <marker id="arrow" markerwidth="5" markerheight="4" refx="0" refy="2" orient="auto" markerunits="strokeWidth">
+      <path d="M0,0 L0,4 L5,2 z" fill="black"/>
+      </marker>
+   </defs>
+   <circle cx="50" cy="5" r="2" stroke="black" stroke-width="4"/>
+   <line x1="0" y1="5" x2="100" y2="5" style="stroke:rgb(0,0,0);stroke-width:2"/>
+   <line x1="0" y1="55" x2="100" y2="55" style="stroke:rgb(0,0,0);stroke-width:2"/>
+   <line x1="50" y1="10" x2="50" y2="45" style="stroke:rgb(0,0,0);stroke-width:1" marker-end="url(#arrow)"/>
+   <text x="105" y="10">
+       <tspan font-style="italic">n</tspan>
+    <tspan font-style="italic" baseline-shift="sub" font-size=".7em">i</tspan>
+   </text>
+   <text x="105" y="60">
+       <tspan font-style="italic">n</tspan>
+    <tspan font-style="italic" baseline-shift="sub" font-size=".7em">j</tspan>
+   </text>
+   Sorry, your browser does not support inline SVG.
+</svg> 
+</center>
+
+<h2 id="Three-types-of-interactions"><a href="#Three-types-of-interactions" class="headerlink" title="Three types of interactions"></a>Three types of interactions</h2><ol>
+<li>Absorption</li>
+<li>Stimulated emission</li>
+<li>Spontaneous emission</li>
+</ol>
+<p>Depending on situations, the <em>rate</em> of one process may dominate.</p>
+<h2 id="Einstein’s-coefficients"><a href="#Einstein’s-coefficients" class="headerlink" title="Einstein’s coefficients"></a>Einstein’s coefficients</h2><p>The coefficients describing the rate of the above processes.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{d\,n_i}{d\,t}&=-B_{ij}\rho(\nu)n_i &&\mathrm{abs.}\\
+\frac{d\,n_j}{d\,t}&=-B_{ji}\rho(\nu)n_j &&\mathrm{st.em.}\\
+\frac{d\,n_j}{d\,t}&=-A_{ji}n_j &&\mathrm{sp.em.}
+\end{align}</script><ul>
+<li>The term <script type="math/tex">\rho(\nu)</script> is the energy density of the radiation, a function of frequency.</li>
+<li>Note that: <ul>
+<li>The <script type="math/tex">B</script> coefficient is like a 2nd order rate constant;</li>
+<li>The <script type="math/tex">A</script> coefficient is like a 1st order rate constant.</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+B_{ij}=\frac{8\pi^3}{4\pi\epsilon_0(3h)}R_{ij}^2\\
+R_{ij}=\int\psi^*_j\hat{\mu}\psi_i\, d\tau</script><p>where the <script type="math/tex">R</script> term is the <strong>transition dipole moment</strong>.</p>
+<h3 id="A-and-B-coefficients-are-related"><a href="#A-and-B-coefficients-are-related" class="headerlink" title="A and B coefficients are related"></a>A and B coefficients are related</h3><p>At equilibrium, </p>
+<script type="math/tex; mode=display">
+\frac{d\,n_i}{d\,t}=-B_{ij}\rho(\nu)n_i+B_{ji}\rho(\nu)n_j+A_{ji}n_j=0.</script><p>Assuming:</p>
+<ol>
+<li>Black body radiation - density given by <strong>Planck law</strong>. <script type="math/tex">\rho(\nu)\,d\nu=\frac{8\pi h\nu^3}{c^3(\exp(h\nu/kT)-1)\, d\nu}</script>.</li>
+<li>Non-degenerate Boltzmann distribution of population. <script type="math/tex">n_i=\frac{N}{q}\exp(\frac{-\epsilon_i}{kT})</script>.</li>
+</ol>
+<p>Then, rearranging gives</p>
+<script type="math/tex; mode=display">
+A_{ji}=\frac{8\pi h\nu^3}{c^3}B_{ji}.</script><p><em>Note</em>: The rate of <em>spontaneous</em> emissions increases drastically with frequency, i.e. energy gap. This is as expected.</p>
+<ul>
+<li>Microwave: sp.em. often very slow, not important.</li>
+<li>UV/VIS: sp.em. often dominant - so we usually record <em>absorption</em> spectra.</li>
+</ul>
+<h2 id="Line-width"><a href="#Line-width" class="headerlink" title="Line width"></a>Line width</h2><p>The line width is most commonly described by <strong>width at half maximum</strong>, <script type="math/tex">\Delta \nu</script>.</p>
+<ul>
+<li>Sometimes, the line width is limited by the instrument.</li>
+<li>Otherwise, the width could be the <em>fundamental property</em> of the sample or the experimental method.</li>
+</ul>
+<p><strong>Broadening</strong> is usually due to the fact that the molecules spend a <em>finite</em> amount of time in any particular energy level. The uncertainty relationship is </p>
+<script type="math/tex; mode=display">
+\tau \Delta E\approx \hbar.</script><p>Put into frequency units, </p>
+<script type="math/tex; mode=display">
+\Delta \nu=\frac{1}{2\pi\tau}.</script><h3 id="Natural-broadening"><a href="#Natural-broadening" class="headerlink" title="Natural broadening"></a>Natural broadening</h3><p>This is due to spontaneous emission.</p>
+<p>The spectroscopy <strong>lifetime</strong> is taken as <script type="math/tex">\tau_e = 1/A_{ij}</script>, so the line width is </p>
+<script type="math/tex; mode=display">
+\Delta\nu=A_{ij}/2\pi.</script><ul>
+<li>Excited electronic states ~<script type="math/tex">\pu{10ns} \implies\pu{5e-4cm-1}(\pu{16MHz})</script>.</li>
+<li>Rotational states ~<script type="math/tex">\pu{1e-4Hz}</script>.</li>
+</ul>
+<h3 id="Pressure-collision-broadening"><a href="#Pressure-collision-broadening" class="headerlink" title="Pressure (collision) broadening"></a>Pressure (collision) broadening</h3><p>The mean time between collisions can be estimated by <em>gas kinetic</em> therory.</p>
+<p>It can be worked out that </p>
+<script type="math/tex; mode=display">
+\Delta \nu \propto p.</script><ul>
+<li>Dominant contribution in microwave</li>
+<li>Important contribution in IR.</li>
+</ul>
+<h3 id="Doppler-broadening"><a href="#Doppler-broadening" class="headerlink" title="Doppler broadening"></a>Doppler broadening</h3><p>(This is not related to lifetime.)</p>
+<p>Molecules travel in random orientations, so the speed of different molecules is different relative to the lightbeam.</p>
+<script type="math/tex; mode=display">
+\frac{\Delta\nu}{\nu}=\frac{1}{c} \left( \frac{2kT\ln2}{m} \right)^\frac{1}{2}.</script><p>Doppler broadening is </p>
+<ul>
+<li>proportional to <em>frequency</em> - tend to be dominant for VIS.<ul>
+<li>IR <script type="math/tex">\sim \pu{0.001cm-1}</script>;</li>
+<li>VIS <script type="math/tex">\sim \pu{0.05cm-1}</script>.</li>
+</ul>
+</li>
+<li>proportional to sqrt of <em>temperature</em>.</li>
+</ul>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Taking all these into consideration, to achieve the best resolution, the supersonic jet <strong>molecular beam</strong> can be used.</p>
+<blockquote>
+<p>Compressed through a small aperture, into a vacuum chamber. The detector is at right angles to the jet.</p>
+</blockquote>
+<ul>
+<li>All energies converted to translational energy in one direction - at lowest levels for other motions.</li>
+<li>Same direction, same speeds - very rare collision.</li>
+<li>Right angles observation - no Doppler shift.</li>
+<li>BUT, only low concentration possible, hence weak signals.</li>
+</ul>
+<h1 id="Rotational-spectroscopy"><a href="#Rotational-spectroscopy" class="headerlink" title="Rotational spectroscopy"></a>Rotational spectroscopy</h1><h2 id="Types-of-rotating-molecules"><a href="#Types-of-rotating-molecules" class="headerlink" title="Types of rotating molecules"></a>Types of rotating molecules</h2><p>In this context, the three axes defined w.r.t. moments of inertia are always in the order</p>
+<script type="math/tex; mode=display">
+I_c \geq I_b\geq I_a.</script><ol>
+<li><p><strong>Spherical tops</strong>: </p>
+<ul>
+<li><script type="math/tex; mode=display">I_a = I_b = I_c</script></li>
+<li>High symmetry, e.g. <script type="math/tex">T_d</script> or <script type="math/tex">O_h</script>.</li>
+</ul>
+</li>
+<li><p><strong>Symmetric tops</strong></p>
+<p>With <script type="math/tex">C_n</script> axis <script type="math/tex">n\gt 2</script> or <script type="math/tex">S_4</script> axis.</p>
+<ol>
+<li><strong>Prolate</strong>: <script type="math/tex">I_c = I_b\geq I_a</script>, e.g. <script type="math/tex">\ce{CH3Cl}</script>.</li>
+<li><strong>Oblate</strong>: <script type="math/tex">I_c \geq I_b = I_a</script>, e.g. <script type="math/tex">\ce{BF3}</script>.</li>
+</ol>
+</li>
+<li><p><strong>Asymmetric tops</strong></p>
+</li>
+<li><p>(Linear molecules) - a special case of prolate top.</p>
+</li>
+</ol>
+<h2 id="Energy-levels"><a href="#Energy-levels" class="headerlink" title="Energy levels"></a>Energy levels</h2><blockquote>
+<p>The following formula could be derived from operator point of view.</p>
+</blockquote>
+<p>For symmetric tops, two quantum numbers are specified:</p>
+<ul>
+<li><script type="math/tex">J</script> - magnitude of total angular momentum as <script type="math/tex">\hbar\sqrt{J(J+1)}</script>. <script type="math/tex">J\in \mathbf{N}</script>.</li>
+<li><script type="math/tex">K</script> - angular momentum about the unique axis as <script type="math/tex">\hbar K</script>. <script type="math/tex">K\in [-J,J]</script>.</li>
+</ul>
+<h3 id="Prolate-top"><a href="#Prolate-top" class="headerlink" title="Prolate top"></a>Prolate top</h3><p>The energy levels are</p>
+<script type="math/tex; mode=display">
+E_{J,K}=hBJ(J+1)+h(A-B)K^2 \tag{R1} \label{R1}</script><p>where the rotational constants are </p>
+<script type="math/tex; mode=display">
+A=\frac{h}{8\pi^2 I_a}\ \ etc.</script><blockquote>
+<p>Remember <script type="math/tex">hA=\hbar^2/(2I_a)</script>.</p>
+</blockquote>
+<p>Or in wavenumber units, </p>
+<script type="math/tex; mode=display">
+\tilde{E}_{J,K}=\tilde{B}J(J+1)+(\tilde{A}-\tilde{B})K^2</script><p>with</p>
+<script type="math/tex; mode=display">
+\tilde{A}=\frac{h}{8\pi^2\tilde{c}I_a}.</script><h3 id="Oblate-top"><a href="#Oblate-top" class="headerlink" title="Oblate top"></a>Oblate top</h3><script type="math/tex; mode=display">
+E_{J,K}=hBJ(J+1)+h(C-B)K^2</script><p>A plot for typical values.</p>
+<img src="/2020/01/HR-spectroscopy/symtoplevels.png" title="Typical energy levels of oblate and prolate symmetric tops. (Keeler, p.26)">
+<h3 id="Spherical-top-and-linear-molecules"><a href="#Spherical-top-and-linear-molecules" class="headerlink" title="Spherical top and linear molecules"></a>Spherical top and linear molecules</h3><p>Both have the same energy levels</p>
+<script type="math/tex; mode=display">
+E_J = hBJ(J+1).</script><h2 id="Selection-rules"><a href="#Selection-rules" class="headerlink" title="Selection rules"></a>Selection rules</h2><ol>
+<li>As always, a <em>permanant dipole</em> is needed.</li>
+<li><script type="math/tex">\Delta J=\pm 1</script>. Photon has 1 unit of angular momentum.</li>
+<li><script type="math/tex">\Delta K=0</script>. Changing the rotation about the unique axis does not change the dipole, hence not allowed.</li>
+</ol>
+<h2 id="Spectra"><a href="#Spectra" class="headerlink" title="Spectra"></a>Spectra</h2><h3 id="Symmetric-tops"><a href="#Symmetric-tops" class="headerlink" title="Symmetric tops"></a>Symmetric tops</h3><p>Since <script type="math/tex">\Delta K=0</script>, the energy difference is as linear molecules.</p>
+<script type="math/tex; mode=display">
+\tilde{\nu}(J'')=2\tilde{B}(J''+1).</script><ul>
+<li>Lines starting from <script type="math/tex">2\tilde{B}</script></li>
+<li>Lines <script type="math/tex">2\tilde{B}</script> apart</li>
+</ul>
+<h3 id="Intensities"><a href="#Intensities" class="headerlink" title="Intensities"></a>Intensities</h3><p>Before, only the population difference and the ground state degeneracy is considered, but also involved are factors including <script type="math/tex">J</script>-dependence of the Einstein coefficients.</p>
+<p>Before</p>
+<script type="math/tex; mode=display">
+I \propto (2J+1)\exp(\frac{-\epsilon_J}{kT}).</script><p>Full</p>
+<script type="math/tex; mode=display">
+I\propto (J+1)\nu_J^2\exp(\frac{-\epsilon_J}{kT}).</script><p>This full prediction is quite good.</p>
+<h2 id="Centrifugal-distortion"><a href="#Centrifugal-distortion" class="headerlink" title="Centrifugal distortion"></a>Centrifugal distortion</h2><p>As molecules rotates faster, the forces on the atoms will cause the bonds to stretch and bond angles to change.</p>
+<ul>
+<li>Moments of inertia should now depend on <script type="math/tex">J</script>.</li>
+<li>However, for simplicity, the improvement is added to the <em>energy levels</em>.</li>
+</ul>
+<p>For prolate tops,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\tilde{E}_{J,K}=&\tilde{B}J(J+1)+(\tilde{A}-\tilde{B})K^2\\&-\tilde{D}_JJ^2(J+1)^2-\tilde{D}_{JK}J(J+1)K^2-\tilde{D}_KK^4
+\end{align}.</script><p>The <script type="math/tex">\tilde{D}</script>s are very small, typically <script type="math/tex">\pu{1e-6 cm-1}</script>.</p>
+<p>For linear diatomics, it can be shown that</p>
+<script type="math/tex; mode=display">
+\tilde{D}=\frac{4\tilde{B}^3}{\tilde{\omega}^2}.</script><h3 id="Change-in-spectra"><a href="#Change-in-spectra" class="headerlink" title="Change in spectra"></a>Change in spectra</h3><p>Now the lines are</p>
+<script type="math/tex; mode=display">
+\tilde{\nu}(J,K)=2\tilde{B}(J+1)-2\tilde{D}_{JK}K^2(J+1)-4\tilde{D}_J(J+1)^3.</script><ul>
+<li>All lines move to lower frequencies.</li>
+<li>Now <script type="math/tex">|K|=0,1,...</script> are separated.</li>
+</ul>
+<h2 id="Stark-effect"><a href="#Stark-effect" class="headerlink" title="Stark effect"></a>Stark effect</h2><p>The effect where application of a field results in a splitting of energy levels. (Here only <em>electric</em> field is concerned.) </p>
+<ul>
+<li>The dipole moment may be worked out from the splittings.</li>
+<li>Information about <script type="math/tex">J</script> values can help assigning the spectra.</li>
+</ul>
+<blockquote>
+<p>Derivation on pp. 34-35 Keeler (2019).</p>
+</blockquote>
+<script type="math/tex; mode=display">
+E_\mathrm{Stark}(J, K, M_J)=-\frac{\mu E_\mathrm{field}KM_J}{J(J+1)}.</script><p>The quantum number <script type="math/tex">M_J</script> is the angular momentum projected onto the E field.</p>
+<h3 id="Change-in-spectra-1"><a href="#Change-in-spectra-1" class="headerlink" title="Change in spectra"></a>Change in spectra</h3><ul>
+<li>A transition will split into <script type="math/tex">(2J+1)</script> lines.</li>
+<li>The splitting between adjacent lines is <script type="math/tex">2\mu E_\mathrm{field} K/[J(J+1)(J+2)]</script>.</li>
+</ul>
+<h1 id="Vibrational-spectroscopy"><a href="#Vibrational-spectroscopy" class="headerlink" title="Vibrational spectroscopy"></a>Vibrational spectroscopy</h1><h2 id="Deriving-the-HO-selection-rule"><a href="#Deriving-the-HO-selection-rule" class="headerlink" title="Deriving the HO selection rule"></a>Deriving the HO selection rule</h2><h3 id="HO-eigenfunctions"><a href="#HO-eigenfunctions" class="headerlink" title="HO eigenfunctions"></a>HO eigenfunctions</h3><p>Remember that in the reduced coordinates, the HO Hamiltonian is</p>
+<script type="math/tex; mode=display">
+\mathcal{H}=-\frac{1}{2}\frac{d^2}{dq^2}+\frac{1}{2}q^2.</script><p>The eigenfunctions are</p>
+<script type="math/tex; mode=display">
+\psi=H(q)\exp(-q^2/2)</script><p>where the <script type="math/tex">H</script> is a Hermite polynomial.</p>
+<p>The eigenfunctions are mutually orthogonal.</p>
+<h3 id="Ladder-operators"><a href="#Ladder-operators" class="headerlink" title="Ladder operators"></a>Ladder operators</h3><p>Define the operators</p>
+<script type="math/tex; mode=display">
+\hat{Q}=\frac{1}{\sqrt{2}}(q+\frac{d}{dq})\\
+\hat{Q}^\dagger=\frac{1}{\sqrt{2}}(q-\frac{d}{dq})</script><p>and it can be shown that </p>
+<script type="math/tex; mode=display">
+\hat{Q}^\dagger\psi_v=N_v\psi_{v+1}\\
+\hat{Q}\psi_v=M_v\psi_{v-1}.</script><p>Note that we can write </p>
+<script type="math/tex; mode=display">
+q=\frac{1}{\sqrt{2}}(\hat{Q}+\hat{Q}^\dagger).</script><h3 id="Transition-dipole-moment"><a href="#Transition-dipole-moment" class="headerlink" title="Transition dipole moment"></a>Transition dipole moment</h3><p>As appeared before in the Einstein coefficients, the transition dipole moments is given by </p>
+<script type="math/tex; mode=display">
+R_{ij}=<\!\!j|\hat{\mu}|i\!\!>.</script><p>Note that the dipole moment is a function of internuclear separation, hence the scaled coordinate <script type="math/tex">q</script>. An expansion about <script type="math/tex">q=0</script> gives</p>
+<script type="math/tex; mode=display">
+\mu=\mu_0+\mu'_0q+\mathcal{O}(q^2).</script><ul>
+<li>The integration over the constant term is only non-zero if <script type="math/tex">i=j</script>, due to the orthonormality of eigenfunctions.</li>
+<li><p>Hence, <script type="math/tex">R\neq 0 \implies \mu'_0 \neq 0</script>, <strong>the gross selection rule</strong> i.e. the dipole must change as the internuclear separation changes from equilibrium position.</p>
+<p>Now look at the integral of itself.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&\mu'_0<\!\!j|q|i\!\!>\\
+=&\frac{\mu'_0}{\sqrt{2}}<\!\!j|\hat{Q}+\hat{Q}^\dagger|i\!\!>\\
+=&\frac{\mu'_0}{\sqrt{2}}(<\!\!j|i+1\!\!>+<\!\!j|i-1\!\!>)
+\end{align}</script><p>For a non-zero integral, <script type="math/tex">j=i\pm1</script>, which is the HO selection rule <script type="math/tex">\Delta v=\pm 1</script>.</p>
+</li>
+</ul>
+<h2 id="Symmetry-of-wavefunctions"><a href="#Symmetry-of-wavefunctions" class="headerlink" title="Symmetry of wavefunctions"></a>Symmetry of wavefunctions</h2><h3 id="Non-degenerate"><a href="#Non-degenerate" class="headerlink" title="Non-degenerate"></a>Non-degenerate</h3><ul>
+<li>Even <script type="math/tex">v</script> transforms as totally symmetric representation</li>
+<li>Odd <script type="math/tex">v</script> transforms as the symmetry of the normal mode</li>
+</ul>
+<h3 id="Degenerate"><a href="#Degenerate" class="headerlink" title="Degenerate"></a>Degenerate</h3><ul>
+<li>GS <script type="math/tex">v=0</script> transforms as totally symmetric</li>
+<li>1st excited <script type="math/tex">v=1</script> transforms as the symmetry of the normal mode</li>
+<li>Afterwards use direct product table, and take the <em>symmetric</em> representations</li>
+</ul>
+<p>Only use symmetric, since the wavefunctions are symmetric w.r.t. exchange of vibrational quanta.</p>
+<blockquote>
+<p>Example. <script type="math/tex">\Pi_u\bigotimes \Pi_u=\Sigma^+_g\bigoplus[\Sigma^+_u]\bigoplus\Delta_g</script>.</p>
+</blockquote>
+<p>For linear molecules regarding the bending modes, there is <strong>vibrational angular momentum</strong> (quantum number <script type="math/tex">m</script>) associated.</p>
+<ul>
+<li>Takes value <script type="math/tex">-v\leq m \leq v</script>, in steps of 2.</li>
+<li>Energies slightly different (a few <script type="math/tex">\pu{cm-1}</script>), so lines split.</li>
+<li>The levels can be labelled with <script type="math/tex">v^m</script>.</li>
+</ul>
+<h3 id="Fermi-resonance"><a href="#Fermi-resonance" class="headerlink" title="Fermi resonance"></a>Fermi resonance</h3><p>If two <em>levels</em> (nothing to do with <em>transitions</em>) are close in energy, they mix and ‘push each other apart’.</p>
+<p>This has consequence on </p>
+<ul>
+<li>frequencies, transitions to and from both levels are changed</li>
+<li>intensities, e.g. an overtone can ‘borrow’ intensity from a fundamental when the two relevant levels mix.</li>
+</ul>
+<h2 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h2><p>It is also convenient to label the overall state of all modes in the form <script type="math/tex">(v_1, v_2,...)</script>, and the transitions</p>
+<script type="math/tex; mode=display">
+(v_1, v_2,...) \rightarrow (v'_1, v'_2,...).</script><h3 id="Fundamental"><a href="#Fundamental" class="headerlink" title="Fundamental"></a>Fundamental</h3><ul>
+<li>From: GS of <em>all</em> modes</li>
+<li>To: 1st excited of 1 of the modes</li>
+<li>Need: symmetry of the mode matches x, y or z</li>
+</ul>
+<p>If the fundamental transition of a mode is allowed, it is <strong>IR active</strong>.</p>
+<h3 id="Overtone"><a href="#Overtone" class="headerlink" title="Overtone"></a>Overtone</h3><ul>
+<li>From: GS of <em>all</em> modes</li>
+<li>To: 2nd excited of 1 of the modes</li>
+<li>Allowed due to anharmonicity</li>
+</ul>
+<h3 id="Hotbands"><a href="#Hotbands" class="headerlink" title="Hotbands"></a>Hotbands</h3><ul>
+<li>Transitions from other than GS</li>
+<li>Temperature dependent</li>
+</ul>
+<h3 id="Linear-molecules"><a href="#Linear-molecules" class="headerlink" title="Linear molecules"></a>Linear molecules</h3><p>The allowed transitions are in two types</p>
+<ol>
+<li><strong>Parallel</strong> transitions. Transition dipole along <script type="math/tex">z</script>. e.g. <script type="math/tex">\Sigma-\Sigma</script> transitions.</li>
+<li><strong>Perpendicular</strong> transitions. Transition dipole along <script type="math/tex">(x,y)</script>. e.g. <script type="math/tex">\Sigma-\Pi</script> transitions.</li>
+</ol>
+<h2 id="Rotational-Fine-Structure"><a href="#Rotational-Fine-Structure" class="headerlink" title="Rotational Fine Structure"></a>Rotational Fine Structure</h2><h3 id="Linear-molecules-1"><a href="#Linear-molecules-1" class="headerlink" title="Linear molecules"></a>Linear molecules</h3><h4 id="Parallel"><a href="#Parallel" class="headerlink" title="Parallel"></a>Parallel</h4><p>Selection rules</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><script type="math/tex">\Delta J</script></th>
+<th>Branch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">+1</script></td>
+<td>R</td>
+</tr>
+<tr>
+<td><script type="math/tex">-1</script></td>
+<td>P</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For <script type="math/tex">\Pi-\Pi</script> transitions, sometimes a very weak <script type="math/tex">Q</script> branch is seen.</p>
+<h4 id="Perpendicular"><a href="#Perpendicular" class="headerlink" title="Perpendicular"></a>Perpendicular</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><script type="math/tex">\Delta J</script></th>
+<th>Branch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">+1</script></td>
+<td>R</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Q</td>
+</tr>
+<tr>
+<td><script type="math/tex">-1</script></td>
+<td>P</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Symmetric-tops-1"><a href="#Symmetric-tops-1" class="headerlink" title="Symmetric tops"></a>Symmetric tops</h3><h4 id="Parallel-1"><a href="#Parallel-1" class="headerlink" title="Parallel"></a>Parallel</h4><p>Require:</p>
+<script type="math/tex; mode=display">
+\Delta J=0, \pm1\\
+\Delta K=0</script><p>except <script type="math/tex">\Delta J=\Delta K=0</script>.</p>
+<img src="/2020/01/HR-spectroscopy/symtopparallel.png" title="Parallel transition peaks of a symmetric top. (Bernath, p.259)">
+<p>Complications</p>
+<ol>
+<li>Centrifugal distortion terms - transitions with different <script type="math/tex">K</script> values do not overlap.</li>
+<li>Require <script type="math/tex">J\geq K</script>, so the larger the <script type="math/tex">K</script> the more missing lines.</li>
+</ol>
+<h4 id="Perpendicular-1"><a href="#Perpendicular-1" class="headerlink" title="Perpendicular"></a>Perpendicular</h4><p>Require:</p>
+<script type="math/tex; mode=display">
+\Delta J=0, \pm1\\
+\Delta K=\pm1.</script><p>Now for each <script type="math/tex">K</script>, there are <script type="math/tex">P</script>, <script type="math/tex">Q</script> and <script type="math/tex">R</script> branches for <script type="math/tex">\Delta K =\pm 1</script> each. Fortunately, only <script type="math/tex">Q</script> branches are resolved.</p>
+<script type="math/tex; mode=display">
+\tilde{\nu}_Q=\tilde{\omega _0}+(\tilde{A}-\tilde{B})(1\pm2K)</script><p>so the <script type="math/tex">Q</script> branch lines are <script type="math/tex">2(\tilde{A}-\tilde{B})</script> apart.</p>
+<img src="/2020/01/HR-spectroscopy/symtopperp.png" title="Perpendicular transition peaks of a symmetric top. (Bernath, p.266)">
+<p>Labels:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><script type="math/tex">\Delta K</script></th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+1</td>
+<td><script type="math/tex">^rQ_K</script></td>
+</tr>
+<tr>
+<td>-1</td>
+<td><script type="math/tex">^pQ_K</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Intensities-1"><a href="#Intensities-1" class="headerlink" title="Intensities"></a>Intensities</h3><ul>
+<li>Upper vibrational levels are hardly populated, hence GS population is dominant.</li>
+<li>Nuclear spin effect.</li>
+</ul>
+
+    </article>
+    
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <center>
+                <p>Like this? Please support me!</p>
+                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+                <p>or via <a href="/about/index.html">other methods.</a></p>
+            </center>
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">https://www.butteraddict.fun/2020/01/HR-spectroscopy/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 11th 2020, 9:33:34 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 11th 2020, 9:47:17 am</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/01/Synthesis-with-enolate/" title="Synthesis with enolate">
+                    <div class="nextTitle">Synthesis with enolate</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/11/Essential-Thermodynamics/" title="Essential Thermodynamics">
+                    <div class="prevTitle">Essential Thermodynamics</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+    
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/wechatpay.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Interaction-of-molecules-with-radiation"><span class="toc-number">1.</span> <span class="toc-text">Interaction of molecules with radiation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-types-of-interactions"><span class="toc-number">1.1.</span> <span class="toc-text">Three types of interactions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Einstein’s-coefficients"><span class="toc-number">1.2.</span> <span class="toc-text">Einstein’s coefficients</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-and-B-coefficients-are-related"><span class="toc-number">1.2.1.</span> <span class="toc-text">A and B coefficients are related</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Line-width"><span class="toc-number">1.3.</span> <span class="toc-text">Line width</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Natural-broadening"><span class="toc-number">1.3.1.</span> <span class="toc-text">Natural broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pressure-collision-broadening"><span class="toc-number">1.3.2.</span> <span class="toc-text">Pressure (collision) broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Doppler-broadening"><span class="toc-number">1.3.3.</span> <span class="toc-text">Doppler broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application"><span class="toc-number">1.3.4.</span> <span class="toc-text">Application</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotational-spectroscopy"><span class="toc-number">2.</span> <span class="toc-text">Rotational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Types-of-rotating-molecules"><span class="toc-number">2.1.</span> <span class="toc-text">Types of rotating molecules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Energy-levels"><span class="toc-number">2.2.</span> <span class="toc-text">Energy levels</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prolate-top"><span class="toc-number">2.2.1.</span> <span class="toc-text">Prolate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oblate-top"><span class="toc-number">2.2.2.</span> <span class="toc-text">Oblate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spherical-top-and-linear-molecules"><span class="toc-number">2.2.3.</span> <span class="toc-text">Spherical top and linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection-rules"><span class="toc-number">2.3.</span> <span class="toc-text">Selection rules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spectra"><span class="toc-number">2.4.</span> <span class="toc-text">Spectra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops"><span class="toc-number">2.4.1.</span> <span class="toc-text">Symmetric tops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities"><span class="toc-number">2.4.2.</span> <span class="toc-text">Intensities</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Centrifugal-distortion"><span class="toc-number">2.5.</span> <span class="toc-text">Centrifugal distortion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra"><span class="toc-number">2.5.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stark-effect"><span class="toc-number">2.6.</span> <span class="toc-text">Stark effect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra-1"><span class="toc-number">2.6.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vibrational-spectroscopy"><span class="toc-number">3.</span> <span class="toc-text">Vibrational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deriving-the-HO-selection-rule"><span class="toc-number">3.1.</span> <span class="toc-text">Deriving the HO selection rule</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HO-eigenfunctions"><span class="toc-number">3.1.1.</span> <span class="toc-text">HO eigenfunctions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ladder-operators"><span class="toc-number">3.1.2.</span> <span class="toc-text">Ladder operators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition-dipole-moment"><span class="toc-number">3.1.3.</span> <span class="toc-text">Transition dipole moment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symmetry-of-wavefunctions"><span class="toc-number">3.2.</span> <span class="toc-text">Symmetry of wavefunctions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-degenerate"><span class="toc-number">3.2.1.</span> <span class="toc-text">Non-degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Degenerate"><span class="toc-number">3.2.2.</span> <span class="toc-text">Degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-resonance"><span class="toc-number">3.2.3.</span> <span class="toc-text">Fermi resonance</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transitions"><span class="toc-number">3.3.</span> <span class="toc-text">Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental"><span class="toc-number">3.3.1.</span> <span class="toc-text">Fundamental</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overtone"><span class="toc-number">3.3.2.</span> <span class="toc-text">Overtone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hotbands"><span class="toc-number">3.3.3.</span> <span class="toc-text">Hotbands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules"><span class="toc-number">3.3.4.</span> <span class="toc-text">Linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rotational-Fine-Structure"><span class="toc-number">3.4.</span> <span class="toc-text">Rotational Fine Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">Linear molecules</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops-1"><span class="toc-number">3.4.2.</span> <span class="toc-text">Symmetric tops</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel-1"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular-1"><span class="toc-number">3.4.2.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities-1"><span class="toc-number">3.4.3.</span> <span class="toc-text">Intensities</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 13
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/Synthesis-with-enolate/">Synthesis with enolate</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/HR-spectroscopy/">High Resolution Spectroscopy</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/2019/11/Essential-Thermodynamics/">Essential Thermodynamics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/La-Pause-de-Pierrette/">【学年最佳餐厅】La Pause de Pierrette</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Electrons and Solids</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/Fourier-Transform/">Fourier Transform</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href="/2019/04/Functionals/">Functionals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/05</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/2019/03/Contour-Integration/">Contour Integration</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href="/2019/03/IB-Spectroscopy/">IB Spectroscopy Techniques</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+    
+        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+    
+        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+    
+        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "2LalA猪"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+    MathJax.Hub.Config({
+
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+            extensions: ["[mhchem]/mhchem.js"]
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
+
+
