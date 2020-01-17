@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.9k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.9k</span>阅读时长: <span class="post-count reading-time">18 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,7 +403,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Updated to vibrational spectroscopies.</p>
+        <p>Updated to electronic spectroscopies.</p>
 <h1 id="Interaction-of-molecules-with-radiation"><a href="#Interaction-of-molecules-with-radiation" class="headerlink" title="Interaction of molecules with radiation"></a>Interaction of molecules with radiation</h1><center>
 <svg width="200" height="70">
    <defs>
@@ -551,7 +551,7 @@ A=\frac{h}{8\pi^2 I_a}\ \ etc.</script><blockquote>
 <script type="math/tex; mode=display">
 \tilde{A}=\frac{h}{8\pi^2\tilde{c}I_a}.</script><h3 id="Oblate-top"><a href="#Oblate-top" class="headerlink" title="Oblate top"></a>Oblate top</h3><script type="math/tex; mode=display">
 E_{J,K}=hBJ(J+1)+h(C-B)K^2</script><p>A plot for typical values.</p>
-<img src="/2020/01/HR-spectroscopy/symtoplevels.png" title="Typical energy levels of oblate and prolate symmetric tops. (Keeler, p.26)">
+<img src="/2020/01/HR-spectroscopy/symtoplevels.png" title="Example of symmetric top levels. (Keeler 2019, p26)">
 <h3 id="Spherical-top-and-linear-molecules"><a href="#Spherical-top-and-linear-molecules" class="headerlink" title="Spherical top and linear molecules"></a>Spherical top and linear molecules</h3><p>Both have the same energy levels</p>
 <script type="math/tex; mode=display">
 E_J = hBJ(J+1).</script><h2 id="Selection-rules"><a href="#Selection-rules" class="headerlink" title="Selection rules"></a>Selection rules</h2><ol>
@@ -730,7 +730,7 @@ R_{ij}=<\!\!j|\hat{\mu}|i\!\!>.</script><p>Note that the dipole moment is a func
 <script type="math/tex; mode=display">
 \Delta J=0, \pm1\\
 \Delta K=0</script><p>except <script type="math/tex">\Delta J=\Delta K=0</script>.</p>
-<img src="/2020/01/HR-spectroscopy/symtopparallel.png" title="Parallel transition peaks of a symmetric top. (Bernath, p.259)">
+<img src="/2020/01/HR-spectroscopy/symtopparallel.png" title="Parallel transition peaks of a symmetric top. Bernath p.259">
 <p>Complications</p>
 <ol>
 <li>Centrifugal distortion terms - transitions with different <script type="math/tex">K</script> values do not overlap.</li>
@@ -742,7 +742,7 @@ R_{ij}=<\!\!j|\hat{\mu}|i\!\!>.</script><p>Note that the dipole moment is a func
 \Delta K=\pm1.</script><p>Now for each <script type="math/tex">K</script>, there are <script type="math/tex">P</script>, <script type="math/tex">Q</script> and <script type="math/tex">R</script> branches for <script type="math/tex">\Delta K =\pm 1</script> each. Fortunately, only <script type="math/tex">Q</script> branches are resolved.</p>
 <script type="math/tex; mode=display">
 \tilde{\nu}_Q=\tilde{\omega _0}+(\tilde{A}-\tilde{B})(1\pm2K)</script><p>so the <script type="math/tex">Q</script> branch lines are <script type="math/tex">2(\tilde{A}-\tilde{B})</script> apart.</p>
-<img src="/2020/01/HR-spectroscopy/symtopperp.png" title="Perpendicular transition peaks of a symmetric top. (Bernath, p.266)">
+<img src="/2020/01/HR-spectroscopy/symtopperp.png" title="Perpendicular transition peaks of a symmetric top. Bernath p.266">
 <p>Labels:</p>
 <div class="table-container">
 <table>
@@ -768,6 +768,355 @@ R_{ij}=<\!\!j|\hat{\mu}|i\!\!>.</script><p>Note that the dipole moment is a func
 <li>Upper vibrational levels are hardly populated, hence GS population is dominant.</li>
 <li>Nuclear spin effect.</li>
 </ul>
+<h1 id="Raman-Spectroscopy"><a href="#Raman-Spectroscopy" class="headerlink" title="Raman Spectroscopy"></a>Raman Spectroscopy</h1><p>The 4th interaction between molecules and radiation is <strong>scattering</strong>. The type of spectroscopy using scattering is <strong>Raman</strong> spectroscopy.</p>
+<h2 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h2><h3 id="Semi-classical-description"><a href="#Semi-classical-description" class="headerlink" title="Semi-classical description"></a>Semi-classical description</h3><ol>
+<li>Electric field of the laser induces a dipole in the molecule.</li>
+<li>The induced dipole oscillates at the same frequency as the laser. (c.f. driven oscillation)</li>
+<li>The anisotropy in polarizability modulates the size of induced dipole (w.r.t. time).</li>
+<li>Oscillating dipole emits EM waves, which.<ol>
+<li>has a base frequency of the incident laser</li>
+<li>amplitude modulated by the oscillation of polarizability (e.g. rotation speed).</li>
+</ol>
+</li>
+</ol>
+<h3 id="Quantum-description"><a href="#Quantum-description" class="headerlink" title="Quantum description"></a>Quantum description</h3><p>Need the idea of a <strong>virtual state</strong>.</p>
+<center>
+<svg width="157px" height="135px" viewbox="0 0 157 135" style="background-color: #ffffff00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4879.97,3435.93 L 4879.97,3455.93 L 3084.25,3455.93 L 3084.25,3435.93 L 4879.97,3435.93 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4884.82,4277.67 L 4884.82,4297.67 L 3084.82,4297.67 L 3084.82,4277.67 L 4884.82,4277.67 Z "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3094.18,1853.28 C 3094.18,1875.36 3111.72,1893.28 3133.32,1893.28 C 3154.93,1893.28 3172.46,1875.36 3172.46,1853.28 C 3172.46,1831.21 3190,1813.28 3211.6,1813.28 C 3233.21,1813.28 3250.75,1831.21 3250.75,1853.28 C 3250.75,1875.36 3268.28,1893.28 3289.89,1893.28 C 3311.49,1893.28 3329.03,1875.36 3329.03,1853.28 C 3329.03,1831.21 3346.57,1813.28 3368.17,1813.28 C 3389.78,1813.28 3407.31,1831.21 3407.31,1853.28 C 3407.31,1875.36 3424.85,1893.28 3446.46,1893.28 C 3468.06,1893.28 3485.6,1875.36 3485.6,1853.28 C 3485.6,1831.21 3503.13,1813.28 3524.74,1813.28 C 3546.35,1813.28 3563.88,1831.21 3563.88,1853.28 C 3563.88,1875.36 3581.42,1893.28 3603.02,1893.28 C 3624.63,1893.28 3642.17,1875.36 3642.17,1853.28 C 3642.17,1831.21 3659.7,1813.28 3681.31,1813.28 C 3702.91,1813.28 3720.45,1831.21 3720.45,1853.28 C 3720.45,1875.36 3737.99,1893.28 3759.59,1893.28 C 3781.2,1893.28 3798.73,1875.36 3798.73,1853.28 C 3798.73,1831.21 3816.27,1813.28 3837.88,1813.28 C 3859.48,1813.28 3877.02,1831.21 3877.02,1853.28 C 3877.02,1875.36 3894.55,1893.28 3916.16,1893.28 C 3937.76,1893.28 3955.3,1875.36 3955.3,1853.28 C 3955.3,1831.21 3972.84,1813.28 3994.44,1813.28 C 4016.05,1813.28 4033.58,1831.21 4033.58,1853.28 C 4033.58,1875.36 4051.12,1893.28 4072.73,1893.28 C 4094.33,1893.28 4111.87,1875.36 4111.87,1853.28 C 4111.87,1831.21 4129.41,1813.28 4151.01,1813.28 C 4172.62,1813.28 4190.15,1831.21 4190.15,1853.28 C 4190.15,1875.36 4207.69,1893.28 4229.29,1893.28 C 4250.9,1893.28 4268.44,1875.36 4268.44,1853.28 C 4268.44,1831.21 4285.97,1813.28 4307.58,1813.28 C 4329.18,1813.28 4346.72,1831.21 4346.72,1853.28 C 4346.72,1875.36 4364.26,1893.28 4385.86,1893.28 C 4407.47,1893.28 4425,1875.36 4425,1853.28 C 4425,1831.21 4442.54,1813.28 4464.15,1813.28 C 4485.75,1813.28 4503.29,1831.21 4503.29,1853.28 C 4503.29,1875.36 4520.82,1893.28 4542.43,1893.28 C 4564.03,1893.28 4581.57,1875.36 4581.57,1853.28 C 4581.57,1831.21 4599.11,1813.28 4620.71,1813.28 C 4642.32,1813.28 4659.86,1831.21 4659.86,1853.28 C 4659.86,1875.36 4677.39,1893.28 4699,1893.28 C 4720.6,1893.28 4738.14,1875.36 4738.14,1853.28 C 4738.14,1831.21 4755.68,1813.28 4777.28,1813.28 C 4798.89,1813.28 4816.42,1831.21 4816.42,1853.28 C 4816.42,1875.36 4833.96,1893.28 4855.56,1893.28 C 4877.17,1893.28 4894.71,1875.36 4894.71,1853.28 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3555.41,2063.55 L 3555.41,4311.44 L 3535.41,4311.44 L 3535.41,2063.55 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4099.46,3286.66 L 4099.46,1901.63 L 4119.46,1901.63 L 4119.46,3286.66 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,3481.05 C 4109.46,3481.05 4067.46,3257.75 4067.46,3257.75 C 4067.46,3257.75 4091.08,3285.66 4109.46,3285.66 C 4127.39,3285.66 4150.46,3257.75 4150.46,3257.75 C 4150.46,3257.75 4109.46,3481.05 4109.46,3481.05 C 4109.46,3481.05 4109.46,3481.05 4109.46,3481.05 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,3481.05 C 4109.46,3481.05 4067.46,3257.75 4067.46,3257.75 C 4067.46,3257.75 4091.08,3285.66 4109.46,3285.66 C 4127.39,3285.66 4150.46,3257.75 4150.46,3257.75 C 4150.46,3257.75 4109.46,3481.05 4109.46,3481.05 C 4109.46,3481.05 4109.46,3481.05 4109.46,3481.05 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4861.17,3055.83 L 4705.73,3055.83 L 4705.73,3035.83 L 4861.17,3035.83 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4125.57,3045.83 C 4125.57,3067.91 4142.37,3085.83 4163.07,3085.83 C 4183.77,3085.83 4200.57,3067.91 4200.57,3045.83 C 4200.57,3023.75 4217.37,3005.83 4238.07,3005.83 C 4258.77,3005.83 4275.57,3023.75 4275.57,3045.83 C 4275.57,3067.91 4292.37,3085.83 4313.07,3085.83 C 4333.77,3085.83 4350.57,3067.91 4350.57,3045.83 C 4350.57,3023.75 4367.37,3005.83 4388.07,3005.83 C 4408.77,3005.83 4425.57,3023.75 4425.57,3045.83 C 4425.57,3067.91 4442.37,3085.83 4463.07,3085.83 C 4483.77,3085.83 4500.57,3067.91 4500.57,3045.83 C 4500.57,3023.75 4517.37,3005.83 4538.07,3005.83 C 4558.77,3005.83 4575.57,3023.75 4575.57,3045.83 C 4575.57,3067.91 4592.37,3085.83 4613.07,3085.83 C 4633.77,3085.83 4650.57,3067.91 4650.57,3045.83 C 4650.57,3023.75 4667.37,3005.83 4688.07,3005.83 C 4708.77,3005.83 4725.57,3023.75 4725.57,3045.83 "/>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 120.985 90.4649)" style="font:normal normal normal 240px 'Helvetica'">
+Upper</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 121.79 132.365)" style="font:normal normal normal 240px 'Helvetica'">
+Lower</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 118.567 11.4989)" style="font:normal normal normal 240px 'Helvetica'">
+Virtual</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 108.898 54.205)" style="font:italic normal normal 246.4px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 115.75 57.0383)" style="font:normal normal normal 184.8px 'Helvetica'">
+Stokes</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3346.28,3007.49 L 3190.87,3007.49 L 3190.87,2987.49 L 3346.28,2987.49 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 2610.71,2997.49 C 2610.71,3019.56 2627.51,3037.49 2648.21,3037.49 C 2668.91,3037.49 2685.71,3019.56 2685.71,2997.49 C 2685.71,2975.41 2702.51,2957.49 2723.21,2957.49 C 2743.91,2957.49 2760.71,2975.41 2760.71,2997.49 C 2760.71,3019.56 2777.51,3037.49 2798.21,3037.49 C 2818.91,3037.49 2835.71,3019.56 2835.71,2997.49 C 2835.71,2975.41 2852.51,2957.49 2873.21,2957.49 C 2893.91,2957.49 2910.71,2975.41 2910.71,2997.49 C 2910.71,3019.56 2927.51,3037.49 2948.21,3037.49 C 2968.91,3037.49 2985.71,3019.56 2985.71,2997.49 C 2985.71,2975.41 3002.51,2957.49 3023.21,2957.49 C 3043.91,2957.49 3060.71,2975.41 3060.71,2997.49 C 3060.71,3019.56 3077.51,3037.49 3098.21,3037.49 C 3118.91,3037.49 3135.71,3019.56 3135.71,2997.49 C 3135.71,2975.41 3152.51,2957.49 3173.21,2957.49 C 3193.91,2957.49 3210.71,2975.41 3210.71,2997.49 "/>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 5.75877 53.3992)" style="font:italic normal normal 246px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 12.5994 56.228)" style="font:normal normal normal 184.5px 'Helvetica'">
+laser</text>
+</svg>
+<svg width="157px" height="135px" viewbox="0 0 157 135" style="background-color: #ffffff00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4879.97,3435.93 L 4879.97,3455.93 L 3084.25,3455.93 L 3084.25,3435.93 L 4879.97,3435.93 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4884.82,4277.67 L 4884.82,4297.67 L 3084.82,4297.67 L 3084.82,4277.67 L 4884.82,4277.67 Z "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3094.18,1853.28 C 3094.18,1875.36 3111.72,1893.28 3133.32,1893.28 C 3154.93,1893.28 3172.46,1875.36 3172.46,1853.28 C 3172.46,1831.21 3190,1813.28 3211.6,1813.28 C 3233.21,1813.28 3250.75,1831.21 3250.75,1853.28 C 3250.75,1875.36 3268.28,1893.28 3289.89,1893.28 C 3311.49,1893.28 3329.03,1875.36 3329.03,1853.28 C 3329.03,1831.21 3346.57,1813.28 3368.17,1813.28 C 3389.78,1813.28 3407.31,1831.21 3407.31,1853.28 C 3407.31,1875.36 3424.85,1893.28 3446.46,1893.28 C 3468.06,1893.28 3485.6,1875.36 3485.6,1853.28 C 3485.6,1831.21 3503.13,1813.28 3524.74,1813.28 C 3546.35,1813.28 3563.88,1831.21 3563.88,1853.28 C 3563.88,1875.36 3581.42,1893.28 3603.02,1893.28 C 3624.63,1893.28 3642.17,1875.36 3642.17,1853.28 C 3642.17,1831.21 3659.7,1813.28 3681.31,1813.28 C 3702.91,1813.28 3720.45,1831.21 3720.45,1853.28 C 3720.45,1875.36 3737.99,1893.28 3759.59,1893.28 C 3781.2,1893.28 3798.73,1875.36 3798.73,1853.28 C 3798.73,1831.21 3816.27,1813.28 3837.88,1813.28 C 3859.48,1813.28 3877.02,1831.21 3877.02,1853.28 C 3877.02,1875.36 3894.55,1893.28 3916.16,1893.28 C 3937.76,1893.28 3955.3,1875.36 3955.3,1853.28 C 3955.3,1831.21 3972.84,1813.28 3994.44,1813.28 C 4016.05,1813.28 4033.58,1831.21 4033.58,1853.28 C 4033.58,1875.36 4051.12,1893.28 4072.73,1893.28 C 4094.33,1893.28 4111.87,1875.36 4111.87,1853.28 C 4111.87,1831.21 4129.41,1813.28 4151.01,1813.28 C 4172.62,1813.28 4190.15,1831.21 4190.15,1853.28 C 4190.15,1875.36 4207.69,1893.28 4229.29,1893.28 C 4250.9,1893.28 4268.44,1875.36 4268.44,1853.28 C 4268.44,1831.21 4285.97,1813.28 4307.58,1813.28 C 4329.18,1813.28 4346.72,1831.21 4346.72,1853.28 C 4346.72,1875.36 4364.26,1893.28 4385.86,1893.28 C 4407.47,1893.28 4425,1875.36 4425,1853.28 C 4425,1831.21 4442.54,1813.28 4464.15,1813.28 C 4485.75,1813.28 4503.29,1831.21 4503.29,1853.28 C 4503.29,1875.36 4520.82,1893.28 4542.43,1893.28 C 4564.03,1893.28 4581.57,1875.36 4581.57,1853.28 C 4581.57,1831.21 4599.11,1813.28 4620.71,1813.28 C 4642.32,1813.28 4659.86,1831.21 4659.86,1853.28 C 4659.86,1875.36 4677.39,1893.28 4699,1893.28 C 4720.6,1893.28 4738.14,1875.36 4738.14,1853.28 C 4738.14,1831.21 4755.68,1813.28 4777.28,1813.28 C 4798.89,1813.28 4816.42,1831.21 4816.42,1853.28 C 4816.42,1875.36 4833.96,1893.28 4855.56,1893.28 C 4877.17,1893.28 4894.71,1875.36 4894.71,1853.28 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3555.41,2063.55 L 3555.41,4215.51 L 3535.41,4215.51 L 3535.41,2063.55 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4099.46,4122.25 L 4099.46,1901.63 L 4119.46,1901.63 L 4119.46,4122.25 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,4316.65 C 4109.46,4316.65 4067.46,4093.34 4067.46,4093.34 C 4067.46,4093.34 4091.08,4121.25 4109.46,4121.25 C 4127.39,4121.25 4150.46,4093.34 4150.46,4093.34 C 4150.46,4093.34 4109.46,4316.65 4109.46,4316.65 C 4109.46,4316.65 4109.46,4316.65 4109.46,4316.65 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,4316.65 C 4109.46,4316.65 4067.46,4093.34 4067.46,4093.34 C 4067.46,4093.34 4091.08,4121.25 4109.46,4121.25 C 4127.39,4121.25 4150.46,4093.34 4150.46,4093.34 C 4150.46,4093.34 4109.46,4316.65 4109.46,4316.65 C 4109.46,4316.65 4109.46,4316.65 4109.46,4316.65 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4861.17,3055.83 L 4705.73,3055.83 L 4705.73,3035.83 L 4861.17,3035.83 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4125.57,3045.83 C 4125.57,3067.91 4142.37,3085.83 4163.07,3085.83 C 4183.77,3085.83 4200.57,3067.91 4200.57,3045.83 C 4200.57,3023.75 4217.37,3005.83 4238.07,3005.83 C 4258.77,3005.83 4275.57,3023.75 4275.57,3045.83 C 4275.57,3067.91 4292.37,3085.83 4313.07,3085.83 C 4333.77,3085.83 4350.57,3067.91 4350.57,3045.83 C 4350.57,3023.75 4367.37,3005.83 4388.07,3005.83 C 4408.77,3005.83 4425.57,3023.75 4425.57,3045.83 C 4425.57,3067.91 4442.37,3085.83 4463.07,3085.83 C 4483.77,3085.83 4500.57,3067.91 4500.57,3045.83 C 4500.57,3023.75 4517.37,3005.83 4538.07,3005.83 C 4558.77,3005.83 4575.57,3023.75 4575.57,3045.83 C 4575.57,3067.91 4592.37,3085.83 4613.07,3085.83 C 4633.77,3085.83 4650.57,3067.91 4650.57,3045.83 C 4650.57,3023.75 4667.37,3005.83 4688.07,3005.83 C 4708.77,3005.83 4725.57,3023.75 4725.57,3045.83 "/>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 120.985 90.4649)" style="font:normal normal normal 240px 'Helvetica'">
+Upper</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 121.79 132.365)" style="font:normal normal normal 240px 'Helvetica'">
+Lower</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 118.567 11.4989)" style="font:normal normal normal 240px 'Helvetica'">
+Virtual</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 108.898 54.205)" style="font:italic normal normal 246.4px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 115.75 57.0383)" style="font:normal normal normal 184.8px 'Helvetica'">
+Rayleigh</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3346.28,3007.49 L 3190.87,3007.49 L 3190.87,2987.49 L 3346.28,2987.49 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 2610.71,2997.49 C 2610.71,3019.56 2627.51,3037.49 2648.21,3037.49 C 2668.91,3037.49 2685.71,3019.56 2685.71,2997.49 C 2685.71,2975.41 2702.51,2957.49 2723.21,2957.49 C 2743.91,2957.49 2760.71,2975.41 2760.71,2997.49 C 2760.71,3019.56 2777.51,3037.49 2798.21,3037.49 C 2818.91,3037.49 2835.71,3019.56 2835.71,2997.49 C 2835.71,2975.41 2852.51,2957.49 2873.21,2957.49 C 2893.91,2957.49 2910.71,2975.41 2910.71,2997.49 C 2910.71,3019.56 2927.51,3037.49 2948.21,3037.49 C 2968.91,3037.49 2985.71,3019.56 2985.71,2997.49 C 2985.71,2975.41 3002.51,2957.49 3023.21,2957.49 C 3043.91,2957.49 3060.71,2975.41 3060.71,2997.49 C 3060.71,3019.56 3077.51,3037.49 3098.21,3037.49 C 3118.91,3037.49 3135.71,3019.56 3135.71,2997.49 C 3135.71,2975.41 3152.51,2957.49 3173.21,2957.49 C 3193.91,2957.49 3210.71,2975.41 3210.71,2997.49 "/>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 5.75877 53.3992)" style="font:italic normal normal 246px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 12.5994 56.228)" style="font:normal normal normal 184.5px 'Helvetica'">
+laser</text>
+</svg>
+<svg width="159px" height="135px" viewbox="0 0 159 135" style="background-color: #ffffff00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4879.97,3435.93 L 4879.97,3455.93 L 3084.25,3455.93 L 3084.25,3435.93 L 4879.97,3435.93 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4884.82,4277.67 L 4884.82,4297.67 L 3084.82,4297.67 L 3084.82,4277.67 L 4884.82,4277.67 Z "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3094.18,1853.28 C 3094.18,1875.36 3111.72,1893.28 3133.32,1893.28 C 3154.93,1893.28 3172.46,1875.36 3172.46,1853.28 C 3172.46,1831.21 3190,1813.28 3211.6,1813.28 C 3233.21,1813.28 3250.75,1831.21 3250.75,1853.28 C 3250.75,1875.36 3268.28,1893.28 3289.89,1893.28 C 3311.49,1893.28 3329.03,1875.36 3329.03,1853.28 C 3329.03,1831.21 3346.57,1813.28 3368.17,1813.28 C 3389.78,1813.28 3407.31,1831.21 3407.31,1853.28 C 3407.31,1875.36 3424.85,1893.28 3446.46,1893.28 C 3468.06,1893.28 3485.6,1875.36 3485.6,1853.28 C 3485.6,1831.21 3503.13,1813.28 3524.74,1813.28 C 3546.35,1813.28 3563.88,1831.21 3563.88,1853.28 C 3563.88,1875.36 3581.42,1893.28 3603.02,1893.28 C 3624.63,1893.28 3642.17,1875.36 3642.17,1853.28 C 3642.17,1831.21 3659.7,1813.28 3681.31,1813.28 C 3702.91,1813.28 3720.45,1831.21 3720.45,1853.28 C 3720.45,1875.36 3737.99,1893.28 3759.59,1893.28 C 3781.2,1893.28 3798.73,1875.36 3798.73,1853.28 C 3798.73,1831.21 3816.27,1813.28 3837.88,1813.28 C 3859.48,1813.28 3877.02,1831.21 3877.02,1853.28 C 3877.02,1875.36 3894.55,1893.28 3916.16,1893.28 C 3937.76,1893.28 3955.3,1875.36 3955.3,1853.28 C 3955.3,1831.21 3972.84,1813.28 3994.44,1813.28 C 4016.05,1813.28 4033.58,1831.21 4033.58,1853.28 C 4033.58,1875.36 4051.12,1893.28 4072.73,1893.28 C 4094.33,1893.28 4111.87,1875.36 4111.87,1853.28 C 4111.87,1831.21 4129.41,1813.28 4151.01,1813.28 C 4172.62,1813.28 4190.15,1831.21 4190.15,1853.28 C 4190.15,1875.36 4207.69,1893.28 4229.29,1893.28 C 4250.9,1893.28 4268.44,1875.36 4268.44,1853.28 C 4268.44,1831.21 4285.97,1813.28 4307.58,1813.28 C 4329.18,1813.28 4346.72,1831.21 4346.72,1853.28 C 4346.72,1875.36 4364.26,1893.28 4385.86,1893.28 C 4407.47,1893.28 4425,1875.36 4425,1853.28 C 4425,1831.21 4442.54,1813.28 4464.15,1813.28 C 4485.75,1813.28 4503.29,1831.21 4503.29,1853.28 C 4503.29,1875.36 4520.82,1893.28 4542.43,1893.28 C 4564.03,1893.28 4581.57,1875.36 4581.57,1853.28 C 4581.57,1831.21 4599.11,1813.28 4620.71,1813.28 C 4642.32,1813.28 4659.86,1831.21 4659.86,1853.28 C 4659.86,1875.36 4677.39,1893.28 4699,1893.28 C 4720.6,1893.28 4738.14,1875.36 4738.14,1853.28 C 4738.14,1831.21 4755.68,1813.28 4777.28,1813.28 C 4798.89,1813.28 4816.42,1831.21 4816.42,1853.28 C 4816.42,1875.36 4833.96,1893.28 4855.56,1893.28 C 4877.17,1893.28 4894.71,1875.36 4894.71,1853.28 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3555.41,2063.55 L 3555.41,3448.72 L 3535.41,3448.72 L 3535.41,2063.55 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3545.41,1851.25 C 3545.41,1851.25 3586.41,2095.02 3586.41,2095.02 C 3586.41,2095.02 3563.35,2064.55 3545.41,2064.55 C 3527.04,2064.55 3503.41,2095.02 3503.41,2095.02 C 3503.41,2095.02 3545.41,1851.25 3545.41,1851.25 C 3545.41,1851.25 3545.41,1851.25 3545.41,1851.25 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4099.46,4122.25 L 4099.46,1901.63 L 4119.46,1901.63 L 4119.46,4122.25 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,4316.65 C 4109.46,4316.65 4067.46,4093.34 4067.46,4093.34 C 4067.46,4093.34 4091.08,4121.25 4109.46,4121.25 C 4127.39,4121.25 4150.46,4093.34 4150.46,4093.34 C 4150.46,4093.34 4109.46,4316.65 4109.46,4316.65 C 4109.46,4316.65 4109.46,4316.65 4109.46,4316.65 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4109.46,4316.65 C 4109.46,4316.65 4067.46,4093.34 4067.46,4093.34 C 4067.46,4093.34 4091.08,4121.25 4109.46,4121.25 C 4127.39,4121.25 4150.46,4093.34 4150.46,4093.34 C 4150.46,4093.34 4109.46,4316.65 4109.46,4316.65 C 4109.46,4316.65 4109.46,4316.65 4109.46,4316.65 "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4861.17,3055.83 L 4705.73,3055.83 L 4705.73,3035.83 L 4861.17,3035.83 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 5076.39,3045.83 C 5076.39,3045.83 4829.28,3108.61 4829.28,3108.61 C 4829.28,3108.61 4860.17,3073.3 4860.17,3045.83 C 4860.17,3017.93 4829.28,2982.06 4829.28,2982.06 C 4829.28,2982.06 5076.39,3045.83 5076.39,3045.83 C 5076.39,3045.83 5076.39,3045.83 5076.39,3045.83 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 4125.57,3045.83 C 4125.57,3067.91 4142.37,3085.83 4163.07,3085.83 C 4183.77,3085.83 4200.57,3067.91 4200.57,3045.83 C 4200.57,3023.75 4217.37,3005.83 4238.07,3005.83 C 4258.77,3005.83 4275.57,3023.75 4275.57,3045.83 C 4275.57,3067.91 4292.37,3085.83 4313.07,3085.83 C 4333.77,3085.83 4350.57,3067.91 4350.57,3045.83 C 4350.57,3023.75 4367.37,3005.83 4388.07,3005.83 C 4408.77,3005.83 4425.57,3023.75 4425.57,3045.83 C 4425.57,3067.91 4442.37,3085.83 4463.07,3085.83 C 4483.77,3085.83 4500.57,3067.91 4500.57,3045.83 C 4500.57,3023.75 4517.37,3005.83 4538.07,3005.83 C 4558.77,3005.83 4575.57,3023.75 4575.57,3045.83 C 4575.57,3067.91 4592.37,3085.83 4613.07,3085.83 C 4633.77,3085.83 4650.57,3067.91 4650.57,3045.83 C 4650.57,3023.75 4667.37,3005.83 4688.07,3005.83 C 4708.77,3005.83 4725.57,3023.75 4725.57,3045.83 "/>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 120.985 90.4649)" style="font:normal normal normal 240px 'Helvetica'">
+Upper</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 121.79 132.365)" style="font:normal normal normal 240px 'Helvetica'">
+Lower</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 118.567 11.4989)" style="font:normal normal normal 240px 'Helvetica'">
+Virtual</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 108.898 54.205)" style="font:italic normal normal 246.4px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 115.75 57.0383)" style="font:normal normal normal 184.8px 'Helvetica'">
+anti-Stokes</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3346.28,3007.49 L 3190.87,3007.49 L 3190.87,2987.49 L 3346.28,2987.49 Z "/>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 3561.53,2997.49 C 3561.53,2997.49 3314.42,3060.32 3314.42,3060.32 C 3314.42,3060.32 3345.28,3024.98 3345.28,2997.49 C 3345.28,2969.56 3314.42,2933.65 3314.42,2933.65 C 3314.42,2933.65 3561.53,2997.49 3561.53,2997.49 C 3561.53,2997.49 3561.53,2997.49 3561.53,2997.49 "/>
+<path stroke="#000000" stroke-width="20" fill="transparent" transform="matrix(0.05 0 0 0.05 -128 -86)" d="M 2610.71,2997.49 C 2610.71,3019.56 2627.51,3037.49 2648.21,3037.49 C 2668.91,3037.49 2685.71,3019.56 2685.71,2997.49 C 2685.71,2975.41 2702.51,2957.49 2723.21,2957.49 C 2743.91,2957.49 2760.71,2975.41 2760.71,2997.49 C 2760.71,3019.56 2777.51,3037.49 2798.21,3037.49 C 2818.91,3037.49 2835.71,3019.56 2835.71,2997.49 C 2835.71,2975.41 2852.51,2957.49 2873.21,2957.49 C 2893.91,2957.49 2910.71,2975.41 2910.71,2997.49 C 2910.71,3019.56 2927.51,3037.49 2948.21,3037.49 C 2968.91,3037.49 2985.71,3019.56 2985.71,2997.49 C 2985.71,2975.41 3002.51,2957.49 3023.21,2957.49 C 3043.91,2957.49 3060.71,2975.41 3060.71,2997.49 C 3060.71,3019.56 3077.51,3037.49 3098.21,3037.49 C 3118.91,3037.49 3135.71,3019.56 3135.71,2997.49 C 3135.71,2975.41 3152.51,2957.49 3173.21,2957.49 C 3193.91,2957.49 3210.71,2975.41 3210.71,2997.49 "/>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 5.75877 53.3992)" style="font:italic normal normal 246px 'Helvetica Oblique'">
+γ</text>
+<text x="0" y="0" stroke="transparent" fill="#191919" transform="matrix(0.05 0 0 0.05 12.5994 56.228)" style="font:normal normal normal 184.5px 'Helvetica'">
+laser</text>
+</svg></center>
+
+<p>The relationships between the energy levels and the wave frequencies is</p>
+<script type="math/tex; mode=display">
+h\nu=h\nu_\mathrm{laser}-(E_\mathrm{final}-E_\mathrm{initial}).</script><h2 id="Rotational-Raman"><a href="#Rotational-Raman" class="headerlink" title="Rotational Raman"></a>Rotational Raman</h2><h3 id="Linear-molecules-2"><a href="#Linear-molecules-2" class="headerlink" title="Linear molecules"></a>Linear molecules</h3><p>The selection rules are</p>
+<script type="math/tex; mode=display">
+\Delta J = 0,\pm 2.</script><p>This gives the lines (Stokes) at</p>
+<script type="math/tex; mode=display">
+h\nu=h\nu_L-2hB(2J+3).</script><ul>
+<li>The first line at <script type="math/tex">6\tilde{B}</script>.</li>
+<li>Subsequent lines spaced by <script type="math/tex">4\tilde{B}</script>.</li>
+<li>Gives O (anti-Stokes) and S (Stokes) branches.</li>
+</ul>
+<h3 id="Symmetric-tops-2"><a href="#Symmetric-tops-2" class="headerlink" title="Symmetric tops"></a>Symmetric tops</h3><p>The selection rules are </p>
+<script type="math/tex; mode=display">
+\Delta J = 0, \pm1\,\pm2.</script><ul>
+<li>Additional lines at <script type="math/tex">2\tilde{B}</script> intervals.</li>
+</ul>
+<h3 id="Spherical-tops"><a href="#Spherical-tops" class="headerlink" title="Spherical tops"></a>Spherical tops</h3><p>No rotational Raman, because of the isotropic polarizability.</p>
+<h2 id="Vibrational-Raman"><a href="#Vibrational-Raman" class="headerlink" title="Vibrational Raman"></a>Vibrational Raman</h2><ul>
+<li>Need change in polarizability during vibration. The mode transforms as a product of <em>two</em> coordinates.</li>
+<li>For HO, <script type="math/tex">\Delta v=\pm1</script>.</li>
+</ul>
+<p>The anti-Stokes lines are very weak in this case, because the upper vibrational level is barely populated.</p>
+<h3 id="Rotational-fine-structures"><a href="#Rotational-fine-structures" class="headerlink" title="Rotational fine structures"></a>Rotational fine structures</h3><p>The fine strucure branches are centered at the <em>vibrational scattered lines</em>, not the laser line.</p>
+<p>O, Q and S branches are seen, and the method of <em>combination difference</em> can be used to calculate rotational constants.</p>
+<h3 id="Modes-and-features"><a href="#Modes-and-features" class="headerlink" title="Modes and features"></a>Modes and features</h3><p>Intensity:</p>
+<ul>
+<li><strong>Breathing modes</strong>, e.g. A1 modes (all atoms stretch together - large change in polarizability), give very strong scatterings.</li>
+<li>Bending modes give weak scatterings.</li>
+</ul>
+<p>Polarization:</p>
+<p><strong>Depolarization ratio</strong>: <script type="math/tex">\rho=I_\parallel/I_\perp</script>.</p>
+<ul>
+<li>Totally symmetric modes give <em>polarized</em> scattering - <script type="math/tex">\rho \approx 0</script>.</li>
+<li>Otherwise, bands are <em>depolarized</em> - <script type="math/tex">\rho \rightarrow 0.75</script>.</li>
+</ul>
+<h1 id="Electronic-Spectroscopy"><a href="#Electronic-Spectroscopy" class="headerlink" title="Electronic Spectroscopy"></a>Electronic Spectroscopy</h1><h2 id="PE-curves"><a href="#PE-curves" class="headerlink" title="PE curves"></a>PE curves</h2><p><strong>Potential energy curves</strong> plot the energies vs the internuclear distance.</p>
+<ul>
+<li>Each excited state has a unique PE curve</li>
+<li>Different states may dissociate into different atomic states</li>
+<li>Curves with different symmetries can cross each other</li>
+</ul>
+<h2 id="Selection-rules-1"><a href="#Selection-rules-1" class="headerlink" title="Selection rules"></a>Selection rules</h2><p>They can be expressed in terms of parts of the term symbol:</p>
+<script type="math/tex; mode=display">
+\Delta S=0\\
+\Delta \Lambda = 0,\pm1\\
++\nleftrightarrow -\\
+g \leftrightarrow u.</script><ul>
+<li>If involving heavier atoms, the spin selection rule may not hold.</li>
+</ul>
+<p>There is <em>no limit</em> in the vibrational energy.</p>
+<p>For rotational transitions:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\Delta J &=\pm1 && \mathrm{parallel}\\
+\Delta J &= 0, \pm1 &&\mathrm{perpendicular}
+\end{align}.</script><ul>
+<li>Almost always see <em>absorption</em> spectra, because electronic transitions are too high in energy; similarly absorption from <script type="math/tex">v=0</script> is usually seen.</li>
+<li>Discharge or flame can give rise to emission spectra. Collisions can degrade vibrational energy, so still emission from <script type="math/tex">v=0</script> is usually seen.</li>
+</ul>
+<h2 id="Vibrational-Course-Structure"><a href="#Vibrational-Course-Structure" class="headerlink" title="Vibrational Course Structure"></a>Vibrational Course Structure</h2><p>Draw out the two curves, and the energy difference should be obvious.</p>
+<ul>
+<li>A <strong>progression</strong> is a series of transitions with a common energy level.</li>
+<li>A <strong>sequence</strong> is a seires of transitions with a common <script type="math/tex">\Delta v</script>.</li>
+</ul>
+<h3 id="Intensity-and-FC-factor"><a href="#Intensity-and-FC-factor" class="headerlink" title="Intensity and FC factor"></a>Intensity and FC factor</h3><p>In the transition dipole moment expression, vibrational part can be separated. In an electronic transition, the light interacts with the electronic wavefunction only, so <script type="math/tex">\mu</script> does not operate on <script type="math/tex">\psi_\mathrm{vib}</script>.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+R_{ij}&=\int\psi'^*_{el}\psi'^*_{vib}\,\hat{\mu}\,\psi''^*_{el}\psi''^*_{vib}\,d\tau\\
+&=[\int\psi'^*_{el}\,\hat{\mu}\,\psi''^*_{el}\,d\tau][\int\psi'^*_{vib}\psi''^*_{vib}\,d r]
+\end{align}</script><p>Now the vibrational integral describes the overlap between the upper and lower vibrational wavefunctions. Define the <strong>Franck-Condon factor</strong></p>
+<script type="math/tex; mode=display">
+q_{i,j}=[\int\psi'^*_{vib}\psi''^*_{vib}\,dr]^2.</script><ul>
+<li>Centre of the GS need to overlap with the <em>asymmetric</em> part of the upper state to have a large integral - usually the edge of wavefunctions.</li>
+</ul>
+<p>For absorption spectra</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Change in <script type="math/tex">r_e</script></th>
+<th>Overlap with upper curve</th>
+<th>Spectra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decrease</td>
+<td>At the shallow end</td>
+<td>Several high <script type="math/tex">v</script> strong</td>
+</tr>
+<tr>
+<td>0</td>
+<td>At GS</td>
+<td><script type="math/tex">0 \rightarrow 0</script> Strong</td>
+</tr>
+<tr>
+<td>Increase</td>
+<td>At the steep end</td>
+<td>Many high <script type="math/tex">v</script> strong</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Classical-interpretations-of-FC-factor"><a href="#Classical-interpretations-of-FC-factor" class="headerlink" title="Classical interpretations of FC factor"></a>Classical interpretations of FC factor</h4><p>The electronic transition itself is very fast compared to the motion of atoms, so the nuclei are expected to have the same position and momentum after the transition.</p>
+<ul>
+<li>At GS, classically there is 0 momentum.</li>
+<li>Same nuclear position means a <em>vertical transition</em>.</li>
+<li>Zero momentum means at the turning points.</li>
+</ul>
+<h2 id="Dissociation"><a href="#Dissociation" class="headerlink" title="Dissociation"></a>Dissociation</h2><p>Dissociation can be observed in the spectra, if the FC factor is in favour. The lines converge until the <strong>dissociation limit</strong> where the lines become a continuum.</p>
+<p>For an absorption spectra:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Upper curve</th>
+<th>Overlap with upper curve</th>
+<th>Spectra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smaller <script type="math/tex">r_e</script></td>
+<td>At the shallow end</td>
+<td>Transitions close to the limit can be observed</td>
+</tr>
+<tr>
+<td>Larger <script type="math/tex">r_e</script></td>
+<td>At the steep end</td>
+<td>The limit continuum can be observed</td>
+</tr>
+<tr>
+<td>Cross a repulsive curve</td>
+<td><strong>radiationless</strong> transition into the repulsive curve</td>
+<td><strong>Pre-dissociation</strong> can be observed, which usually has a lifetime broadening</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Measurement-of-dissociation-energies"><a href="#Measurement-of-dissociation-energies" class="headerlink" title="Measurement of dissociation energies"></a>Measurement of dissociation energies</h3><p>It is very unlikely that the vibration GS and the dissociation limit of a curve are both obsered in the spectrum. Hence, <strong>Birge-Sponer</strong> extrapolation is used.</p>
+<img src="/2020/01/HR-spectroscopy/BSplot.png" title="An example Berge-Sponer plot. (Keeler, 2019)">
+<ul>
+<li>X-axis plots <script type="math/tex">(v+0.5)</script>. </li>
+<li>Y-axis plots the energy difference between <script type="math/tex">v</script> and <script type="math/tex">(v+1)</script> levels, labelled <script type="math/tex">\Delta G(v+0.5)</script>. (Note that the <script type="math/tex">v+0.5</script> is the argument, not an multiplication).</li>
+<li>Now, dissociation energy <script type="math/tex">D_0</script> is the sum of energy differences between levels, hence the <em>area under graph</em>.</li>
+<li>For a <em>Morse</em> potential, the graph should be a straight line.</li>
+<li>However, the real data exhibits curving, hence the <script type="math/tex">D_0</script> is <em>overestimated</em> by using Morse.</li>
+<li>Curving can be due to charge separation, etc.</li>
+</ul>
+<h2 id="Deslandres-table"><a href="#Deslandres-table" class="headerlink" title="Deslandres table"></a>Deslandres table</h2><p>It is hard to make sure the assignments in the electronic spectra are correct. Use <strong>Deslandres tables</strong> for this purpose.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0</th>
+<th style="text-align:center"><script type="math/tex">\downarrow</script></th>
+<th>1</th>
+<th><script type="math/tex">\downarrow</script></th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><script type="math/tex">\rightarrow</script></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><script type="math/tex">\rightarrow</script></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Label <script type="math/tex">v''</script> as columns and <script type="math/tex">v'</script> as rows.</li>
+<li>Fill in the assigned wavenumbers.</li>
+<li>The differences between the adjacent columns or rows should be the same.</li>
+</ul>
+<h2 id="Rotational-fine-structures-1"><a href="#Rotational-fine-structures-1" class="headerlink" title="Rotational fine structures"></a>Rotational fine structures</h2><p>Remember the exact positions of lines depend on the rotational constants of both upper and lower levels. </p>
+<p>For vib-rot transitions, <script type="math/tex">\tilde{B''}</script> and <script type="math/tex">\tilde{B}'</script> are only very slightly different. But for different electronic states, the <script type="math/tex">r_e</script> hence <script type="math/tex">B</script> can be very different. </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>P branch</th>
+<th>R branch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">B'<B''</script></td>
+<td>Further apart</td>
+<td>Closer together<br>R band head<br>Degraded to the red</td>
+</tr>
+<tr>
+<td><script type="math/tex">B'>B''</script></td>
+<td>Closer together<br>P band head<br>Degraded to the blue</td>
+<td>Further apart</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The position of the band head can be calculated by differentiating the relevant <script type="math/tex">\tilde{\nu}_R</script> or <script type="math/tex">\tilde{\nu}_P</script> expressions.</p>
 
     </article>
     
@@ -781,8 +1130,8 @@ R_{ij}=<\!\!j|\hat{\mu}|i\!\!>.</script><p>Note that the dipole moment is a func
             </center>
             <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
             </p><p>原文链接：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">https://www.butteraddict.fun/2020/01/HR-spectroscopy/</a>
-            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 11th 2020, 9:33:34 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 11th 2020, 9:47:17 am</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 11th 2020, 1:33:34 am</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/01/HR-spectroscopy/">January 17th 2020, 9:38:59 am</a>
             </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
         </div>
     
@@ -923,7 +1272,7 @@ top:50vh;
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         
-        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Interaction-of-molecules-with-radiation"><span class="toc-number">1.</span> <span class="toc-text">Interaction of molecules with radiation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-types-of-interactions"><span class="toc-number">1.1.</span> <span class="toc-text">Three types of interactions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Einstein’s-coefficients"><span class="toc-number">1.2.</span> <span class="toc-text">Einstein’s coefficients</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-and-B-coefficients-are-related"><span class="toc-number">1.2.1.</span> <span class="toc-text">A and B coefficients are related</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Line-width"><span class="toc-number">1.3.</span> <span class="toc-text">Line width</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Natural-broadening"><span class="toc-number">1.3.1.</span> <span class="toc-text">Natural broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pressure-collision-broadening"><span class="toc-number">1.3.2.</span> <span class="toc-text">Pressure (collision) broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Doppler-broadening"><span class="toc-number">1.3.3.</span> <span class="toc-text">Doppler broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application"><span class="toc-number">1.3.4.</span> <span class="toc-text">Application</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotational-spectroscopy"><span class="toc-number">2.</span> <span class="toc-text">Rotational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Types-of-rotating-molecules"><span class="toc-number">2.1.</span> <span class="toc-text">Types of rotating molecules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Energy-levels"><span class="toc-number">2.2.</span> <span class="toc-text">Energy levels</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prolate-top"><span class="toc-number">2.2.1.</span> <span class="toc-text">Prolate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oblate-top"><span class="toc-number">2.2.2.</span> <span class="toc-text">Oblate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spherical-top-and-linear-molecules"><span class="toc-number">2.2.3.</span> <span class="toc-text">Spherical top and linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection-rules"><span class="toc-number">2.3.</span> <span class="toc-text">Selection rules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spectra"><span class="toc-number">2.4.</span> <span class="toc-text">Spectra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops"><span class="toc-number">2.4.1.</span> <span class="toc-text">Symmetric tops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities"><span class="toc-number">2.4.2.</span> <span class="toc-text">Intensities</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Centrifugal-distortion"><span class="toc-number">2.5.</span> <span class="toc-text">Centrifugal distortion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra"><span class="toc-number">2.5.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stark-effect"><span class="toc-number">2.6.</span> <span class="toc-text">Stark effect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra-1"><span class="toc-number">2.6.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vibrational-spectroscopy"><span class="toc-number">3.</span> <span class="toc-text">Vibrational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deriving-the-HO-selection-rule"><span class="toc-number">3.1.</span> <span class="toc-text">Deriving the HO selection rule</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HO-eigenfunctions"><span class="toc-number">3.1.1.</span> <span class="toc-text">HO eigenfunctions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ladder-operators"><span class="toc-number">3.1.2.</span> <span class="toc-text">Ladder operators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition-dipole-moment"><span class="toc-number">3.1.3.</span> <span class="toc-text">Transition dipole moment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symmetry-of-wavefunctions"><span class="toc-number">3.2.</span> <span class="toc-text">Symmetry of wavefunctions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-degenerate"><span class="toc-number">3.2.1.</span> <span class="toc-text">Non-degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Degenerate"><span class="toc-number">3.2.2.</span> <span class="toc-text">Degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-resonance"><span class="toc-number">3.2.3.</span> <span class="toc-text">Fermi resonance</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transitions"><span class="toc-number">3.3.</span> <span class="toc-text">Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental"><span class="toc-number">3.3.1.</span> <span class="toc-text">Fundamental</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overtone"><span class="toc-number">3.3.2.</span> <span class="toc-text">Overtone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hotbands"><span class="toc-number">3.3.3.</span> <span class="toc-text">Hotbands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules"><span class="toc-number">3.3.4.</span> <span class="toc-text">Linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rotational-Fine-Structure"><span class="toc-number">3.4.</span> <span class="toc-text">Rotational Fine Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">Linear molecules</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops-1"><span class="toc-number">3.4.2.</span> <span class="toc-text">Symmetric tops</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel-1"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular-1"><span class="toc-number">3.4.2.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities-1"><span class="toc-number">3.4.3.</span> <span class="toc-text">Intensities</span></a></li></ol></li></ol></li></ol>
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Interaction-of-molecules-with-radiation"><span class="toc-number">1.</span> <span class="toc-text">Interaction of molecules with radiation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-types-of-interactions"><span class="toc-number">1.1.</span> <span class="toc-text">Three types of interactions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Einstein’s-coefficients"><span class="toc-number">1.2.</span> <span class="toc-text">Einstein’s coefficients</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-and-B-coefficients-are-related"><span class="toc-number">1.2.1.</span> <span class="toc-text">A and B coefficients are related</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Line-width"><span class="toc-number">1.3.</span> <span class="toc-text">Line width</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Natural-broadening"><span class="toc-number">1.3.1.</span> <span class="toc-text">Natural broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pressure-collision-broadening"><span class="toc-number">1.3.2.</span> <span class="toc-text">Pressure (collision) broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Doppler-broadening"><span class="toc-number">1.3.3.</span> <span class="toc-text">Doppler broadening</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application"><span class="toc-number">1.3.4.</span> <span class="toc-text">Application</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rotational-spectroscopy"><span class="toc-number">2.</span> <span class="toc-text">Rotational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Types-of-rotating-molecules"><span class="toc-number">2.1.</span> <span class="toc-text">Types of rotating molecules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Energy-levels"><span class="toc-number">2.2.</span> <span class="toc-text">Energy levels</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prolate-top"><span class="toc-number">2.2.1.</span> <span class="toc-text">Prolate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oblate-top"><span class="toc-number">2.2.2.</span> <span class="toc-text">Oblate top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spherical-top-and-linear-molecules"><span class="toc-number">2.2.3.</span> <span class="toc-text">Spherical top and linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection-rules"><span class="toc-number">2.3.</span> <span class="toc-text">Selection rules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spectra"><span class="toc-number">2.4.</span> <span class="toc-text">Spectra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops"><span class="toc-number">2.4.1.</span> <span class="toc-text">Symmetric tops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities"><span class="toc-number">2.4.2.</span> <span class="toc-text">Intensities</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Centrifugal-distortion"><span class="toc-number">2.5.</span> <span class="toc-text">Centrifugal distortion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra"><span class="toc-number">2.5.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stark-effect"><span class="toc-number">2.6.</span> <span class="toc-text">Stark effect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-in-spectra-1"><span class="toc-number">2.6.1.</span> <span class="toc-text">Change in spectra</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vibrational-spectroscopy"><span class="toc-number">3.</span> <span class="toc-text">Vibrational spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deriving-the-HO-selection-rule"><span class="toc-number">3.1.</span> <span class="toc-text">Deriving the HO selection rule</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HO-eigenfunctions"><span class="toc-number">3.1.1.</span> <span class="toc-text">HO eigenfunctions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ladder-operators"><span class="toc-number">3.1.2.</span> <span class="toc-text">Ladder operators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition-dipole-moment"><span class="toc-number">3.1.3.</span> <span class="toc-text">Transition dipole moment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symmetry-of-wavefunctions"><span class="toc-number">3.2.</span> <span class="toc-text">Symmetry of wavefunctions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-degenerate"><span class="toc-number">3.2.1.</span> <span class="toc-text">Non-degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Degenerate"><span class="toc-number">3.2.2.</span> <span class="toc-text">Degenerate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-resonance"><span class="toc-number">3.2.3.</span> <span class="toc-text">Fermi resonance</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transitions"><span class="toc-number">3.3.</span> <span class="toc-text">Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental"><span class="toc-number">3.3.1.</span> <span class="toc-text">Fundamental</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overtone"><span class="toc-number">3.3.2.</span> <span class="toc-text">Overtone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hotbands"><span class="toc-number">3.3.3.</span> <span class="toc-text">Hotbands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules"><span class="toc-number">3.3.4.</span> <span class="toc-text">Linear molecules</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rotational-Fine-Structure"><span class="toc-number">3.4.</span> <span class="toc-text">Rotational Fine Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">Linear molecules</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops-1"><span class="toc-number">3.4.2.</span> <span class="toc-text">Symmetric tops</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parallel-1"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">Parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Perpendicular-1"><span class="toc-number">3.4.2.2.</span> <span class="toc-text">Perpendicular</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensities-1"><span class="toc-number">3.4.3.</span> <span class="toc-text">Intensities</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Raman-Spectroscopy"><span class="toc-number">4.</span> <span class="toc-text">Raman Spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Theory"><span class="toc-number">4.1.</span> <span class="toc-text">Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Semi-classical-description"><span class="toc-number">4.1.1.</span> <span class="toc-text">Semi-classical description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quantum-description"><span class="toc-number">4.1.2.</span> <span class="toc-text">Quantum description</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rotational-Raman"><span class="toc-number">4.2.</span> <span class="toc-text">Rotational Raman</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-molecules-2"><span class="toc-number">4.2.1.</span> <span class="toc-text">Linear molecules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-tops-2"><span class="toc-number">4.2.2.</span> <span class="toc-text">Symmetric tops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spherical-tops"><span class="toc-number">4.2.3.</span> <span class="toc-text">Spherical tops</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vibrational-Raman"><span class="toc-number">4.3.</span> <span class="toc-text">Vibrational Raman</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rotational-fine-structures"><span class="toc-number">4.3.1.</span> <span class="toc-text">Rotational fine structures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Modes-and-features"><span class="toc-number">4.3.2.</span> <span class="toc-text">Modes and features</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Electronic-Spectroscopy"><span class="toc-number">5.</span> <span class="toc-text">Electronic Spectroscopy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PE-curves"><span class="toc-number">5.1.</span> <span class="toc-text">PE curves</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection-rules-1"><span class="toc-number">5.2.</span> <span class="toc-text">Selection rules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vibrational-Course-Structure"><span class="toc-number">5.3.</span> <span class="toc-text">Vibrational Course Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intensity-and-FC-factor"><span class="toc-number">5.3.1.</span> <span class="toc-text">Intensity and FC factor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Classical-interpretations-of-FC-factor"><span class="toc-number">5.3.1.1.</span> <span class="toc-text">Classical interpretations of FC factor</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dissociation"><span class="toc-number">5.4.</span> <span class="toc-text">Dissociation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Measurement-of-dissociation-energies"><span class="toc-number">5.4.1.</span> <span class="toc-text">Measurement of dissociation energies</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deslandres-table"><span class="toc-number">5.5.</span> <span class="toc-text">Deslandres table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rotational-fine-structures-1"><span class="toc-number">5.6.</span> <span class="toc-text">Rotational fine structures</span></a></li></ol></li></ol>
         
     </div>
     
@@ -937,6 +1286,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -1178,13 +1529,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
-    
         <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -1227,13 +1578,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
     
-        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
     
