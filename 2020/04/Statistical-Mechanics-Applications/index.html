@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="2LalA猪">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="2LalA猪">
+    
+    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Statistical Mechanics Applications · 黄油上瘾 ButterAddict</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/baicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Statistical Mechanics Applications</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">黄油上瘾</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Statistical Mechanics Applications
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">742</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Langmuir-adsorption"><a href="#Langmuir-adsorption" class="headerlink" title="Langmuir adsorption"></a>Langmuir adsorption</h1><p>To illustrate the difference in choices of ensembles.</p>
+<h2 id="Canonical-ensemble"><a href="#Canonical-ensemble" class="headerlink" title="Canonical ensemble"></a>Canonical ensemble</h2><p>Find the partition function from the number of ways to distribute</p>
+<script type="math/tex; mode=display">
+\Omega(N)=\frac{M!}{N!(M-N)!}\\
+\implies Q=\frac{M!}{N!(M-N)!}\exp(\beta N\epsilon)</script><p>With Stirling’s approximation, chemical potential can be calculated</p>
+<script type="math/tex; mode=display">
+\mu=-\epsilon+k_B T(\ln N-\ln(M-N)).</script><p>Rearranging from here, </p>
+<script type="math/tex; mode=display">
+\rho=\frac{1}{1+\exp(\beta(\mu+\epsilon))}.</script><h2 id="Grand-ensemble"><a href="#Grand-ensemble" class="headerlink" title="Grand ensemble"></a>Grand ensemble</h2><p>The grand partition function, on the other hand, can be simplified by binomial theorem!</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\Xi&=\sum_{N=0}^MQ\exp(N\beta\mu)\\
+&=\sum_{N=0}^M\frac{M!}{N!(M-N)!}\exp(\beta N(\epsilon+\mu))\\
+&=(1+\exp(\beta (\epsilon+\mu)))
+\end{align}</script><p>And the average number is the derivative</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle N\rangle&=\left( \frac{\partial \ln \Xi}{\partial \beta\mu} \right)_{M,T}\\
+&=\frac{M\exp[\beta(\mu+\epsilon)]}{1+\exp[\beta(\mu+\epsilon)]}\\
+\langle \rho\rangle&=\frac{1}{1+\exp(\beta(\mu+\epsilon))}.
+\end{align}</script><p>Somewhat faster than using canonical ensemble.</p>
+<h1 id="Widom’s-particle-insertion-method"><a href="#Widom’s-particle-insertion-method" class="headerlink" title="Widom’s particle insertion method"></a>Widom’s particle insertion method</h1><p><strong>Chemical potential</strong> is not an intuitive quantity as temperature or pressure. The following analyses allows a more intuitive understanding of the chemical potential.</p>
+<p>From the fundamental equations and bridge relationship,</p>
+<script type="math/tex; mode=display">
+\mu=\left( \frac{\partial A}{\partial N} \right)_{T,V}=-k_BT\left( \frac{\partial \ln Q}{\partial N} \right)_{T,V}.</script><p>In the limit of large <script type="math/tex">N</script>, where it can be treated as continuous,</p>
+<script type="math/tex; mode=display">
+\mu=-k_BT\ln\left( \frac{Q(N+1,V,T)}{Q(N,V,T)} \right).</script><p>For an ideal gas, </p>
+<script type="math/tex; mode=display">
+Q=\frac{V^N}{\Lambda^{3N}N!}\\
+\mu^\mathrm{id}=-k_BT\ln\frac{V}{\Lambda^3 (N+1)}.</script><p>We can now split the chemical potentials of all interacting particles into <em>ideal</em> and <strong>excess</strong> parts. </p>
+<script type="math/tex; mode=display">
+\begin{align}
+\beta\mu^\mathrm{ex}&=\mu-\mu^\mathrm{id}\\
+&=-\ln\left( \frac{\int \exp[-\beta U(\mathbf{r}^{N+1})]\,d\mathbf{r}^{N+1}}{V\int \exp[-\beta U(\mathbf{r}^{N})]\,d\mathbf{r}^{N}} \right)\\
+&=-\ln\left(\frac{1}{V}\int \frac{\int \exp[-\beta \Delta U(\mathbf{r}^{N};\mathbf{r}_{N+1})]\exp[-\beta U(\mathbf{r}^{N})]\,d\mathbf{r}^{N}}{\int \exp[-\beta U(\mathbf{r}^{N})]\,d\mathbf{r}^{N}} \,d \mathbf{r}^{N+1}\right)\\
+&=-\ln(\langle \exp[-\beta \Delta U] \rangle_N)
+\end{align}</script><p>The last step is valid if the system is <em>homogeneous</em>, so <script type="math/tex">\Delta U</script> does not depend on <script type="math/tex">\mathbf{r}_{N+1}</script>.</p>
+<blockquote>
+<p>This expression is key to calculate <script type="math/tex">\mu</script> in a computer simulation.</p>
+</blockquote>
+<p>Therefore, <em><script type="math/tex">\mu^\mathrm{ex}</script> is related to the average Boltzmann factor associated with the</em> <strong>random insertion</strong> <em>of an additional particle</em>.</p>
+<h2 id="Hard-sphere-gas"><a href="#Hard-sphere-gas" class="headerlink" title="Hard-sphere gas"></a>Hard-sphere gas</h2><p>Potential is infinity when two molecules overlap.</p>
+<script type="math/tex; mode=display">
+\langle \exp[-\beta \Delta U] \rangle_N=P_\mathrm{overlap}\times0+P_\mathrm{no\ overlap}\times 1</script><p>Therefore, <script type="math/tex">\mu^\mathrm{ex}=k_B T \ln P_\mathrm{no\ overlap}</script>, which is very intuitive! The more dilute, the higher <script type="math/tex">P_\mathrm{no\ overlap}</script>, the lower chemical potential; vice versa.</p>
+<h2 id="Virial-expansion"><a href="#Virial-expansion" class="headerlink" title="Virial expansion"></a>Virial expansion</h2><p>The <strong>virial expansion</strong> is an expansion of the compressibility factor in a power series of <script type="math/tex">\rho</script>, </p>
+<script type="math/tex; mode=display">
+Z=1+B_2(T)\rho+B_3(T)\rho^2+...</script><p>To find the coefficients, try linking <script type="math/tex">\rho</script> to <script type="math/tex">\mu^\mathrm{ex}</script> and use particle insertion method. </p>
+<script type="math/tex; mode=display">
+\begin{align}
+\left(\frac{\partial \mu}{\partial \rho}\right)_T&=\left(\frac{\partial \mu}{\partial P}\right)_T\left(\frac{\partial P}{\partial \rho}\right)_T&&\mathrm{chain\ rule}\\
+&=\frac{1}{\rho}\left(\frac{\partial P}{\partial \rho}\right)_T && \mathrm{Gibbs-Duhem}\\
+&=\frac{k_B T}{\rho}[1+2B_2\rho+...]&&\mathrm{Virial\ for\ }P\\
+\left(\frac{\partial \mu^\mathrm{ex}}{\partial \rho}\right)_T&=\frac{k_B T}{\rho}[2B_2\rho+...]\\
+\mu^\mathrm{ex}(\rho)-0&=k_B T(2B_2\rho+\frac{3}{2}B_3\rho^2+...)
+\end{align}</script><p>By far, the only assumption is that the virial expansion holds. For low density, we can truncate it to <script type="math/tex">B_2</script> term only,</p>
+<script type="math/tex; mode=display">
+B_2\approx\frac{\mu^\mathrm{ex}}{2k_B T \rho}.</script><p>Now use Widom. By considering the probability inside and outside the interaction volume, we have</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mu^\mathrm{ex}&=-k_B T \ln\left(1+\rho\int\exp[-\beta \phi(r)]-1 \,d\mathbf{r}\right)\\
+&\approx k_B T \rho\int1-\exp[-\beta \phi(r)]\,d\mathbf{r}\\
+B_2(T)&=\frac{1}{2}\int1-\exp[-\beta \phi(r)]\,d\mathbf{r}\\
+&=\frac{1}{2}\int -f(r)\,d\mathbf{r}.
+\end{align}</script><p>The abbreviation <script type="math/tex">f(r)</script> is the <strong>Mayer <script type="math/tex">f</script>-function</strong>.</p>
+<h3 id="Hard-sphere"><a href="#Hard-sphere" class="headerlink" title="Hard sphere"></a>Hard sphere</h3><script type="math/tex; mode=display">
+\phi(r)=\begin{cases}
+\infty && r<\sigma,\\
+0 &&r\geq \sigma.
+\end{cases}</script><p>Hence, <script type="math/tex">B_2(T)=2\pi\sigma^3/3</script>. </p>
+<p>Note that there is <em>no</em> temperature dependence, called <em>athermal</em>, meaning there is no energy scale in the hard-shpere model.</p>
+<h3 id="Square-well"><a href="#Square-well" class="headerlink" title="Square well"></a>Square well</h3><script type="math/tex; mode=display">
+\phi(r)=\begin{cases}
+\infty && r<\sigma,\\
+-\epsilon && \sigma<r<\lambda\sigma\\
+0 &&r\geq \lambda\sigma.
+\end{cases}</script><p>Hence,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+B_2(T)&=B_2^{HS}+\frac{1}{2}\int_\sigma^{\lambda\sigma}[\exp(\beta\epsilon)-1]r^2\,dr\\
+&=\frac{2\pi\sigma^3}{3}[1-(\lambda^3-1)][\exp(\beta\epsilon)-1].
+
+\end{align}</script><p>Now there is a temperature dependence, comparing to the scale of <script type="math/tex">\epsilon</script>. At the point <script type="math/tex">B_2</script> changes sign, <strong>Boyle temperature</strong>, the system is close to ideal.</p>
+<h2 id="Flory-Huggins-theory-of-polymer-solutions"><a href="#Flory-Huggins-theory-of-polymer-solutions" class="headerlink" title="Flory-Huggins theory of polymer solutions"></a>Flory-Huggins theory of polymer solutions</h2><p>Consider polymer chain on a lattice. Assumptions:</p>
+<ul>
+<li>No interpenetration =&gt; no double occupancy </li>
+<li>All sites are either occupied by polymer or solvent =&gt; no empty site</li>
+<li>Mean field approximation.</li>
+</ul>
+<h3 id="Chemical-potential"><a href="#Chemical-potential" class="headerlink" title="Chemical potential"></a>Chemical potential</h3><p>We want to again use Widom’s method. Need to calculate two parts</p>
+<ol>
+<li>the probability that the insertion is not an overlap</li>
+<li>the energy changed during this insertion.</li>
+</ol>
+<p>More assumptions:</p>
+<ul>
+<li>The inserting polymer is not connected</li>
+<li>Segments and solvents are <em>randomly</em> distributed.</li>
+</ul>
+<p>With <script type="math/tex">N</script> polymers, lengths <script type="math/tex">r</script>, total <script type="math/tex">M</script> sites, <script type="math/tex">\eta</script> fraction occupancy, <script type="math/tex">z</script> average non-bonded neighbouring segment, <script type="math/tex">\Delta \epsilon=\epsilon_{SP}-(\epsilon_{SS}+\epsilon_{PP})/2</script>.</p>
+<script type="math/tex; mode=display">
+\mu^\mathrm{ex}=-rk_B T \ln(1-\eta)-2rz\eta\Delta\epsilon+\mathrm{const.}</script><p>Note:</p>
+<ul>
+<li>It is necessary that <script type="math/tex">\Delta \epsilon>0</script> for phase separation to be possible</li>
+<li>any terms independent of <script type="math/tex">\eta</script> is collected into constant term.</li>
+</ul>
+<p>Also,</p>
+<script type="math/tex; mode=display">
+\mu^\mathrm{id}=k_BT\ln(N/M)=k_BT\ln(\eta)+\mathrm{const.}</script><p>By using the Flory-Huggins parameter <script type="math/tex">\chi=z\Delta \epsilon/kT</script>,</p>
+<script type="math/tex; mode=display">
+\mu=k_B T (\ln \eta-r\ln(1-\eta)-2r\chi\eta)</script><p>is the F-H chemical potential of a polymer solution.</p>
+<h3 id="Critical-point"><a href="#Critical-point" class="headerlink" title="Critical point"></a>Critical point</h3><p>The critial points are 1st and 2nd derivatives of <script type="math/tex">P</script> w.r.t. <script type="math/tex">V</script> are 0. Here, <script type="math/tex">M</script> is effectively <script type="math/tex">V</script>, and by using Gibbs-Duhem, the extrema of <script type="math/tex">(\partial \mu/\partial \eta)</script> is the same as <script type="math/tex">(\partial P/\partial V)</script>.</p>
+<script type="math/tex; mode=display">
+\eta_\mathrm{crit}=\frac{1}{1+\sqrt{r}}\\
+\chi_\mathrm{crit}=\frac{(1+\sqrt{r})^2}{2r}</script><p>Unlike regular binary solutions, the polymer solution</p>
+<ul>
+<li>does not have a symmetric phase diagram - <script type="math/tex">\eta_\mathrm{crit}</script> moves increasingly to the left as the polymer length increase</li>
+<li>short limit of <script type="math/tex">\chi</script> is 2; long limit is 0.5</li>
+</ul>
+<p>Another way to look at the asymmetric nature is to investigate <script type="math/tex">U</script> and <script type="math/tex">S</script>.</p>
+<p>The potential energy change for mixing is </p>
+<script type="math/tex; mode=display">
+\Delta U=Mk_B T\chi\eta(1-\eta)</script><p>which still causes <em>demixing</em>, but is still symmetric.</p>
+<p>The entropic contribution is</p>
+<script type="math/tex; mode=display">
+\Delta S=-k_BM\left[(1-\eta)\ln(1-\eta)+\frac{n}{r}\ln(\eta)\right].</script><p>Here we can see that longer polymer leads to less entropy, and the entropy is asymmetric.</p>
+<h3 id="Flory-Huggins-parameter"><a href="#Flory-Huggins-parameter" class="headerlink" title="Flory-Huggins parameter"></a>Flory-Huggins parameter</h3><p>Compare to the virial expansion (noting <script type="math/tex">\rho=\eta/r</script>), at low densities</p>
+<script type="math/tex; mode=display">
+B_2=r^2(\frac{1}{2}-\chi).</script><ul>
+<li>Ideal behaviour occurs when <script type="math/tex">\chi=1/2</script>;</li>
+<li>Good solvent - smaller energy penalty - <script type="math/tex">\chi<1/2</script>, <script type="math/tex">B_2>0</script>, increase osmotic pressure;</li>
+<li>Poor solvent - <script type="math/tex">\chi>1/2</script>, reduced osmotic pressure, phase separation.</li>
+</ul>
+<p>Experimental determination of <script type="math/tex">B_2</script> measures the osmotic pressure.</p>
+<h1 id="Landau-theory"><a href="#Landau-theory" class="headerlink" title="Landau theory"></a>Landau theory</h1><h2 id="Order-of-phase-transition"><a href="#Order-of-phase-transition" class="headerlink" title="Order of phase transition"></a>Order of phase transition</h2><p>At phase transition, <script type="math/tex">T</script>, <script type="math/tex">P</script> and <script type="math/tex">\mu</script>, and hence <script type="math/tex">G</script> of the two coexisting phases are equal.</p>
+<p><strong>1st order</strong> phase transition:</p>
+<ul>
+<li>The 1st derivative of free energy is <em>discontinuous</em>;</li>
+<li>Sudden volumn change, non-zero enthalpy of transition;</li>
+<li>Need to overcome a free energy barrier.</li>
+</ul>
+<p><strong>2nd order</strong> phase transition:</p>
+<ul>
+<li>The 1st derivative is <em>continuous</em>, but the 2nd derivative is not;</li>
+<li>Continuous, and no barrier.</li>
+</ul>
+<h2 id="Parameterization"><a href="#Parameterization" class="headerlink" title="Parameterization"></a>Parameterization</h2><p>Use <strong>order parameter</strong> to describe free energy as a <em>polynomial</em>. </p>
+<ul>
+<li>The order parameter is 0 in disordered phase, and non-zero in ordered phase.</li>
+<li>Can be symmetric (e.g. magnetization) with only even power terms, or not (e.g. solid-fluid transition).</li>
+<li>Coefficients are continuous functions of temperature.</li>
+<li>Linear term always vanishes (since derivative at 0 need to be 0 at (at least) high T).</li>
+<li>Highest power has a +ve coefficient, for stability.</li>
+</ul>
+<h2 id="Techniques"><a href="#Techniques" class="headerlink" title="Techniques"></a>Techniques</h2><ul>
+<li>Sketch out the shapes at temperatures above, at and below coexistence.</li>
+<li>Clearly keep track of the expected number of roots in free energy and in 1st derivative.</li>
+<li>Use <script type="math/tex">\Delta=b^2-4ac=0</script> to simplify calculation whenever double roots are expected.</li>
+<li>Always verify the order by checking the continuity of derivatives.<ul>
+<li>Use <script type="math/tex">\frac{d A}{d T}=\frac{\partial A}{\partial M}\frac{\partial M}{\partial T}+\frac{\partial A}{\partial T}</script> to simplify.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><ol>
+<li>Assumption that the polynomial expansion is valid?</li>
+<li>Fluctuations around the minimum are ignored.</li>
+</ol>
+<h1 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h1><p>The Brownian motion of molecules is responsible for diffusion.</p>
+<h2 id="Fick’s-laws"><a href="#Fick’s-laws" class="headerlink" title="Fick’s laws"></a>Fick’s laws</h2><p><strong>First law</strong>: flux proportional to concentration gradient,</p>
+<script type="math/tex; mode=display">
+j_x(x,t)=-D\frac{\partial c(x,t)}{\partial x}.</script><p>By considering the accumulation of material in a slab, and take small limit of <script type="math/tex">x</script> and <script type="math/tex">t</script>, </p>
+<script type="math/tex; mode=display">
+\frac{\partial c}{\partial t}=-\frac{\partial j_x}{\partial x}.</script><p><strong>Second law</strong>, aka <strong>diffusion equation</strong>: combining the above two equations,</p>
+<script type="math/tex; mode=display">
+\frac{\partial c(x,t)}{\partial t}=D\frac{\partial^2 c(x,t)}{\partial x^2}.</script><h2 id="Deduce-the-property-of-the-solution"><a href="#Deduce-the-property-of-the-solution" class="headerlink" title="Deduce the property of the solution"></a>Deduce the property of the solution</h2><p>If the initial condition is <script type="math/tex">c(x,0)=\delta(x)</script>, the exact solution is a Gaussian, widening with time</p>
+<script type="math/tex; mode=display">
+c(x,t)=\frac{1}{\sqrt{4\pi Dt}}\exp(-\frac{x^2}{4Dt}).</script><p>However, to find out the <em>time-dependence</em> of the <em>mean squared width</em> does not require the knowledge of this exact form, as the following.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle x^2(t)\rangle&=\sigma^2-\langle x(t)\rangle^2\\
+&=\int x^2c(x,t)\,dx-0\\
+\int x^2\frac{\partial c(x,t)}{\partial t} \,dx &=D\int x^2\frac{\partial^2 c(x,t)}{\partial x^2}\,dx &&\mathrm{from\ Fick's\ 2nd}\\
+\frac{\partial}{\partial t}\int x^2c(x,t)\,dx &=D\int x^2\frac{\partial^2 c(x,t)}{\partial x^2}\,dx\\
+\frac{\partial \langle x^2(t)\rangle }{\partial t}&=D\{[x^2\frac{\partial c(x,t)}{\partial x}]_{-\infty}^\infty-2D\int x\frac{\partial c(x,t)}{\partial x}\,dx\}\\
+&=2D\{ -[xc(x,t)]_{-\infty}^\infty +\int c(x,t)\, dx \}\\
+&=2D.
+\end{align}</script><h2 id="Random-walk-model"><a href="#Random-walk-model" class="headerlink" title="Random walk model"></a>Random walk model</h2><ul>
+<li>Lattice spacing is <script type="math/tex">l</script>, equal probability left or right, frequency <script type="math/tex">\Gamma</script>.</li>
+<li>Calculate expectation values <script type="math/tex">\langle x^2 \rangle</script> by listing out all possibilities - note the need to use double sum.</li>
+</ul>
+<script type="math/tex; mode=display">
+\langle x^2(t) \rangle=\Gamma t l^2\\
+\implies D=\frac{\Gamma l^2}{2}.</script><h2 id="Green-Kubo-relation"><a href="#Green-Kubo-relation" class="headerlink" title="Green-Kubo relation"></a>Green-Kubo relation</h2><p>Into continuous space, and using <script type="math/tex">x(t)=\int_0^t v(t')\, dt'</script>, we can evaluate the mean square displacement as</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle x^2(t) \rangle&=\langle \left(\int_0^tv_x(t')\,dt'\right)^2 \rangle\\
+&=\int_0^t\int_0^t \langle v_x(t')v_x(t'') \rangle\,dt'\,dt''\\
+&=2\int_0^tdt' \int_0^{t'}\langle v_x(t')v_x(t'') \rangle\,dt'' &&(*)\\
+&=2\int_0^tdt' \int_0^{t'}\langle v_x(t'-t'')v_x(0) \rangle\,dt''.
+\end{align}</script><ul>
+<li>The term <script type="math/tex">\langle v_x(t')v_x(t'') \rangle</script> is called the <strong>velocity auto-correlation function</strong>, which measures the average correlation between the velocity of a particle at times <script type="math/tex">t'</script> and <script type="math/tex">t''</script>.</li>
+<li>The line <script type="math/tex">(*)</script> comes from splitting the limit of integration and changing the order.</li>
+<li>The last line is valid because the auto-correlation function is a <em>equilibrium</em> property, and hence is invariant under an arbitrary time shift.</li>
+</ul>
+<p>Therefore, we can write the diffusion coefficient in the <strong>Green-Kubo</strong> relation</p>
+<script type="math/tex; mode=display">
+D=\int_0^\infty \langle v_x(\tau)v_x(0) \rangle\,d\tau.</script><h2 id="Langevin-equation"><a href="#Langevin-equation" class="headerlink" title="Langevin equation"></a>Langevin equation</h2><p>With GK relation, we can start to estimate diffusion coefficients, provided a few more assumptions.</p>
+<ul>
+<li>Under an external force <script type="math/tex">F</script>, the average drift velocity is <script type="math/tex">\langle v \rangle=F/\gamma</script>. <script type="math/tex">\gamma</script> is the friction coefficient, and <script type="math/tex">u=1/\gamma</script> is the <strong>mobility</strong>.</li>
+<li>It can be estimated by Stokes expression <script type="math/tex">\gamma=6\pi\eta a</script>.</li>
+<li>Random collisions with neighbours is caused by a <em>random</em> force <script type="math/tex">F^R(t)</script>, not correlated with the velocity.</li>
+</ul>
+<p>Now the equation of motion of the particle is </p>
+<script type="math/tex; mode=display">
+m\dot{v}(t)=F^R(t)-\gamma v(t)</script><p>which is the <strong>Langevin equation</strong>.</p>
+<blockquote>
+<p>Multiply by <script type="math/tex">v(0)</script> and take average, the <script type="math/tex">F^R</script> term vanishes, and results in a ODE <script type="math/tex">m\langle \dot{v}_x(t)v_x(0) \rangle+\gamma\langle v_x(t)v_x(0) \rangle=0</script>.</p>
+<p>This can be solved to get <script type="math/tex">\langle v_x(t)v_x(0)\rangle=\langle v^2_x(0) \rangle\exp[-\gamma t/m]</script>. Maxwell distribution gives <script type="math/tex">m\langle v^2_x(0) \rangle=k_B T</script>.</p>
+<p>Hence from GK, <script type="math/tex">D=\frac{k_B T}{6\pi\eta a}</script>. This is <strong>Stokes-Einstein</strong> relation.</p>
+</blockquote>
+<h2 id="Einstein-Smoluchowski-relation"><a href="#Einstein-Smoluchowski-relation" class="headerlink" title="Einstein-Smoluchowski relation"></a>Einstein-Smoluchowski relation</h2><p>Same goal as Langevin, but more general, using flux. At equilibrium, <em>the diffusion flux exactly balances the flux due to external force</em>.</p>
+<p>The flux is the number density times the average (over these particles) velocity: <script type="math/tex">j=\rho\langle v\rangle</script>.</p>
+<p>Flux due to external force:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+j_\mathrm{ext}&=\rho\langle v_\mathrm{ext}\rangle\\
+&=\rho uf_\mathrm{ext}\\
+&=-\rho u\frac{\partial U(x)}{\partial x}.
+\end{align}</script><p>Diffusion flux (by Fick’s 1st):</p>
+<script type="math/tex; mode=display">
+j_\mathrm{D}=-D\frac{\partial \rho(x)}{\partial x}.</script><p>Therefore, at equilibrium,</p>
+<script type="math/tex; mode=display">
+0=-\rho u\frac{\partial U(x)}{\partial x}-D\frac{\partial \rho(x)}{\partial x}\\
+\mathrm{Also,\ }\rho(x)=\rho_0\exp[-U(x)/k_BT].</script><p>Satisfied if <script type="math/tex">u=D/k_BT</script>. This is the <strong>Einstein-Smoluchowski relation</strong>.</p>
+<h1 id="Polymers"><a href="#Polymers" class="headerlink" title="Polymers"></a>Polymers</h1><p>Closely linked to diffusion.</p>
+<h2 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h2><p>The freely jointed chain consists of <strong>segments</strong>, which is larger than monomers (Kuhn length). Analysis of the end-to-end distance <script type="math/tex">\langle \mathbf{R}_\mathrm{ee}\rangle</script> is similar to the random walk in diffusion, except that it is <em>vector</em> addtion.</p>
+<script type="math/tex; mode=display">
+\langle \mathbf{R}_\mathrm{ee}\rangle=\mathbf{0}\\
+\begin{align}
+\langle \mathbf{R}_\mathrm{ee}^2\rangle&=\langle (\sum_i\mathbf{l}_i)\cdot(\sum_j\mathbf{l}_j)\rangle\\
+&=\sum_{ij}\langle \mathbf{l}_i\cdot \mathbf{l}_j \rangle\\
+&=\sum_{i}l^2+\sum_{i\neq j}l^2 \langle \cos\theta\rangle\\
+&=Nl^2
+\end{align}</script><p>The expectation of <script type="math/tex">\theta</script> is 0 since segments are uncorrelated.</p>
+<p>The ratio between RMS end-to-end distance and contour length is therefore <script type="math/tex">1/\sqrt{N}</script>.</p>
+<h2 id="Probability-distribution-of-size"><a href="#Probability-distribution-of-size" class="headerlink" title="Probability distribution of size"></a>Probability distribution of size</h2><p>Considering 1D case, then it is not too hard to work out the distribution of end-to-end length.</p>
+<p>Abbreviate <script type="math/tex">(N_R-N_L)=n</script>. The probability distribution is </p>
+<script type="math/tex; mode=display">
+P(N,n)=\frac{N!}{\frac{N+n}{2}!\frac{N-n}{2}!}\left(\frac{1}{2}\right)^N.</script><p>Taking natural log for easier manipulation.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\ln P&=N\ln N -\frac{1}{2}[(N+n)\ln(N+n)+(N-n)\ln(N-n)]\\
+&=-\frac{1}{2}[(N+n)\ln(1+\frac{n}{N})+(N-n)\ln(1-\frac{n}{N})]\\
+&=-\frac{1}{2}[(N+n)\left\{ \frac{n}{N}-\frac{1}{2}\left(\frac{n}{N}\right)^2 \right\}+(N-n)\left\{- \frac{n}{N}-\frac{1}{2}\left(\frac{n}{N}\right)^2 \right\}\\
+&=-\frac{n^2}{2N}
+\end{align}</script><blockquote>
+<p>Note: need to take up to quadratic term in the Taylor expansion because the final result is quadratic.</p>
+</blockquote>
+<p>Therefore, the distribution is a Gaussian, </p>
+<script type="math/tex; mode=display">
+P\propto \exp \left(-\frac{n^2}{2N}\right).</script><p>For normalization, it is important to note that <script type="math/tex">n</script> changes in steps of <strong>2</strong> (since <script type="math/tex">N_R</script> and <script type="math/tex">N_L</script> change simultaneously). Hence, a half is needed to ‘properly’ normalize.</p>
+<script type="math/tex; mode=display">
+P=\sqrt{\frac{1}{2\pi N}}\exp \left(-\frac{n^2}{2N}\right)</script><h2 id="Thermodynamics-of-polymers"><a href="#Thermodynamics-of-polymers" class="headerlink" title="Thermodynamics of polymers"></a>Thermodynamics of polymers</h2><h3 id="Entropic-force"><a href="#Entropic-force" class="headerlink" title="Entropic force"></a>Entropic force</h3><p>Having calculated via <script type="math/tex">\Omega</script>, might as well go towards entropy. In the expression for <script type="math/tex">P(N,n)</script>, the <script type="math/tex">(1/2)^N</script> term does not depend on <script type="math/tex">n</script>, so</p>
+<script type="math/tex; mode=display">
+\begin{align}
+S(n)&=k_B\ln \Omega=k_B\ln P +\mathrm{const.}\\
+&=-\frac{k_B n^2}{2N}+\mathrm{const.}\\
+S(X_\mathrm{ee})&=-\frac{k_BX_\mathrm{ee}^2}{2Nl^2}+\mathrm{const.}
+\end{align}</script><p>In this context, the first law becomes</p>
+<script type="math/tex; mode=display">
+dE=TdS+FdX_\mathrm{ee}.</script><p>At constant temperature, for <em>ideal</em> polymer,</p>
+<script type="math/tex; mode=display">
+T\left( \frac{\partial S}{\partial X_\mathrm{ee}} \right)_T+F=\left( \frac{\partial E}{\partial X_\mathrm{ee}} \right)_T=0.</script><p>Solving for <script type="math/tex">F</script> gives a ‘restoring force’, which is completely <em>entropic</em> in origin:</p>
+<script type="math/tex; mode=display">
+F_\mathrm{restoring}=-F=-\frac{X_\mathrm{ee} k_B T}{Nl^2}.</script><h3 id="Force-without-Stirling"><a href="#Force-without-Stirling" class="headerlink" title="Force, without Stirling"></a>Force, without Stirling</h3><p>Formally write the ‘internal energy’ as <script type="math/tex">E=-FX_\mathrm{ee}=-Fl\sum_i s_i</script>, where <script type="math/tex">s_i</script> is <script type="math/tex">\pm 1</script>. This is a separable energy, so it is possible to write partition functions.</p>
+<script type="math/tex; mode=display">
+q=\sum_{s=\pm1}\exp[-\beta Fl s]=2\cosh(\beta F l)\\
+Q=q^N.</script><p>Then,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle X_\mathrm{ee}\rangle&=\frac{\langle E\rangle}{-F}\\
+&=\frac{1}{F}\frac{\partial \ln Q}{\partial \beta}\\
+&=Nl\tanh(\beta Fl)\\
+F&=\frac{k_B T}{l}\mathrm{artanh}\left(\frac{X_\mathrm{ee}}{Nl}\right).
+\end{align}</script><h3 id="Adiabatic-stretching"><a href="#Adiabatic-stretching" class="headerlink" title="Adiabatic stretching"></a>Adiabatic stretching</h3><p>Equivalent to saying constant <script type="math/tex">S</script>. Differentiate <script type="math/tex">E(T, X_\mathrm{ee})</script> w.r.t. <script type="math/tex">X_\mathrm{ee}</script> at constant <script type="math/tex">S</script> gives</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial E}{\partial T} \right)_{X_\mathrm{ee}}\left( \frac{\partial T}{\partial X_\mathrm{ee}} \right)_S+\left( \frac{\partial E}{\partial X_\mathrm{ee}} \right)_T=\left( \frac{\partial E}{\partial X_\mathrm{ee}} \right)_S.</script><p>Therefore,</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial T}{\partial X_\mathrm{ee}} \right)_S=\frac{k_B T X_\mathrm{ee}}{C_X Nl^2}>0.</script><p>Heats up when stretched, cools down when released!</p>
+
+    </article>
+    
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <center>
+                <p>Like this? Please support me!</p>
+                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+                <p>or via <a href="/about/index.html">other methods.</a></p>
+            </center>
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Applications/">https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Applications/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Applications/">April 25th 2020, 6:23:37 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Applications/">April 25th 2020, 6:36:32 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/04/Statistical-Mechanics-Fundamentals/" title="Statistical Mechnics Fundamentals">
+                    <div class="prevTitle">Statistical Mechnics Fundamentals</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Langmuir-adsorption"><span class="toc-number">1.</span> <span class="toc-text">Langmuir adsorption</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Canonical-ensemble"><span class="toc-number">1.1.</span> <span class="toc-text">Canonical ensemble</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grand-ensemble"><span class="toc-number">1.2.</span> <span class="toc-text">Grand ensemble</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Widom’s-particle-insertion-method"><span class="toc-number">2.</span> <span class="toc-text">Widom’s particle insertion method</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hard-sphere-gas"><span class="toc-number">2.1.</span> <span class="toc-text">Hard-sphere gas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Virial-expansion"><span class="toc-number">2.2.</span> <span class="toc-text">Virial expansion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hard-sphere"><span class="toc-number">2.2.1.</span> <span class="toc-text">Hard sphere</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Square-well"><span class="toc-number">2.2.2.</span> <span class="toc-text">Square well</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flory-Huggins-theory-of-polymer-solutions"><span class="toc-number">2.3.</span> <span class="toc-text">Flory-Huggins theory of polymer solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chemical-potential"><span class="toc-number">2.3.1.</span> <span class="toc-text">Chemical potential</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Critical-point"><span class="toc-number">2.3.2.</span> <span class="toc-text">Critical point</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flory-Huggins-parameter"><span class="toc-number">2.3.3.</span> <span class="toc-text">Flory-Huggins parameter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Landau-theory"><span class="toc-number">3.</span> <span class="toc-text">Landau theory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Order-of-phase-transition"><span class="toc-number">3.1.</span> <span class="toc-text">Order of phase transition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parameterization"><span class="toc-number">3.2.</span> <span class="toc-text">Parameterization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Techniques"><span class="toc-number">3.3.</span> <span class="toc-text">Techniques</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limitations"><span class="toc-number">3.4.</span> <span class="toc-text">Limitations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Diffusion"><span class="toc-number">4.</span> <span class="toc-text">Diffusion</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fick’s-laws"><span class="toc-number">4.1.</span> <span class="toc-text">Fick’s laws</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deduce-the-property-of-the-solution"><span class="toc-number">4.2.</span> <span class="toc-text">Deduce the property of the solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Random-walk-model"><span class="toc-number">4.3.</span> <span class="toc-text">Random walk model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Green-Kubo-relation"><span class="toc-number">4.4.</span> <span class="toc-text">Green-Kubo relation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Langevin-equation"><span class="toc-number">4.5.</span> <span class="toc-text">Langevin equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Einstein-Smoluchowski-relation"><span class="toc-number">4.6.</span> <span class="toc-text">Einstein-Smoluchowski relation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Polymers"><span class="toc-number">5.</span> <span class="toc-text">Polymers</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Size"><span class="toc-number">5.1.</span> <span class="toc-text">Size</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability-distribution-of-size"><span class="toc-number">5.2.</span> <span class="toc-text">Probability distribution of size</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thermodynamics-of-polymers"><span class="toc-number">5.3.</span> <span class="toc-text">Thermodynamics of polymers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Entropic-force"><span class="toc-number">5.3.1.</span> <span class="toc-text">Entropic force</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Force-without-Stirling"><span class="toc-number">5.3.2.</span> <span class="toc-text">Force, without Stirling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adiabatic-stretching"><span class="toc-number">5.3.3.</span> <span class="toc-text">Adiabatic stretching</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 19
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Diffraction-in-chemistry/">Diffraction Methods in Chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/2020/03/抗疫措施和解方程/">抗疫措施和解方程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2020/03/Symmetry-in-chemistry/">Symmetry in chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href="/2020/02/Theoretical-Techniques-Key-Equations/">Theoretical Techniques Key Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/Synthesis-with-enolate/">Synthesis with enolate</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/HR-spectroscopy/">High Resolution Spectroscopy</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/2019/11/Essential-Thermodynamics/">Essential Thermodynamics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/La-Pause-de-Pierrette/">【学年最佳餐厅】La Pause de Pierrette</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Electrons and Solids</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/Fourier-Transform/">Fourier Transform</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href="/2019/04/Functionals/">Functionals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/05</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/2019/03/Contour-Integration/">Contour Integration</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href="/2019/03/IB-Spectroscopy/">IB Spectroscopy Techniques</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+    
+        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+    
+        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+    
+        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "2LalA猪"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+    MathJax.Hub.Config({
+
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+            extensions: ["[mhchem]/mhchem.js"]
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
+
+

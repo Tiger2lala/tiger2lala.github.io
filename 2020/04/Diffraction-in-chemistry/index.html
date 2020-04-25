@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="2LalA猪">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="2LalA猪">
+    
+    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Diffraction Methods in Chemistry · 黄油上瘾 ButterAddict</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/baicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Diffraction Methods in Chemistry</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">黄油上瘾</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Diffraction Methods in Chemistry
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">13 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Rigorous maths is not essential for the sake of this course, so that will only be added later if required.</p>
+<h1 id="Diffraction"><a href="#Diffraction" class="headerlink" title="Diffraction"></a>Diffraction</h1><h2 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">\mathbf{r}</script></td>
+<td>Position</td>
+</tr>
+<tr>
+<td><script type="math/tex">\mathbf{s_0}</script></td>
+<td>Unit vector of incident beam</td>
+</tr>
+<tr>
+<td><script type="math/tex">\mathbf{s}</script></td>
+<td>Unit vector of diffracted beam</td>
+</tr>
+<tr>
+<td><script type="math/tex">\mathbf{S=(s-s_0)}/\lambda</script></td>
+<td>Scattering vector</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>With such definitions, the phase difference is <script type="math/tex">\mathbf{r\cdot S}</script>.</p>
+<h2 id="Diffracting-from-electron-density"><a href="#Diffracting-from-electron-density" class="headerlink" title="Diffracting from electron density"></a>Diffracting from electron density</h2><p>For the most part, only elastic scattering is considered. The amplitude of the diffracted beam remains the same, but there is a phase shift.</p>
+<p>We define a <strong>transmission function</strong>, which depends on the electron density,</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r})=\exp(i\sigma \rho(\mathbf{r})),</script><p>so that the total diffracted amplitude is </p>
+<script type="math/tex; mode=display">
+\Psi=\int\psi(\mathbf{r})\exp(2\pi i \mathbf{r\cdot S})\, dV_r.</script><p>The <strong>kinematic approximation</strong> is a Taylor expansion of the transmission function,</p>
+<script type="math/tex; mode=display">
+\psi (\mathbf{r})\approx 1+i\sigma\rho(\mathbf{r}).</script><p>Then, ignore the constant 1, and define the very convenient <strong>structure factor</strong> as </p>
+<script type="math/tex; mode=display">
+\begin{align}
+F(\mathbf{S})&=\frac{\Psi}{i\sigma}\\
+&=\int\rho(\mathbf{r})\exp(2\pi i\mathbf{r\cdot S}).
+\end{align}</script><p>Now the electron density and the diffracted amplitude are related by a Fourier transform - if we know the full information of <script type="math/tex">F</script>, we know the electron density.</p>
+<h2 id="The-phase-problem"><a href="#The-phase-problem" class="headerlink" title="The phase problem"></a>The phase problem</h2><p>In reality, only the diffracted intensity is measurable, hence the size of <script type="math/tex">F</script>, but not the phase. To measure the phase, one would need an aerial comparable to the wavelength, but the reason why we are doing X-ray at the first place is that it’s comparable to atoms.</p>
+<p>Therefore, the main task in structure determination is to deduce the phase angle of each structure factor.</p>
+<h1 id="Patterson-Function"><a href="#Patterson-Function" class="headerlink" title="Patterson Function"></a>Patterson Function</h1><p><em>If we don’t know it, just ignore it.</em></p>
+<p>Since only the intensity can be measured, we try to deduce as much information as possible from the intensity alone. The <strong>Patterson function</strong> is the inverse FT of <script type="math/tex">|F|^2</script> (which is basically the intensity).</p>
+<script type="math/tex; mode=display">
+\begin{align}
+P(\mathbf{u})&=\mathcal{F}^{-1}[FF^*]\\
+&=\mathcal{F}^{-1}[F]*\mathcal{F}^{-1}[F^*]\\
+&=\rho(\mathbf{r})*\rho(-\mathbf{r})\\
+&=\int\rho(\mathbf{r})\rho(\mathbf{u-r})\, dV_r
+\end{align}</script><p>The second term is valid, because <script type="math/tex">\rho</script> is real, so it’s FT has conjugate symmetry.</p>
+<p>The Patterson function can be interpreted as the overlap between two copies of electron densities, if one is translated by <script type="math/tex">\mathbf{u}</script>.</p>
+<ul>
+<li>always symmetrical about origin</li>
+<li>maximum at <script type="math/tex">\mathbf{u=0}</script></li>
+<li>creates a peak when <script type="math/tex">\mathbf{u}</script> is an interatomic vector</li>
+<li>weight of peak is product of no. of electrons</li>
+<li>there are <script type="math/tex">N^2-N</script> non-origin peaks</li>
+<li>peaks twice as broad</li>
+</ul>
+<h2 id="Gas-phase"><a href="#Gas-phase" class="headerlink" title="Gas phase"></a>Gas phase</h2><p>The <strong>radial</strong> Patterson function is extremely useful when dealing with gas phase diffractions, because</p>
+<ul>
+<li>Intermolecular vectors are averaged out as a weak background</li>
+<li>Intramolecular vectors are spherically averaged, hence only depend on the distance between pairs of atoms.</li>
+</ul>
+<h2 id="Single-crystal"><a href="#Single-crystal" class="headerlink" title="Single crystal"></a>Single crystal</h2><p>Summing up contributions of all cells, the intensity is given by</p>
+<script type="math/tex; mode=display">
+I(\mathbf{S})=|F_\mathrm{cell}|^2\frac{\sin^2(\pi(N\mathbf{a\cdot S}))}{\sin^2(\pi(\mathbf{a\cdot S}))}.</script><ul>
+<li>Maxima at <script type="math/tex">\mathbf{S\cdot a}</script> is integer;</li>
+<li>N-2 subsidiary maxima in between;</li>
+<li>For very large N, this becomes an array of <script type="math/tex">\delta</script>, referred to as <strong>reciprocal lattice</strong>.</li>
+</ul>
+<h1 id="Independent-Atom-Model"><a href="#Independent-Atom-Model" class="headerlink" title="Independent Atom Model"></a>Independent Atom Model</h1><p>Chemists generally are only interested in the positions and types of atoms. The useful assumptions for this purpose are:</p>
+<ol>
+<li>The electron density is not continuous, but gathered into isolated, individual atoms at fixed sites.</li>
+<li>Atoms can be considered spherical.</li>
+<li>All electrons are localized within atoms - neglect electrons in bonds.</li>
+</ol>
+<p>Now the electron density in the crystal is a convolution between <script type="math/tex">\rho_\mathrm{atom}</script> and a delta function of their positions in the lattice.</p>
+<h2 id="Consequences-for-structure-factors"><a href="#Consequences-for-structure-factors" class="headerlink" title="Consequences for structure factors"></a>Consequences for structure factors</h2><p>Hence,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+F(\mathbf{S})&=\sum_\mathrm{atom\ types} \mathcal{F}[\rho_\mathrm{atom}]\times\mathcal{F}[\mathrm{lattice}]\\
+&=\sum_\mathrm{all\ atoms} f_n\exp[2\pi i \mathbf{r \cdot S}].
+\end{align}</script><p>In other words, </p>
+<script type="math/tex; mode=display">
+\sum f_n \exp [2\pi i \mathbf{r \cdot S}] =\int \rho(\mathbf{r})\exp [2\pi i \mathbf{r \cdot S}]\, dV_r.</script><ul>
+<li>When <script type="math/tex">\mathbf{S}=0</script>, <script type="math/tex">F(0)=\int \rho(\mathbf{r})\, dV_r</script> is the number of electrons.</li>
+</ul>
+<p>The scattering factor <script type="math/tex">f_n</script> are usually fitted as a function of <script type="math/tex">\sin\theta/\lambda</script>. </p>
+<ul>
+<li>Larger radius, or the consideration of atomic displacements, both reduces the peak width of <script type="math/tex">f_n</script>.</li>
+</ul>
+<h1 id="Symmetry-in-Crystals"><a href="#Symmetry-in-Crystals" class="headerlink" title="Symmetry in Crystals"></a>Symmetry in Crystals</h1><h2 id="Symmetry-elements"><a href="#Symmetry-elements" class="headerlink" title="Symmetry elements"></a>Symmetry elements</h2><p>Crystals have inherent translational symmetry.</p>
+<p>Other symmetry elements, and its result in the reciprocal space are as follows. (Detailed derivations pp. 30-37)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Symmetry</th>
+<th>Reciprocal space</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inversion centre *</td>
+<td>Different probability distribution of intensities; possible for very weak F(hkl)</td>
+<td>Reciprocal lattice is always centrosymmetric (<strong>Friedel’s law</strong>)</td>
+</tr>
+<tr>
+<td>Mirror plane</td>
+<td>A mirror plane <script type="math/tex">\perp \mathbf{b}</script> gives a mirror plane <script type="math/tex">\perp \mathbf{b^*}</script></td>
+<td></td>
+</tr>
+<tr>
+<td>Rotation axis</td>
+<td>Produces the corresponding rotation axis.</td>
+<td>If 2-fold rotation along one axis, mirror perpendicular to that axis, then that axis is perpendicular to both other axes.</td>
+</tr>
+<tr>
+<td>Screw axis</td>
+<td>Along <script type="math/tex">\mathbf{b}</script> produces a corresponding rotation axis; (0k0) absent for odd k.</td>
+<td></td>
+</tr>
+<tr>
+<td>Glide plane</td>
+<td><script type="math/tex">\mathbf{c}</script> glide perpendicular to <script type="math/tex">\mathbf{b}</script> produces a mirror plane <script type="math/tex">\perp \mathbf{b^*}</script>; (h0l) absent for odd l.</td>
+<td></td>
+</tr>
+<tr>
+<td>Unit-cell centering</td>
+<td>P - no absence; C - absent for odd (h+k); I absent for odd (h+k+l); F absent - unless all even or all odd.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Space-groups"><a href="#Space-groups" class="headerlink" title="Space groups"></a>Space groups</h2><p>The name consists of two parts</p>
+<ul>
+<li>Centering - P, C, I or F</li>
+<li>Symmetry elements along each axis.</li>
+</ul>
+<p>Only need to know <script type="math/tex">P2_1</script>, <script type="math/tex">P2_1/c</script>, <script type="math/tex">P2_1 2_1 2_1</script>. The first two groups are abbreviated by ignoring the ‘1’ (stands for no symmetry) for a and c.</p>
+<p><strong>General equivalent positions</strong> are positions related by the symmetry elements of the space group. There are (m+1) of them.</p>
+<p>For <script type="math/tex">P2_1/c</script>, the conventions are:</p>
+<ul>
+<li>Screw axes at (0, y, 1/4)</li>
+<li>c-glide at (x, 1/4, z)</li>
+</ul>
+<h2 id="Symmetry-in-Patterson-function"><a href="#Symmetry-in-Patterson-function" class="headerlink" title="Symmetry in Patterson function"></a>Symmetry in Patterson function</h2><p>The Patterson peaks between two GEPs are guaranteed to exist. These vectors and produced by substracting the GEP coordinates. If it is a heavy atom, then the peaks are expected to be strong, and can be used to straight away to work out there positions.</p>
+<p>Note some pairs of GEPs will produce the same vector, hence systematic doubling the Patterson intensities of these peaks.</p>
+<h1 id="Heavy-Atom-method"><a href="#Heavy-Atom-method" class="headerlink" title="Heavy Atom method"></a>Heavy Atom method</h1><p>By decomposing the vector</p>
+<script type="math/tex; mode=display">
+F(hkl)=F_\mathrm{heavy}(hkl)+F_\mathrm{rest}(hkl),</script><p>it can be approximated that, given <script type="math/tex">|F_\mathrm{heavy}|\gg|F_\mathrm{rest}|</script>, the overall phase <script type="math/tex">\Phi(hkl)\approx\Phi_\mathrm{heavy}(hkl)</script>.</p>
+<h2 id="Sequence"><a href="#Sequence" class="headerlink" title="Sequence"></a>Sequence</h2><ol>
+<li>Determine the positions of heavy atoms from Patterson</li>
+<li>Evaluate <script type="math/tex">F_\mathrm{heavy}</script></li>
+<li>Take <script type="math/tex">\Phi(hkl)=\Phi_\mathrm{heavy}(hkl)</script></li>
+<li>Generate <script type="math/tex">\rho_\mathrm{trial}=\mathcal{F}^{-1}(|F|\exp{(i\Phi)})</script></li>
+<li>Try to deduce any new identities of atoms</li>
+<li>Regenerate <script type="math/tex">F_\mathrm{heavy}</script></li>
+<li>Repeat</li>
+</ol>
+<h2 id="Special-case-of-centrosymmetric-structures"><a href="#Special-case-of-centrosymmetric-structures" class="headerlink" title="Special case of centrosymmetric structures"></a>Special case of centrosymmetric structures</h2><p>The phase can be either 0 or <script type="math/tex">\pi</script>, so if the heavy atoms are really dominant, the approximate phase is <em>exactly correct</em>. The true <script type="math/tex">\rho</script> can be generated in one inverse FT.</p>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><ul>
+<li>Heavy atoms not dominant enough (hence the approximation of phase is bad)</li>
+<li>Heavy atoms on SEPs</li>
+</ul>
+<h1 id="Phase-Determining-methods"><a href="#Phase-Determining-methods" class="headerlink" title="Phase Determining methods"></a>Phase Determining methods</h1><p>If the heavy atoms are not dominant enough, then the approximation of the phase is bad; however, geometrically, if the known <script type="math/tex">F_\mathrm{heavy}</script> can be altered in a known way, than <script type="math/tex">F</script> can be solved in a triangle.</p>
+<h2 id="Isomorphous-Replacement"><a href="#Isomorphous-Replacement" class="headerlink" title="Isomorphous Replacement"></a>Isomorphous Replacement</h2><p>If an isomorphous crystal can be produced by replacing the known heavy elements, then</p>
+<ul>
+<li>new <script type="math/tex">F_\mathrm{heavy}'</script> is also known, with the phases being equal <script type="math/tex">\Phi_\mathrm{heavy}=\Phi_\mathrm{heavy}'</script></li>
+<li>for the rest of atoms, <script type="math/tex">F_\mathrm{rest}</script> is unchanged</li>
+<li>the size and phase of the difference in the structure factor, <script type="math/tex">\delta F</script> is known.</li>
+</ul>
+<p>Now we know <script type="math/tex">|F|</script>, <script type="math/tex">|F'|</script> and <script type="math/tex">\delta F</script>, a triangle can be constructed to solve for <script type="math/tex">F</script>, up to a mirror image.</p>
+<svg width="400" height="400">
+  <circle cx="200" cy="200" r="150" stroke="black" stroke-width="2" fill="none"/>
+  <circle cx="200" cy="200" r="120" stroke="black" stroke-width="2" fill="none"/>
+  <line x1="200" y1="200" x2="260" y2="96" style="stroke:rgb(255,0,0);stroke-width:2"/>
+  <line x1="200" y1="200" x2="306" y2="094" style="stroke:rgb(0,200,0);stroke-width:2"/>
+  <line x1="260" y1="96" x2="306" y2="94" style="stroke:rgb(0,0,150);stroke-width:2"/>
+  <path d="M 268 92 L 260 96 L 268 100" stroke="brown" stroke-width="2"/>
+  <line x1="200" y1="200" x2="268" y2="298" style="stroke:rgb(255,0,0);stroke-width:2"/>
+  <line x1="200" y1="200" x2="314" y2="296" style="stroke:rgb(0,200,0);stroke-width:2"/>
+  <line x1="268" y1="298" x2="314" y2="296" style="stroke:rgb(0,0,150);stroke-width:2"/>
+  <path d="M 276 294 L 268 298 L 276 302" stroke="brown" stroke-width="2"/> 
+</svg>
+
+<p>A <strong>multiple isomorphous replacement</strong> can be carried out to confirm which triangle the true <script type="math/tex">F</script> is in - out of the four triangles generated in two sets of experiments, only one edge is shared.</p>
+<h2 id="Anomalous-scattering"><a href="#Anomalous-scattering" class="headerlink" title="Anomalous scattering"></a>Anomalous scattering</h2><p>It is sometimes too hard to make isomorphous crystals, but the known <script type="math/tex">F_\mathrm{heavy}</script> can also be changed by changing the <em>scattering power</em> of these elements. </p>
+<p>When the X-ray is shorter in wavelength than the <strong>absorption edge</strong> of an element, significant absorption takes place. The transmission function is now </p>
+<script type="math/tex; mode=display">
+\psi(xyz)=\exp(i \sigma\rho(xyz))\exp(-\eta(xyz)).</script><p>As a result, the diffracted amplitude now has an imaginary component</p>
+<script type="math/tex; mode=display">
+F(hkl)=\mathcal{F}[\rho(xyz)]+\frac{i}{\sigma}\mathcal{F}[\eta(xyz)].</script><p>Therefore, the difference <script type="math/tex">\delta F</script> always has a phase of <script type="math/tex">\Phi_\mathrm{heavy}+\frac{\pi}{2}</script>, and now <script type="math/tex">|F(hkl)|\neq|F(\bar{h}\bar{k}\bar{l})|</script>. It is possible in this case to deduced the <strong>absolute structure</strong> (handedness of the structure).</p>
+<p>Otherwise, the process of determining the phase is similar to above.</p>
+<p>Note that a cyclotron can be used to generate variable X-ray wavelengths.</p>
+<h1 id="Direct-Methods"><a href="#Direct-Methods" class="headerlink" title="Direct Methods"></a>Direct Methods</h1><h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>When no heavy atom is present, no positions can be deduced from the Patterson function, and hence the previous methods can not be applied. </p>
+<p>The fact that the electron density <script type="math/tex">\rho(xyz)</script> is a <em>positive quantity</em> imposes restrictions on phases. It can therefore help us rule out certain combinations of phases, and work towards the correct structure. It is useful because the process can be automated.</p>
+<p>(All examples concern special cases of real <script type="math/tex">F(hkl)</script>, i.e. choices between 0 and <script type="math/tex">\pi</script> only.)</p>
+<h2 id="Fixing-the-origin"><a href="#Fixing-the-origin" class="headerlink" title="Fixing the origin"></a>Fixing the origin</h2><p>Phases change when the origin changes, since</p>
+<script type="math/tex; mode=display">
+F(\mathbf{S})=\sum_n f_n \exp(2\pi i[\mathbf{S}\cdot (\mathbf{r_n}-\mathbf{r_O})]).</script><p>Before starting to work on choices, the origin must be fixed. </p>
+<p>In a centrosymmetric group, inversion about each SEP generates specific phases <script type="math/tex">0</script> or <script type="math/tex">\pi</script> for different even/odd combinations of <script type="math/tex">hkl</script> values. (e.g. <script type="math/tex">P2_1 /c</script> on pp.59-60) By arbitrarily choosing 3 phases (usually 100, 010, 001), it is sufficient to fix the origin on a specific SEP.</p>
+<h2 id="Expanding-by-symmetry"><a href="#Expanding-by-symmetry" class="headerlink" title="Expanding by symmetry"></a>Expanding by symmetry</h2><p>Known group gives known GEPs; with the known 3 arbitrary choices, we can deduce the phases of all <script type="math/tex">F(hkl)</script> which are related to these 3 points by symmetry. With <script type="math/tex">m</script> symmetry elements in a group, we now know the phases of <script type="math/tex">3m</script> structure factors.</p>
+<h2 id="Projected-structures"><a href="#Projected-structures" class="headerlink" title="Projected structures"></a>Projected structures</h2><h3 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h3><p>The larger <script type="math/tex">|F(hkl)|</script>, the stronger it contributes to the Fourier summation of the electron density, the more confidence we have when assigning its phase.</p>
+<p>However, in a triple summation over <script type="math/tex">hkl</script> with no heavy atoms involved, no term can be particularly dominating. By projecting onto 2D or 1D, we only deal with 2D or 1D summations, where strong <script type="math/tex">F(hkl)</script> can be more dominating. Projections can be done by, e.g. onto body diagonal in a centrosymmetric group,</p>
+<script type="math/tex; mode=display">
+\rho(xxx)=F(000)+2\sum_h S(hhh)|F(hhh)|\cos(2\pi(3hx)).</script><h3 id="New-problems"><a href="#New-problems" class="headerlink" title="New problems"></a>New problems</h3><p>Many overlaps will be generated, and hence there will be very little near-zero areas left. Now, even a few (weak) phases are wrongly assigned, no significant negative areas will be generated.</p>
+<p>This can be solved, by trying to further reduce the IAM into point atom models. Then, the fuzziness of atoms will be removed, and overlaps will be reduced. </p>
+<p>In the reciprocal space, this means that the atomic scattering factors should not drop off with <script type="math/tex">\theta</script>, but <em>remains quite constant</em>. This can be achieved by using <strong>unitary scattering factor</strong>,</p>
+<script type="math/tex; mode=display">
+n_n=\frac{f_n}{\sum_i f_i}.</script><blockquote>
+<p>The <script type="math/tex">f_n</script> for all atoms drop off in a similar fassion, so at any particular <script type="math/tex">\theta</script>, the ratio between <script type="math/tex">f_n</script> for different atoms is roughly constant.</p>
+</blockquote>
+<p>Now <strong>unitary structure factors</strong> are </p>
+<script type="math/tex; mode=display">
+U(\mathbf{S})=\sum_n n_n \exp(2\pi i(\mathbf{S}\cdot\mathbf{r}_n)).</script><p>It is helpful to further normalize <script type="math/tex">U</script> to eliminate the effect of systematic intensity changes, to give <strong>normalized structure factor</strong></p>
+<script type="math/tex; mode=display">
+E(\mathbf{S})=\frac{U(\mathbf{S})}{\sum_n n_n}\\
+|E(\mathbf{S})|^2=\frac{|F(\mathbf{S})|^2}{\epsilon {\sum_n f_n}}.</script><p>where <script type="math/tex">\epsilon</script> is the systematic intensity change caused by symmetry.</p>
+<h2 id="Pair-relationships"><a href="#Pair-relationships" class="headerlink" title="Pair relationships"></a>Pair relationships</h2><p>In 1D projection, e.g. if <script type="math/tex">|E(h)|\approx |E(2h)|</script>, and are strong compared to others. By trying all four combinations of signs, <script type="math/tex">S(2h)</script> must be +1 to avoid two troughs coinciding.</p>
+<img src="/2020/04/Diffraction-in-chemistry/pairrelationship.png" title="pairrelationship">
+<h2 id="Triplet-relationships"><a href="#Triplet-relationships" class="headerlink" title="Triplet relationships"></a>Triplet relationships</h2><p>Similar idea, in 2D projections, between <script type="math/tex">S(\mathbf{h})</script>, <script type="math/tex">S(\mathbf{h'})</script> and <script type="math/tex">S(\mathbf{h-h'})</script>.</p>
+<p>By trying all combinations of phases, and to ensure that any two coinciding troughs are cancelled by a peak, it can be concluded that</p>
+<script type="math/tex; mode=display">
+S(\mathbf{h})S(\mathbf{h'})S(\mathbf{h-h'})\approx+1,</script><p>where <script type="math/tex">\approx</script> says ‘probably equals to’.</p>
+<h2 id="Not-suitable"><a href="#Not-suitable" class="headerlink" title="Not suitable"></a>Not suitable</h2><p>When </p>
+<ul>
+<li>Heavy atoms are present - truncation error can produce significant negative regions next to a big peak.</li>
+<li>Macromolecular structure - unlikely to see particularly strong peaks.</li>
+</ul>
+<h1 id="The-Rest"><a href="#The-Rest" class="headerlink" title="The Rest"></a>The Rest</h1><h2 id="Dual-space-methods"><a href="#Dual-space-methods" class="headerlink" title="Dual-space methods"></a>Dual-space methods</h2><p>An iterative method, by forcing any negative <script type="math/tex">\rho</script> value to be positive.</p>
+<h2 id="Structure-refinement"><a href="#Structure-refinement" class="headerlink" title="Structure refinement"></a>Structure refinement</h2><p>All the above methods are approximate. To get a more accurate structure, we would want to minimize any difference between <em>observed</em> and <em>calculated</em> <script type="math/tex">|F|</script>.</p>
+<h3 id="Difference-density"><a href="#Difference-density" class="headerlink" title="Difference density"></a>Difference density</h3><ul>
+<li>any +ve peaks are missing atoms. - excellent way to find H atoms</li>
+<li>+ve/-ve peaks next to an atom position - incorrect position</li>
+<li>hollow peaks at atom position - displacement parameter makes the atom too dense.</li>
+</ul>
+<p>Always use chemical sense!</p>
+
+    </article>
+    
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <center>
+                <p>Like this? Please support me!</p>
+                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+                <p>or via <a href="/about/index.html">other methods.</a></p>
+            </center>
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2020/04/Diffraction-in-chemistry/">https://www.butteraddict.fun/2020/04/Diffraction-in-chemistry/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/04/Diffraction-in-chemistry/">April 25th 2020, 6:09:10 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/04/Diffraction-in-chemistry/">April 25th 2020, 6:21:35 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/04/Statistical-Mechanics-Fundamentals/" title="Statistical Mechnics Fundamentals">
+                    <div class="nextTitle">Statistical Mechnics Fundamentals</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/03/抗疫措施和解方程/" title="抗疫措施和解方程">
+                    <div class="prevTitle">抗疫措施和解方程</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Diffraction"><span class="toc-number">1.</span> <span class="toc-text">Diffraction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Geometry"><span class="toc-number">1.1.</span> <span class="toc-text">Geometry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diffracting-from-electron-density"><span class="toc-number">1.2.</span> <span class="toc-text">Diffracting from electron density</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-phase-problem"><span class="toc-number">1.3.</span> <span class="toc-text">The phase problem</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Patterson-Function"><span class="toc-number">2.</span> <span class="toc-text">Patterson Function</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-phase"><span class="toc-number">2.1.</span> <span class="toc-text">Gas phase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Single-crystal"><span class="toc-number">2.2.</span> <span class="toc-text">Single crystal</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Independent-Atom-Model"><span class="toc-number">3.</span> <span class="toc-text">Independent Atom Model</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Consequences-for-structure-factors"><span class="toc-number">3.1.</span> <span class="toc-text">Consequences for structure factors</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Symmetry-in-Crystals"><span class="toc-number">4.</span> <span class="toc-text">Symmetry in Crystals</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Symmetry-elements"><span class="toc-number">4.1.</span> <span class="toc-text">Symmetry elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Space-groups"><span class="toc-number">4.2.</span> <span class="toc-text">Space groups</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symmetry-in-Patterson-function"><span class="toc-number">4.3.</span> <span class="toc-text">Symmetry in Patterson function</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Heavy-Atom-method"><span class="toc-number">5.</span> <span class="toc-text">Heavy Atom method</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sequence"><span class="toc-number">5.1.</span> <span class="toc-text">Sequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-case-of-centrosymmetric-structures"><span class="toc-number">5.2.</span> <span class="toc-text">Special case of centrosymmetric structures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limitations"><span class="toc-number">5.3.</span> <span class="toc-text">Limitations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Phase-Determining-methods"><span class="toc-number">6.</span> <span class="toc-text">Phase Determining methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Isomorphous-Replacement"><span class="toc-number">6.1.</span> <span class="toc-text">Isomorphous Replacement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anomalous-scattering"><span class="toc-number">6.2.</span> <span class="toc-text">Anomalous scattering</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Direct-Methods"><span class="toc-number">7.</span> <span class="toc-text">Direct Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">7.1.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fixing-the-origin"><span class="toc-number">7.2.</span> <span class="toc-text">Fixing the origin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Expanding-by-symmetry"><span class="toc-number">7.3.</span> <span class="toc-text">Expanding by symmetry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Projected-structures"><span class="toc-number">7.4.</span> <span class="toc-text">Projected structures</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Purpose"><span class="toc-number">7.4.1.</span> <span class="toc-text">Purpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#New-problems"><span class="toc-number">7.4.2.</span> <span class="toc-text">New problems</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pair-relationships"><span class="toc-number">7.5.</span> <span class="toc-text">Pair relationships</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Triplet-relationships"><span class="toc-number">7.6.</span> <span class="toc-text">Triplet relationships</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not-suitable"><span class="toc-number">7.7.</span> <span class="toc-text">Not suitable</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Rest"><span class="toc-number">8.</span> <span class="toc-text">The Rest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dual-space-methods"><span class="toc-number">8.1.</span> <span class="toc-text">Dual-space methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Structure-refinement"><span class="toc-number">8.2.</span> <span class="toc-text">Structure refinement</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Difference-density"><span class="toc-number">8.2.1.</span> <span class="toc-text">Difference density</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 19
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Diffraction-in-chemistry/">Diffraction Methods in Chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/2020/03/抗疫措施和解方程/">抗疫措施和解方程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2020/03/Symmetry-in-chemistry/">Symmetry in chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href="/2020/02/Theoretical-Techniques-Key-Equations/">Theoretical Techniques Key Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/Synthesis-with-enolate/">Synthesis with enolate</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/HR-spectroscopy/">High Resolution Spectroscopy</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/2019/11/Essential-Thermodynamics/">Essential Thermodynamics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/La-Pause-de-Pierrette/">【学年最佳餐厅】La Pause de Pierrette</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Electrons and Solids</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/Fourier-Transform/">Fourier Transform</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href="/2019/04/Functionals/">Functionals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/05</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/2019/03/Contour-Integration/">Contour Integration</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href="/2019/03/IB-Spectroscopy/">IB Spectroscopy Techniques</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+    
+        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+    
+        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+    
+        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "2LalA猪"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+    MathJax.Hub.Config({
+
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+            extensions: ["[mhchem]/mhchem.js"]
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
+
+

@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="2LalA猪">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="2LalA猪">
+    
+    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Statistical Mechnics Fundamentals · 黄油上瘾 ButterAddict</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/baicon.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">黄油上瘾</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Statistical Mechnics Fundamentals</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">黄油上瘾</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Statistical Mechnics Fundamentals
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="化学">化学</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.7k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Fundamental-idea"><a href="#Fundamental-idea" class="headerlink" title="Fundamental idea"></a>Fundamental idea</h1><h2 id="Think-about-thermodynamics"><a href="#Think-about-thermodynamics" class="headerlink" title="Think about thermodynamics"></a>Think about thermodynamics</h2><p>The observable properties of systems containing very large numbers of particles depend only on specifying a few macroscopic properties - internal energy, temperature, volume, pressure, density, etc.</p>
+<p>Most experiments measure <em>averaged</em> properties - over many particles and over the time of measurement.</p>
+<p>That is why it is hopeful to be able to calculate what we need to know, for macroscopic systems.</p>
+<h2 id="Principle-of-equal-a-priori-probabilities"><a href="#Principle-of-equal-a-priori-probabilities" class="headerlink" title="Principle of equal a priori probabilities"></a>Principle of equal <em>a priori</em> probabilities</h2><p>A system with fixed <script type="math/tex">N</script>, <script type="math/tex">V</script> and <script type="math/tex">E</script> (isolated system) is equally likely to be found in any of its <script type="math/tex">\Omega(E)</script> energy states.</p>
+<p>Hence, to find the probability of a system in a particular macrostate, we calculate the <strong>degeneracy</strong>. For macroscopic systems, the degeneracies of energy levels are superastronomically large; the most probable states have overwhelmingly large degeneracies compared to other states. </p>
+<h1 id="Bridging-with-thermodynamics"><a href="#Bridging-with-thermodynamics" class="headerlink" title="Bridging with thermodynamics"></a>Bridging with thermodynamics</h1><h2 id="Energy-transfer-between-two-systems-temperature-entropy"><a href="#Energy-transfer-between-two-systems-temperature-entropy" class="headerlink" title="Energy transfer between two systems - temperature, entropy"></a>Energy transfer between two systems - temperature, entropy</h2><p>Note that when the total energy is <script type="math/tex">E=E_1+E_2</script>, the total degeneracy becomes <script type="math/tex">\Omega(E)=\Omega(E_1)\Omega(E_2)</script>. It turns out more convenient to consider the logarithm of <script type="math/tex">\Omega</script>, which is <em>extensive</em>.</p>
+<blockquote>
+<p>An extensive variable scales <em>linearly</em> with the system size. e.g. <script type="math/tex">E</script>, <script type="math/tex">V</script>, <script type="math/tex">N</script>, <script type="math/tex">S</script>; an intensive variable is independent of system sizes. e.g. <script type="math/tex">T</script>, <script type="math/tex">P</script>, <script type="math/tex">\mu</script>.</p>
+</blockquote>
+<p>That <script type="math/tex">\ln \Omega</script> and entropy <script type="math/tex">S</script> are both maximized at equilibrium, and that they are both extensive, mean that they are proportional. Experimental measurements gave the constant of proportionality <script type="math/tex">k_\mathrm{B}</script>.</p>
+<script type="math/tex; mode=display">
+S=k_\mathrm{B}\ln\Omega.</script><p>When we fix the total energy between the two systems, <script type="math/tex">\Omega</script> depends on <em>either</em> <script type="math/tex">E_1</script> or <script type="math/tex">E_2</script>. For a maximum, </p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial \ln \Omega}{\partial E_1} \right)_{N,V,E} = 0,\mathrm{\ or}\\
+\left( \frac{\partial \ln \Omega_1}{\partial E_1} \right)_{N_1,V_1}= \left( \frac{\partial \ln \Omega_2}{\partial E_2} \right)_{N_2,V_2}.</script><p>Defind <script type="math/tex">\beta=\partial \ln\Omega/\partial E</script>, then the above equality says that <em>thermal equilibrium implies</em> <script type="math/tex">\beta(N_1,V_1,E_1)=\beta(N_2,V_2,E_2)</script>.</p>
+<blockquote>
+<p>We have known from thermodynamics that thermal equilibrium also mean temperatures are the same.</p>
+</blockquote>
+<p>Using a fundamental equation, <script type="math/tex">dE =T\,dS-p\,dV+\mu\,dN</script>, we get</p>
+<script type="math/tex; mode=display">
+\beta=\frac{1}{k_\mathrm{B}T}.</script><h2 id="System-at-constant-temperature-Canonical-ensemble"><a href="#System-at-constant-temperature-Canonical-ensemble" class="headerlink" title="System at constant temperature - Canonical ensemble"></a>System at constant temperature - Canonical ensemble</h2><p>System in thermal equilibrium with a large heat bath. Total energy is fixed. The probability that the system is in state <script type="math/tex">i</script> is </p>
+<script type="math/tex; mode=display">
+P_i=\frac{\Omega_\mathrm{bath}(E-E_i)}{\sum_j \Omega_\mathrm{bath}(E-E_j)}.</script><p>By Taylor expanding <script type="math/tex">\ln \Omega</script>,</p>
+<script type="math/tex; mode=display">
+\ln\Omega_\mathrm{bath}(E-E_i)=\ln\Omega_\mathrm{bath}(E)-E_i\frac{\partial \ln\Omega_\mathrm{bath}(E)}{\partial E}+\mathcal{O}(E^{-1}),</script><p>and the definition of <script type="math/tex">\beta</script>, </p>
+<script type="math/tex; mode=display">
+P_i=\frac{\exp(-\beta E_i)}{\sum_j\exp(-\beta E_j)}.</script><p>The denominator is the canonical partition function</p>
+<script type="math/tex; mode=display">
+Q =\sum_j\exp(-\beta E_j).</script><h2 id="Average-energy-Helmholtz-energy-and-equilibrium"><a href="#Average-energy-Helmholtz-energy-and-equilibrium" class="headerlink" title="Average energy, Helmholtz energy and equilibrium"></a>Average energy, Helmholtz energy and equilibrium</h2><p>Now the way to compute the average energy is </p>
+<script type="math/tex; mode=display">
+\langle E\rangle=\sum_i E_iP_i=\sum_i\frac{E_i\exp(-\beta E_i)}{Q}.</script><p>Note the similarity of the numerator to <script type="math/tex">Q</script>, so in fact,</p>
+<script type="math/tex; mode=display">
+\langle E\rangle=-\frac{\ln Q}{\beta}.</script><blockquote>
+<p>To obtain the expectation of any linear term in Hamiltonian, differentiate the relevant ln partition function w.r.t the quantity it couples to (<script type="math/tex">\beta</script> in this case).</p>
+</blockquote>
+<p>Write that in terms of <script type="math/tex">T</script>: <script type="math/tex">\langle E\rangle=k_BT^2\frac{\partial\ln Q}{T}</script>.</p>
+<blockquote>
+<p>Compare with the thermodynamic relation <script type="math/tex">E=-T^2 \left( \frac{\partial (A/T)}{\partial T}\right)_V</script>, Helmholtz analogue of Gibbs-Helmholtz equation.</p>
+</blockquote>
+<p>We arrive at the bridge relation:</p>
+<script type="math/tex; mode=display">
+A=-k_\mathrm{B}T\ln Q.</script><p>Again from the Taylor expansion on <script type="math/tex">\ln\Omega</script>,</p>
+<script type="math/tex; mode=display">
+\ln\Omega=\ln\Omega_\mathrm{sys}(E_\mathrm{sys})+\ln\Omega_\mathrm{bath}(E_\mathrm{tot})-\beta E_\mathrm{sys},</script><p>to maximize <script type="math/tex">\Omega</script>, we need to minimize </p>
+<script type="math/tex; mode=display">
+\begin{align}
+&[\beta E_\mathrm{sys}-\ln\Omega_\mathrm{sys}(E_\mathrm{sys})]
+\\
+=&\beta[E_\mathrm{sys}-TS_\mathrm{sys}]\\
+=&\beta A.
+\end{align}</script><p>Now we recover that, under constant <script type="math/tex">T</script> and <script type="math/tex">V</script>, <script type="math/tex">A</script> is minimized at equilibrium.</p>
+<h2 id="Classical-statistical-mechanics"><a href="#Classical-statistical-mechanics" class="headerlink" title="Classical statistical mechanics"></a>Classical statistical mechanics</h2><p>In the classical limit, it is possible to approximate sum with integrals. Hence the expectation values can become </p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle X\rangle&=\frac{\sum_i\exp(E_i/k_BT)\langle i|X|i\rangle}{\sum_i\exp(E_i/k_BT)}\\
+&=\frac{\int X(\mathbf{p},\mathbf{r})\exp(-\beta[\sum_j p_j^2/(2m_j)+U(\mathbf{r})])\,d\mathbf{p}^N\,d\mathbf{r}^N}{\int \exp(-\beta[\sum_j p_j^2/(2m_j)+U(\mathbf{r})])\,d\mathbf{p}^N\,d\mathbf{r}^N}
+\end{align}</script><p>and the partition function becomes</p>
+<script type="math/tex; mode=display">
+Q=\frac{1}{h^{3N}N!}\int \exp(-\beta[\sum_j p_j^2/(2m_j)+U(\mathbf{r})])\,d\mathbf{p}^N\,d\mathbf{r}^N.</script><p>Evaluate the kinetic energy part by factorising into separate <script type="math/tex">x,y,z</script> components, and use Gaussian standard integral to find</p>
+<script type="math/tex; mode=display">
+Q=\frac{1}{\Lambda^{3N}N!}\int\exp[-\beta U(\mathbf{r})]\,d\mathbf{r}^N.</script><p>This is as important as the bridge relation.</p>
+<h2 id="Fluctuations"><a href="#Fluctuations" class="headerlink" title="Fluctuations"></a>Fluctuations</h2><p>In most cases, any fluctuation about the expectation value is ignored. How valid is this?</p>
+<p>It is possible to either work out the probability distribution of energy is a Gaussian, with variance</p>
+<script type="math/tex; mode=display">
+\sigma_E^2=k_BT^2C_V.</script><p>Or, the same result can be achieved using the fact that a second derivative of ln partition function gives the negative variance. Then we can relate heat capacity through the thermodynamic definition</p>
+<script type="math/tex; mode=display">
+C_V=\left( \frac{\partial E}{\partial T} \right)_{N,V}=\left( \frac{\partial E}{\partial \beta} \right)_{N,V}\frac{\partial \beta}{\partial T}=-\frac{1}{k_BT^2}\left( \frac{\partial E}{\partial \beta} \right)_{N,V}.</script><p>Therefore, in the thermodynamic limit, i.e. <script type="math/tex">N \to \infty</script>, the ratio</p>
+<script type="math/tex; mode=display">
+\frac{\langle (\Delta E)^2\rangle}{\langle E\rangle^2}\sim \frac{1}{N}\to 0.</script><h2 id="Other-ensembles"><a href="#Other-ensembles" class="headerlink" title="Other ensembles"></a>Other ensembles</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Ensemble</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microcanonical</td>
+<td>N,V,E</td>
+</tr>
+<tr>
+<td>Canonical</td>
+<td>N,V,T</td>
+</tr>
+<tr>
+<td>Isothermal-isobaric</td>
+<td>N,P,T</td>
+</tr>
+<tr>
+<td>Isoenthalpic-isobaric</td>
+<td>N,P,H</td>
+</tr>
+<tr>
+<td>Grand</td>
+<td>µ,V,T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using different ensembles will always arrive at the same result. <em>Ensembles are equivalent in the thermodynamic limit</em>. Choices are made based on how much it facilitates the derivation and calculation of a specific problem.</p>
+<h2 id="Pressure"><a href="#Pressure" class="headerlink" title="Pressure"></a>Pressure</h2><p>To investigate pressure, we need to allow exchange of volume between system and bath. At equilibrium, maximum of entropy is achieved.</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial S_\mathrm{sys}}{\partial V} \right)_{N,E}+\left( \frac{\partial S_\mathrm{bath}}{\partial V} \right)_{N,E}=0</script><blockquote>
+<p>From thermodynamics, <script type="math/tex">dS=\frac{1}{T}\,dE+\frac{P}{V}\,dV-\frac{\mu}{T}\,dN</script>.</p>
+</blockquote>
+<p>Then, <script type="math/tex">P_s/T_s=P_b/T_b</script>. Combining with the fact that temperatures are equal, we conclude pressures must be equal at equilibrium.</p>
+<p>With the fundamental relation for Helmholtz energy <script type="math/tex">dA=-P\,dV-S\,dT+\mu\,dN</script>, </p>
+<script type="math/tex; mode=display">
+P=-\left( \frac{\partial A}{\partial V} \right)_{N,T}=k_B T\left( \frac{\partial \ln Q}{\partial V} \right)_{N,T}.</script><h2 id="Pressure-of-interacting-particles"><a href="#Pressure-of-interacting-particles" class="headerlink" title="Pressure of interacting particles"></a>Pressure of interacting particles</h2><h3 id="From-partition-function"><a href="#From-partition-function" class="headerlink" title="From partition function"></a>From partition function</h3><p>Consider a cubic box with edge length <script type="math/tex">L</script>. Using scaled coordinates <script type="math/tex">\mathbf{s}_i=\mathbf{r}_i/L</script>, and use the equation above</p>
+<script type="math/tex; mode=display">
+P=k_B T\left( \frac{\partial V^N}{\partial V} \right)_{N,T}+k_BT\left( \frac{\partial}{\partial V}\ln \int_0^1 \exp[-\beta U(\mathbf{s}^N;L)]\,d \mathbf{s}^N\right)_{N,T}.</script><p>Working through the change in coordinates, and define a force <script type="math/tex">f_{ij}=\partial U/\partial r_{ij}</script>, we can arrive at</p>
+<script type="math/tex; mode=display">
+P=\frac{Nk_B T}{V}+\frac{1}{3V}\left\langle \sum_{i=1}^N \mathbf{f}_i\cdot \mathbf{r}_i\right\rangle.</script><h3 id="Pairwise-additive-forces"><a href="#Pairwise-additive-forces" class="headerlink" title="Pairwise additive forces"></a>Pairwise additive forces</h3><p>If the intermolecular forces are pairwise-additive, then</p>
+<script type="math/tex; mode=display">
+U=\frac{1}{2}\sum_{i=1}^N\sum_{i\neq j} \phi(r_{ij})\\
+\mathbf{f}_i=\sum_{i\neq j}\mathbf{f}_{ij}.</script><p>By permuting the indices and calling Newton’s 3rd law, </p>
+<script type="math/tex; mode=display">
+P=\frac{Nk_B T}{V}+\frac{1}{6V}\left\langle \sum_{i=1}^N\sum_{i\neq j} \mathbf{f}_{ij}\cdot \mathbf{r}_{ij}\right\rangle</script><p>where <script type="math/tex">r_{ij}=r_i-r_j</script>. This is important because we may know the form of <em>intermolecular</em> forces!</p>
+<p>Write in a dimensionless form, we get the <strong>compressibility factor</strong></p>
+<script type="math/tex; mode=display">
+Z=1+\frac{1}{6k_B T}\left\langle \sum_{i\neq j} \mathbf{f}_{ij}\cdot \mathbf{r}_{ij}\right\rangle.</script><p>The sum for <script type="math/tex">i</script> is omitted as in a homogeneous system, the average contribution of any one particle is the same.</p>
+<h2 id="Law-of-corresponding-states"><a href="#Law-of-corresponding-states" class="headerlink" title="Law of corresponding states"></a>Law of corresponding states</h2><p>Generally, if the interactions <script type="math/tex">\phi</script> of several types of atoms or molecules are of the same funcional form <script type="math/tex">\phi=\epsilon u(r/\sigma)</script>, then the reduced potentials, <script type="math/tex">\phi^*(r^*)</script> are all equal. Reduced quantities are expressed in the units of <script type="math/tex">\epsilon</script> and <script type="math/tex">\sigma</script>.  </p>
+<p>Similarly, the compressibility factor of different substances can be made to lie on the same curve by rescaling the temperature and density, if their potentials are of the same functional form.</p>
+<script type="math/tex; mode=display">
+Z(\rho^*, T^*)=1+\frac{1}{6T^*}\left\langle \sum_{i\neq j} \mathbf{f}_{ij}^*\cdot \mathbf{r}_{ij}^*\right\rangle.</script><h1 id="Free-energy-and-phase-behaviour"><a href="#Free-energy-and-phase-behaviour" class="headerlink" title="Free energy and phase behaviour"></a>Free energy and phase behaviour</h1><h2 id="Equilibrium"><a href="#Equilibrium" class="headerlink" title="Equilibrium"></a>Equilibrium</h2><p>At equilibrium, the entropy reaches a maximum, <script type="math/tex">dS=dS_1+dS_2</script>. From the fundamental relation of <script type="math/tex">S</script>, </p>
+<script type="math/tex; mode=display">
+dS=\frac{1}{T}\,dE+\frac{P}{T}\,dV-\frac{\mu}{T}\,dN,</script><p>as <script type="math/tex">E</script>, <script type="math/tex">V</script> and <script type="math/tex">N</script> can vary independently, the coefficient for each must be equal between the two phases. That is <script type="math/tex">T</script>, <script type="math/tex">P</script> and <script type="math/tex">\mu</script> must be equal.</p>
+<p>Then, consider a second order transfer of energy, <script type="math/tex">\Delta E</script>.</p>
+<script type="math/tex; mode=display">
+\Delta S_1=\Delta S_2=\frac{1}{2}\frac{\partial 1/T}{\partial E}(\Delta E)^2;\\
+\Delta S=\Delta S_1+\Delta S_2=\frac{\partial 1/T}{\partial E}(\Delta E)^2\leq0.</script><p>Therefore it can be deduced that</p>
+<script type="math/tex; mode=display">
+\frac{\partial E}{\partial 1/T}\leq0\\
+-T^2\frac{\partial E}{\partial T}=-T^2C_V\leq 0.</script><p><em>Heat capacity is never negative.</em></p>
+<p>Similarly, by considering the Helmholtz energy at minimum, and give a second order transfer in volume, it can be deduced that <em>compressibility is never negative</em>.</p>
+<h2 id="Coexistence"><a href="#Coexistence" class="headerlink" title="Coexistence"></a>Coexistence</h2><p>If we have a analytical form of a Helmholtz energy <script type="math/tex">A(V)</script>, the coexistence can be determined graphically.At constant <script type="math/tex">T</script>, pressure and chemical potential need to equate between the two phases. </p>
+<ul>
+<li>Using <script type="math/tex">\partial A/\partial V =-P</script>, same gradient guanrantees equal pressure;</li>
+<li>Using <script type="math/tex">A+PV=G=N\mu</script>, same intercept gives equal chemical potential.</li>
+</ul>
+<p>A <strong>common tangent</strong> can be used to find the coexisting phases.</p>
+<p>Note that as compressibility is positve, <script type="math/tex">A(V)</script> must be convex - any concave part represents unstable systems (these exist usually because the form of <script type="math/tex">A</script> is approximate). Therefore, for the region between the common tangent construction,</p>
+<ul>
+<li>Convex part is metastable - there is an energy barrier to separate;</li>
+<li>Concave part is unstable - spinodal.</li>
+</ul>
+<h2 id="Phase-diagrams"><a href="#Phase-diagrams" class="headerlink" title="Phase diagrams"></a>Phase diagrams</h2><p>For one component systems, <script type="math/tex">PVT</script> are the variables to determine the state. Hence the phase diagram is actually a <em>surface</em> in the <script type="math/tex">PVT</script> space.</p>
+<blockquote>
+<p>Critical point is the point beyond which liquid-vapour transition is continuous.</p>
+</blockquote>
+<h2 id="Thermodynamic-integrations"><a href="#Thermodynamic-integrations" class="headerlink" title="Thermodynamic integrations"></a>Thermodynamic integrations</h2><p>There are two classes of TD variables</p>
+<ol>
+<li>‘Thermal’ variable - depend on <em>accessible volumes in phase space</em>: <script type="math/tex">A</script>, <script type="math/tex">G</script>, <script type="math/tex">S</script> etc.</li>
+<li>‘Mechanical’ variables - depend on positions and momenta: <script type="math/tex">P</script>, <script type="math/tex">E</script>, etc.</li>
+</ol>
+<p>We can measure the <em>averages</em> of <strong>mechanical</strong> quantities, but nothing about <strong>thermal</strong> quantities. Fortunately, the derivatives of thermal quantities can be mechanical quantities, so the values of thermal variables can be worked out by integrations.</p>
+<p>Note that choosing to ‘measure’ thermal variables by e.g. ‘observing’ phase transitions is not reliable, due to factors including metastability.</p>
+<h1 id="Thermodynamic-perturation-theory"><a href="#Thermodynamic-perturation-theory" class="headerlink" title="Thermodynamic perturation theory"></a>Thermodynamic perturation theory</h1><h2 id="Gibbs-Bogoliubov-inequality"><a href="#Gibbs-Bogoliubov-inequality" class="headerlink" title="Gibbs-Bogoliubov inequality"></a>Gibbs-Bogoliubov inequality</h2><p>Use a linear parameterisation of the potential energy function</p>
+<script type="math/tex; mode=display">
+U(\lambda)=\lambda U_1+(1-\lambda)U_0,</script><p>where <script type="math/tex">U_0</script> is a reference, and <script type="math/tex">U_1</script> is the system of interest. Then we can compute </p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial A}{\partial \lambda} \right)_{N,V,T}=\left\langle \frac{\partial U}{\partial \lambda} \right\rangle_\lambda\\
+\left( \frac{\partial A^2}{\partial^2 \lambda} \right)_{N,V,T}=-\beta(\langle (U_1-U_0)^2\rangle_\lambda-\langle U_1-U_0\rangle_\lambda^2).</script><p>First look at the second derivative. It is a negative of a variance, hence is negative. Therefore, inside this region, the function is concave.</p>
+<p>Then, integrate the first derivative from 0 to 1, </p>
+<script type="math/tex; mode=display">
+A_1-A_0=\int_0^1 \langle U_1-U_0\rangle_\lambda\,d\lambda.</script><p>Combining with the concaveness, this expression gives an upper bound to <script type="math/tex">A_1</script>, i.e.</p>
+<script type="math/tex; mode=display">
+A_1\leq A_0+\langle U_1-U_0\rangle_0.</script><p>As with all perturbation problems, the closer <script type="math/tex">U_0</script> is chosen to represent <script type="math/tex">U_1</script>, the more accurate the bound is; but usually the harder to compute.</p>
+<h2 id="Ising-model-and-mean-field-theory"><a href="#Ising-model-and-mean-field-theory" class="headerlink" title="Ising model and mean-field theory"></a>Ising model and mean-field theory</h2><p>The Ising model is a classic in describing magnetic systems. Its Hamiltonian is </p>
+<script type="math/tex; mode=display">
+U_1=-\frac{J}{2}\sum_{i=1}^N\sum_{j;i}s_is_j,</script><p>where the <script type="math/tex">j</script> index runs through neighbours of <script type="math/tex">i</script>. This involves interactions between spins, which may not be easy to deal with, so we turn to a <em>mean-field</em> approximation of the Hamiltonian</p>
+<script type="math/tex; mode=display">
+U_0=-\sum_{i=1}^N hs_i.</script><p>Here it is easy to work out the partition function and expectation of spin</p>
+<script type="math/tex; mode=display">
+a_0(h)=-k_B T \ln(2\cosh(\beta h))\\
+\langle s\rangle_0=-\frac{\partial a_0(h)}{\partial h}=\tanh(\beta h).</script><p>To use G-B inequality, we also need to calculate the ‘gradient at <script type="math/tex">\lambda=0</script>‘, <script type="math/tex">\langle u_1-u_0\rangle_0</script>. Since in the reference system, spins are <em>not</em> correlated, this is very easy.</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle u_1-u_0\rangle_0&=\left\langle -\frac{J}{2}\sum_{i;j} s_i s_j+hs_i\right \rangle_0\\
+&=-J\langle s\rangle_0^2z/2+h\langle s\rangle_0
+\end{align}</script><p>where <script type="math/tex">z</script> is the number of nearest neighbours.</p>
+<p>By minimizing the expression, we find the best value for the parameter <script type="math/tex">h</script> by differentiation.</p>
+<script type="math/tex; mode=display">
+h=Jz\langle s\rangle_0\\
+\langle s\rangle_0=\tanh(\beta J z \langle s\rangle_0)</script><p>With graphical method or otherwise, we can see that</p>
+<ul>
+<li>At high temperature, there is only one solution;</li>
+<li>Below a certain temperature, <strong>Curie temperature</strong>, there are two solutions and the mean magnetization is non-zero;</li>
+<li>Once in a branch, it is unlikely to enter the other branch by fluctuation - <strong>spontaneous symmetry breaking</strong>.</li>
+<li>The mean field Curie temperature is higher than the actual value due to ignoring the correlation between spins.</li>
+</ul>
+<h2 id="Van-der-Waals-equation"><a href="#Van-der-Waals-equation" class="headerlink" title="Van der Waals equation"></a>Van der Waals equation</h2><p>An example where the 2nd derivative in G-B vanishes - so the ‘=’ sign is taken in G-B.</p>
+<h3 id="Hard-sphere-gas"><a href="#Hard-sphere-gas" class="headerlink" title="Hard-sphere gas"></a>Hard-sphere gas</h3><p>The potential is</p>
+<script type="math/tex; mode=display">
+\phi(r_{ij})=\begin{cases}
+0 &r_{ij}>\sigma \\
+\infty &r_{ij}\leq\sigma
+\end{cases}.</script><p>Approximate that each sphere <em>excludes</em> a volume of <script type="math/tex">v=4\pi\sigma^3/3</script>, where as its own volume is <script type="math/tex">v_0=v/8</script>. In the dilute limit, it is assumed (drastically) that <em>no two excluded volumes overlap</em>. </p>
+<p>After some clever algebra, the partition function, and hence pressure is given by</p>
+<script type="math/tex; mode=display">
+Q_\mathrm{HS}\approx \frac{1}{\Lambda^{3N}N!}(V-4Nv_0)\\
+P_\mathrm{HS}\approx \frac{Nk_BT}{V-4Nv_0}=\frac{k_BT}{v_0}\frac{\phi}{1-4\phi}.</script><p>Note</p>
+<ul>
+<li>This diverges as <script type="math/tex">\phi \to 1/4</script>;</li>
+<li>This is due to the crude no exclusion approximation, hence only valid at low density.</li>
+</ul>
+<h3 id="Mean-field-attraction"><a href="#Mean-field-attraction" class="headerlink" title="Mean-field attraction"></a>Mean-field attraction</h3><p>To model gas better, we need an attraction. This is introduced by a <em>mean-field</em> attraction potential, which is very weak, but very long-ranged (Poisson-like). </p>
+<ul>
+<li>On average, <script type="math/tex">N_c=4\pi R_c^3\rho/3</script> particles within interaction range;</li>
+<li>Each contributes <script type="math/tex">-\epsilon/2</script>;</li>
+<li>As <script type="math/tex">N_c\to\infty</script>, the fluctuation goes to 0, hence the first order G-B becomes exact.</li>
+</ul>
+<p>Therefore, the free energy becomes</p>
+<script type="math/tex; mode=display">
+\frac{A}{N}_\mathrm{VDW}=\frac{A}{N}_\mathrm{HS}-\rho a</script><p>where <script type="math/tex">a=2\epsilon\pi R_c^3/3</script> is a Van der Waals parameter, along with <script type="math/tex">b=4v_0</script>.</p>
+<p>Therefore, the pressure is </p>
+<script type="math/tex; mode=display">
+P_\mathrm{VDW}=P_\mathrm{HS}-a\rho^2.</script><p>By rearranging, we have the <strong>Van der Waals equation of state</strong></p>
+<script type="math/tex; mode=display">
+(P_\mathrm{VDW}+a\rho^2)(V-Nb)=Nk_BT.</script><p>Note that in reduced units, this can also be written as</p>
+<script type="math/tex; mode=display">
+P_r=\frac{8T_r}{3V_r-1}-\frac{3}{V_r^2}.</script><h3 id="Maxwell-equal-area-construction"><a href="#Maxwell-equal-area-construction" class="headerlink" title="Maxwell equal-area construction"></a>Maxwell equal-area construction</h3><p>The Van der Waals state P-V phase diagram shows that</p>
+<ul>
+<li>Above critical temperature, the curve is monotonic, so there is only one fluid phase;</li>
+<li>Below critical temperature, a single horizontal line, representing a common pressure, can cross the curve three times - called the Van der Waals loop.</li>
+</ul>
+<p>At coexistence,</p>
+<script type="math/tex; mode=display">
+A_1+PV_1=A_2PV_2\\
+\implies P(V_2-V_1)=A_1-A_2.</script><p>Now use thermodynamic integration to express the free energy <script type="math/tex">A</script>, we get the condition</p>
+<script type="math/tex; mode=display">
+P(V_2-V_1)=\int_{V_1}^{V_2}P\,dV.</script><p>Hence, the equilibrium phases at the given temperature make the area enclosed above and below the pressure line to be the same.</p>
+
+    </article>
+    
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <center>
+                <p>Like this? Please support me!</p>
+                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+                <p>or via <a href="/about/index.html">other methods.</a></p>
+            </center>
+            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>原文链接：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Fundamentals/">https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Fundamentals/</a>
+            </p><p>发表日期：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Fundamentals/">April 25th 2020, 6:22:08 pm</a>
+            </p><p>更新日期：<a href="https://www.butteraddict.fun/2020/04/Statistical-Mechanics-Fundamentals/">April 25th 2020, 6:39:32 pm</a>
+            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/04/Statistical-Mechanics-Applications/" title="Statistical Mechanics Applications">
+                    <div class="nextTitle">Statistical Mechanics Applications</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/04/Diffraction-in-chemistry/" title="Diffraction Methods in Chemistry">
+                    <div class="prevTitle">Diffraction Methods in Chemistry</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Fundamental-idea"><span class="toc-number">1.</span> <span class="toc-text">Fundamental idea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Think-about-thermodynamics"><span class="toc-number">1.1.</span> <span class="toc-text">Think about thermodynamics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Principle-of-equal-a-priori-probabilities"><span class="toc-number">1.2.</span> <span class="toc-text">Principle of equal a priori probabilities</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Bridging-with-thermodynamics"><span class="toc-number">2.</span> <span class="toc-text">Bridging with thermodynamics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Energy-transfer-between-two-systems-temperature-entropy"><span class="toc-number">2.1.</span> <span class="toc-text">Energy transfer between two systems - temperature, entropy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System-at-constant-temperature-Canonical-ensemble"><span class="toc-number">2.2.</span> <span class="toc-text">System at constant temperature - Canonical ensemble</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Average-energy-Helmholtz-energy-and-equilibrium"><span class="toc-number">2.3.</span> <span class="toc-text">Average energy, Helmholtz energy and equilibrium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classical-statistical-mechanics"><span class="toc-number">2.4.</span> <span class="toc-text">Classical statistical mechanics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fluctuations"><span class="toc-number">2.5.</span> <span class="toc-text">Fluctuations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-ensembles"><span class="toc-number">2.6.</span> <span class="toc-text">Other ensembles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pressure"><span class="toc-number">2.7.</span> <span class="toc-text">Pressure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pressure-of-interacting-particles"><span class="toc-number">2.8.</span> <span class="toc-text">Pressure of interacting particles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#From-partition-function"><span class="toc-number">2.8.1.</span> <span class="toc-text">From partition function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairwise-additive-forces"><span class="toc-number">2.8.2.</span> <span class="toc-text">Pairwise additive forces</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Law-of-corresponding-states"><span class="toc-number">2.9.</span> <span class="toc-text">Law of corresponding states</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Free-energy-and-phase-behaviour"><span class="toc-number">3.</span> <span class="toc-text">Free energy and phase behaviour</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Equilibrium"><span class="toc-number">3.1.</span> <span class="toc-text">Equilibrium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coexistence"><span class="toc-number">3.2.</span> <span class="toc-text">Coexistence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Phase-diagrams"><span class="toc-number">3.3.</span> <span class="toc-text">Phase diagrams</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thermodynamic-integrations"><span class="toc-number">3.4.</span> <span class="toc-text">Thermodynamic integrations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Thermodynamic-perturation-theory"><span class="toc-number">4.</span> <span class="toc-text">Thermodynamic perturation theory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gibbs-Bogoliubov-inequality"><span class="toc-number">4.1.</span> <span class="toc-text">Gibbs-Bogoliubov inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ising-model-and-mean-field-theory"><span class="toc-number">4.2.</span> <span class="toc-text">Ising model and mean-field theory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Van-der-Waals-equation"><span class="toc-number">4.3.</span> <span class="toc-text">Van der Waals equation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hard-sphere-gas"><span class="toc-number">4.3.1.</span> <span class="toc-text">Hard-sphere gas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mean-field-attraction"><span class="toc-number">4.3.2.</span> <span class="toc-text">Mean-field attraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maxwell-equal-area-construction"><span class="toc-number">4.3.3.</span> <span class="toc-text">Maxwell equal-area construction</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 19
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Diffraction-in-chemistry/">Diffraction Methods in Chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/2020/03/抗疫措施和解方程/">抗疫措施和解方程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2020/03/Symmetry-in-chemistry/">Symmetry in chemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href="/2020/02/Theoretical-Techniques-Key-Equations/">Theoretical Techniques Key Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/Synthesis-with-enolate/">Synthesis with enolate</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2020/01/HR-spectroscopy/">High Resolution Spectroscopy</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/2019/11/Essential-Thermodynamics/">Essential Thermodynamics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/La-Pause-de-Pierrette/">【学年最佳餐厅】La Pause de Pierrette</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/2019/05/Solids/">Electrons and Solids</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/Fourier-Transform/">Fourier Transform</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href="/2019/04/Functionals/">Functionals</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/05</span><a class="archive-post-title" href="/2019/04/Differential-Equations/">Differential Equations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/31</span><a class="archive-post-title" href="/2019/03/Matrix-Tensor/">Matrix & Tensor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/2019/03/Contour-Integration/">Contour Integration</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href="/2019/03/IB-Spectroscopy/">IB Spectroscopy Techniques</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/Addict-2019/">2019, what can I addict to?</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/Intro-to-QM/">Introduction to Quantum Mechanics</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
+    
+        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+    
+        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+    
+        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+    
+        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "2LalA猪"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+    MathJax.Hub.Config({
+
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        },
+        TeX: {
+            extensions: ["[mhchem]/mhchem.js"]
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
+
+
