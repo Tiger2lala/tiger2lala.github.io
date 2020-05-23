@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
     <!-- title -->
 
 
@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,hexo">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -200,6 +200,8 @@
     
     <!-- 谷歌统计  -->
     
+    <!-- Indieauth -->
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 </head>
 
     
@@ -274,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">695</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>Word count: <span class="post-count word-count">695</span>Reading time: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -511,11 +513,11 @@ E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}<
                 <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
                 <p>or via <a href="/about/index.html">other methods.</a></p>
             </center>
-            <p>原文作者：<a href="https://www.butteraddict.fun">2LalA猪</a>
-            </p><p>原文链接：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/</a>
-            </p><p>发表日期：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">November 30th 2019, 9:32:11 am</a>
-            </p><p>更新日期：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">November 30th 2019, 5:35:28 pm</a>
-            </p><p>版权声明：CC BY 4.0 - 转载请注明出处</p>
+            <p>Author：<a href="https://www.butteraddict.fun">2LalA猪</a>
+            </p><p>Permalink：<a href="https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/">https://www.butteraddict.fun/2019/11/Essential-Thermodynamics/</a>
+            </p><p>Published on：30th November 2019, 9:32 am
+            </p><p>Updated on：30th November 2019, 5:35 pm
+            </p><p>License：CC BY 4.0</p>
         </div>
     
     <!-- paginator  -->
@@ -540,21 +542,6 @@ E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}<
     <!-- 评论插件 -->
     <!-- 来必力City版安装代码 -->
 
-    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODAyNS8xNDU1NQ==">
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
 <!-- City版安装代码已完成 -->
     
     
@@ -564,6 +551,21 @@ E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}<
 
     
     
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        lang: 'en',
+        appId: "FFlBnoT5B2pTIhQ8NbOTV5zP-MdYXbMMI",
+        appKey: "lCl8SEjTqBohKTU7j1RqXKix",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
 
     <!-- 评论 -->
 </main>
@@ -593,10 +595,14 @@ E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}<
         
     
         
+            
+                <a href="https://twitter.com/tz2lala" class="iconfont-archer twitter" target="_blank" title="twitter" rel="me"></a>
+            
+        
     
         
             
-                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+                <a href="https://www.instagram.com/2lala_mydga/" class="iconfont-archer instagram" target="_blank" title="instagram" rel="me"></a>
             
         
     
@@ -617,7 +623,7 @@ E=E^\circ-\frac{RT}{nF}\ln\frac{a_P^{\nu_P}a_Q^{\nu_Q}}{a_A^{\nu_A}a_B^{\nu_B}}<
     
     <!-- powered by Hexo  -->
     <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Customized based on theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- 不蒜子  -->
     
@@ -723,7 +729,6 @@ top:50vh;
     
     
     
-    
     <!-- Tweets are not displayed in archives -->
     
     
@@ -749,6 +754,7 @@ top:50vh;
     
     
     <!-- Tweets are not displayed in archives -->
+    
     
     
     
@@ -1080,13 +1086,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
-    
         <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
         <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
     
@@ -1129,17 +1135,17 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
-    
         <span class="sidebar-category-name" data-categories="学习上瘾"><span class="iconfont-archer">&#xe60a;</span>学习上瘾</span>
     
-        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
+        <span class="sidebar-category-name" data-categories="慵懒上瘾"><span class="iconfont-archer">&#xe60a;</span>慵懒上瘾</span>
     
         <span class="sidebar-category-name" data-categories="学习上瘾/麦瑟买提"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/麦瑟买提</span>
     
-        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
+        <span class="sidebar-category-name" data-categories="肥胖上瘾"><span class="iconfont-archer">&#xe60a;</span>肥胖上瘾</span>
     
         <span class="sidebar-category-name" data-categories="Tweet"><span class="iconfont-archer">&#xe60a;</span>Tweet</span>
+    
+        <span class="sidebar-category-name" data-categories="学习上瘾/砍灭思吹"><span class="iconfont-archer">&#xe60a;</span>学习上瘾/砍灭思吹</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
