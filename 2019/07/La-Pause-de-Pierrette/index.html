@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao,2LalA猪">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -202,6 +202,10 @@
     
     <!-- Indieauth -->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    
+    <link rel="webmention" href="https://webmention.io/butteraddict.fun/webmention">
+    <link rel="pingback" href="https://webmention.io/butteraddict.fun/xmlrpc">
+    
 </head>
 
     
@@ -216,14 +220,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/">黄油上瘾</a>
+                <a href="/">ButterAddict</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">【学年最佳餐厅】La Pause de Pierrette</a>
             </div>
     </div>
     
-    <a class="home-link" href="/">黄油上瘾</a>
+    <a class="home-link" href="/">ButterAddict</a>
 </header>
     
     <div class="wrapper h-entry">
@@ -246,6 +250,7 @@ height:50vh;
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
+      
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -270,11 +275,11 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="美食">美食</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Food">Food</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="店铺">店铺</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Restaurant">Restaurant</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="法国">法国</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="France">France</a>
     
 </div>
                 
@@ -309,6 +314,7 @@ height:50vh;
             </div>
         
     </div>
+     
 </div>
         <script>
  
@@ -340,7 +346,11 @@ height:50vh;
     console.log('font loaded');
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      Array.from(document.getElementsByClassName('intro-subtitle')).forEach(
+        function(element,index,array){
+          element.classList.add('intro-fade-in');
+        });
+      //document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
         postIntros.classList.add('post-fade-in');
@@ -454,14 +464,14 @@ height:50vh;
     
         <div class="license-wrapper">
             <center>
-                <p>Like this? Please support me!</p>
-                <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
-                <p>or via <a href="/about/index.html">other methods.</a></p>
-            </center>
+	<p>Like this? Please support me!</p>
+	<script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+	<p>or via <a href="/about/index.html">other methods.</a></p>
+</center>
             <p>Author：<a class="p-author h-card" href="https://butteraddict.fun">2LalA猪</a>
             </p><p>Permalink：<a class="u-url" href="https://butteraddict.fun/2019/07/La-Pause-de-Pierrette/">https://butteraddict.fun/2019/07/La-Pause-de-Pierrette/</a>
             </p><p>Published on：<span class="dt-published">8th July 2019, 9:22 am</span>
-            </p><p>Updated on：<span class="dt-updated">8th July 2019, 9:28 am</span>
+            </p><p>Updated on：<span class="dt-updated">9th June 2020, 3:22 pm</span>
             </p><p>License：CC BY 4.0</p>
         </div>
     
@@ -512,6 +522,24 @@ height:50vh;
     </script>
 
 
+    
+    <script type="text/javascript" src="/scripts/webmention.js" async></script>
+
+<div>
+  <h3 style="color:#23394d;">Webmentions <span id="default-noWM" style="font-size:1rem"> - no interactions yet...</span></h3> 
+  <ul id="webmentions"></ul>
+</div>
+
+<template id="wm-template">
+  <li class="license-wrapper h-entry" style="display:grid;align-items:baseline;align-content:flex-start;grid-template-columns: repeat(4, [col-start] 1fr);grid-gap:10px;">
+    <div class="p-author" style="grid-column: col-start / span 1; position:relative; grid-row:1; display:flex; flex-wrap:wrap; ">
+       <a class="js-author-name" href=""></a>
+     </div>
+    <div class="js-content e-entry" style="grid-column:col-start 2/ span 3;grid-row: 1;position:relative;display:block;"></div>
+  </li>
+</template>
+
+    
     <!-- 评论 -->
 </main>
             <!-- profile -->
@@ -623,7 +651,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -631,7 +658,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -639,7 +665,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -647,7 +672,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -655,7 +679,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -663,7 +686,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -671,7 +693,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -679,7 +700,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -687,14 +707,12 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -702,7 +720,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -710,7 +727,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -718,7 +734,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -726,7 +741,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -734,7 +748,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -742,7 +755,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -750,7 +762,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -758,7 +769,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -766,7 +776,6 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -774,7 +783,8 @@ top:50vh;
     
     
     
-    <!-- Tweets are not displayed in archives -->
+    
+    
     
     
     
@@ -924,12 +934,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
         </li>
     
     
@@ -1035,21 +1045,21 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+        <span class="sidebar-tag-name" data-tags="Life"><span class="iconfont-archer">&#xe606;</span>Life</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="Notes"><span class="iconfont-archer">&#xe606;</span>Notes</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="Maths"><span class="iconfont-archer">&#xe606;</span>Maths</span>
     
-        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+        <span class="sidebar-tag-name" data-tags="Chemistry"><span class="iconfont-archer">&#xe606;</span>Chemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+        <span class="sidebar-tag-name" data-tags="Food"><span class="iconfont-archer">&#xe606;</span>Food</span>
     
-        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+        <span class="sidebar-tag-name" data-tags="Restaurant"><span class="iconfont-archer">&#xe606;</span>Restaurant</span>
     
-        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+        <span class="sidebar-tag-name" data-tags="France"><span class="iconfont-archer">&#xe606;</span>France</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1131,28 +1141,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 

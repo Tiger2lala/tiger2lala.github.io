@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao,2LalA猪">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -202,6 +202,10 @@
     
     <!-- Indieauth -->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    
+    <link rel="webmention" href="https://webmention.io/butteraddict.fun/webmention">
+    <link rel="pingback" href="https://webmention.io/butteraddict.fun/xmlrpc">
+    
 </head>
 
     
@@ -212,7 +216,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href="/">黄油上瘾</a>
+    <a class="home-link" href="/">ButterAddict</a>
 </header>
     
     <div class="wrapper">
@@ -230,6 +234,7 @@
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/)"></div>
+      
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -244,6 +249,7 @@
         <!-- 文章页meta -->
         
     </div>
+     
 </div>
         <script>
  
@@ -275,7 +281,11 @@
     console.log('font loaded');
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      Array.from(document.getElementsByClassName('intro-subtitle')).forEach(
+        function(element,index,array){
+          element.classList.add('intro-fade-in');
+        });
+      //document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
         postIntros.classList.add('post-fade-in');
@@ -351,33 +361,259 @@
     
     
     <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/07/La-Pause-de-Pierrette/">
+        <a class="abstract-title u-url" href="/2019/04/Functionals/">
             
-                <span class="p-title">【学年最佳餐厅】La Pause de Pierrette</span>
+                <span class="p-title">Functionals</span>
         </a>
         <div class="abstract-content p-summary">
-            
-让对滑雪完全无感的我，回到全法最大滑雪度假村Val Thoren的唯一动力。The motivation for a ski-phobia like me to return to Val Thoren.
+            FunctionalsJust like functions take variables as arguments, functionals take functions as arguments.
+In the following sections, the functional of the form
 
-参与牛剑Varsity trip前往法国享受的一次滑雪之旅已经过去半年多了，而这家餐厅的记忆也自然而然随时间开始淡去。
-“不行，不能忘，必须记录下来！”它给我带来的体验就是有这么优越。
-于是，在这不尴不尬的时间点，胡编了一个“之最”的名号来赞美它。不想说得太绝对，毕竟我也没去过足够多的优秀餐厅。“学年最佳”，就一点也不假，完全可以甩心中的第二名13条街。
-在短短的一周时间中，我们就...
+G[y]=\int_\alpha^\beta f(y,y' ; x) \, dxis considered.
+Functional derivativesDefinition:
+
+\begin{align}
+
+\delta G &= G[y+\delta y]-G[y]\\
+&=\...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/15</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="美食">美食</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="店铺">店铺</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="法国">法国</a>
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    <article class="index-post h-entry">
+        <a class="abstract-title u-url" href="/2019/04/Differential-Equations/">
+            
+                <span class="p-title">Differential Equations</span>
+        </a>
+        <div class="abstract-content p-summary">
+            Key concepts
+Linear operator
+Homogeneous: 
+equation: no forcing, or, a multiple of a solution y, \alpha y is also a solution.
+problem: in addition, \alpha y also satisfies B.C.
+
+
+Boundary conditions
+Dirichlet: the function value on the boundary is defined
+Neumann: the normal derivative value on t...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    <article class="index-post h-entry">
+        <a class="abstract-title u-url" href="/2019/03/Matrix-Tensor/">
+            
+                <span class="p-title">Matrix &amp; Tensor</span>
+        </a>
+        <div class="abstract-content p-summary">
+            MatricesVector spaceDefinition
+A set of elements on which vector addition and scalar multiplication are defined
+Closed under these operations
+Includes identity \mathbf{0}​ for vector addition
+
+Note:
+
+2D spaces \mathbb{R}^2 \neq \mathbb{C}, since \mathbb{C} has a single point of \infty.
+
+SpanThe s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    <article class="index-post h-entry">
+        <a class="abstract-title u-url" href="/2019/03/Contour-Integration/">
+            
+                <span class="p-title">Contour Integration</span>
+        </a>
+        <div class="abstract-content p-summary">
+            Contour IntegrationIdea: A powerful method of doing integrals by using the properties of complex functions.
+Analytic functions
+To be differentiable at a point, a function must satisfy Cauchy-Riemann.
+
+
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \,\frac{\partial v}{\partial x} ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    <article class="index-post h-entry">
+        <a class="abstract-title u-url" href="/2019/03/IB-Spectroscopy/">
+            
+                <span class="p-title">IB Spectroscopy Techniques</span>
+        </a>
+        <div class="abstract-content p-summary">
+            Overall pictureScale
+
+
+
+Type
+Energy scale / \pu{cm-1}
+EM wave
+
+
+
+
+Electronic
+10000
+UV/VIS,  X-ray
+
+
+Vibration
+1000
+IR
+
+
+Rotation
+1
+Microwave
+
+
+
+
+Requirements
+Rotation (Microwave) Spectra
+
+Need permanent dipole 
+x, y or z transforms as totally symmetric representation
+
+
+Infrared
+
+Need change in di...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    <article class="index-post h-entry">
+        <a class="abstract-title u-url" href="/2018/10/Intro-to-QM/">
+            
+                <span class="p-title">Introduction to Quantum Mechanics</span>
+        </a>
+        <div class="abstract-content p-summary">
+            Notes for Cambridge IB Introduction to QM course. Password access required.
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -386,6 +622,10 @@
     
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/tags/Notes/">&#60; PREV</a><a class="page-number" href="/tags/Notes/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -477,7 +717,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -485,7 +724,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -493,7 +731,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -501,7 +738,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -509,7 +745,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -517,7 +752,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -525,7 +759,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -533,7 +766,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -541,14 +773,12 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -556,7 +786,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -564,7 +793,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -572,7 +800,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -580,7 +807,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -588,7 +814,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -596,7 +821,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -604,7 +828,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -612,7 +835,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -620,7 +842,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -628,7 +849,8 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
+    
+    
     
     
     
@@ -778,12 +1000,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
         </li>
     
     
@@ -889,21 +1111,21 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+        <span class="sidebar-tag-name" data-tags="Life"><span class="iconfont-archer">&#xe606;</span>Life</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="Notes"><span class="iconfont-archer">&#xe606;</span>Notes</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="Maths"><span class="iconfont-archer">&#xe606;</span>Maths</span>
     
-        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+        <span class="sidebar-tag-name" data-tags="Chemistry"><span class="iconfont-archer">&#xe606;</span>Chemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+        <span class="sidebar-tag-name" data-tags="Food"><span class="iconfont-archer">&#xe606;</span>Food</span>
     
-        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+        <span class="sidebar-tag-name" data-tags="Restaurant"><span class="iconfont-archer">&#xe606;</span>Restaurant</span>
     
-        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+        <span class="sidebar-tag-name" data-tags="France"><span class="iconfont-archer">&#xe606;</span>France</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -983,28 +1205,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 

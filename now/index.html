@@ -17,12 +17,12 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao,2LalA猪">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>黄油上瘾 ButterAddict</title>
+    <title>/Now · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -202,8 +202,14 @@
     
     <!-- Indieauth -->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    
+    <link rel="webmention" href="https://webmention.io/butteraddict.fun/webmention">
+    <link rel="pingback" href="https://webmention.io/butteraddict.fun/xmlrpc">
+    
 </head>
 
+    
+        <body class="about-body">
     
     
 <header class="header">
@@ -212,10 +218,10 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href="/">黄油上瘾</a>
+    <a class="home-link" href="/">ButterAddict</a>
 </header>
     
-    <div class="wrapper">
+    <div class="wrapper h-entry">
     
         <div class="site-intro" style="
 
@@ -224,16 +230,23 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-butter.jpg)"></div>
+      
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            <span class="p-name">/Now</span>
             
         </h1>
         <!-- 副标题 -->
@@ -244,6 +257,7 @@
         <!-- 文章页meta -->
         
     </div>
+     
 </div>
         <script>
  
@@ -275,7 +289,11 @@
     console.log('font loaded');
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      Array.from(document.getElementsByClassName('intro-subtitle')).forEach(
+        function(element,index,array){
+          element.classList.add('intro-fade-in');
+        });
+      //document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
         postIntros.classList.add('post-fade-in');
@@ -342,78 +360,55 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2020/03/抗疫措施和解方程/">
             
-                <span class="p-title">抗疫措施和解方程</span>
-        </a>
-        <div class="abstract-content p-summary">
-            It should be obvious but 主题是针对英国。如果没有了解政府进入Stage II的措施以及理由，在最后附了摘要。（Credit: LZH）
-为什么不在质疑一个人“为什么不”之前，如果你没有站在他的立场上思考一下为什么不，那这个质疑是极不负责任的。
-一场瘟疫面前，政府为什么不轻举妄动的理由很多，大家也都能慢慢看到了。最近的例子，美国一封闭欧洲的航班，DJI就暴跌10%。这说明从经济上看，任何的封闭性措施，至少在大多数人（资本）看来，在短期内都会对经济造成更加负面的、极其严重的影响。
-同样的，在其他方面，任何措施对国家、社会的影响都不可小觑。多少小企业就此破产、多少投资...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活态度">生活态度</a>
-    
-</div>
-            
-        </div>
+<main class="main about-page">
+    <article class="article-entry e-content">
+        <p>Here is what I’ve been up to.</p>
+<h1 id="Entering-the-summer"><a href="#Entering-the-summer" class="headerlink" title="Entering the summer"></a>Entering the summer</h1><ul>
+<li>Finished my 3rd year undergraduate as a chemist at Cambridge. </li>
+<li>Working on summer research projects in MRI and, later, electronic structures. Both are in Cambridge. I’m planning to log these experiences in some details as posts.</li>
+<li>Tutoring <em>maths for sciences</em> and <em>chemistry</em> for all levels up to 1st year undergraduate, including for competitions. This is an important way in which I keep knowledge fresh and alleviate my overseas education costs.</li>
+</ul>
+<h1 id="For-fun"><a href="#For-fun" class="headerlink" title="For fun"></a>For fun</h1><ul>
+<li>Learning finger style jazz guitar.</li>
+<li>Playing pixel, strategy games, including OpenTTD and TheoTown.</li>
+<li>Gently running 20-30km per week. </li>
+</ul>
+
     </article>
+
     
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/01/Addict-2019/">
-            
-                <span class="p-title">2019, what can I addict to?</span>
-        </a>
-        <div class="abstract-content p-summary">
-            Irrelevant content.
+        <div class="license-wrapper">
+            <center>
+	<p>Like this? Please support me!</p>
+	<script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+	<p>or via <a href="/about/index.html">other methods.</a></p>
+</center>
+            <p>Author：<a class="p-author h-card" href="https://butteraddict.fun">2LalA猪</a>
+            </p><p>Permalink：<a class="u-url" href="https://butteraddict.fun/now/index.html">https://butteraddict.fun/now/index.html</a>
+            </p><p>Published on：<span class="dt-published">9th June 2020, 11:14 am</span>
+            </p><p>Updated on：<span class="dt-updated">9th June 2020, 11:14 am</span>
+            </p><p>License：CC BY 4.0</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活">生活</a>
+
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活态度">生活态度</a>
-    
+    <script type="text/javascript" src="/scripts/webmention.js" async></script>
+
+<div>
+  <h3 style="color:#23394d;">Webmentions <span id="default-noWM" style="font-size:1rem"> - no interactions yet...</span></h3> 
+  <ul id="webmentions"></ul>
 </div>
-            
-        </div>
-    </article>
-    
-    
-    <!-- paginator  -->
+
+<template id="wm-template">
+  <li class="license-wrapper h-entry" style="display:grid;align-items:baseline;align-content:flex-start;grid-template-columns: repeat(4, [col-start] 1fr);grid-gap:10px;">
+    <div class="p-author" style="grid-column: col-start / span 1; position:relative; grid-row:1; display:flex; flex-wrap:wrap; ">
+       <a class="js-author-name" href=""></a>
+     </div>
+    <div class="js-content e-entry" style="grid-column:col-start 2/ span 3;grid-row: 1;position:relative;display:block;"></div>
+  </li>
+</template>
+
     
 </main>
             <!-- profile -->
@@ -505,7 +500,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -513,7 +507,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -521,7 +514,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -529,7 +521,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -537,7 +528,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -545,7 +535,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -553,7 +542,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -561,7 +549,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -569,14 +556,12 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -584,7 +569,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -592,7 +576,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -600,7 +583,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -608,7 +590,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -616,7 +597,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -624,7 +604,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -632,7 +611,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -640,7 +618,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -648,7 +625,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -656,7 +632,8 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
+    
+    
     
     
     
@@ -806,12 +783,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
         </li>
     
     
@@ -917,21 +894,21 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+        <span class="sidebar-tag-name" data-tags="Life"><span class="iconfont-archer">&#xe606;</span>Life</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="Notes"><span class="iconfont-archer">&#xe606;</span>Notes</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="Maths"><span class="iconfont-archer">&#xe606;</span>Maths</span>
     
-        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+        <span class="sidebar-tag-name" data-tags="Chemistry"><span class="iconfont-archer">&#xe606;</span>Chemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+        <span class="sidebar-tag-name" data-tags="Food"><span class="iconfont-archer">&#xe606;</span>Food</span>
     
-        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+        <span class="sidebar-tag-name" data-tags="Restaurant"><span class="iconfont-archer">&#xe606;</span>Restaurant</span>
     
-        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+        <span class="sidebar-tag-name" data-tags="France"><span class="iconfont-archer">&#xe606;</span>France</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1011,28 +988,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 

@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao,2LalA猪">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -200,6 +200,10 @@
     
     <!-- Indieauth -->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    
+    <link rel="webmention" href="https://webmention.io/butteraddict.fun/webmention">
+    <link rel="pingback" href="https://webmention.io/butteraddict.fun/xmlrpc">
+    
 </head>
 
     
@@ -212,7 +216,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href="/">黄油上瘾</a>
+    <a class="home-link" href="/">ButterAddict</a>
 </header>
     
     <div class="wrapper">
@@ -225,7 +229,7 @@
 
 
 
-height:50vh;
+height:100vh;
 ">
     
     <!-- 主页  -->
@@ -235,28 +239,34 @@ height:50vh;
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/intro/index-butter.jpg)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-            黄油上瘾
-            <!-- 文章页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-            
-                科学而不失偏见的大杂烩
-            
-            <!-- 文章页  -->
-            
+    
+    
+<div class="site-intro-meta">
+    <!-- 标题  -->
+    <h1 class="intro-title" align="center">
+        <!-- 主页  -->
+
+        ButterAddict<br>黄油上瘾
+        <!-- 文章页  -->
+
+    </h1>
+    <!-- 副标题 -->
+    <p class="intro-subtitle">
+        <!-- 主页副标题  -->
+        科学而不失偏见的大杂烩
+    </p>
+    <!-- 文章页meta -->
+    <div style="padding-top:50px;">
+
+        <p class="intro-subtitle" style="font-size:1.2rem;transition-delay: 1.0s;">
+            Hi guys, this is Minghao Zhang, aka Tiger / 2LalA. I am an <a style="color:#fff080" href="/now">undergrad scientist</a> at Cambridge. <br>
+            ButterAddict is not only the title of my leisure blogging site, but also a <a style="color:#fff080" href="/about/ButterAddict.html">life philosophy</a>. 
         </p>
-        <!-- 文章页meta -->
-        
-    </div>
+
+    </div>    
+</div>
+
+     
 </div>
         <script>
  
@@ -288,7 +298,11 @@ height:50vh;
     console.log('font loaded');
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      Array.from(document.getElementsByClassName('intro-subtitle')).forEach(
+        function(element,index,array){
+          element.classList.add('intro-fade-in');
+        });
+      //document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
         postIntros.classList.add('post-fade-in');
@@ -406,9 +420,9 @@ Canonical ensembleFind the partition function from the number of ways to distrib
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -440,9 +454,9 @@ Most experiments measure averaged properties - over many...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -497,9 +511,9 @@ Scattering ...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -533,7 +547,7 @@ Scattering ...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活">生活</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Life">Life</a>
     
         <a class="post-tag p-category" href="javascript:void(0);" data-tags="生活态度">生活态度</a>
     
@@ -569,9 +583,9 @@ RepresentationsThe representation matrix of an operation is defined with a left 
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -602,9 +616,9 @@ RepresentationsThe representation matrix of an operation is defined with a left 
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -653,9 +667,9 @@ Lewis acid to form cation\ce{TiCl4}, TMS enol ether ...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -713,9 +727,9 @@ Spontaneous ...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -757,9 +771,9 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -780,6 +794,10 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     <link class="u-url u-uid" rel="me" href="https://butteraddict.fun" "="">
     <img class="profile-avatar u-photo" alt="avatar" src="/avatar/t2.jpeg">
     <div class="profile-name p-name">2LalA猪</div>
+    
+    <div class="profile-signature p-note">
+        Steve: &#39;Stay hungry, stay foolish.&#39; Me: &#39;Eat well, don&#39;t be stupid.&#39;
+    </div>
     
     
     <div class="profile-social">
@@ -833,20 +851,14 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     </div>
     
     
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-            
-                
-            
-                
-            
+        <div class="about-me">
+            <a href="/now">NOW</a>
         </div>
     
     
+    
         <div class="about-me">
-            <a href="/about">ABOUT ME</a>
+            <a href="/about">ABOUT</a>
         </div>
     
 </div>
@@ -938,7 +950,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -946,7 +957,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -954,7 +964,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -962,7 +971,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -970,7 +978,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -978,7 +985,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -986,7 +992,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -994,7 +999,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1002,14 +1006,12 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1017,7 +1019,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1025,7 +1026,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1033,7 +1033,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1041,7 +1040,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1049,7 +1047,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1057,7 +1054,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1065,7 +1061,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1073,7 +1068,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1081,7 +1075,6 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -1089,7 +1082,8 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
     
-    <!-- Tweets are not displayed in archives -->
+    
+    
     
     
     
@@ -1239,12 +1233,12 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
         </li>
     
     
@@ -1350,21 +1344,21 @@ dS=\frac{\delta q_{rev}}{T}. \tag{2}\label{entropy}​  ...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+        <span class="sidebar-tag-name" data-tags="Life"><span class="iconfont-archer">&#xe606;</span>Life</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="Notes"><span class="iconfont-archer">&#xe606;</span>Notes</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="Maths"><span class="iconfont-archer">&#xe606;</span>Maths</span>
     
-        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+        <span class="sidebar-tag-name" data-tags="Chemistry"><span class="iconfont-archer">&#xe606;</span>Chemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+        <span class="sidebar-tag-name" data-tags="Food"><span class="iconfont-archer">&#xe606;</span>Food</span>
     
-        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+        <span class="sidebar-tag-name" data-tags="Restaurant"><span class="iconfont-archer">&#xe606;</span>Restaurant</span>
     
-        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+        <span class="sidebar-tag-name" data-tags="France"><span class="iconfont-archer">&#xe606;</span>France</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1444,28 +1438,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 

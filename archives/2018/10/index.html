@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="2LalA猪">
     
-    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao">
+    <meta name="keywords" content="黄油上瘾,ButterAddict,Minghao,2LalA猪">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -202,6 +202,10 @@
     
     <!-- Indieauth -->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    
+    <link rel="webmention" href="https://webmention.io/butteraddict.fun/webmention">
+    <link rel="pingback" href="https://webmention.io/butteraddict.fun/xmlrpc">
+    
 </head>
 
     
@@ -212,7 +216,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href="/">黄油上瘾</a>
+    <a class="home-link" href="/">ButterAddict</a>
 </header>
     
     <div class="wrapper">
@@ -230,6 +234,7 @@
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/)"></div>
+      
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -244,6 +249,7 @@
         <!-- 文章页meta -->
         
     </div>
+     
 </div>
         <script>
  
@@ -275,7 +281,11 @@
     console.log('font loaded');
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      Array.from(document.getElementsByClassName('intro-subtitle')).forEach(
+        function(element,index,array){
+          element.classList.add('intro-fade-in');
+        });
+      //document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
         postIntros.classList.add('post-fade-in');
@@ -367,9 +377,9 @@
             
             <div class="abstract-tags">
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="笔记">笔记</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
     
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="化学">化学</a>
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
     
 </div>
             
@@ -469,7 +479,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -477,7 +486,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -485,7 +493,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -493,7 +500,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -501,7 +507,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -509,7 +514,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -517,7 +521,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -525,7 +528,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -533,14 +535,12 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -548,7 +548,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -556,7 +555,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -564,7 +562,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -572,7 +569,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -580,7 +576,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -588,7 +583,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -596,7 +590,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -604,7 +597,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -612,7 +604,6 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
     
     
     
@@ -620,7 +611,8 @@
     
     
     
-    <!-- Tweets are not displayed in archives -->
+    
+    
     
     
     
@@ -770,12 +762,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Fundamentals/">Statistical Mechnics Fundamentals</a>
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href="/2020/04/Statistical-Mechanics-Applications/">Statistical Mechanics Applications</a>
         </li>
     
     
@@ -881,21 +873,21 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+        <span class="sidebar-tag-name" data-tags="Life"><span class="iconfont-archer">&#xe606;</span>Life</span>
     
         <span class="sidebar-tag-name" data-tags="生活态度"><span class="iconfont-archer">&#xe606;</span>生活态度</span>
     
-        <span class="sidebar-tag-name" data-tags="笔记"><span class="iconfont-archer">&#xe606;</span>笔记</span>
+        <span class="sidebar-tag-name" data-tags="Notes"><span class="iconfont-archer">&#xe606;</span>Notes</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="Maths"><span class="iconfont-archer">&#xe606;</span>Maths</span>
     
-        <span class="sidebar-tag-name" data-tags="化学"><span class="iconfont-archer">&#xe606;</span>化学</span>
+        <span class="sidebar-tag-name" data-tags="Chemistry"><span class="iconfont-archer">&#xe606;</span>Chemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="美食"><span class="iconfont-archer">&#xe606;</span>美食</span>
+        <span class="sidebar-tag-name" data-tags="Food"><span class="iconfont-archer">&#xe606;</span>Food</span>
     
-        <span class="sidebar-tag-name" data-tags="店铺"><span class="iconfont-archer">&#xe606;</span>店铺</span>
+        <span class="sidebar-tag-name" data-tags="Restaurant"><span class="iconfont-archer">&#xe606;</span>Restaurant</span>
     
-        <span class="sidebar-tag-name" data-tags="法国"><span class="iconfont-archer">&#xe606;</span>法国</span>
+        <span class="sidebar-tag-name" data-tags="France"><span class="iconfont-archer">&#xe606;</span>France</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -975,28 +967,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-    MathJax.Hub.Config({
-
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        },
-        TeX: {
-            extensions: ["[mhchem]/mhchem.js"]
-        }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</body>
+    </body>
 </html>
 
 
