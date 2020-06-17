@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>黄油上瘾 ButterAddict</title>
+    <title>IndieWeb &amp; ButterAddict Update · 黄油上瘾 ButterAddict</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -209,6 +209,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -216,10 +218,19 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ButterAddict</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">IndieWeb & ButterAddict Update</a>
+            </div>
+    </div>
+    
     <a class="home-link" href="/">ButterAddict</a>
 </header>
     
-    <div class="wrapper">
+    <div class="wrapper h-entry">
     
         <div class="site-intro" style="
 
@@ -228,25 +239,77 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-butter.jpg)"></div>
       
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            <span class="p-name">IndieWeb & ButterAddict Update</span>
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Life">Life</a>
+    
+        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Tech">Tech</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">730</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/06/15</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
      
@@ -352,281 +415,122 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/04/Functionals/">
-            
-                <span class="p-title">Functionals</span>
-        </a>
-        <div class="abstract-content p-summary">
-            FunctionalsJust like functions take variables as arguments, functionals take functions as arguments.
-In the following sections, the functional of the form
+            <main class="main post-page">
+    <article class="article-entry e-content">
+        <p>It seems peculiar that the revision time before Tripos triggers my programming crave, every year. It was the Tripos question bank website in year 1, … something that I’ve forgotten in year 2…, and this year, updating my website for the IndieWeb concept.</p>
+<h1 id="Learning-about-IndieWeb"><a href="#Learning-about-IndieWeb" class="headerlink" title="Learning about IndieWeb"></a>Learning about IndieWeb</h1><p>I was searching for ideas about starting a <strong>personal website</strong> for a friend, when <strong><a href="https://indieweb.org/" target="_blank" rel="noopener">IndieWeb</a></strong> came up in the search result. It is <em>a people-focused alternative to the ‘corporate web’</em>.</p>
+<p>Despite the seemingly clear definition, the word IndieWeb and what it represents became increasingly confusing as I go deeper in its website and wiki. Only after I worked through this update project have I got a grip on what that is about. </p>
+<p>Here I share some of my own understandings, regarding what I found confusing. </p>
+<blockquote>
+<p>My personal understandings might not be accurate; also you may find it helpful to browse through the official website before reading this.</p>
+</blockquote>
+<h2 id="A-concept-and-a-community"><a href="#A-concept-and-a-community" class="headerlink" title="A concept and a community"></a>A concept and a community</h2><p>It is definitely not a product or a service. It encourages you to create your <strong>own</strong> site - “beyond blogging and decentralization”. It includes a lot of tutorials on its wiki for you to get started, as well as a helpful community to interact with.</p>
+<p>While it is your own, the IndieWeb concept also encourages certain <strong>standards</strong> - owning your domain, using it as your primary identity, as well as technical standards including <a href="http://microformats.org/" target="_blank" rel="noopener">Microformat</a> and <a href="https://webmention.net/" target="_blank" rel="noopener">Webmentions</a>. Of course, this <em>doesn’t mean</em> that your personal website must conform to these rules; but instead, these are <em>what the people in the IndieWeb community believe will make personal websites more <strong>efficient</strong> and more <strong>communicative</strong>, and will maximize the value of personal websites</em>.</p>
+<h2 id="People-focused"><a href="#People-focused" class="headerlink" title="People-focused?"></a>People-focused?</h2><p>That seemed a confusing word. Why not straight-forwardly use the word ‘personal website’ in the definition?</p>
+<p>Perhaps because some ‘personal website’ are aimed at monetizing contents or products, which is not what IndieWeb is promoting?</p>
+<p>Perhaps this also explains why some of the aforementioned web standards are not yet widely accepted - there is no profit driving behind all this, since all is about people themselves.</p>
+<h2 id="Owning-data-vs-Syndication"><a href="#Owning-data-vs-Syndication" class="headerlink" title="Owning data vs Syndication"></a>Owning data vs Syndication</h2><p>This is definitely the part that I was most confused about.</p>
+<p>A big motivation of having a personal website is about owning your <strong>data</strong> and your <strong>privacy</strong>. In this case, why is ‘syndicating to social media’ (aka POSSE) an important function module of these websites? If you publish to social media sites, don’t they still have your data on hand?</p>
+<p>I understand this as an intermediate step. In the current era, information spread fast anywhere within, but hardly beyond social media. Most people are not able to interact with you, or even read about what you write, outside social media.</p>
+<p>But when eventually, a good number of people in your circle has a personal website which supports <a href="https://webmention.net/" target="_blank" rel="noopener">Webmention</a>, you can safely say goodbye to social media platforms.</p>
+<h3 id="Briefly-on-how-Webmention-works"><a href="#Briefly-on-how-Webmention-works" class="headerlink" title="Briefly on how Webmention works"></a>Briefly on how Webmention works</h3><p>Alice and Bob both have personal websites that supports webmentions. </p>
+<p>One day, Alice wrote an article about ‘lemon cakes’ and publishes on her website.</p>
+<p>Bob, scrolling through his news feed (not a Twitter or Instagram feed anymore, but a feed gathering all updates from all his friends’ personal websites), found Alice’s ‘lemon cake’ article interesting. </p>
+<p>So, he <em>replies</em>(or <em>likes</em> or <em>reposts</em>) to Alice, not on any platforms, but by writing an entry on his own website, quoting the link to Alice’s article. Then he sends a webmention to Alice’s server, quoting the link to his reply (or like or repost). Therefore Alice knows that Bob wrote a reply. </p>
+<p>Now both Alice and Bob’s websites know about the interaction, and they can present this in whatever way they want to. There is no middleman though - 隔空传信 - hence the ultimate ‘owning your data’.</p>
+<h1 id="Update-to-ButterAddict"><a href="#Update-to-ButterAddict" class="headerlink" title="Update to ButterAddict"></a>Update to ButterAddict</h1><p>The key is to emphasize that this is a <em>personal</em> website, not some company that sells butter by writing maths notes LOL. </p>
+<ul>
+<li>Included a paragraph to introduce myself in the intro part.</li>
+<li>Included a /now page to describe my recent activities. More on the /now page concept <a href="https://nownownow.com" target="_blank" rel="noopener">here</a>.</li>
+<li>Updated wordings in the <a href="https://butteraddict.fun/about/ButterAddict.html">ButterAddict philosophy</a></li>
+</ul>
+<p>Also incorporated the technical parts of IndieWeb.</p>
+<ul>
+<li>Enabled IndieAuth.</li>
+<li>Added Microformat2 in rendered html tags.</li>
+<li>Receives Webmentions via <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</li>
+<li>Presents Webmentions below each article, referring to the script by <a href="https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/" target="_blank" rel="noopener">Keith</a>.</li>
+</ul>
+<p>After all these effort, I will definitely write more on my site. Well I say definitely…</p>
 
-G[y]=\int_\alpha^\beta f(y,y' ; x) \, dxis considered.
-Functional derivativesDefinition:
-
-\begin{align}
-
-\delta G &= G[y+\delta y]-G[y]\\
-&=\...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
-    
-</div>
-            
-        </div>
     </article>
     
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/04/Differential-Equations/">
-            
-                <span class="p-title">Differential Equations</span>
-        </a>
-        <div class="abstract-content p-summary">
-            Key concepts
-Linear operator
-Homogeneous: 
-equation: no forcing, or, a multiple of a solution y, \alpha y is also a solution.
-problem: in addition, \alpha y also satisfies B.C.
-
-
-Boundary conditions
-Dirichlet: the function value on the boundary is defined
-Neumann: the normal derivative value on t...
+        <div class="license-wrapper">
+            <center>
+	<p>Like this? Please support me!</p>
+	<script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init('Cheers!', '#666666', 'H2H6YD9S');kofiwidget2.draw();</script>
+	<p>or via <a href="/about/index.html">other methods.</a></p>
+</center>
+            <p>Author：<a class="p-author h-card" href="https://butteraddict.fun">2LalA猪</a>
+            </p><p>Permalink：<a class="u-url" href="https://butteraddict.fun/2020/06/IndieWeb-ButterAddict-Update/">https://butteraddict.fun/2020/06/IndieWeb-ButterAddict-Update/</a>
+            </p><p>Published on：<span class="dt-published">15th June 2020, 7:27 am</span>
+            </p><p>Updated on：<span class="dt-updated">17th June 2020, 11:01 am</span>
+            </p><p>License：CC BY 4.0</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/03/Matrix-Tensor/">
-            
-                <span class="p-title">Matrix &amp; Tensor</span>
-        </a>
-        <div class="abstract-content p-summary">
-            MatricesVector spaceDefinition
-A set of elements on which vector addition and scalar multiplication are defined
-Closed under these operations
-Includes identity \mathbf{0}​ for vector addition
-
-Note:
-
-2D spaces \mathbb{R}^2 \neq \mathbb{C}, since \mathbb{C} has a single point of \infty.
-
-SpanThe s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/03/Contour-Integration/">
-            
-                <span class="p-title">Contour Integration</span>
-        </a>
-        <div class="abstract-content p-summary">
-            Contour IntegrationIdea: A powerful method of doing integrals by using the properties of complex functions.
-Analytic functions
-To be differentiable at a point, a function must satisfy Cauchy-Riemann.
-
-
-\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \,\frac{\partial v}{\partial x} ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Maths">Maths</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2019/03/IB-Spectroscopy/">
-            
-                <span class="p-title">IB Spectroscopy Techniques</span>
-        </a>
-        <div class="abstract-content p-summary">
-            Overall pictureScale
-
-
-
-Type
-Energy scale / \pu{cm-1}
-EM wave
-
-
-
-
-Electronic
-10000
-UV/VIS,  X-ray
-
-
-Vibration
-1000
-IR
-
-
-Rotation
-1
-Microwave
-
-
-
-
-Requirements
-Rotation (Microwave) Spectra
-
-Need permanent dipole 
-x, y or z transforms as totally symmetric representation
-
-
-Infrared
-
-Need change in di...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    <article class="index-post h-entry">
-        <a class="abstract-title u-url" href="/2018/10/Intro-to-QM/">
-            
-                <span class="p-title">Introduction to Quantum Mechanics</span>
-        </a>
-        <div class="abstract-content p-summary">
-            Notes for Cambridge IB Introduction to QM course. Password access required.
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Notes">Notes</a>
-    
-        <a class="post-tag p-category" href="javascript:void(0);" data-tags="Chemistry">Chemistry</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/05/Tweets-available/" title="Tweets available!">
+                    <div class="prevTitle">Tweets available!</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/categories/学习上瘾/">&#60; PREV</a><a class="page-number" href="/categories/学习上瘾/">1</a><span class="page-number current">2</span>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        lang: 'en',
+        appId: "FFlBnoT5B2pTIhQ8NbOTV5zP-MdYXbMMI",
+        appKey: "lCl8SEjTqBohKTU7j1RqXKix",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    
+    <script type="text/javascript" src="/scripts/webmention.js" async></script>
+
+<div>
+  <h3 style="color:#23394d;">Webmentions <span id="default-noWM" style="font-size:1rem"> - no interactions yet...</span></h3> 
+  <ul id="webmentions"></ul>
+</div>
+
+<template id="wm-template">
+  <li class="license-wrapper h-entry" style="display:grid;align-items:baseline;align-content:flex-start;grid-template-columns: repeat(4, [col-start] 1fr);grid-gap:10px;">
+    <div class="p-author" style="grid-column: col-start / span 1; position:relative; grid-row:1; display:flex; flex-wrap:wrap; ">
+       <a class="js-author-name" href=""></a>
+     </div>
+    <div class="js-content e-entry" style="grid-column:col-start 2/ span 3;grid-row: 1;position:relative;display:block;"></div>
+  </li>
+</template>
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -700,6 +604,26 @@ Need change in di...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Learning-about-IndieWeb"><span class="toc-number">1.</span> <span class="toc-text">Learning about IndieWeb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-concept-and-a-community"><span class="toc-number">1.1.</span> <span class="toc-text">A concept and a community</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#People-focused"><span class="toc-number">1.2.</span> <span class="toc-text">People-focused?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Owning-data-vs-Syndication"><span class="toc-number">1.3.</span> <span class="toc-text">Owning data vs Syndication</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Briefly-on-how-Webmention-works"><span class="toc-number">1.3.1.</span> <span class="toc-text">Briefly on how Webmention works</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Update-to-ButterAddict"><span class="toc-number">2.</span> <span class="toc-text">Update to ButterAddict</span></a></li></ol>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1224,6 +1148,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
